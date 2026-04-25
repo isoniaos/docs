@@ -1,6 +1,7 @@
 # IsoniaOS v0.1 — REST API Spec
 
 ## Principles
+
 - REST only for v0.1
 - JSON only
 - versioned routes under `/v1`
@@ -10,26 +11,31 @@
 ## Endpoints
 
 ### System
+
 - `GET /v1/health`
 - `GET /v1/version`
 
 ### Organizations
+
 - `GET /v1/orgs`
 - `GET /v1/orgs/:orgId`
 - `GET /v1/orgs/:orgId/overview`
 
 ### Bodies / Roles / Mandates
+
 - `GET /v1/orgs/:orgId/bodies`
 - `GET /v1/orgs/:orgId/roles`
 - `GET /v1/orgs/:orgId/mandates`
 - `GET /v1/orgs/:orgId/holders/:address/mandates`
 
 ### Proposals
+
 - `GET /v1/orgs/:orgId/proposals`
 - `GET /v1/orgs/:orgId/proposals/:proposalId`
 - `GET /v1/orgs/:orgId/proposals/:proposalId/route`
 
 ### Graph
+
 - `GET /v1/orgs/:orgId/graph`
 
 ## Route explanation response
@@ -55,7 +61,7 @@
 ```
 
 ## Non-goals for v0.1
+
 - GraphQL
 - arbitrary filtering DSL
 - external public write API for governance actions
-
