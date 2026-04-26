@@ -115,7 +115,7 @@ export interface ProposalRouteExplanationDto {
 
 export interface RouteBodyRequirementDto { bodyId: string; bodyName: string; required: boolean; approved: boolean; approvedBy?: Address; approvedAtChain?: string; txHash?: string; }
 export interface RouteBodyVetoDto { bodyId: string; bodyName: string; canVeto: boolean; vetoed: boolean; vetoedBy?: Address; vetoedAtChain?: string; txHash?: string; }
-export interface RouteBlockedReasonDto { code: "missing_approval" | "vetoed" | "not_queued" | "timelock_not_satisfied" | "already_executed" | "cancelled" | "expired" | "policy_disabled" | "unknown"; message: string; relatedBodyId?: string; }
+export interface RouteBlockedReasonDto { code: "missing_approval" | "vetoed" | "not_queued" | "timelock_not_satisfied" | "already_executed" | "cancelled" | "expired" | "policy_disabled" | "policy_snapshot_missing" | "unknown"; message: string; relatedBodyId?: string; }
 ```
 
 ## Governance Graph DTO

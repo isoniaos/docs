@@ -104,6 +104,7 @@ Responsibilities:
 - inspect proposal, policy, approvals, vetoes, timelock;
 - return human-readable and machine-readable route status;
 - never invent authority not present in read models/on-chain events.
+- return `policy_snapshot_missing` when the proposal's policy version is absent from projections, without falling back to the latest policy.
 
 ### 4.5 Governance graph service
 

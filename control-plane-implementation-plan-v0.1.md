@@ -128,6 +128,8 @@ Given `chainId`, `orgId`, `proposalId`, return:
 - executable boolean;
 - blocked reasons.
 
+If the proposal references a policy version that is missing from projections, the route explanation must return a `policy_snapshot_missing` blocked reason. It must not fall back to the latest policy rule.
+
 ## REST endpoints
 
 ```txt
