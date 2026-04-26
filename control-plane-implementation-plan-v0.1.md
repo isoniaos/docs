@@ -45,6 +45,8 @@ CONFIRMATIONS
 BLOCK_RANGE_SIZE
 POLL_INTERVAL_MS
 API_PORT
+CORS_ORIGINS
+CORS_CREDENTIALS
 ```
 
 ### Ingestion module
@@ -100,6 +102,12 @@ Projection workers process raw events in deterministic order:
 
 ```txt
 block_number ASC, log_index ASC
+```
+
+Workers must claim rows inside the projection transaction using:
+
+```sql
+FOR UPDATE SKIP LOCKED
 ```
 
 Each event must be processed idempotently inside a DB transaction.

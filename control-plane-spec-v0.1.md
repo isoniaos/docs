@@ -132,13 +132,19 @@ Do not assume exactly-once delivery from RPC/WebSocket providers.
 
 ### 5.2 Event identity
 
-Every blockchain log MUST be uniquely identified by:
+Every blockchain log MUST be deduplicated by its logical event identity:
 
 ```text
-chainId + blockNumber + txHash + logIndex
+chainId + txHash + logIndex
 ```
 
-This key MUST have a unique constraint in `raw_events`.
+The physical raw log identity also includes `blockHash`:
+
+```text
+chainId + blockHash + txHash + logIndex
+```
+
+The logical key MUST have a unique constraint in `raw_events`. The `block_hash` MUST still be stored for reorg detection.
 
 ### 5.3 Event statuses
 
@@ -211,7 +217,7 @@ failed_at timestamptz,
 error text,
 created_at timestamptz not null default now(),
 updated_at timestamptz not null default now(),
-unique(chain_id, block_number, tx_hash, log_index)
+unique(chain_id, tx_hash, log_index)
 );
 ```
 
@@ -261,7 +267,7 @@ created_block bigint not null,
 data_status text not null,
 created_at timestamptz not null,
 updated_at timestamptz not null,
-primary key(chain_id, body_id)
+primary key(chain_id, org_id, body_id)
 );
 ```
 
@@ -278,7 +284,7 @@ active boolean not null,
 data_status text not null,
 created_at timestamptz not null,
 updated_at timestamptz not null,
-primary key(chain_id, role_id)
+primary key(chain_id, org_id, role_id)
 );
 ```
 
@@ -300,7 +306,7 @@ revoked boolean not null,
 data_status text not null,
 created_at timestamptz not null,
 updated_at timestamptz not null,
-primary key(chain_id, mandate_id)
+primary key(chain_id, org_id, mandate_id)
 );
 ```
 
@@ -343,7 +349,7 @@ executed_at_chain bigint,
 data_status text not null,
 created_at timestamptz not null,
 updated_at timestamptz not null,
-primary key(chain_id, proposal_id)
+primary key(chain_id, org_id, proposal_id)
 );
 ```
 
@@ -362,7 +368,7 @@ block_number bigint not null,
 log_index integer not null,
 data_status text not null,
 created_at timestamptz not null,
-unique(chain_id, proposal_id, body_id, decision_type)
+unique(chain_id, org_id, proposal_id, body_id, decision_type)
 );
 ```
 
@@ -397,6 +403,7 @@ Each event type must have a deterministic handler.
 Each handler MUST:
 
 - run inside a DB transaction;
+- claim unprocessed raw rows with `FOR UPDATE SKIP LOCKED`;
 - be safe to run multiple times;
 - use upsert where appropriate;
 - update `governance_edges` if needed;
@@ -421,6 +428,7 @@ Each handler MUST:
 - `ProposalQueued`
 - `ProposalExecuted`
 - `ProposalCancelled`
+- `ProposalStatusChanged`
 
 ---
 
@@ -624,6 +632,8 @@ GOV_PROPOSALS_ADDRESS
 START_BLOCK
 CONFIRMATION_DEPTH
 MAX_BLOCK_RANGE
+CORS_ORIGINS
+CORS_CREDENTIALS
 PUBLIC_RPS_LIMIT
 ```
 

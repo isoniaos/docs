@@ -33,9 +33,10 @@ Physical raw log identity:
 1. Fetch logs from RPC
 2. Write the raw event to `raw_events`
 3. Deduplicate by the logical event key
-4. The projection worker applies the event inside a database read-model transaction
-5. Mark the event as processed
-6. Rebuild the affected range on reorg
+4. The projection worker claims an unprocessed row with `FOR UPDATE SKIP LOCKED`
+5. The projection worker applies the event inside the same database read-model transaction
+6. Mark the event as processed
+7. Rebuild the affected range on reorg
 
 ## Required tables
 
@@ -46,6 +47,7 @@ Physical raw log identity:
 ## Idempotency rule
 
 Reprocessing the same event must not change the final state beyond the first successful application.
+Org-scoped read models must include `orgId` in their write identity so duplicate IDs in different organizations remain isolated.
 
 ## Finality model for v0.1
 
