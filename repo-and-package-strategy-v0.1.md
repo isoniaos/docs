@@ -9,6 +9,18 @@ Create two additional public packages/repositories:
 
 They can start as local workspace packages inside the root workspace and later become separate public repositories/npm packages. The important part is that `control-plane`, `app-core`, and `saas` do not duplicate DTOs or domain enums.
 
+Before the public beta npm/package-registry release, consumers should depend on pinned GitHub tags for shared packages, not on floating branches. Example:
+
+```json
+{
+  "dependencies": {
+    "@isonia/types": "github:isoniaos/types#v0.1.0"
+  }
+}
+```
+
+Local `link:` or workspace dependencies are acceptable for temporary local development, but they must not be the production/deployment dependency shape.
+
 ## Repository map
 
 - `isonia-protocol` / `evm-contracts` — public EVM contracts, tests, deployments, ABI exports.
@@ -37,6 +49,18 @@ saas
 `@isonia/types` must not depend on React, NestJS, wagmi, viem, DB libraries, or app code.
 
 `@isonia/sdk` may depend on `@isonia/types` and `viem`, but not on React or NestJS.
+
+## Shared types maintenance
+
+`@isonia/types` is the canonical source for shared domain enums, DTOs, event argument DTOs, graph DTOs, chain enum maps, and domain constants.
+
+Every change to `@isonia/types` must update:
+
+- `@isonia/types/README.md` when usage, install, exports, scope, or release guidance changes;
+- `@isonia/types/CHANGELOG.md` for every user-visible type, enum, DTO, event, constant, or export change;
+- matching docs in this repository when REST DTOs, events, graph DTOs, route explanation semantics, or indexing-facing shapes change.
+
+Tagged releases must be reproducible. Do not consume an untagged branch for deployable services.
 
 ## Security rules
 

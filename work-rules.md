@@ -21,6 +21,7 @@
 - projections must be replay-safe
 - a raw event store is mandatory
 - finality distinction is mandatory
+- shared domain types must come from `@isonia/types`; update its README and CHANGELOG after every shared type change
 
 ## 4. Frontend
 

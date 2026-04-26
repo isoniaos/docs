@@ -6,6 +6,8 @@ Define DTOs shared by `control-plane`, `app-core`, `saas`, `@isonia/types`, and 
 
 REST is the only API style for v0.1. GraphQL is postponed.
 
+`@isonia/types` is the canonical implementation package for these DTOs. Every DTO, enum, route explanation, event-facing shape, or graph shape change must update `@isonia/types/README.md`, `@isonia/types/CHANGELOG.md`, and this specification in the same change set.
+
 ## Shared TypeScript enums
 
 ```ts
