@@ -284,12 +284,13 @@ Notes:
 
 ### 7.5 PolicyRule
 
-For v0.1, keep this simple.
+For v0.1, keep this simple but versioned.
 
 ```solidity
 struct PolicyRule {
     uint64 orgId;
     ProposalType proposalType;
+    uint64 version;
     uint64[] requiredApprovalBodies;
     uint64[] vetoBodies;
     uint64 executorBody;
@@ -300,6 +301,7 @@ struct PolicyRule {
 
 Notes:
 
+- Each policy update increments `version`, and proposals must bind to the version that existed at creation time.
 - This is not gas-optimal for all production cases, but acceptable for v0.1.
 - If gas becomes problematic, replace arrays with fixed-size arrays or store body requirements separately.
 
@@ -310,6 +312,7 @@ struct Proposal {
     uint64 id;
     uint64 orgId;
     ProposalType proposalType;
+    uint64 policyVersion;
     ProposalStatus status;
     address creator;
     address target;
@@ -381,16 +384,23 @@ mapping(uint64 => Mandate) public mandates;
 // orgId => proposalType => policy rule
 mapping(uint64 => mapping(ProposalType => PolicyRule)) internal policyRules;
 
+// orgId => proposalType => version => policy rule snapshot
+mapping(uint64 => mapping(ProposalType => mapping(uint64 => PolicyRule))) internal policyRuleVersions;
+
+// orgId => proposalType => latest version
+mapping(uint64 => mapping(ProposalType => uint64)) public policyVersion;
+
 // Optional fast lookup indexes
 mapping(uint64 => uint64[]) internal orgBodies;
 mapping(uint64 => uint64[]) internal bodyRoles;
-mapping(address => uint64[]) internal holderMandates;
+mapping(address => mapping(uint64 => uint64[])) internal holderOrgMandates;
 ```
 
 Important:
 
 - arrays are acceptable for basic getters in v0.1, but frontend should use indexer/read models for lists;
-- authorization checks should not require unbounded loops over large arrays in production; v0.1 may accept simple loops if scoped.
+- authorization checks should not require unbounded loops over large arrays in production;
+- authorization checks should be scoped by `orgId` so a holder's mandates in other organizations do not affect gas costs for the current organization.
 
 ---
 
@@ -591,12 +601,21 @@ Requirements:
 - caller is organization admin;
 - all bodies belong to org;
 - proposalType not Unknown;
+- increment and persist a new policy version;
 - emits `PolicyRuleSet`.
 
 ```solidity
 function getPolicyRule(
     uint64 orgId,
     ProposalType proposalType
+) external view returns (PolicyRule memory);
+```
+
+```solidity
+function getPolicyRuleAtVersion(
+    uint64 orgId,
+    ProposalType proposalType,
+    uint64 version
 ) external view returns (PolicyRule memory);
 ```
 
@@ -641,6 +660,8 @@ function bodyBelongsToOrg(uint64 orgId, uint64 bodyId) external view returns (bo
 
 It must call `GovCore` for authority and policy checks.
 
+For any proposal created under a policy, `GovProposals` must continue to use that proposal's stored `policyVersion` instead of reading the latest policy.
+
 ---
 
 ## 14. GovProposals storage outline
@@ -684,6 +705,7 @@ Requirements:
 - policy rule enabled;
 - caller has `Proposer` mandate for at least one relevant body or is org admin if allowed in v0.1;
 - proposal type not Unknown;
+- stores `policyVersion` from the enabled rule snapshot;
 - emits `ProposalCreated`;
 - sets status to `UnderReview` unless no approvals required.
 
@@ -841,6 +863,7 @@ event MandateRevoked(
 event PolicyRuleSet(
     uint64 indexed orgId,
     ProposalType indexed proposalType,
+    uint64 version,
     uint64[] requiredApprovalBodies,
     uint64[] vetoBodies,
     uint64 executorBody,
@@ -856,6 +879,7 @@ event ProposalCreated(
     uint64 indexed orgId,
     uint64 indexed proposalId,
     ProposalType indexed proposalType,
+    uint64 policyVersion,
     address creator,
     address target,
     uint256 value,
@@ -896,6 +920,13 @@ event ProposalCancelled(
     uint64 indexed orgId,
     uint64 indexed proposalId,
     address indexed actor
+);
+
+event ProposalStatusChanged(
+    uint64 indexed orgId,
+    uint64 indexed proposalId,
+    ProposalStatus previousStatus,
+    ProposalStatus newStatus
 );
 ```
 

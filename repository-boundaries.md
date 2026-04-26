@@ -4,7 +4,7 @@
 
 ### `isonia-protocol`
 
-Содержит trust layer:
+Contains the trust layer:
 
 - contracts
 - tests
@@ -14,7 +14,7 @@
 
 ### `isonia-app-core`
 
-Содержит public application core:
+Contains the public application core:
 
 - governance console
 - self-hosted-ready UI
@@ -24,7 +24,7 @@
 
 ### `isonia-theme-default`
 
-Содержит default theme:
+Contains the default theme:
 
 - tokens
 - branding
@@ -33,13 +33,13 @@
 
 ### `isonia-web`
 
-Содержит marketing/docs website.
+Contains the marketing and docs website.
 
 ## Private repositories
 
 ### `isonia-control-plane`
 
-Содержит:
+Contains:
 
 - ingestion workers
 - projections
@@ -49,7 +49,7 @@
 
 ### `isonia-saas`
 
-Содержит:
+Contains:
 
 - SaaS-only overlays
 - billing later
@@ -60,15 +60,15 @@
 
 ### `isonia-sdk`
 
-Общий TS SDK и shared types.
+Shared TypeScript SDK and shared types.
 
 ### `docs/specs/adr`
 
-Архитектурные решения, спецификации и правила.
+Architectural decisions, specifications, and rules.
 
 ## Boundary rules
 
-- SaaS не должен дублировать app-core
-- control-plane не является источником истины
-- default theme заменяема без переписывания app-core
-- protocol versioning отделено от frontend versioning
+- SaaS must not duplicate app-core
+- control-plane is not the source of truth
+- the default theme must be replaceable without rewriting app-core
+- protocol versioning is separate from frontend versioning

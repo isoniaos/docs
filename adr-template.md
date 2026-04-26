@@ -6,16 +6,16 @@ Proposed / Accepted / Superseded
 
 ## Context
 
-Какую проблему решаем и почему это важно.
+What problem is being solved and why it matters.
 
 ## Decision
 
-Что именно принято.
+What exactly was decided.
 
 ## Consequences
 
-Плюсы, минусы, trade-offs.
+Pros, cons, and trade-offs.
 
 ## Alternatives considered
 
-Какие варианты отвергнуты и почему.
+Which alternatives were rejected and why.

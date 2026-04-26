@@ -2,7 +2,7 @@
 
 ## Goal
 
-Обеспечить надёжную обработку blockchain events при сбоях RPC, дубликатах, reorg и рестартах воркеров.
+Provide reliable blockchain event processing under RPC failures, duplicates, reorgs, and worker restarts.
 
 ## Guarantees
 
@@ -15,21 +15,27 @@
 
 ## Event identity
 
-Каждое событие uniquely identified by:
+Logical event identity:
 
 - `chainId`
-- `blockNumber`
+- `txHash`
+- `logIndex`
+
+Physical raw log identity:
+
+- `chainId`
+- `blockHash`
 - `txHash`
 - `logIndex`
 
 ## Processing flow
 
-1. Получить логи из RPC
-2. Записать raw event в `raw_events`
-3. Deduplicate по уникальному event key
-4. Projection worker применяет event в read model транзакции БД
-5. Пометить event processed
-6. При reorg уметь rebuild affected range
+1. Fetch logs from RPC
+2. Write the raw event to `raw_events`
+3. Deduplicate by the logical event key
+4. The projection worker applies the event inside a database read-model transaction
+5. Mark the event as processed
+6. Rebuild the affected range on reorg
 
 ## Required tables
 
@@ -39,7 +45,7 @@
 
 ## Idempotency rule
 
-Повторная обработка одного и того же события не должна менять конечный state сверх первого применения.
+Reprocessing the same event must not change the final state beyond the first successful application.
 
 ## Finality model for v0.1
 
@@ -48,10 +54,10 @@
 
 ## Replay requirement
 
-Любая projection должна быть rebuildable из raw blockchain events.
+Every projection must be rebuildable from raw blockchain events.
 
 ## Anti-patterns
 
-- не считать websocket subscription единственным transport layer
-- не строить projections без raw event store
-- не хранить только latest state без replay source
+- do not treat websocket subscription as the only transport layer
+- do not build projections without a raw event store
+- do not store only the latest state without a replay source

@@ -11,13 +11,26 @@ REST is the only API style for v0.1. GraphQL is postponed.
 ```ts
 export enum OrganizationStatus { Active = "active", Paused = "paused", Archived = "archived" }
 export enum BodyKind { GeneralCouncil = "general_council", TreasuryCommittee = "treasury_committee", SecurityCouncil = "security_council", CapitalHouse = "capital_house", MeritHouse = "merit_house", EmergencyCouncil = "emergency_council", Custom = "custom" }
-export enum RoleType { BodyAdmin = "body_admin", Proposer = "proposer", Approver = "approver", Vetoer = "vetoer", Executor = "executor", EmergencyPauser = "emergency_pauser" }
+export enum RoleType { OrgAdmin = "org_admin", BodyAdmin = "body_admin", Proposer = "proposer", Approver = "approver", Vetoer = "vetoer", Executor = "executor", EmergencyOperator = "emergency_operator" }
 export enum ProposalType { Standard = "standard", Treasury = "treasury", Upgrade = "upgrade", Emergency = "emergency" }
 export enum ProposalStatus { Created = "created", UnderReview = "under_review", Approved = "approved", Queued = "queued", Vetoed = "vetoed", Executed = "executed", Cancelled = "cancelled", Expired = "expired" }
 export enum DecisionType { Approve = "approve", Veto = "veto" }
 export enum GraphNodeType { Organization = "organization", Body = "body", Role = "role", Holder = "holder", Proposal = "proposal", ProposalType = "proposal_type" }
 export enum GraphEdgeType { Owns = "owns", Contains = "contains", Holds = "holds", RequiresApproval = "requires_approval", CanVeto = "can_veto", CanExecute = "can_execute", Decided = "decided" }
 ```
+
+## Chain enum maps
+
+Use explicit numeric maps when decoding Solidity enums from events or contract reads. Do not rely on array positions.
+
+Examples:
+
+```ts
+import { PROPOSAL_TYPE_CHAIN_MAP } from "@isonia/types/constants/proposal-type-chain-map";
+import { ROLE_TYPE_CHAIN_MAP } from "@isonia/types/constants/role-type-chain-map";
+```
+
+Equivalent map files exist for `OrganizationStatus`, `BodyKind`, `RoleType`, `ProposalType`, `ProposalStatus`, and `DecisionType`.
 
 ## Base types
 
@@ -27,6 +40,8 @@ export type Address = `0x${string}`;
 ```
 
 ## Organization DTO
+
+The chain event stores `metadataURI`, while the control plane resolves human-readable names from metadata. REST DTOs keep `name` required and must provide a fallback such as `Organization #1` if metadata is unavailable.
 
 ```ts
 export interface OrganizationDto {
@@ -50,6 +65,8 @@ export interface OrganizationOverviewDto {
 
 ## Body / Role / Mandate DTOs
 
+`BodyDto.name` and `RoleDto.name` are also required and should use metadata-derived values with stable fallbacks like `Body #2` or `Role #3` when metadata cannot be resolved.
+
 ```ts
 export interface BodyDto { chainId: ChainId; orgId: string; bodyId: string; kind: BodyKind; name: string; metadataUri?: string; active: boolean; createdBlock: string; }
 export interface RoleDto { chainId: ChainId; orgId: string; bodyId: string; roleId: string; roleType: RoleType; name: string; metadataUri?: string; active: boolean; }
@@ -63,6 +80,7 @@ export interface PolicyRuleDto {
   chainId: ChainId;
   orgId: string;
   proposalType: ProposalType;
+  version: string;
   requiredApprovalBodies: string[];
   vetoBodies: string[];
   executorBody?: string;
@@ -74,8 +92,8 @@ export interface PolicyRuleDto {
 ## Proposal DTOs
 
 ```ts
-export interface ProposalSummaryDto { chainId: ChainId; orgId: string; proposalId: string; proposalType: ProposalType; title: string; creatorAddress: Address; status: ProposalStatus; createdAtChain: string; }
-export interface ProposalDto { chainId: ChainId; orgId: string; proposalId: string; proposalType: ProposalType; title: string; descriptionUri?: string; targetAddress?: Address; value: string; dataHash?: string; creatorAddress: Address; status: ProposalStatus; createdBlock: string; createdTxHash: string; createdAtChain: string; queuedAtChain?: string; executableAtChain?: string; executedAtChain?: string; }
+export interface ProposalSummaryDto { chainId: ChainId; orgId: string; proposalId: string; proposalType: ProposalType; policyVersion: string; title: string; creatorAddress: Address; status: ProposalStatus; createdAtChain: string; }
+export interface ProposalDto { chainId: ChainId; orgId: string; proposalId: string; proposalType: ProposalType; policyVersion: string; title: string; descriptionUri?: string; targetAddress?: Address; value: string; dataHash?: string; creatorAddress: Address; status: ProposalStatus; createdBlock: string; createdTxHash: string; createdAtChain: string; queuedAtChain?: string; executableAtChain?: string; executedAtChain?: string; }
 export interface ProposalDecisionDto { chainId: ChainId; orgId: string; proposalId: string; bodyId: string; actorAddress: Address; decisionType: DecisionType; blockNumber: string; txHash: string; decidedAtChain: string; }
 ```
 
@@ -87,6 +105,7 @@ export interface ProposalRouteExplanationDto {
   orgId: string;
   proposalId: string;
   proposalType: ProposalType;
+  policyVersion: string;
   status: ProposalStatus;
   requiredApprovalBodies: RouteBodyRequirementDto[];
   vetoBodies: RouteBodyVetoDto[];
