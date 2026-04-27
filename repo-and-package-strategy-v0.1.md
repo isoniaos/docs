@@ -77,3 +77,9 @@ Tagged releases must be reproducible. Do not consume an untagged branch for depl
 - `isonia-saas`: extends `app-core`; follows app-core framework unless a strong reason appears later.
 
 Reason: app-core is an interactive governance console, not an SEO surface. Static SPA is simpler for self-hosted deployments, wallet state, runtime config, and theme replacement.
+
+## App wallet stack
+
+App Core uses Reown AppKit for optional multi-wallet connection UX. wagmi and viem remain the core EVM interaction layer for configured chains, transports, connectors, and protocol calls.
+
+Self-hosted App Core deployments must remain usable when `wallet.reownProjectId` is empty. In that case, app-core uses wagmi's injected connector fallback instead of Reown AppKit.

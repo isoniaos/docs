@@ -124,6 +124,11 @@ export interface RuntimeConfig {
   mode: RuntimeMode;
   apiBaseUrl: string;
   chainId: number;
+  chainName: string;
+  rpcUrl: string;
+  blockExplorerUrl?: string;
+  nativeCurrencyName: string;
+  nativeCurrencySymbol: string;
   contracts: {
     govCore: `0x${string}`;
     govProposals: `0x${string}`;
@@ -141,6 +146,11 @@ export interface RuntimeConfig {
     source: 'default' | 'package' | 'runtime';
     packageName?: string;
   };
+  wallet: {
+    reownProjectId: string;
+    appUrl: string;
+    icons: string[];
+  };
 }
 ```
 
@@ -149,6 +159,8 @@ export interface RuntimeConfig {
 - App core must work with only default config and default theme.
 - SaaS-only features must be disabled unless provided by private SaaS extension.
 - Self-hosted mode must not call SaaS-only endpoints.
+- Self-hosted mode must work when `wallet.reownProjectId` is empty by using injected wallet fallback.
+- `rpcUrl` must be an absolute HTTP(S) URL and `chainId` must be a positive safe integer.
 
 ---
 
@@ -257,7 +269,9 @@ getVersion()
 
 ## 8. Wallet and chain interactions
 
-Use wagmi + viem.
+Use wagmi + viem as the core EVM interaction layer.
+
+Reown AppKit is used for optional multi-wallet connection UX when `wallet.reownProjectId` is configured. It must not replace wagmi/viem as the app's protocol interaction layer.
 
 ### 8.1 Required transaction flows
 
@@ -273,6 +287,9 @@ Use wagmi + viem.
 - Transaction buttons must be disabled if route/API says action is unavailable.
 - UI should still expect contract revert and display normalized errors.
 - Do not trust only frontend access checks; contracts remain authority.
+- App core must initialize without a Reown project ID in self-hosted mode and expose a clear runtime diagnostic that injected wallet fallback is active.
+- If Reown AppKit initialization fails, app core should fall back to injected wallet mode and expose a diagnostic rather than failing the whole application.
+- Invalid chain or RPC runtime config should block wallet setup with a diagnostic that names the invalid field.
 
 ---
 

@@ -44,6 +44,8 @@ Next.js remains the right choice for `isonia-web` because SEO and SSR/SSG matter
 - Runtime config must be loaded at runtime, not hardcoded only at build time.
 - SaaS frontend must extend App Core instead of reimplementing it.
 - Theme packages must be compatible with React + Vite.
+- Reown AppKit may provide multi-wallet connection UX, but wagmi and viem remain the core EVM interaction layer.
+- Self-hosted App Core deployments must run without a Reown project ID by falling back to an injected wallet connector.
 - `isonia-web` remains separate from product application code.
 
 ## Revisit conditions
