@@ -146,6 +146,11 @@ export interface RuntimeConfig {
     source: 'default' | 'package' | 'runtime';
     packageName?: string;
   };
+  metadata: {
+    enabled: boolean;
+    ipfsGatewayUrl: string;
+    timeoutMs: number;
+  };
   wallet: {
     reownProjectId: string;
     appUrl: string;
@@ -161,6 +166,8 @@ export interface RuntimeConfig {
 - Self-hosted mode must not call SaaS-only endpoints.
 - Self-hosted mode must work when `wallet.reownProjectId` is empty by using injected wallet fallback.
 - `rpcUrl` must be an absolute HTTP(S) URL and `chainId` must be a positive safe integer.
+- Metadata resolution must be optional and must never block or break the UI.
+- `metadata.ipfsGatewayUrl` is used to normalize `ipfs://` URIs through an HTTP gateway; no local IPFS node is required.
 
 ---
 
@@ -465,13 +472,25 @@ Because blockchain data can be observed before confirmed, UI should support:
 - `Confirmed` badge;
 - optionally tooltip explaining finality status.
 
+## 12. Metadata UI
+
+Read-only screens should resolve optional metadata URIs when configured, but indexed governance DTOs remain sufficient to render every screen.
+
+Requirements:
+
+- define a small app-core metadata resolver abstraction;
+- normalize `ipfs://` URIs through `metadata.ipfsGatewayUrl`;
+- use deterministic fallback labels when metadata is missing or unavailable, such as `Organization #id`, `Body #id`, `Role #id`, `Mandate #id`, and `Proposal #id`;
+- prefer human-readable body kind, role type, and proposal type labels when available;
+- keep metadata resolution outside the governance authority path.
+
 ---
 
-## 12. SaaS extension boundaries
+## 13. SaaS extension boundaries
 
 The public app core must not include SaaS-only implementation, but it must expose extension points.
 
-### 12.1 Extension areas
+### 13.1 Extension areas
 
 - top navigation extra items;
 - organization sidebar extra items;
@@ -480,13 +499,13 @@ The public app core must not include SaaS-only implementation, but it must expos
 - billing/subscription route injection;
 - SaaS admin route injection.
 
-### 12.2 Rule
+### 13.2 Rule
 
 Private `isonia-saas` should extend app core, not fork or duplicate it.
 
 ---
 
-## 13. Self-hosted requirements
+## 14. Self-hosted requirements
 
 v0.1 self-host mode must support:
 
@@ -500,7 +519,7 @@ Self-host mode does not require full Docker packaging in app-core spec, but conf
 
 ---
 
-## 14. Error handling
+## 15. Error handling
 
 All screens must handle:
 
@@ -516,7 +535,7 @@ All screens must handle:
 
 ---
 
-## 15. Minimal dependency policy
+## 16. Minimal dependency policy
 
 Allowed:
 
@@ -538,7 +557,7 @@ All critical domain mappers and route display logic should be first-party code.
 
 ---
 
-## 16. Suggested file structure
+## 17. Suggested file structure
 
 ```text
 src/
@@ -580,7 +599,7 @@ src/
 
 ---
 
-## 17. Acceptance criteria
+## 18. Acceptance criteria
 
 App core v0.1 is complete when:
 
