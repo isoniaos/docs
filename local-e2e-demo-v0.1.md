@@ -202,9 +202,13 @@ For the default fresh local deployment it should contain:
   "chainId": 31337,
   "rpcUrl": "http://127.0.0.1:8545",
   "contracts": {
-    "govCore": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
-    "govProposals": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
-    "demoTarget": "0x5FbDB2315678afecb367f032d93F642f64180aa3"
+    "govCoreAddress": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+    "govProposalsAddress": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
+    "demoTargetAddress": "0x5FbDB2315678afecb367f032d93F642f64180aa3"
+  },
+  "features": {
+    "createProposal": false,
+    "writeActions": false
   },
   "metadata": {
     "enabled": true,
@@ -322,9 +326,9 @@ evm-contracts/ignition/deployments/chain-31337/deployed_addresses.json
 Map it exactly:
 
 ```txt
-IsoniaProtocolV01Module#GovCore      -> GOV_CORE_ADDRESS and contracts.govCore
-IsoniaProtocolV01Module#GovProposals -> GOV_PROPOSALS_ADDRESS and contracts.govProposals
-IsoniaProtocolV01Module#DemoTarget   -> DEMO_TARGET_ADDRESS and contracts.demoTarget
+IsoniaProtocolV01Module#GovCore      -> GOV_CORE_ADDRESS and contracts.govCoreAddress
+IsoniaProtocolV01Module#GovProposals -> GOV_PROPOSALS_ADDRESS and contracts.govProposalsAddress
+IsoniaProtocolV01Module#DemoTarget   -> DEMO_TARGET_ADDRESS and contracts.demoTargetAddress
 ```
 
 If the Hardhat node has been reset but Ignition still has old local deployment state, redeploy and make sure the JSON file, control-plane environment, seed environment, and app-core runtime config all use the same address set.

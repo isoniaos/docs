@@ -130,12 +130,13 @@ export interface RuntimeConfig {
   nativeCurrencyName: string;
   nativeCurrencySymbol: string;
   contracts: {
-    govCore: `0x${string}`;
-    govProposals: `0x${string}`;
-    demoTarget?: `0x${string}`;
+    govCoreAddress: `0x${string}`;
+    govProposalsAddress: `0x${string}`;
+    demoTargetAddress?: `0x${string}`;
   };
   features: {
     createProposal: boolean;
+    writeActions: boolean;
     manageOrg: boolean;
     advancedAnalytics: boolean;
     billing: boolean;
@@ -166,6 +167,7 @@ export interface RuntimeConfig {
 - Self-hosted mode must not call SaaS-only endpoints.
 - Self-hosted mode must work when `wallet.reownProjectId` is empty by using injected wallet fallback.
 - `rpcUrl` must be an absolute HTTP(S) URL and `chainId` must be a positive safe integer.
+- Public write flows must require `features.writeActions` plus their flow-specific flag, such as `features.createProposal`.
 - Metadata resolution must be optional and must never block or break the UI.
 - `metadata.ipfsGatewayUrl` is used to normalize `ipfs://` URIs through an HTTP gateway; no local IPFS node is required.
 
