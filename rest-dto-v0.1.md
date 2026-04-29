@@ -89,6 +89,9 @@ export interface PolicyRuleDto {
   timelockSeconds: string;
   enabled: boolean;
 }
+
+export type OrganizationPolicyDto = PolicyRuleDto;
+export type OrganizationPoliciesDto = readonly OrganizationPolicyDto[];
 ```
 
 ## Proposal DTOs
@@ -222,6 +225,7 @@ GET /v1/orgs/:orgId/bodies
 GET /v1/orgs/:orgId/roles
 GET /v1/orgs/:orgId/mandates
 GET /v1/orgs/:orgId/holders/:address/mandates
+GET /v1/orgs/:orgId/policies
 GET /v1/orgs/:orgId/proposals
 GET /v1/orgs/:orgId/proposals/:proposalId
 GET /v1/orgs/:orgId/proposals/:proposalId/route
