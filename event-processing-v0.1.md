@@ -58,6 +58,17 @@ Org-scoped read models must include `orgId` in their write identity so duplicate
 
 Every projection must be rebuildable from raw blockchain events.
 
+## Diagnostics
+
+`GET /v1/diagnostics` reports operator-facing event processing state:
+
+- raw event counts by `observed`, `confirmed`, `processed`, `failed`, and `orphaned`;
+- projection backlog for confirmed, unprocessed raw events;
+- failed projection count and latest projection error summary;
+- latest safe block and per-contract scan cursors so indexer lag can be distinguished from expected confirmation delay.
+
+Diagnostics are read-only and must not become a governance authority source.
+
 ## Anti-patterns
 
 - do not treat websocket subscription as the only transport layer

@@ -14,6 +14,7 @@
 
 - `GET /v1/health`
 - `GET /v1/version`
+- `GET /v1/diagnostics`
 
 ### Organizations
 
@@ -57,6 +58,76 @@
   "executableAt": 1730000000,
   "isExecutable": false,
   "blockingReasons": ["timelock_not_elapsed"]
+}
+```
+
+## Diagnostics response
+
+`GET /v1/diagnostics` exposes operator-safe status for indexing,
+projection, and configuration. It must not expose database URLs, private keys,
+full environment dumps, or privileged SaaS configuration.
+
+```json
+{
+  "apiVersion": "v1",
+  "chainId": 31337,
+  "confirmations": 5,
+  "contracts": [
+    {
+      "name": "govCore",
+      "configured": true,
+      "address": "0x0000000000000000000000000000000000000001"
+    },
+    {
+      "name": "govProposals",
+      "configured": true,
+      "address": "0x0000000000000000000000000000000000000002"
+    }
+  ],
+  "latestChainBlock": "120",
+  "latestSafeBlock": "115",
+  "lastScannedBlocks": [
+    {
+      "contractName": "govCore",
+      "address": "0x0000000000000000000000000000000000000001",
+      "lastScannedBlock": "100",
+      "lastConfirmedBlock": "100",
+      "lagFromSafeBlock": "15"
+    }
+  ],
+  "rawEventCounts": {
+    "observed": 0,
+    "confirmed": 2,
+    "processed": 3,
+    "failed": 1,
+    "orphaned": 0
+  },
+  "projectionBacklog": 2,
+  "failedProjectionCount": 1,
+  "latestProjectionError": {
+    "rawEventId": "9",
+    "chainId": 31337,
+    "contractAddress": "0x0000000000000000000000000000000000000001",
+    "blockNumber": "99",
+    "txHash": "0xabc",
+    "logIndex": 4,
+    "eventName": "ProposalCreated",
+    "error": "Missing event argument: orgId",
+    "failedAt": "2026-04-29T12:05:00.000Z",
+    "processingAttempts": 2
+  },
+  "staleDataIndicators": [
+    {
+      "code": "indexer_behind_safe_block",
+      "severity": "warning",
+      "message": "govCore indexer cursor is behind the latest safe block.",
+      "contractName": "govCore",
+      "lastScannedBlock": "100",
+      "latestSafeBlock": "115",
+      "lagBlocks": "15"
+    }
+  ],
+  "generatedAt": "2026-04-29T12:10:00.000Z"
 }
 ```
 

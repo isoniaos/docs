@@ -128,11 +128,93 @@ export interface GovernanceGraphNodeDto { id: string; type: GraphNodeType; label
 export interface GovernanceGraphEdgeDto { id: string; sourceId: string; targetId: string; type: GraphEdgeType; label?: string; metadata?: Record<string, unknown>; }
 ```
 
+## Diagnostics DTO
+
+Diagnostics DTOs are operator-facing, REST-safe, and shared through
+`@isonia/types`. They must not expose database URLs, private keys, full
+environment dumps, or privileged SaaS configuration.
+
+```ts
+export type DiagnosticsContractName = "govCore" | "govProposals";
+export type DiagnosticsIndicatorSeverity = "info" | "warning" | "error";
+export type DiagnosticsIndicatorCode =
+  | "contract_address_missing"
+  | "latest_chain_block_unavailable"
+  | "contract_cursor_missing"
+  | "indexer_behind_safe_block"
+  | "projection_backlog"
+  | "projection_failures";
+
+export interface DiagnosticsContractDto {
+  name: DiagnosticsContractName;
+  configured: boolean;
+  address?: Address;
+}
+
+export interface DiagnosticsContractCursorDto {
+  contractName: DiagnosticsContractName;
+  address: Address;
+  lastScannedBlock?: string;
+  lastConfirmedBlock?: string;
+  updatedAt?: string;
+  lagFromSafeBlock?: string;
+}
+
+export interface DiagnosticsRawEventCountsDto {
+  observed: number;
+  confirmed: number;
+  processed: number;
+  failed: number;
+  orphaned: number;
+}
+
+export interface DiagnosticsProjectionErrorDto {
+  rawEventId: string;
+  chainId: ChainId;
+  contractAddress: Address;
+  blockNumber: string;
+  txHash: string;
+  logIndex: number;
+  eventName: string;
+  error: string;
+  failedAt?: string;
+  processingAttempts: number;
+}
+
+export interface DiagnosticsStaleDataIndicatorDto {
+  code: DiagnosticsIndicatorCode;
+  severity: DiagnosticsIndicatorSeverity;
+  message: string;
+  contractName?: DiagnosticsContractName;
+  contractAddress?: Address;
+  lastScannedBlock?: string;
+  latestSafeBlock?: string;
+  lagBlocks?: string;
+}
+
+export interface DiagnosticsDto {
+  apiVersion: string;
+  chainId: ChainId;
+  confirmations: number;
+  contracts: DiagnosticsContractDto[];
+  latestChainBlock?: string;
+  latestSafeBlock?: string;
+  lastScannedBlocks: DiagnosticsContractCursorDto[];
+  rawEventCounts: DiagnosticsRawEventCountsDto;
+  projectionBacklog: number;
+  failedProjectionCount: number;
+  latestProjectionError?: DiagnosticsProjectionErrorDto;
+  staleDataIndicators: DiagnosticsStaleDataIndicatorDto[];
+  generatedAt: string;
+}
+```
+
 ## REST endpoints
 
 ```txt
 GET /v1/health
 GET /v1/version
+GET /v1/diagnostics
 GET /v1/orgs
 GET /v1/orgs/:orgId
 GET /v1/orgs/:orgId/overview

@@ -75,6 +75,7 @@ Responsibilities:
 - serve proposal route explanations;
 - serve governance graph;
 - expose health/version endpoints;
+- expose operator-safe diagnostics for chain, indexer, projection, and stale data state;
 - enforce RPS/rate limits where needed.
 
 ### 4.2 Chain ingestion worker
@@ -477,6 +478,7 @@ Base path:
 ```http
 GET /v1/health
 GET /v1/version
+GET /v1/diagnostics
 ```
 
 ### 11.2 Organizations
@@ -568,6 +570,25 @@ export interface GovernanceGraphDto {
   }>;
 }
 ```
+
+### 12.3 Diagnostics DTO
+
+`GET /v1/diagnostics` returns the shared `DiagnosticsDto` from
+`@isonia/types`. It includes:
+
+- API version;
+- configured chain ID and confirmation depth;
+- configured GovCore and GovProposals addresses;
+- latest chain block and latest safe block when RPC is available;
+- last scanned and confirmed block per configured contract;
+- raw event counts by `observed`, `confirmed`, `processed`, `failed`, and `orphaned`;
+- projection backlog and failed projection count;
+- latest projection error summary;
+- stale data indicators for missing contract addresses, unavailable chain head,
+  missing cursors, indexer lag, projection backlog, and projection failures.
+
+Diagnostics must not expose secrets such as database URLs, private keys, full
+internal environment dumps, or privileged SaaS configuration.
 
 ---
 
