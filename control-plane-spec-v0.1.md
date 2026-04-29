@@ -498,7 +498,17 @@ GET /v1/orgs/:orgId/mandates
 GET /v1/orgs/:orgId/holders/:address/mandates
 ```
 
-### 11.4 Proposals
+### 11.4 Policies
+
+```http
+GET /v1/orgs/:orgId/policies
+```
+
+Returns the indexed current policy rules for the organization as
+`OrganizationPoliciesDto`, using shared `@isonia/types` DTOs. This read surface
+is REST-only and must not create backend setup authority.
+
+### 11.5 Proposals
 
 ```http
 GET /v1/orgs/:orgId/proposals
@@ -506,7 +516,7 @@ GET /v1/orgs/:orgId/proposals/:proposalId
 GET /v1/orgs/:orgId/proposals/:proposalId/route
 ```
 
-### 11.5 Governance graph
+### 11.6 Governance graph
 
 ```http
 GET /v1/orgs/:orgId/graph
