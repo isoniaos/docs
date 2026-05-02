@@ -1,6 +1,6 @@
 # IsoniaOS Documentation
 
-This repository is the working documentation set for IsoniaOS. It contains planning notes, release materials, architecture decisions, specs, guides, and runbooks for the current v0.1 baseline and the v0.5 Design Partner Alpha planning track.
+This repository is the working documentation set for IsoniaOS. It contains planning notes, release materials, architecture decisions, specs, guides, and runbooks for the current v0.1 baseline and the v0.5 Developer Preview track.
 
 ## Planning
 
@@ -40,6 +40,7 @@ This repository is the working documentation set for IsoniaOS. It contains plann
 
 ## Runbooks
 
+- [v0.5 Developer Preview Runbook](developer-preview-v0.5.md)
 - [v0.1-alpha Release Checklist](release-checklist-v0.1-alpha.md)
 - [Local End-to-End Demo](local-e2e-demo-v0.1.md)
 

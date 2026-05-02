@@ -8,6 +8,7 @@ Git tags use SemVer with a leading `v`, for example `v0.5.0-alpha.2`.
 
 ### Added
 
+- Added the v0.5 Developer Preview Runbook covering local contracts, seed data, Control Plane REST checks, and SDK usage without frontend or SaaS scope.
 - Added the v0.5 Design Partner Setup Guide for creating and verifying a Simple DAO+ organization through App Core.
 - Added this changelog for documentation release tracking.
 - Added a README navigation index for the current documentation set.

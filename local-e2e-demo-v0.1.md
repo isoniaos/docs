@@ -1,5 +1,7 @@
 # IsoniaOS v0.1 Local End-to-End Demo
 
+For the v0.5 Developer Preview flow that excludes frontend acceptance, use `developer-preview-v0.5.md`.
+
 ## Purpose
 
 This guide runs the first local end-to-end IsoniaOS demo:
@@ -111,7 +113,7 @@ If your seed output reports different IDs, use the reported IDs in the API and a
 
 ## 4. Configure and Index control-plane
 
-The current control-plane reads `process.env` directly. The `.env.example` file is a reference, but it is not automatically loaded by the app.
+The current control-plane commands preload `.env` with `dotenv/config`. You can either export the variables in the terminal or copy `.env.example` to `.env` and edit that file before running scripts.
 
 Open terminal C:
 
