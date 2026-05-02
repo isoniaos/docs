@@ -315,6 +315,16 @@ All local demo components must agree on chain ID `31337`:
 
 If `/v1/version` reports a different chain ID than `app-core/public/isonia.config.json`, fix the mismatched config and restart the affected service.
 
+### Local Hardhat Wallet Troubleshooting
+
+Local wallet failures are usually configuration drift rather than a protocol bug. Check these before changing code:
+
+- Wrong chain: the browser wallet must be on chain ID `31337`, and App Core, Control Plane, and Hardhat must all use `http://127.0.0.1:8545`.
+- Unfunded local account: imported wallets are not automatically funded by Hardhat. Use one of the seeded Hardhat private keys, or fund the selected account from a seeded account before sending transactions.
+- Stale nonce: if Hardhat was restarted or reset, reset the browser wallet account activity/nonce state for the local network, then reconnect.
+- Gas estimation masking a revert: wallets may report a generic gas estimation failure when the contract would revert. Check the connected account's mandate, the proposal status, required approvals, veto state, timelock state, and the Hardhat node logs.
+- Contract address mismatch: every write must target the addresses from the current `evm-contracts/ignition/deployments/chain-31337/deployed_addresses.json`; update Control Plane `.env`, seed environment, and `app-core/public/isonia.config.local.json` or `app-core/public/isonia.config.json` together.
+
 ### Wrong Contract Addresses
 
 Use the address mapping from:

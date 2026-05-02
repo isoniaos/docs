@@ -12,6 +12,7 @@ Git tags use SemVer with a leading `v`, for example `v0.5.0-alpha.2`.
 - Added this changelog for documentation release tracking.
 - Added a README navigation index for the current documentation set.
 - Documented Simple DAO+ setup warning codes for invalid addresses and zero-address authority.
+- Added local Hardhat wallet troubleshooting notes for wrong chain, unfunded accounts, stale nonces, gas estimation failures, and contract address mismatches.
 
 ## 0.5.0-alpha.2
 
