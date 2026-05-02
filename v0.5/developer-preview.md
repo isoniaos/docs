@@ -21,9 +21,11 @@ Use repositories from the same finalization set. The package versions in that se
 
 ```txt
 @isonia/evm-contracts   0.5.0-alpha.3
-@isonia/types           0.5.0-alpha.3
+@isonia/types           0.5.0-alpha.5
 @isonia/control-plane   0.5.0-alpha.3
 @isonia/sdk             0.5.0-alpha.6
+@isonia/theme-default   0.5.0-alpha.2
+@isonia/app-core        0.5.0-alpha.7
 ```
 
 The SDK and Control Plane both consume shared DTOs from `@isonia/types`. Do not mix a newer Control Plane or SDK with an older `@isonia/types` tag than the one declared in that package's `package.json`.
@@ -143,6 +145,7 @@ Manual commands remain available for debugging, CI, and recovery:
 corepack pnpm indexer:once
 corepack pnpm indexer:start
 corepack pnpm projections:start
+corepack pnpm projections:retry-failed
 corepack pnpm projections:rebuild
 ```
 
