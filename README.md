@@ -35,6 +35,7 @@ This repository is the working documentation set for IsoniaOS. It contains plann
 
 ## Guides
 
+- [v0.5 Design Partner Setup Guide](design-partner-setup-v0.5.md)
 - [Engineering Work Rules](work-rules.md)
 
 ## Runbooks
