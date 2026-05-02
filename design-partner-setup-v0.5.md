@@ -55,10 +55,13 @@ Useful checks before opening the setup UI:
 GET /v1/health
 GET /v1/version
 GET /v1/diagnostics
+GET /v1/diagnostics/indexer
 ```
 
 `/v1/version` and `/v1/diagnostics` should report the same chain ID and contract
 addresses that App Core uses in `isonia.config.json`.
+`/v1/diagnostics/indexer` should show fresh `running` statuses for the API,
+indexer, and projection worker in local development.
 
 For local environment setup, see [Local End-to-End Demo](local-e2e-demo-v0.1.md).
 For the diagnostics response shape, see
@@ -339,10 +342,12 @@ Symptoms:
 Actions:
 
 - Open `/diagnostics` or call `GET /v1/diagnostics`.
+- Call `GET /v1/diagnostics/indexer` and confirm the indexer and projection
+  worker are `running`.
 - Compare latest safe block with the transaction block.
 - Check per-contract last scanned blocks for `GovCore` and `GovProposals`.
-- In local development, run the one-time indexer and projection worker again as
-  described in [Local End-to-End Demo](local-e2e-demo-v0.1.md).
+- In local development, run `pnpm dev` from `control-plane`; it starts the REST
+  API, continuous indexer, and continuous projection worker together.
 - In a shared testnet environment, ask the Isonia operator to check the indexer
   process and RPC availability.
 
@@ -358,7 +363,7 @@ Actions:
 
 - Check `projectionBacklog`, failed projection count, and latest projection
   error in diagnostics.
-- Run or restart the projection worker in the local environment.
+- Run or restart `pnpm dev` in the local `control-plane` environment.
 - In shared testnet, ask the operator to inspect the projection worker logs.
 - Do not manually patch the database to mark setup complete.
 
@@ -376,8 +381,8 @@ Actions:
   Core.
 - Confirm the transaction was sent to the expected chain.
 - Check whether the read model exists under a different organization ID.
-- Re-run indexing and projections locally, or ask the shared testnet operator to
-  inspect indexing state.
+- Re-run `pnpm dev` locally, or ask the shared testnet operator to inspect
+  indexing state.
 - If the transaction reverted, treat it as a failed transaction rather than a
   missing indexed entity.
 

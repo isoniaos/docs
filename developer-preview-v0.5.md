@@ -116,26 +116,37 @@ API_PORT=3000
 
 Leave `GOV_CORE_ADDRESS` and `GOV_PROPOSALS_ADDRESS` blank until real deployed addresses are available. The zero address is rejected.
 
-## 4. Index and Project
+## 4. Start Complete Control Plane Runtime
 
 In terminal C:
 
 ```powershell
 corepack pnpm db:migrate
 corepack pnpm db:reset
-corepack pnpm indexer:once
-corepack pnpm worker:projections
+corepack pnpm dev
 ```
 
-Run `indexer:once` and `worker:projections` again after additional local chain transactions.
+`pnpm dev` starts the complete local Control Plane runtime for the v0.5
+Developer Preview:
 
-## 5. Start REST API
+- REST API;
+- continuous indexer;
+- continuous projection worker.
 
-In terminal C:
+Keep this terminal running while using App Core or REST checks. The process logs
+API startup details, indexer chain/RPC/contract cursor configuration, and
+projection worker store/cursor configuration.
+
+Manual commands remain available for debugging, CI, and recovery:
 
 ```powershell
-corepack pnpm start:dev
+corepack pnpm indexer:once
+corepack pnpm indexer:start
+corepack pnpm projections:start
+corepack pnpm projections:rebuild
 ```
+
+## 5. Check REST API
 
 From another terminal:
 
@@ -143,6 +154,7 @@ From another terminal:
 Invoke-RestMethod http://localhost:3000/v1/health
 Invoke-RestMethod http://localhost:3000/v1/version | ConvertTo-Json -Depth 6
 Invoke-RestMethod http://localhost:3000/v1/diagnostics | ConvertTo-Json -Depth 8
+Invoke-RestMethod http://localhost:3000/v1/diagnostics/indexer | ConvertTo-Json -Depth 8
 Invoke-RestMethod http://localhost:3000/v1/orgs | ConvertTo-Json -Depth 8
 Invoke-RestMethod http://localhost:3000/v1/orgs/1/policies | ConvertTo-Json -Depth 8
 Invoke-RestMethod http://localhost:3000/v1/orgs/1/proposals/1/route | ConvertTo-Json -Depth 8
@@ -153,6 +165,7 @@ Expected results:
 - `/v1/health` returns `status: ok`.
 - `/v1/version` reports `service: isonia-control-plane`, version `0.5.0-alpha.3`, chain ID `31337`, and the configured contract addresses.
 - `/v1/diagnostics` has no contract-address-missing errors once addresses are set.
+- `/v1/diagnostics/indexer` reports `running` runtime status for the API, indexer, and projection worker after their heartbeats are recorded.
 - `/v1/orgs` includes the seeded organizations.
 - `/v1/orgs/1/policies` returns versioned policy rules.
 - `/v1/orgs/1/proposals/1/route` returns policy-versioned route explanation data.
