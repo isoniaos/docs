@@ -2,30 +2,37 @@
 
 All notable changes to the IsoniaOS documentation repository are documented here.
 
-Git tags use SemVer with a leading `v`, for example `v0.5.0-alpha.2`.
+Git tags use SemVer with a leading `v`, for example `v0.6.0-alpha.1`.
 
 ## Unreleased
 
 ### Added
 
-- Added the active v0.6 alpha documentation set.
-- Added the archived v0.5 compatibility matrix with the known-good Developer Preview tag set.
-- Added the v0.5 Developer Preview Runbook covering local contracts, seed data, Control Plane REST checks, and SDK usage without frontend or SaaS scope.
-- Added the v0.5 Design Partner Setup Guide for creating and verifying a Simple DAO+ organization through App Core.
-- Added this changelog for documentation release tracking.
-- Added a README navigation index for the historical v0.5 documentation set.
-- Documented Simple DAO+ setup warning codes for invalid addresses and zero-address authority.
-- Added local Hardhat wallet troubleshooting notes for wrong chain, unfunded accounts, stale nonces, gas estimation failures, and contract address mismatches.
-- Documented `pnpm dev` as the complete local v0.5 Control Plane runtime and added the indexer diagnostics endpoint to v0.5 troubleshooting guidance.
-- Added the now-archived `v0.5/` documentation index and versioning rules for the pre-tag compatibility set.
+- Added the DAO-first market entry strategy.
+- Added the competitive landscape document covering voting, onchain governance, treasury execution, DAO frameworks, grants workflows, grant accountability, AI governance, and metagovernance tooling.
+- Added the integration strategy for Snapshot, Safe, Tally/Agora, Discourse, GitHub, block explorers, ERC-4824-style metadata, and attestation-based evidence.
+- Added the accountability model defining execution statuses, responsible parties, due dates, proofs, milestones, failure states, and accountability levels.
+- Added the trust and security model for alpha/demo, design partner, and production trust boundaries.
+- Added the AI policy defining advisory-only AI behavior, allowed early features, disallowed early features, data rules, and future arbitration constraints.
+- Added the SaaS and open-core model.
+- Added the narrative and messaging guide for DAO-first positioning.
+- Added the development process for Codex-assisted docs-first development.
+- Added repository-level `AGENTS.md` rules for AI agents.
+- Added the v0.6 design partner demo script.
+- Added the v0.6 review checklist.
+- Added v0.6 Codex task prompt templates.
 
 ### Changed
 
-- Set the root README active target to v0.6 alpha documentation.
-- Archived v0.5 documentation under `archive/v0.5/`.
-- Previously moved v0.5 documents under `v0.5/`; they are now archived under `archive/v0.5/`.
-- Moved historical v0.1 documents under `archive/v0.1/`.
-- Updated v0.5 compatibility matrix references to the pre-tag package set.
+- Updated the root README navigation to include active strategy, v0.6, and development-process documents.
+- Updated the whitepaper from a broad governance OS draft into a DAO-first governance control plane whitepaper.
+- Updated the roadmap to prioritize v0.6 demo readiness, v0.7 integrations, v0.8 accountability dashboard, v0.9 advisory AI digest, and v1.0 design partner release.
+- Updated `VERSIONING.md` to state that `v0.6/` is the active documentation context and `archive/v0.5/` is historical.
+- Updated v0.6 documentation index to include design partner, review checklist, and Codex task prompt documents.
+
+### Fixed
+
+- Corrected the stale versioning guidance that previously described `v0.5/` as the active docs path while the root README pointed to v0.6.
 
 ## 0.5.0-alpha.2
 

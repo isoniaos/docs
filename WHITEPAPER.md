@@ -1,974 +1,436 @@
-# IsoniaOS: A Governance Operating System for Accountable Digital Organizations
+# IsoniaOS: A Governance Control Plane for Accountable Digital Organizations
 
-**Version:** Draft 0.1  
+**Version:** Draft 0.2  
 **Status:** Working Whitepaper  
 **Project:** IsoniaOS  
+**Primary market:** DAO and Web3 governance  
+**Long-term direction:** Accountable digital organizations, civic governance experiments, and public governance infrastructure
 
 ---
 
 ## 1. Executive Summary
 
-Governance is one of the most important unsolved problems in digital organizations. Blockchain technology made assets programmable and transactions verifiable, but the way decentralized organizations make, explain, execute, and review decisions remains fragmented, opaque, and operationally weak.
+Governance is one of the most important unsolved problems in digital organizations.
 
-Most governance infrastructure today focuses on voting. Voting is important, but voting is not governance. A mature governance system must support the full lifecycle of a decision: idea formation, proposal drafting, deliberation, review, voting, execution, accountability, and long-term institutional memory.
+Blockchain technology made assets programmable and transactions verifiable. DAOs made it possible for distributed communities to coordinate around protocols, treasuries, grants, public goods, and shared ownership. But the operational reality of DAO governance remains fragmented.
 
-IsoniaOS is a governance operating system for accountable digital organizations. It is designed to help communities, protocols, DAOs, foundations, cooperatives, public-good initiatives, and future civic organizations coordinate decision-making through transparent, modular, and verifiable governance processes.
+Most governance infrastructure still focuses on voting. Voting is important, but voting is not governance. A mature governance system must support the full lifecycle of a decision: problem discovery, proposal drafting, review, deliberation, approval, execution, accountability, dispute handling, and institutional memory.
 
-IsoniaOS does not aim to replace the existing governance ecosystem. Instead, it is designed to orchestrate it. Existing tools such as voting platforms, treasury systems, forums, multisigs, communication channels, and analytics dashboards solve important parts of the governance stack. IsoniaOS provides a control plane that connects these pieces into a coherent governance lifecycle.
+IsoniaOS is a governance control plane for accountable digital organizations.
 
-The long-term goal of IsoniaOS is to transform governance from isolated voting events into structured organizational infrastructure. This means helping organizations define their decision-making rules, manage proposals, coordinate participation, track execution, resolve disputes, and preserve institutional memory.
+It is designed to help DAOs, protocols, foundations, grants programs, public-good communities, and future digital organizations coordinate governance through transparent, modular, and verifiable processes.
 
-IsoniaOS may also include optional AI-assisted governance features. These features are not intended to replace human or community judgment. Instead, AI can act as an intelligence layer that helps participants understand complex proposals, summarize discussions, interpret policies, identify risks, and structure disputes. The default role of AI in IsoniaOS is assistance, not authority.
+IsoniaOS does not aim to replace the existing governance ecosystem. Instead, it is designed to orchestrate it. Existing tools such as Snapshot, Safe, Tally, Agora, Aragon, Discourse, GitHub, block explorers, treasury dashboards, and grant-management tools solve important parts of the stack. IsoniaOS connects these parts into a coherent governance lifecycle.
 
-IsoniaOS is built around a simple principle:
+The first market for IsoniaOS is Web3 governance, where the pain is already visible: proposals are scattered, discussions are hard to reconstruct, execution is difficult to track, delegation is opaque, grants lack follow-through, and governance memory is weak.
 
-> Governance is not a vote. Governance is a lifecycle.
+The long-term opportunity is larger. Once IsoniaOS proves itself in DAO and digital-organization governance, the same principles can expand into cooperatives, foundations, associations, civic initiatives, participatory budgeting, public consultations, and eventually public governance infrastructure. Those later stages require additional legal, accounting, business-development, institutional, and political capabilities. They are not the immediate product claim.
 
----
+IsoniaOS is built around two simple principles:
 
-## 2. The Problem: Governance Is Still Primitive
+```text
+Governance is not a vote. Governance is a lifecycle.
+```
 
-The first generation of DAO and Web3 governance tools solved a critical problem: they made it possible for distributed communities to signal preferences and approve decisions. This was a major step forward. However, as digital organizations became larger, richer, and more complex, the limitations of voting-centered governance became increasingly visible.
-
-Many organizations now manage treasuries, software protocols, grant programs, contributors, partnerships, public goods, token economies, and reputational risk. These organizations need more than a voting interface. They need governance processes that are understandable, auditable, and enforceable.
-
-Today, governance is often fragmented across disconnected systems:
-
-- proposals are written in forums or documents;
-- discussions happen across Discord, Telegram, Discourse, Notion, GitHub, or other channels;
-- voting happens on separate platforms;
-- execution is handled through multisigs or manual coordination;
-- treasury information lives in separate dashboards;
-- accountability is informal or absent;
-- institutional memory is scattered across archives and chat history.
-
-This fragmentation creates several problems.
-
-First, decision history is difficult to reconstruct. A participant may see the final vote result but struggle to understand why a decision was made, what alternatives were considered, who supported or opposed it, and whether the decision was actually executed.
-
-Second, participation becomes difficult. Most people do not have enough time to follow every discussion, read every proposal, understand every technical trade-off, and track every execution detail. This leads to low participation and increased reliance on a small group of insiders.
-
-Third, accountability is weak. Once a proposal passes, many organizations lack a structured process for tracking implementation, deadlines, responsible parties, evidence of completion, and post-execution review.
-
-Fourth, governance becomes vulnerable to plutocracy, apathy, information asymmetry, and opaque delegation. Token voting alone does not guarantee accountable decision-making.
-
-Existing tools solved important parts of the stack. IsoniaOS is not built to compete with them unnecessarily. It is built to connect, structure, and extend them.
+```text
+IsoniaOS closes the loop between DAO decisions and execution.
+```
 
 ---
 
-## 3. Why Voting Is Not Governance
+## 2. The Problem: DAO Governance Is Fragmented
 
-Voting answers one question: what was approved or rejected?
+DAO governance has matured beyond simple polls and token votes. Many organizations now manage protocol changes, treasuries, grant programs, security processes, contributors, working groups, legal wrappers, public-good funding, delegate programs, and reputation risk.
 
-Governance must answer a much broader set of questions:
+The tooling stack has also grown. A typical DAO may use:
 
-- Why was this proposal created?
-- Who is responsible for it?
-- Which rules apply?
-- Who can participate?
-- What risks were identified?
-- What alternatives were considered?
-- Was there meaningful deliberation?
-- Were conflicts of interest disclosed?
-- Was the decision executed?
-- Did the execution match the approved proposal?
-- What can the organization learn from the outcome?
+- forums or documents for proposal drafts;
+- Discord, Telegram, Farcaster, or community calls for discussion;
+- Snapshot for offchain voting;
+- Tally, Agora, Governor contracts, or custom systems for onchain voting;
+- Safe for treasury execution;
+- GitHub for protocol payloads and pull requests;
+- block explorers for transaction verification;
+- Notion, Airtable, CharmVerse, or spreadsheets for operations;
+- grant systems, dashboards, analytics tools, and community archives.
 
-A weak governance process often looks like this:
+These tools are useful, but the decision lifecycle is often not connected.
 
-> Forum post → Snapshot vote → Multisig execution
+A participant may see that a proposal passed, but still not know:
 
-This may be enough for simple communities, but it is not sufficient for mature organizations managing significant capital, protocols, contributors, public goods, or social legitimacy.
+- why the proposal was created;
+- which governance rules applied;
+- what alternatives were considered;
+- which risks were identified;
+- whether the vote matched the reviewed payload;
+- who was responsible for execution;
+- whether execution happened;
+- whether a grant recipient met milestones;
+- whether a delegate acted consistently;
+- where evidence of completion is stored;
+- what the organization learned from the outcome.
 
-A stronger governance lifecycle should include:
+Persistent failures include the execution gap, information overload, weak institutional memory, opaque delegation, weak grant follow-through, and governance security risk.
 
-1. Problem discovery
-2. Proposal drafting
-3. Public deliberation
-4. Expert or stakeholder review
-5. Formal submission
-6. Voting or decision approval
-7. Execution
-8. Monitoring
-9. Accountability
-10. Post-decision analysis
-11. Institutional memory
-
-IsoniaOS is designed around this full lifecycle. Voting remains important, but it becomes one stage inside a broader governance process rather than the entire process itself.
+IsoniaOS addresses these problems by treating governance as a lifecycle, not an isolated vote.
 
 ---
 
-## 4. The IsoniaOS Vision
+## 3. Product Category
 
-IsoniaOS is a governance operating system for organizations that need transparent, modular, and accountable decision-making.
+IsoniaOS is not a voting app, DAO launcher, treasury wallet, forum, grant tracker, or AI agent.
 
-It is not only a voting frontend. It is a governance architecture layer: a system for defining, operating, reviewing, and evolving governance processes.
+IsoniaOS is a **DAO Governance Control Plane**.
 
-IsoniaOS is designed to become the control plane for governance. It should be the place where an organization defines its decision-making rules, manages proposals, coordinates participation, tracks execution, resolves disputes, and preserves institutional memory.
+It provides a structured layer that connects proposals, reviews, votes, execution, accountability, and memory across the existing governance stack.
 
-The vision is to support a wide range of governance models, including:
+The product category can also be described as:
 
-- token voting;
-- delegated voting;
-- role-based governance;
-- council-based governance;
-- one-member-one-vote systems;
-- quadratic voting;
-- reputation-based models;
-- hybrid offchain/onchain workflows;
-- progressive decentralization models;
-- custom governance modules.
+- governance operating system;
+- governance lifecycle infrastructure;
+- governance coordination layer;
+- accountability layer for digital organizations.
 
-Different organizations need different governance designs. A DeFi protocol, an investment club, a public-goods community, a grants DAO, a cooperative, and a civic-tech organization should not be forced into the same structure.
+The most practical early positioning is:
 
-IsoniaOS provides the infrastructure for organizations to choose, configure, and evolve their governance architecture over time.
+```text
+From proposal to proof of execution.
+```
+
+---
+
+## 4. What IsoniaOS Is Not
+
+IsoniaOS is not:
+
+- a replacement for Snapshot, Safe, Tally, Agora, Aragon, Discourse, or other existing tools;
+- a voting-only product;
+- a DAO launcher as its primary market category;
+- a treasury wallet;
+- an AI governor;
+- a platform for binding AI decisions by default;
+- a state operating system in its first market;
+- a political party platform;
+- a legal substitute for contracts, bylaws, foundation documents, or regulatory advice;
+- production-audited governance security until the relevant audits and controls exist.
+
+IsoniaOS may provide native modules where useful, but its strategic role is to orchestrate governance processes and preserve accountability across tools.
 
 ---
 
 ## 5. Design Principles
 
-### 5.1 Transparency by Default
+### 5.1 Lifecycle-first governance
 
-Governance decisions should be understandable and traceable. Participants should be able to see proposals, rules, votes, execution status, responsible parties, and historical outcomes.
+Governance must be represented as a full decision lifecycle:
 
-Transparency should not only mean publishing the final result. It should mean preserving the full decision path.
+```text
+Idea → Proposal → Review → Deliberation → Decision → Execution → Accountability → Memory
+```
 
-### 5.2 Modular Governance
+Voting remains important, but it becomes one stage inside a larger process.
 
-No single governance model fits every organization. IsoniaOS should support modular voting, delegation, permissions, execution workflows, roles, proposal types, and accountability mechanisms.
+### 5.2 Integration-first architecture
 
-Organizations should be able to start simple and add complexity only when needed.
+DAOs already use many tools. IsoniaOS should integrate with existing infrastructure before trying to replace it.
 
-### 5.3 Verifiable Execution
+### 5.3 Execution accountability
 
-A passed proposal should not disappear into manual coordination. IsoniaOS should help organizations track execution status, attach evidence, assign responsible parties, set deadlines, and preserve proof of completion.
+A passed proposal should create an obligation, not just a result. IsoniaOS should help organizations assign responsible parties, define deadlines, track milestones, attach evidence, link transactions, review completion, and report failure.
 
-Governance must include not only approval, but follow-through.
+### 5.4 Modular governance
 
-### 5.4 Separation of Governance Logic and Interface
+No single governance model fits every organization. IsoniaOS should support configurable proposal types, approval routes, voting strategies, role models, execution flows, review processes, and accountability workflows.
 
-Governance logic should not be locked to a single frontend or visual design. IsoniaOS should separate core governance infrastructure from presentation layers.
+### 5.5 Human and community authority by default
 
-Organizations should be able to use the default interface, custom themes, or entirely custom frontends.
+AI may help summarize, explain, search, detect risks, and structure disputes. It must not become the default source of authority.
 
-### 5.5 Progressive Decentralization
+### 5.6 Open where trust matters
 
-Not every organization starts as a fully decentralized DAO. Many begin as founder-led, council-led, contributor-led, or hybrid structures.
+The governance core should be open where trust matters. Managed SaaS can provide hosting, reliability, integrations, analytics, premium support, and optional AI-assisted governance.
 
-IsoniaOS should support progressive decentralization by allowing organizations to evolve their governance model over time.
+### 5.7 Security-first trust posture
 
-### 5.6 Open Infrastructure
+Governance infrastructure can influence treasuries, protocol changes, permissions, contributor compensation, grants, and community legitimacy. IsoniaOS must treat governance as a security boundary.
 
-Governance infrastructure requires trust. The core of IsoniaOS should be open where trust matters, while managed services can provide convenience, hosting, monitoring, integrations, and support.
+### 5.8 Practical governance over ideology
 
-Open-source infrastructure reduces vendor lock-in concerns and allows organizations to self-host when needed.
-
-### 5.7 Practical Governance Over Ideology
-
-IsoniaOS should not force a single political or governance ideology. It should provide infrastructure for organizations to design governance systems appropriate to their own needs, maturity, and values.
-
-### 5.8 Human and Community Authority by Default
-
-IsoniaOS may support AI-assisted governance features, but AI should not replace the legitimate authority of participants, delegates, councils, or communities by default.
-
-AI can summarize, analyze, compare, suggest, and explain. Binding AI decisions should only be possible when an organization explicitly enables such a module and participants accept the relevant governance rules.
-
-The default role of AI is assistance, not control.
+IsoniaOS should provide infrastructure for organizations to choose and evolve governance models appropriate to their maturity, risks, and values.
 
 ---
 
 ## 6. Product Overview
 
-IsoniaOS provides a complete governance workspace for digital organizations.
-
 ### 6.1 Organization Space
 
-Each organization has its own governance environment, including:
+Each organization has its own governance environment:
 
-- organization profile;
 - public governance page;
+- organization profile;
 - members and participants;
 - roles and permissions;
-- governance rules;
+- governance bodies;
 - proposal types;
-- voting modules;
+- policy routes;
+- voting and decision modules;
 - execution workflows;
+- accountability archive;
 - historical records.
 
-### 6.2 Proposal Management
+### 6.2 Proposal Lifecycle
 
-Proposals should move through a structured lifecycle. A typical lifecycle may include:
+Proposals should move through a structured lifecycle:
 
-- draft;
-- review;
-- discussion;
-- formal submission;
-- voting;
-- passed, rejected, expired, or withdrawn;
-- execution;
-- completion;
-- archival.
+```text
+Draft → Review → Discussion → Ready for Vote → Voting → Passed / Rejected / Expired → Awaiting Execution → In Progress → Completed / Failed / Cancelled / Archived
+```
 
-Organizations should be able to configure proposal types based on their needs. A treasury request, protocol upgrade, grant application, emergency action, contributor election, and policy update may all require different rules.
+Different proposal types may include treasury requests, protocol upgrades, parameter changes, grants, contributor compensation, working group mandates, policy proposals, delegate elections, and emergency proposals.
 
-### 6.3 Voting and Decision Modules
+### 6.3 Policy Routes
 
-IsoniaOS should support pluggable voting and decision modules, including:
+A policy route defines:
 
-- token voting;
-- one-member-one-vote;
-- delegated voting;
-- role-weighted voting;
-- quorum rules;
-- threshold rules;
-- voting time windows;
-- council approvals;
-- emergency voting;
-- veto mechanisms;
-- custom strategies.
+- who can create the proposal;
+- who must review it;
+- which body approves it;
+- whether a vote is required;
+- whether veto is available;
+- whether a timelock applies;
+- who can execute;
+- what evidence must be attached after execution.
 
-### 6.4 Execution Tracking
+### 6.4 Voting and Decision Modules
 
-After a decision passes, IsoniaOS should help the organization track what happens next.
+IsoniaOS should support pluggable decision mechanisms: yes/no/abstain, token voting, one-member-one-vote, delegated voting, role-weighted voting, council approval, quorum/threshold rules, veto rights, timelocks, and custom strategies. Future modules may include quadratic voting, conviction voting, ranked-choice voting, reputation-weighted models, and hybrid systems.
 
-Execution tracking may include:
+### 6.5 Execution Tracking
 
-- responsible party assignment;
-- deadline setting;
-- milestone tracking;
-- linked onchain transactions;
-- manual execution evidence;
-- execution status;
-- completion review;
-- historical record preservation.
+After a proposal passes, IsoniaOS should track responsible party, deadline, execution status, linked onchain transaction, manual evidence, milestone updates, completion review, failure reason, cancellation reason, and post-execution summary.
 
-### 6.5 Delegation and Representation
+### 6.6 Accountability Layer
 
-Delegation is a core part of many governance systems, but it is often difficult for participants to understand.
+Accountability records may include obligations, due dates, status updates, transaction hashes, external evidence, milestone attestations, reviewer notes, completion confirmations, failure reports, and public audit exports.
 
-IsoniaOS should make delegation more transparent by showing:
+### 6.7 Governance Memory
 
-- who delegated to whom;
-- how much voting power is delegated;
-- delegate voting history;
-- delegate activity;
-- delegate rationale;
-- potential conflicts of interest;
-- delegate performance over time.
+IsoniaOS should preserve proposals, reviews, discussions and summaries, votes, rationales, execution records, disputes and resolutions, policy changes, delegate history, similar historical proposals, and post-decision analysis.
 
-### 6.6 Governance Memory
+### 6.8 Delegate and Contributor Accountability
 
-As organizations grow, they need institutional memory.
+IsoniaOS should help organizations understand delegate activity, delegate voting history, delegate rationales, delegated voting power, conflicts of interest, contributor obligations, grant recipient progress, milestone completion, and unresolved responsibilities.
 
-IsoniaOS should preserve:
+### 6.9 Optional AI Governance Assistant
 
-- past proposals;
-- discussions and summaries;
-- votes;
-- rationales;
-- execution records;
-- policy changes;
-- failed decisions;
-- disputes and resolutions;
-- historical precedents.
+AI-assisted governance can reduce cognitive burden. Potential features include proposal summaries, route explanations, discussion summaries, risk checklists, unresolved question detection, similar proposal search, governance history search, execution-delay summaries, and dispute summaries.
 
-Governance memory helps participants avoid repeating mistakes and makes the organization more understandable to new members.
-
-### 6.7 AI Governance Assistant
-
-IsoniaOS may include an optional AI Governance Assistant that helps participants understand and navigate governance processes.
-
-Potential features include:
-
-- proposal summaries;
-- discussion summaries;
-- argument mapping;
-- risk analysis;
-- policy interpretation;
-- dispute summaries;
-- mediation suggestions;
-- governance memory search.
-
-For SaaS users, these capabilities may be offered as managed AI features. Self-hosted organizations may disable AI entirely, use only local or open-source models where possible, or connect their own AI infrastructure.
+AI outputs are advisory by default. Organizations should be able to disable AI, use managed AI features, or connect their own infrastructure.
 
 ---
 
-## 7. Governance Architecture
+## 7. Technical Architecture
 
-IsoniaOS treats governance as an operating system composed of configurable layers.
+IsoniaOS combines smart contracts, indexing, projections, APIs, SDKs, governance configuration, integrations, and user-facing applications.
 
-### 7.1 Identity Layer
+### Smart Contract Layer
 
-The identity layer defines who can participate.
+Provides verifiable primitives where appropriate: organization configuration, governance bodies, roles and permissions, proposal primitives, approval/veto routes, timelocks, execution primitives, events, and transparent access control.
 
-It may include:
+### Indexing and Projection Layer
 
-- wallet addresses;
-- token holders;
-- NFT holders;
-- verified members;
-- role-based accounts;
-- contributor accounts;
-- external identity integrations in the future.
+Turns raw onchain events into normalized governance data. It must handle event indexing, proposal lifecycle tracking, route status, execution status, reorg-aware processing, projections, diagnostics, backfills, and stale/failure indicators.
 
-### 7.2 Permission Layer
+### Control Plane API
 
-The permission layer defines what participants can do.
+Orchestrates organization configuration, proposal lifecycle, roles, external integrations, execution tracking, diagnostics, and managed services.
 
-Examples include permissions to:
+### Frontend and App Core
 
-- create proposals;
-- review proposals;
-- vote;
-- execute approved decisions;
-- veto decisions;
-- moderate discussions;
-- manage organization settings;
-- assign roles;
-- manage governance modules.
+Provides organization dashboard, setup wizard, proposal list/detail, route explanation, action screens, execution status, diagnostics, and public governance archive.
 
-### 7.3 Proposal Layer
+### Integration Layer
 
-The proposal layer defines how decisions are created, structured, and advanced through the lifecycle.
+Connects Snapshot, Safe, Tally, Agora, Discourse, GitHub, block explorers, EAS-style attestations, ERC-4824-style metadata, and other governance tools.
 
-Different proposal types may include:
+### AI Intelligence Layer
 
-- treasury proposal;
-- protocol upgrade;
-- parameter change;
-- grant request;
-- policy proposal;
-- election;
-- emergency action;
-- contributor compensation proposal;
-- partnership approval.
-
-### 7.4 Deliberation Layer
-
-The deliberation layer defines how proposals are discussed and improved before formal approval.
-
-It may include:
-
-- comments;
-- structured arguments;
-- expert review;
-- community feedback;
-- amendment process;
-- risk analysis;
-- dispute detection;
-- discussion summaries.
-
-### 7.5 Voting Layer
-
-The voting layer defines how decisions are approved or rejected.
-
-It includes:
-
-- voting strategy;
-- quorum;
-- threshold;
-- voting period;
-- voting power;
-- delegation;
-- abstention;
-- veto rights;
-- role-based approvals;
-- custom voting modules.
-
-### 7.6 Execution Layer
-
-The execution layer defines how approved decisions are carried out.
-
-It may include:
-
-- manual execution;
-- multisig execution;
-- onchain transaction execution;
-- staged execution;
-- delayed execution;
-- milestone-based execution;
-- emergency pause;
-- integration with external tools such as Safe.
-
-### 7.7 Accountability Layer
-
-The accountability layer defines how the community verifies that decisions were implemented.
-
-It may include:
-
-- responsible parties;
-- deadlines;
-- status updates;
-- proof of execution;
-- public audit trails;
-- milestone reviews;
-- post-execution analysis;
-- governance health reporting.
-
-This layered architecture makes IsoniaOS more than a voting app. It positions the product as serious governance infrastructure.
+Optional managed or self-hosted intelligence for summaries, risk checklists, status explanations, search, and dispute understanding. AI remains advisory by default.
 
 ---
 
-## 8. AI-Assisted Governance and Dispute Intelligence
+## 8. Initial Product Focus
 
-IsoniaOS may include optional AI-assisted governance capabilities designed to improve clarity, accessibility, dispute resolution, and accountability.
+The current active target is v0.6 alpha.
 
-AI is not positioned as a replacement for human or community judgment. Instead, AI acts as an intelligence layer that helps participants understand complex governance processes and make better-informed decisions.
+v0.6 should make the v0.5 Developer Preview usable as a coherent local governance console demo.
 
-### 8.1 Why AI Belongs in Governance
+A developer or design partner should be able to:
 
-Complex governance creates information overload. Proposals may be long, discussions may span multiple channels, and disputes may involve technical, financial, legal, social, and operational arguments.
+1. run IsoniaOS locally;
+2. create a Simple DAO+ organization;
+3. inspect governance bodies and policy routes;
+4. create a proposal;
+5. move the proposal through approval, veto, timelock, and execution;
+6. understand what happened without reading source code;
+7. use diagnostics to identify chain, indexer, projection, API, config, and wallet issues.
 
-As a result, many participants do not have enough time or context to fully understand every issue before voting or delegating their voting power.
+v0.6 is not a production release, SaaS release, AI release, Safe integration release, token voting release, or audit-ready release.
 
-AI-assisted governance can reduce this cognitive burden by summarizing information, structuring arguments, highlighting risks, and helping participants navigate institutional memory.
+---
 
-### 8.2 Proposal Summaries
+## 9. Primary Use Cases
 
-AI can generate concise, neutral summaries of long proposals, including:
+### DAO governance operations
 
-- what is being proposed;
-- why it matters;
-- what resources are requested;
-- who is responsible;
-- what risks are involved;
-- what decision participants are being asked to make.
+Structure proposals, approval routes, execution tracking, and public governance records.
 
-### 8.3 Discussion Summaries
+### Protocol governance
 
-AI can summarize long community discussions across comments, forums, and connected communication channels.
+Make proposal routes, payload review, timelocks, execution state, and governance history easier to inspect.
 
-It can highlight:
+### Grants and public goods
 
-- main arguments in favor;
-- main arguments against;
-- unresolved questions;
-- repeated concerns;
-- proposed amendments;
-- areas of emerging consensus.
+Connect applications, reviews, funding decisions, milestone tracking, evidence, and post-grant accountability.
 
-### 8.4 Policy Interpretation
+### Foundations and councils
 
-AI can help participants understand whether a proposal appears to align with existing governance rules, policies, or organizational procedures.
+Document mandates, approvals, delegated responsibilities, execution obligations, and public records.
 
-This may include checks such as:
+### Contributor accountability
 
-- whether the correct proposal type was used;
-- whether quorum and threshold rules are applicable;
-- whether review periods were respected;
-- whether a treasury request requires additional approval;
-- whether a proposal conflicts with existing policies.
+Track approved scopes, compensation proposals, milestones, deliverables, delays, and completion reviews.
 
-AI-generated policy interpretation should be advisory by default and should not replace formal human or community review.
+### Future digital organizations
 
-### 8.5 Dispute Intelligence
+After DAO-market validation, expand into cooperatives, associations, member-owned organizations, civic initiatives, and institutional governance pilots.
 
-Conflict is a normal part of collective decision-making. The problem is not that disputes exist, but that many digital organizations lack structured, transparent, and trusted mechanisms for understanding and resolving them.
+---
 
-IsoniaOS can provide AI-assisted dispute intelligence to help communities:
+## 10. Competitive Landscape
 
-- summarize the positions of each side;
-- identify the core point of disagreement;
-- separate factual disputes from value disagreements;
-- surface relevant governance rules;
-- detect unresolved questions;
-- suggest possible resolution paths;
-- preserve a transparent record of the dispute.
+The governance tooling market is fragmented.
 
-### 8.6 Mediation Suggestions
+Some tools focus on voting and signaling. Some focus on onchain execution. Some focus on treasury control. Some focus on DAO frameworks. Some focus on grants, accountability, AI assistance, or governance security.
 
-AI may suggest non-binding compromise options, such as:
+IsoniaOS differentiates by connecting the full lifecycle:
 
-- splitting a proposal into multiple votes;
-- adding milestones to a treasury request;
-- requiring additional review before execution;
-- extending the discussion period;
-- converting a binary decision into several structured alternatives.
+```text
+Proposal → Review → Vote / Approval → Execution → Accountability → Memory
+```
 
-These suggestions are designed to support better deliberation, not to impose outcomes.
+IsoniaOS should integrate with strong existing tools rather than frame them as enemies.
 
-### 8.7 Risk Reviews
+A detailed competitor map is maintained in:
 
-AI can generate structured risk reviews before voting or execution, covering areas such as:
+```text
+strategy/COMPETITIVE-LANDSCAPE.md
+```
 
-- financial risk;
-- operational risk;
-- governance risk;
-- centralization risk;
-- execution risk;
-- reputational risk;
-- security risk.
+---
 
-### 8.8 Governance Memory Search
+## 11. Business Model
 
-As organizations grow, their governance history becomes difficult to navigate.
+IsoniaOS should combine open-source trust with sustainable managed services.
 
-AI-assisted search can help participants find:
+### Open-source core
 
-- previous decisions;
-- similar proposals;
-- historical precedents;
-- delegate positions;
-- execution records;
-- policy changes;
-- previous disputes and resolutions.
+The open-source core should include the governance infrastructure that users need to inspect, self-host, extend, and trust: contracts, shared types, SDK, basic Control Plane, App Core, default theme, self-hosting docs, public governance records, and basic integrations where feasible.
 
-### 8.9 Optional AI Arbitration
+### Managed SaaS
 
-Some organizations may choose to experiment with stronger forms of AI-assisted dispute resolution, including AI-generated recommendations or even binding arbitration under clearly defined conditions.
+Managed SaaS can provide hosted infrastructure, managed database/indexer, monitoring, backups, custom domains, managed integrations, governance analytics, AI-assisted summaries/reports, compliance-oriented exports, premium support, private deployments, and enterprise/civic deployments later.
 
-Such mechanisms should be optional, explicitly enabled, and based on prior consent of participants. They should include clear rules, transparency, appeal mechanisms, and human or community oversight where appropriate.
+Best framing:
 
-IsoniaOS should support this as a configurable governance module rather than a default assumption.
+```text
+Open where trust matters. Commercial where reliability, convenience, and intelligence matter.
+```
 
-### 8.10 Design Position
+---
 
-AI in IsoniaOS follows a simple principle:
+## 12. Security and Trust
 
-> AI does not govern by default. AI helps governance become more understandable, transparent, and accountable.
+Key trust principles:
+
+- contracts are authoritative for onchain state;
+- UI is an explanatory layer, not a source of authority;
+- indexer and projection data can lag or fail;
+- admin powers must be explicit;
+- upgrade assumptions must be documented;
+- critical actions should support review periods and timelocks;
+- production security claims require audits and operational controls;
+- AI output must be labeled and non-binding by default.
+
+A detailed model is maintained in:
+
+```text
+strategy/TRUST-AND-SECURITY.md
+```
+
+---
+
+## 13. Roadmap Summary
+
+### v0.6 — Usable Governance Console Alpha
+
+Local demo readiness: Simple DAO+ setup wizard, proposal lifecycle demo, route explanation, setup execution UX, diagnostics, and clear documentation.
+
+### v0.7 — Integration Preview
+
+First linked/imported integrations with existing DAO tools, especially Snapshot, Safe, Tally/Agora, Discourse, GitHub, and block explorers.
+
+### v0.8 — Public Governance Archive and Accountability Dashboard
+
+Public decision records, execution status, responsible parties, due dates, transaction proofs, external evidence, and basic accountability records.
+
+### v0.9 — Optional AI Governance Digest
+
+Advisory proposal summaries, risk checklists, status explanations, similar proposal search, and unresolved question detection.
+
+### v1.0 — Design Partner Release
+
+A stable release suitable for real design-partner workflows on non-critical governance processes.
+
+### v1.x — Modular Governance
+
+Templates, policy configuration, pluggable strategies, advanced permissions, analytics, delegate views, and expanded integrations.
+
+### v2.x — Accountability and Dispute Intelligence
+
+Milestone tracking, post-execution reviews, contributor/delegate accountability, structured disputes, AI-assisted dispute summaries, and governance health reports.
+
+### v3.x+ — Ecosystem and Institutional Expansion
+
+Plugin marketplace, advanced identity/reputation modules, optional arbitration frameworks, enterprise deployments, civic pilots, and broader governance infrastructure.
+
+---
+
+## 14. Long-Term Vision
+
+The first market is DAO and Web3 governance. This is where the pain is already formed and where IsoniaOS can prove competence.
+
+After successful DAO adoption, IsoniaOS can expand to broader digital organizations. That phase will require stronger business development, legal, accounting, compliance, enterprise sales, and operational capabilities.
+
+Only after that should IsoniaOS seriously approach civic and public governance use cases. Public governance requires institutional trust, legal recognition, political cooperation, public-sector procurement, privacy guarantees, and legislative processes.
+
+The long-term vision is not blockchain for governance as ideology. The goal is governance that is more transparent, accountable, participatory, auditable, resilient, and understandable.
+
+---
+
+## 15. Conclusion
+
+IsoniaOS is built for organizations that need governance to be more than a vote.
+
+It turns fragmented governance activity into structured organizational infrastructure.
+
+Existing tools solve important pieces of the DAO governance stack. IsoniaOS connects these pieces into a lifecycle: proposal, review, vote, execution, accountability, dispute intelligence, and memory.
+
+The project should first prove itself in DAO and Web3 governance. From there it can expand into broader organizational governance, and eventually into civic and public governance experiments.
 
 Final authority remains with the governance model chosen by each organization.
 
----
-
-## 9. Technical Architecture
-
-IsoniaOS combines smart contracts, indexing, APIs, configurable organization logic, and customizable frontends.
-
-### 9.1 Smart Contract Layer
-
-The smart contract layer provides verifiable governance primitives.
-
-It may include:
-
-- shared contract system where possible;
-- organization-specific configuration;
-- modular governance contracts;
-- voting primitives;
-- execution primitives;
-- event-driven architecture;
-- transparent access control;
-- security-first design.
-
-A shared contract architecture can reduce deployment overhead and make the system more scalable for many organizations.
-
-### 9.2 Indexing Layer
-
-The indexing layer tracks governance activity and turns raw onchain events into usable governance data.
-
-It should support:
-
-- reliable indexing of governance events;
-- proposal lifecycle tracking;
-- vote aggregation;
-- execution status;
-- historical governance data;
-- reorg-aware event processing;
-- backfills and recovery;
-- public data access where appropriate.
-
-### 9.3 Backend / Control Plane
-
-The backend provides organization configuration, lifecycle orchestration, integrations, and managed services.
-
-For the MVP, a REST API may be sufficient. The backend may include:
-
-- organization management;
-- proposal orchestration;
-- role and permission management;
-- voting module configuration;
-- execution tracking;
-- admin tools;
-- integration management;
-- SaaS-specific features;
-- optional AI services.
-
-### 9.4 Frontend Layer
-
-The frontend layer provides user-facing governance interfaces.
-
-IsoniaOS should support:
-
-- default open-source UI;
-- public governance pages;
-- organization dashboards;
-- proposal views;
-- voting views;
-- execution tracking views;
-- delegate profiles;
-- theme system;
-- custom frontend support.
-
-The separation between core governance logic and presentation allows organizations to adopt IsoniaOS without losing their own visual identity.
-
-### 9.5 Deployment Models
-
-IsoniaOS should support multiple deployment models:
-
-- self-hosted open-source deployment;
-- managed SaaS deployment;
-- hybrid deployment;
-- custom enterprise or civic deployment.
-
-This gives organizations flexibility based on their security, operational, regulatory, and budget requirements.
-
-### 9.6 Integration Layer
-
-IsoniaOS is designed to cooperate with existing governance and coordination tools.
-
-Potential integrations may include:
-
-- Safe;
-- Snapshot;
-- Tally;
-- Discourse;
-- Discord;
-- Telegram;
-- GitHub;
-- Notion;
-- blockchain explorers;
-- treasury dashboards;
-- identity providers;
-- analytics systems.
-
-The goal is not to replace every tool, but to connect governance activities into a structured lifecycle.
-
----
-
-## 10. Open-Source and SaaS Model
-
-IsoniaOS can combine open-source credibility with a sustainable commercial model.
-
-### 10.1 Open-Source Core
-
-An open-source core helps build trust and adoption.
-
-It allows organizations to:
-
-- inspect the system;
-- self-host critical infrastructure;
-- avoid vendor lock-in;
-- contribute improvements;
-- build custom interfaces;
-- extend governance modules;
-- verify how governance logic works.
-
-For governance infrastructure, openness is not only a distribution strategy. It is a trust mechanism.
-
-### 10.2 Managed SaaS Layer
-
-The managed SaaS version of IsoniaOS may provide convenience, reliability, and advanced features.
-
-Potential SaaS features include:
-
-- hosted infrastructure;
-- automatic updates;
-- monitoring;
-- premium integrations;
-- governance analytics;
-- custom domains;
-- governance templates;
-- enterprise support;
-- private themes;
-- advanced permissions;
-- compliance-oriented exports;
-- AI-assisted governance features.
-
-### 10.3 Managed AI Governance Features
-
-The managed SaaS version of IsoniaOS may provide AI-assisted governance capabilities as premium services.
-
-These may include:
-
-- automatic proposal summaries;
-- governance discussion digests;
-- risk analysis;
-- delegate activity summaries;
-- dispute intelligence workflows;
-- AI-assisted policy checks;
-- governance memory search;
-- periodic governance health reports.
-
-Self-hosted deployments may disable AI features, use local or open-source models where possible, or connect to their own AI providers depending on their security, privacy, and compliance requirements.
-
-### 10.4 Strategic Positioning
-
-IsoniaOS should be open where trust matters and commercial where convenience, reliability, and support matter.
-
-This hybrid model makes the project more credible for Web3 communities while allowing a sustainable business to grow around managed infrastructure, integrations, advanced analytics, and AI-assisted governance.
-
----
-
-## 11. Use Cases
-
-### 11.1 DAO Governance
-
-DAOs can use IsoniaOS to manage proposal lifecycles, voting, delegation, execution tracking, governance history, and community accountability.
-
-### 11.2 Protocol Governance
-
-Web3 protocols can use IsoniaOS for parameter changes, treasury management, upgrade coordination, emergency processes, delegate transparency, and contributor accountability.
-
-### 11.3 Grants and Public Goods
-
-Grant programs can use IsoniaOS to manage applications, reviewer roles, milestone tracking, community feedback, funding decisions, and post-grant accountability.
-
-### 11.4 Investment Clubs and Onchain Funds
-
-Investment communities can use IsoniaOS to coordinate deal proposals, member voting, treasury execution, reporting, and decision archives.
-
-### 11.5 Cooperatives and Member-Owned Organizations
-
-Cooperatives can use IsoniaOS for member participation, role-based decision-making, transparent records, and internal accountability.
-
-### 11.6 Civic-Tech and Public Governance Experiments
-
-In the long term, IsoniaOS may support civic-tech and public governance experiments, including participatory budgeting, public consultations, local community governance, transparent decision records, and citizen oversight.
-
-This should be treated as a long-term direction rather than an immediate claim. The first market is digital organizations and Web3 governance.
-
----
-
-## 12. Competitive Landscape
-
-The governance tooling market is fragmented. IsoniaOS differentiates by focusing on the full governance lifecycle.
-
-### 12.1 Voting Tools
-
-Voting tools help organizations approve or reject proposals. They are essential but usually focus on one stage of governance.
-
-IsoniaOS can integrate with existing voting systems or provide native voting modules when needed.
-
-### 12.2 Treasury and Execution Tools
-
-Treasury and multisig tools are strong for asset control and execution. However, they do not usually manage the full lifecycle of proposal creation, deliberation, accountability, and institutional memory.
-
-IsoniaOS can connect governance approval to execution tracking and evidence.
-
-### 12.3 Forum and Discussion Tools
-
-Forums and communication platforms support discussion, but governance data often becomes scattered across threads, chats, and documents.
-
-IsoniaOS can preserve structured summaries, proposal context, and decision records.
-
-### 12.4 Analytics Dashboards
-
-Analytics dashboards can show governance activity, but they do not necessarily define or operate governance processes.
-
-IsoniaOS can use analytics as part of a broader governance control plane.
-
-### 12.5 IsoniaOS Differentiation
-
-IsoniaOS is not trying to replace every governance tool.
-
-It aims to become the coordination layer that connects proposals, deliberation, voting, execution, accountability, dispute intelligence, and organizational memory into one governance operating system.
-
----
-
-## 13. Roadmap
-
-IsoniaOS should evolve from a focused MVP into a modular governance infrastructure platform.
-
-### Phase 1 — Foundation
-
-The first phase focuses on the governance core.
-
-Key goals:
-
-- core organization model;
-- proposal lifecycle;
-- basic voting module;
-- basic roles and permissions;
-- public organization page;
-- initial smart contract architecture;
-- governance event indexing;
-- default frontend theme;
-- documentation for developers and early adopters.
-
-AI is not required for the initial governance core.
-
-Potential AI-related groundwork:
-
-- data model prepared for proposal summaries;
-- structured proposal metadata;
-- governance history stored in a format suitable for future search and summarization;
-- clear separation between core governance logic and optional intelligence services.
-
-### Phase 2 — Governance Control Plane
-
-The second phase expands configurability and operational usability.
-
-Key goals:
-
-- configurable proposal types;
-- advanced voting settings;
-- execution tracking;
-- delegate profiles;
-- governance history;
-- admin panel;
-- self-hosting documentation;
-- SaaS deployment foundation;
-- basic integrations with external tools.
-
-Potential AI-assisted features for managed deployments:
-
-- proposal summaries;
-- discussion summaries;
-- explanation of proposal status;
-- simple governance history search;
-- admin-controlled AI enable/disable setting.
-
-### Phase 3 — Modular Governance
-
-The third phase introduces deeper modularity and ecosystem integrations.
-
-Key goals:
-
-- pluggable voting strategies;
-- integration with Safe;
-- integration with Snapshot or external voting systems;
-- custom themes;
-- organization templates;
-- analytics dashboards;
-- governance health metrics.
-
-AI-assisted governance expansion:
-
-- argument mapping;
-- risk reviews;
-- policy interpretation;
-- delegate activity summaries;
-- unresolved question detection;
-- similar proposal detection;
-- governance memory search.
-
-### Phase 4 — Dispute Intelligence and Accountability
-
-The fourth phase focuses on accountability, dispute workflows, and institutional memory.
-
-Key goals:
-
-- structured dispute workflows;
-- post-execution reviews;
-- milestone tracking;
-- contributor accountability;
-- public audit exports;
-- delegate performance views;
-- governance health reports.
-
-AI-assisted dispute and accountability features:
-
-- dispute summaries;
-- position mapping;
-- conflict-of-interest indicators;
-- mediation suggestions;
-- post-execution accountability reviews;
-- milestone deviation summaries;
-- AI-assisted governance health reports.
-
-### Phase 5 — Ecosystem and Advanced Governance
-
-The fifth phase expands IsoniaOS into a broader governance ecosystem.
-
-Key goals:
-
-- plugin marketplace;
-- advanced identity modules;
-- reputation systems;
-- civic-tech pilots;
-- enterprise and civic deployments;
-- cross-organization governance networks;
-- advanced governance templates.
-
-Optional advanced AI governance modules:
-
-- AI-generated non-binding recommendations;
-- configurable AI mediation workflows;
-- optional AI arbitration modules with explicit consent;
-- appeal mechanisms;
-- human or community oversight rules;
-- audit logs for AI-assisted decisions.
-
----
-
-## 14. Governance Templates
-
-Many organizations do not know how to design governance from scratch. IsoniaOS can reduce adoption friction by providing templates.
-
-Possible templates include:
-
-- simple DAO template;
-- protocol DAO template;
-- grants DAO template;
-- investment club template;
-- cooperative template;
-- foundation or council template;
-- public consultation template;
-- emergency governance template.
-
-Templates allow organizations to start from a proven structure and customize over time.
-
-The ideal user journey is:
-
-> Choose a governance model → customize modules → launch organization → evolve over time.
-
----
-
-## 15. Security and Trust
-
-Governance infrastructure must be designed with a security-first mindset because it can control treasuries, permissions, protocol decisions, and organizational legitimacy.
-
-IsoniaOS should treat governance as part of an organization’s security boundary.
-
-Key security principles include:
-
-- explicit and auditable access control;
-- minimized hidden authority;
-- careful upgradeability design;
-- secure smart contract architecture;
-- transparent admin powers;
-- reliable event indexing;
-- tamper-resistant records where possible;
-- review periods for critical actions;
-- optional time delays;
-- emergency mechanisms when appropriate;
-- clear separation between advisory AI outputs and binding governance authority.
-
-AI-assisted features must also be designed carefully. Organizations should understand when AI is used, what data it can access, what outputs it generates, and whether those outputs are advisory or binding.
-
-By default, AI outputs should be non-binding and clearly labeled as assistance.
-
----
-
-## 16. Long-Term Vision
-
-The first market for IsoniaOS is Web3 governance. DAOs, protocols, foundations, grant programs, and onchain communities already feel the pain of fragmented governance.
-
-The broader opportunity is transparent digital governance for any organization.
-
-Over time, IsoniaOS can support public-good communities, cooperatives, civic initiatives, institutional governance experiments, and new forms of accountable coordination.
-
-The long-term vision is not governance on blockchain for its own sake. The goal is governance that is more transparent, participatory, auditable, resilient, and understandable.
-
-The internet changed how people communicate. Blockchain changed how people coordinate value. The next step is to improve how people govern together.
-
----
-
-## 17. Conclusion
-
-IsoniaOS is built for organizations that want governance to be more than a vote.
-
-It transforms governance from fragmented voting events into structured, transparent, and accountable organizational infrastructure.
-
-Existing tools solve important pieces of the governance stack. IsoniaOS connects these pieces into a lifecycle: proposal, deliberation, voting, execution, accountability, dispute intelligence, and memory.
-
-The project is designed to support both open-source self-hosted deployments and a managed SaaS layer. The open core builds trust, while managed services can provide convenience, integrations, analytics, and optional AI-assisted governance features.
-
-AI in IsoniaOS is not the governor. AI is the intelligence layer that helps governance become clearer, fairer, and more accountable.
-
-Final authority remains with the governance model chosen by each organization.
-
-IsoniaOS is a governance operating system for accountable digital organizations.
+IsoniaOS is a governance control plane for accountable digital organizations.
 
 > Governance is not a vote. Governance is a lifecycle.
 
@@ -979,14 +441,20 @@ IsoniaOS is a governance operating system for accountable digital organizations.
 **Core message:**  
 Governance is not a vote. Governance is a lifecycle.
 
+**Launch wedge:**  
+IsoniaOS closes the loop between DAO decisions and execution.
+
 **Product category:**  
-Governance operating system / governance control plane.
+DAO Governance Control Plane / Governance Operating System.
 
 **Primary audience:**  
-DAOs, Web3 protocols, foundations, grants programs, public-good communities, cooperatives, and future civic-tech organizations.
+DAOs, Web3 protocols, foundations, grants programs, public-good communities, and onchain organizations.
+
+**Long-term audience:**  
+Cooperatives, associations, civic initiatives, institutional governance pilots, and public governance experiments.
 
 **Differentiation:**  
-IsoniaOS connects proposals, deliberation, voting, execution, accountability, dispute intelligence, and institutional memory into one modular governance system.
+IsoniaOS connects proposals, review, voting, execution, accountability, dispute intelligence, and institutional memory into one modular governance lifecycle.
 
 **AI positioning:**  
 AI does not govern by default. AI helps governance become more understandable, transparent, and accountable.
@@ -995,12 +463,11 @@ AI does not govern by default. AI helps governance become more understandable, t
 
 ## Appendix B — Suggested Short Positioning Statements
 
-- IsoniaOS is a governance operating system for accountable digital organizations.
+- IsoniaOS is a governance control plane for accountable DAOs and digital organizations.
 - Governance is not a vote. Governance is a lifecycle.
-- IsoniaOS does not replace the governance ecosystem. It orchestrates it.
+- IsoniaOS closes the loop between DAO decisions and execution.
+- From proposal to proof of execution.
+- IsoniaOS does not replace the DAO tooling ecosystem. It orchestrates it.
+- Open where trust matters. Commercial where reliability, convenience, and intelligence matter.
 - AI does not govern. AI helps governance become clearer.
-- The default role of AI in IsoniaOS is assistance, not authority.
-- Communities remain the source of legitimacy. AI helps them understand, deliberate, and verify.
-- IsoniaOS uses AI to reduce governance complexity, not to replace collective decision-making.
-- Optional AI arbitration may be supported only as an explicitly enabled governance module with participant consent, transparent rules, and appeal mechanisms.
-- AI-assisted governance is a SaaS accelerator, not a dependency of the open-source core.
+- The first market is DAO governance. Civic governance is a long-term expansion path.
