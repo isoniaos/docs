@@ -11,18 +11,18 @@ It is not production certification, an audit statement, or a security guarantee.
 | Repository | Package name | Version / tag | Role | Notes |
 | --- | --- | --- | --- | --- |
 | docs | n/a | Active v0.6 docs; docs tag to be assigned after alpha.5 docs are accepted | Documentation and demo runbooks | This task prepares the alpha.5 docs surface. Do not treat docs alpha.5 as tagged until a tag is actually created. |
-| types | `@isonia/types` | `0.6.0-alpha.1` / `v0.6.0-alpha.1` | Shared DTOs, enums, constants, and setup/diagnostics types | Package version and local tag were verified. |
-| sdk | `@isonia/sdk` | `0.6.0-alpha.1` / `v0.6.0-alpha.1` | Typed REST client and path helpers | Depends on `@isonia/types` via `github:isoniaos/types#v0.6.0-alpha.1`. The tag exists; the inspected local worktree was not exactly at the tag. |
+| types | `@isonia/types` | Pending `0.6.0-alpha.2`; tag pending | Shared DTOs, enums, constants, and setup/diagnostics types | Prepared for Node 22 baseline and metadata hardening. Do not record `v0.6.0-alpha.2` as released until the tag exists. |
+| sdk | `@isonia/sdk` | Pending `0.6.0-alpha.2`; tag pending | Typed REST client and path helpers | Current dependency ref remains `github:isoniaos/types#v0.6.0-alpha.1` until the new types tag exists. |
 | evm-contracts | `@isonia/evm-contracts` | Pending metadata alignment to `0.6.0-alpha.3`; tag pending | Shared local EVM governance protocol and DemoTarget | The package metadata is being aligned for the v0.6 local demo stack. Do not record `@isonia/evm-contracts` `0.6.0-alpha.3` / `v0.6.0-alpha.3` as the known-good matrix entry until the tag actually exists. |
-| control-plane | `@isonia/control-plane` | `0.6.0-alpha.1` / `v0.6.0-alpha.1` | REST API, indexer, projections, diagnostics, read models | Depends on `@isonia/types` via `github:isoniaos/types#v0.6.0-alpha.1`. The tag exists; the inspected local worktree was not exactly at the tag. |
-| theme-default | `@isonia/theme-default` | `0.6.0-alpha.1` / `v0.6.0-alpha.1` | Default theme tokens, assets, and CSS variables | Package version and local tag were verified. |
-| app-core | `@isonia/app-core` | `0.6.0-alpha.4` / `v0.6.0-alpha.4` | Public self-hostable React + Vite governance console | Depends on `@isonia/types`, `@isonia/sdk`, and `@isonia/theme-default` through v0.6 alpha GitHub refs. Package version and local tag were verified. |
+| control-plane | `@isonia/control-plane` | Pending `0.6.0-alpha.2`; tag pending | REST API, indexer, projections, diagnostics, read models | Current dependency ref remains `github:isoniaos/types#v0.6.0-alpha.1` until the new types tag exists. |
+| theme-default | `@isonia/theme-default` | Pending `0.6.0-alpha.2`; tag pending | Default theme tokens, assets, and CSS variables | Prepared for Node 22 baseline, line-ending policy, and address component theme metadata. Do not record `v0.6.0-alpha.2` as released until the tag exists. |
+| app-core | `@isonia/app-core` | Pending `0.6.0-alpha.5`; tag pending | Public self-hostable React + Vite governance console | Depends on `@isonia/types`, `@isonia/sdk`, and `@isonia/theme-default` through existing v0.6 alpha GitHub refs until the new tags exist. |
 
 ## Notes
 
 - Node baseline: `>=22`. Use the latest Node 22 LTS patch for v0.6 local demo work.
 - Node 24 may be tested later, but v0.6 is baselined on Node 22.
-- After the evm-contracts metadata tag is created later, update this matrix entry to `@isonia/evm-contracts` `0.6.0-alpha.3` / `v0.6.0-alpha.3`.
+- After the pending package tags are created later, update this matrix from pending entries to released `version` / `tag` entries and then update dependency refs where applicable.
 - Package versions do not include a leading `v`.
 - Git tags include a leading `v`.
 - GitHub dependency refs should use tag names with a leading `v`.

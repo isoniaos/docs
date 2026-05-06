@@ -26,6 +26,7 @@ Git tags use SemVer with a leading `v`, for example `v0.6.0-alpha.1`.
 ### Changed
 
 - Updated v0.6 docs for the Node 22 baseline, evm-contracts metadata alignment status, and line-ending policy hardening.
+- Updated the v0.6 compatibility matrix and alpha release notes for pending package/tag alignment, app-core lint/CI hardening, and unchanged dependency refs until target tags exist.
 - Updated the root README navigation to include active strategy, v0.6, and development-process documents.
 - Updated the whitepaper from a broad governance OS draft into a DAO-first governance control plane whitepaper.
 - Updated the roadmap to prioritize v0.6 demo readiness, v0.7 integrations, v0.8 accountability dashboard, v0.9 advisory AI digest, and v1.0 design partner release.

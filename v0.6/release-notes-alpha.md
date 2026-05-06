@@ -53,10 +53,12 @@ Scope:
 
 ## v0.6.0-alpha.5
 
-Primary docs focus:
+Primary focus:
 
 - Documentation and demo readiness target.
 - Node 22 baseline documentation.
+- app-core lint and CI hardening.
+- Package metadata and pending tag alignment.
 - evm-contracts metadata alignment status.
 
 Scope:
@@ -67,7 +69,11 @@ Scope:
 - Compatibility Matrix.
 - Alpha release notes.
 - Recorded Node.js `>=22` as the v0.6 baseline, with Node 24 left for later testing.
+- Added app-core linting with CI lint, typecheck, address utility test, and build checks.
+- Prepared `@isonia/types`, `@isonia/sdk`, `@isonia/control-plane`, and `@isonia/theme-default` for pending `0.6.0-alpha.2` tags.
+- Prepared `@isonia/app-core` for pending `0.6.0-alpha.5`.
 - Recorded evm-contracts `0.6.0-alpha.3` as pending metadata alignment until the tag exists.
+- Kept dependency refs unchanged where target tags do not yet exist.
 
 Expected result:
 
