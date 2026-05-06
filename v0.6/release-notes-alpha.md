@@ -56,6 +56,8 @@ Scope:
 Primary docs focus:
 
 - Documentation and demo readiness target.
+- Node 22 baseline documentation.
+- evm-contracts metadata alignment status.
 
 Scope:
 
@@ -64,6 +66,8 @@ Scope:
 - Troubleshooting guide.
 - Compatibility Matrix.
 - Alpha release notes.
+- Recorded Node.js `>=22` as the v0.6 baseline, with Node 24 left for later testing.
+- Recorded evm-contracts `0.6.0-alpha.3` as pending metadata alignment until the tag exists.
 
 Expected result:
 

@@ -29,6 +29,24 @@ http://localhost:3000/v1/diagnostics/indexer
 
 Use diagnostics before retrying a transaction. A mined transaction followed by stale UI state is often an indexing, projection, or config issue rather than a chain failure.
 
+## Node Version Below v0.6 Baseline
+
+Symptoms:
+
+- Dependency installation, typecheck, build, or test commands fail unexpectedly.
+- Tooling reports unsupported Node versions.
+
+Checks:
+
+- Run `node --version`.
+- Confirm the active Node version is `>=22`.
+
+Recovery:
+
+- Switch to Node.js `>=22`, preferably the latest Node 22 LTS patch.
+- Rerun `corepack enable`.
+- Rerun `corepack pnpm install` in the affected repository after switching Node versions.
+
 ## Wallet Connected To Wrong Chain
 
 Symptoms:

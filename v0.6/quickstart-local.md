@@ -10,7 +10,9 @@ This is an alpha/local-demo setup. It is not production deployment guidance.
 
 ## Prerequisites
 
-- Node.js >= 18.
+- Node.js >= 22.
+- Recommended: latest Node 22 LTS patch.
+- Node 24 may be tested later, but the v0.6 baseline is Node 22.
 - Corepack and pnpm.
 - Git.
 - Local PostgreSQL.
