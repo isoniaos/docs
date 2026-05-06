@@ -21,6 +21,7 @@ Git tags use SemVer with a leading `v`, for example `v0.6.0-alpha.1`.
 - Added the v0.6 design partner demo script.
 - Added the v0.6 review checklist.
 - Added v0.6 Codex task prompt templates.
+- Added v0.6 quickstart-local guide, design partner demo script, troubleshooting guide, compatibility matrix, and alpha release notes for demo readiness.
 
 ### Changed
 

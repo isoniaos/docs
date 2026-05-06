@@ -2,36 +2,37 @@
 
 Active target: IsoniaOS v0.6 alpha.
 
-v0.6 turns the v0.5 Developer Preview into a coherent, usable governance console alpha. The goal is not to add every future governance feature, but to make the existing protocol, Control Plane, SDK, App Core, and theme foundation easier to understand, demonstrate, and extend.
+v0.6 turns the v0.5 Developer Preview into a coherent local governance console demo. The goal is to make the existing protocol, Control Plane, SDK, App Core, and theme foundation understandable and reproducible for developers and design partners.
 
-A developer or design partner should be able to run IsoniaOS locally, create a Simple DAO+ organization, inspect its governance structure, create a proposal, route it through approval, veto, timelock, and execution, and understand what is happening without reading source code.
+v0.6 is scoped to alpha, local-demo, and self-hosted readiness. It is not a production, audit, SaaS, Safe integration, token voting, delegation, AI, or arbitrary calldata release.
 
-## Active documents
-
-### v0.6 product scope
+## Active v0.6 Docs
 
 - [Roadmap](roadmap.md)
 - [Scope and Non-Goals](scope-and-non-goals.md)
-- [Design Partner Demo](design-partner-demo.md)
-- [Review Checklist](review-checklist.md)
-
-### v0.6 UI and UX
-
-- [UI Foundation](ui-foundation.md)
-- [Address Components](address-components.md)
+- [Quickstart Local](quickstart-local.md)
+- [Design Partner Demo Script](design-partner-demo-script.md)
+- [Troubleshooting](troubleshooting.md)
+- [Compatibility Matrix](compatibility-matrix.md)
 - [Setup Wizard](setup-wizard.md)
 - [Setup Execution UX](setup-execution-ux.md)
 - [Proposal Lifecycle Demo](proposal-lifecycle-demo.md)
 - [Diagnostics Panel](diagnostics-panel.md)
-
-### v0.6 development process
-
 - [Repository Preparation](repository-preparation.md)
 - [Codex Implementation Rules](codex-implementation-rules.md)
-- [Codex Task Prompts](codex-task-prompts.md)
 - [Release Process](release-process.md)
 
-## Strategic context
+## Supporting v0.6 References
+
+- [UI Foundation](ui-foundation.md)
+- [Address Components](address-components.md)
+- [Design Partner Demo](design-partner-demo.md)
+- [Review Checklist](review-checklist.md)
+- [Codex Task Prompts](codex-task-prompts.md)
+- [Demo Readiness Checklist](demo-readiness-checklist.md)
+- [Alpha Release Notes](release-notes-alpha.md)
+
+## Strategic Context
 
 Read the root and strategy docs when making product decisions:
 
@@ -43,34 +44,26 @@ Read the root and strategy docs when making product decisions:
 - [Trust and Security](../strategy/TRUST-AND-SECURITY.md)
 - [AI Policy](../strategy/AI-POLICY.md)
 
-## Historical references
+## Historical References
 
-The v0.5 Developer Preview is closed and archived. Its known-good compatibility matrix must be preserved at:
+The v0.5 Developer Preview is closed and archived. Historical v0.5 material must stay under:
+
+```text
+../archive/v0.5/
+```
+
+The v0.5 known-good compatibility matrix is archived at:
 
 ```text
 ../archive/v0.5/compatibility-matrix.md
 ```
 
-Codex and other coding agents must not update archived v0.5 materials unless explicitly asked to correct archival metadata.
+Archived v0.5 and v0.1 docs are historical references only. Do not update archived material unless explicitly asked to correct archival metadata.
 
-## v0.6 Product Principle
+## Product Principle
 
 ```text
-v0.6 should move IsoniaOS from “it works” to “it can be shown to a person and they can understand the value.”
+Governance is not a vote. Governance is a lifecycle.
 ```
 
-## v0.6 Non-goals Reminder
-
-v0.6 must not attempt to deliver:
-
-- SaaS billing;
-- tenant management;
-- production deployment;
-- smart contract audit readiness;
-- Safe integration;
-- delegation;
-- token-weighted voting;
-- multi-chain production indexing;
-- AI governance assistant;
-- custom theme loading from Git;
-- final brand/marketing design.
+For v0.6, that means a developer or design partner should be able to run IsoniaOS locally, create a Simple DAO+ organization, inspect the route, create a DemoTarget proposal, move it through approval, veto or no-veto, timelock, and execution, and understand what happened without reading source code.
