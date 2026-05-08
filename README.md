@@ -39,6 +39,8 @@ IsoniaOS closes the loop between DAO decisions and execution.
 - [Trust and Security](strategy/TRUST-AND-SECURITY.md)
 - [AI Policy](strategy/AI-POLICY.md)
 - [SaaS and Open-Core Model](strategy/SAAS-AND-OPEN-CORE.md)
+- [Tenant and Domain Model](strategy/TENANT-AND-DOMAIN-MODEL.md)
+- [Storage and IPFS Model](strategy/STORAGE-AND-IPFS-MODEL.md)
 - [Narrative and Messaging](strategy/NARRATIVE-AND-MESSAGING.md)
 
 ### v0.6 alpha

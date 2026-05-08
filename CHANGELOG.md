@@ -15,6 +15,8 @@ Git tags use SemVer with a leading `v`, for example `v0.6.0-alpha.1`.
 - Added the trust and security model for alpha/demo, design partner, and production trust boundaries.
 - Added the AI policy defining advisory-only AI behavior, allowed early features, disallowed early features, data rules, and future arbitration constraints.
 - Added the SaaS and open-core model.
+- Added the tenant and domain model covering SaaS domains, self-hosted modes, single-org UX, multi-org administration, and multi-chain organization contexts.
+- Added the storage and IPFS model covering upload intent, purpose-limited storage, CID registry, gateway boundaries, quotas, privacy, and abuse prevention.
 - Added the narrative and messaging guide for DAO-first positioning.
 - Added the development process for Codex-assisted docs-first development.
 - Added repository-level `AGENTS.md` rules for AI agents.

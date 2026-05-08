@@ -411,6 +411,10 @@ Stable enough for selected DAOs, protocol foundations, and grants programs to ru
 
 Templates, policy configuration, advanced permissions, analytics, delegate views, and deeper integrations.
 
+Tenant mode, domain binding, organization workspace mapping, and chain deployment mapping should be planned as part of the SaaS and self-hosting path. The normal tenant experience should remain single-org, while multi-org administration should be reserved for operators, agencies, demos, and advanced administration.
+
+Storage work should introduce an Isonia-controlled storage API, upload intent flow, CID registry, and gateway allowlist/no-fetch posture before broad public uploads. Isonia should not expose IPFS/Kubo write RPC directly to browsers or the public internet.
+
 ## v2.x — Dispute and Accountability Intelligence
 
 Milestones, post-execution reviews, structured disputes, contributor/delegate accountability, and governance health reports.

@@ -43,6 +43,8 @@ Read the root and strategy docs when making product decisions:
 - [Accountability Model](../strategy/ACCOUNTABILITY-MODEL.md)
 - [Trust and Security](../strategy/TRUST-AND-SECURITY.md)
 - [AI Policy](../strategy/AI-POLICY.md)
+- [Tenant and Domain Model](../strategy/TENANT-AND-DOMAIN-MODEL.md)
+- [Storage and IPFS Model](../strategy/STORAGE-AND-IPFS-MODEL.md)
 
 ## Historical References
 
