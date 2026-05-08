@@ -6,6 +6,8 @@ Git tags use SemVer with a leading `v`, for example `v0.6.0-alpha.1`.
 
 ## Unreleased
 
+## 0.6.0-alpha.7
+
 ### Added
 
 - Added the DAO-first market entry strategy.
