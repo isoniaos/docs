@@ -87,6 +87,22 @@ v0.6 must not attempt to deliver:
 - custom theme loading from Git;
 - final brand/marketing design.
 
+## Future protocol backlog
+
+### Bootstrap finalization and admin handoff
+
+The v0.6 alpha protocol uses the organization admin as bootstrap authority. A future protocol milestone should add explicit bootstrap finalization so the admin can complete setup and then lose unilateral power over roles, mandates, and policy rules.
+
+After finalization, mandate and policy changes should be governed by proposal routes or by narrowly scoped role authority such as `BodyAdmin` where the contract model grants it. Contracts remain authoritative for governance power.
+
+### Admin batch activation
+
+A related future EVM contract design item should add typed admin batch functions for bootstrap setup groups. Batches should preserve `msg.sender` as the organization admin and should avoid arbitrary calldata multicall as the first production path.
+
+Preferred shapes include batch create bodies, batch create roles, batch assign mandates, batch set policy rules, or a typed bootstrap activation bundle. These functions must emit the same events expected by the Control Plane indexer so read models remain deterministically recoverable from contract events.
+
+Design these two upgrades together: batch activation reduces setup friction, while bootstrap finalization removes permanent admin control after setup. App Core should use a contract batch path first when available, keep serial activation as the reliable v0.6 default, and treat EIP-5792 as an optional wallet-level optimization only. EIP-5792 support is wallet, account, and chain dependent, so it is not reliable enough to be the primary bootstrap path in v0.6.
+
 ## Product principle
 
 v0.6 should move IsoniaOS from “it works” to “it can be shown to a person and they can understand the value.”

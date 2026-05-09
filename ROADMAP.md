@@ -154,6 +154,32 @@ Expected results:
 
 v0.6 must not deliver SaaS billing, tenant management, production deployment, smart contract audit readiness, Safe integration, delegation, token-weighted voting, multi-chain production indexing, AI assistant, custom theme loading from Git, or final brand/marketing design.
 
+## Future Protocol Backlog
+
+### Bootstrap Finalization and Admin Handoff
+
+The v0.6 alpha contracts intentionally use the organization admin as bootstrap authority. A future protocol milestone should add an explicit bootstrap finalization path so the admin can complete organization setup and then give up unilateral control over roles, mandates, and policy rules.
+
+After finalization, mandate and policy changes should move through governance-controlled proposals and routes, or through narrowly scoped role authority such as `BodyAdmin` where that authority is explicitly modeled. Contracts remain the authoritative source of governance power; apps, wallets, and indexers may explain or optimize the flow but must not become the source of authority.
+
+### Admin Batch Activation
+
+A related future EVM contract design item should add typed admin batch functions for bootstrap setup groups. The goal is to reduce setup friction while preserving `msg.sender` as the organization admin during bootstrap actions.
+
+Prefer typed batch helpers over arbitrary calldata multicall as the first production path, for example:
+
+- batch create bodies;
+- batch create roles;
+- batch assign mandates;
+- batch set policy rules;
+- or a typed bootstrap activation bundle that combines those setup groups.
+
+Batch activation must emit the same events expected by the Control Plane indexer and preserve deterministic read-model recovery from contract events.
+
+These two upgrades should be designed together: batch activation makes bootstrap setup easier, while bootstrap finalization prevents that bootstrap authority from becoming permanent admin control after governance activation. App Core activation UX should prefer a protocol-level batch path when available, keep serial activation as the reliable default for v0.6, and treat EIP-5792 only as a wallet-level optimization.
+
+EIP-5792 remains optional because support is wallet, account, and chain dependent. It is not reliable enough to be the primary bootstrap path in v0.6, but it may improve the experience later when a user's wallet and local chain support it.
+
 ## Product principle
 
 ```text

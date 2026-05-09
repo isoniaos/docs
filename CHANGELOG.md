@@ -4,7 +4,11 @@ All notable changes to the IsoniaOS documentation repository are documented here
 
 Git tags use SemVer with a leading `v`, for example `v0.6.0-alpha.1`.
 
-## Unreleased
+## 0.6.0-alpha.8
+
+### Added
+
+- Added a future protocol backlog note for bootstrap finalization, admin handoff, and typed admin batch activation, including EIP-5792's optional optimization role.
 
 ## 0.6.0-alpha.7
 
