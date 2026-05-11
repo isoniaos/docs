@@ -1,0 +1,192 @@
+# IsoniaOS v0.7 Roadmap
+
+## Goal
+
+Move from a demo-ready UX/product foundation to protocol hardening and real governance execution foundations.
+
+v0.7 should establish the governance lifecycle, reliable activation path, finalization/admin handoff model, and the first concrete design for safer proposal execution authoring.
+
+## Product direction
+
+v0.7 should preserve the v0.6 UX foundation and avoid turning the app into an engineering console.
+
+Default screens should remain product-focused. Technical detail belongs in disclosures, diagnostics, technical tabs, or dedicated protocol documentation.
+
+## v0.7 milestones
+
+### v0.7-alpha.1 - Documentation and architecture baseline
+
+Create and review the v0.7 documentation pack.
+
+Expected outputs:
+
+- v0.7 roadmap;
+- protocol roadmap;
+- bootstrap finalization design;
+- admin batch activation design;
+- Proposal Action Builder design;
+- storage and metadata schema direction;
+- Control Plane roadmap;
+- App Core roadmap;
+- compatibility matrix;
+- design partner demo plan.
+
+Non-goal:
+
+- no runtime implementation.
+
+### v0.7-alpha.2 - Protocol design for admin batch activation
+
+Design contract-level typed batch activation functions.
+
+Preferred direction:
+
+- typed batch functions instead of arbitrary calldata multicall;
+- deterministic events;
+- predictable indexing;
+- clear partial failure behavior;
+- gas-aware structure.
+
+Possible function families:
+
+- `batchCreateBodies`;
+- `batchCreateRoles`;
+- `batchAssignMandates`;
+- `batchSetPolicyRules`;
+- typed bootstrap activation bundle if justified.
+
+### v0.7-alpha.3 - Bootstrap finalization / admin handoff design
+
+Design organization lifecycle:
+
+```text
+Created -> Activating -> Active -> Finalized
+```
+
+Clarify:
+
+- who can finalize;
+- whether finalization is reversible;
+- what is blocked after finalization;
+- whether governance approval is required;
+- whether emergency recovery exists;
+- how scoped administrative authority works after handoff.
+
+### v0.7-alpha.4 - EVM contracts implementation
+
+Implement typed batch activation and bootstrap finalization in `evm-contracts`.
+
+Requirements:
+
+- tests;
+- events;
+- ABI updates;
+- no silent ABI assumptions;
+- clear compatibility expectations for `types`, `sdk`, and `control-plane`.
+
+### v0.7-alpha.5 - Control Plane indexing/read models
+
+Index and expose new protocol state.
+
+Expected indexing/read-model updates:
+
+- lifecycle state;
+- bootstrap finalization status;
+- admin handoff status;
+- batch activation effects;
+- policy and mandate change history where needed.
+
+### v0.7-alpha.6 - App Core support
+
+Update UI flows for the new protocol state.
+
+Expected UX updates:
+
+- activation can use contract-level batch when available;
+- serial activation remains fallback when needed;
+- finalization step is visible and understandable;
+- post-finalization admin restrictions are explained;
+- Governance Structure reflects finalized state;
+- warnings are calm and precise.
+
+### v0.7-alpha.7 - Proposal Action Builder design
+
+Design the Proposal Action Builder.
+
+This milestone is design-first. Full production implementation is not required in v0.7.
+
+The design should cover:
+
+- ABI import from Etherscan-compatible explorers;
+- manual ABI paste/upload;
+- NatSpec extraction;
+- human-readable calldata;
+- human-readable `dataHash`;
+- multiple write calls;
+- read-call dependencies;
+- late-bound execution values;
+- simulation/dry-run;
+- chain-specific explorer adapters.
+
+### v0.7-alpha.8 - Metadata/storage schemas
+
+Define metadata and storage models.
+
+Expected outputs:
+
+- organization metadata schema;
+- proposal metadata schema;
+- action metadata schema;
+- upload intent model;
+- CID registry model;
+- gateway policy;
+- privacy/encryption guidance.
+
+### v0.7-beta.1 - Design partner protocol preview
+
+Prepare a small design partner preview showing the v0.7 protocol improvements.
+
+The goal is not mass-market launch. The goal is focused feedback from a small group of technical and governance-aware users.
+
+## Non-goals
+
+Do not include unless explicitly reprioritized:
+
+- production SaaS billing;
+- custom domains;
+- full IPFS upload service;
+- Safe integration;
+- multi-chain execution;
+- token-weighted voting;
+- delegation;
+- AI arbitration;
+- production audit readiness;
+- full Proposal Action Builder production release;
+- tenant provisioning.
+
+## Release discipline
+
+For each repo involved in v0.7, use:
+
+```text
+1 feature task
+1 review
+1 release bookkeeping task
+1 tag
+1 short status update
+```
+
+Feature tasks:
+
+- do not bump package versions;
+- do not create tags;
+- update changelog `[Unreleased]`;
+- update backlog if needed;
+- run relevant checks.
+
+Release tasks:
+
+- only version/changelog/backlog metadata;
+- no runtime code;
+- run checks;
+- user tags manually after review.
