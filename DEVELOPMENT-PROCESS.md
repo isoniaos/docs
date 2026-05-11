@@ -15,7 +15,7 @@ Governance infrastructure is sensitive. Product scope, authority model, trust bo
 Recommended process:
 
 ```text
-Docs → Issue → Codex Task → Patch → Tests → Human Review → Merge → Changelog
+Docs -> Issue -> Codex Task -> Patch -> Tests -> Human Review -> Merge -> Changelog
 ```
 
 ---
@@ -27,9 +27,9 @@ Before any implementation work, read:
 - `AGENTS.md`
 - `WHITEPAPER.md`
 - `ROADMAP.md`
-- `v0.6/README.md`
-- `v0.6/scope-and-non-goals.md`
-- relevant feature docs under `v0.6/`
+- `v0.7/README.md`
+- `v0.7/roadmap.md`
+- relevant feature docs under `v0.7/`
 - relevant strategy docs under `strategy/`
 
 Archived docs are historical context only.
@@ -53,7 +53,7 @@ A good Codex task has:
 Avoid tasks like:
 
 ```text
-Implement the v0.6 roadmap.
+Implement the v0.7 roadmap.
 ```
 
 Prefer tasks like:
@@ -69,12 +69,12 @@ Implement AddressInput checksum validation in app-core and add tests. Do not cha
 ```text
 You are working on IsoniaOS.
 
-Active target: v0.6 alpha.
+Active target: v0.7 alpha.
 
 Read first:
 - AGENTS.md
-- docs/v0.6/README.md
-- docs/v0.6/scope-and-non-goals.md
+- docs/v0.7/README.md
+- docs/v0.7/roadmap.md
 - [specific feature doc]
 
 Task:
@@ -86,11 +86,16 @@ Allowed changes:
 Do not change:
 - archive docs
 - unrelated packages
-- SaaS billing/tenant logic
-- AI features
+- production SaaS billing
+- custom domains
+- full IPFS upload service
 - Safe integration
+- multi-chain execution
 - token voting/delegation
-- production claims
+- AI arbitration
+- production audit readiness
+- full Proposal Action Builder production release
+- tenant provisioning
 
 Acceptance criteria:
 - [specific behavior]
@@ -111,9 +116,9 @@ Report:
 Recommended branch names:
 
 - `docs/...`
-- `feat/v0.6-...`
-- `fix/v0.6-...`
-- `chore/v0.6-...`
+- `feat/v0.7-...`
+- `fix/v0.7-...`
+- `chore/v0.7-...`
 
 Recommended PR shape:
 
@@ -133,7 +138,7 @@ Recommended PR shape:
 Before merge, verify:
 
 - scope matches active docs;
-- no out-of-scope v0.6 features introduced;
+- no out-of-scope v0.7 features introduced;
 - package boundaries remain clean;
 - public app-core does not include SaaS-only logic;
 - UI uses theme tokens where appropriate;
@@ -150,7 +155,7 @@ Docs must be updated when behavior changes.
 
 Update:
 
-- feature doc under `v0.6/`;
+- feature doc under `v0.7/`;
 - `CHANGELOG.md` under Unreleased;
 - compatibility matrix after tags exist;
 - troubleshooting docs when new failure modes are discovered;
@@ -227,14 +232,14 @@ References:
 
 ---
 
-## 12. Definition of Done for v0.6 Tasks
+## 12. Definition of Done for v0.7 Tasks
 
-A v0.6 task is done when:
+A v0.7 task is done when:
 
 - it satisfies the relevant doc;
-- it stays within v0.6 scope;
+- it stays within v0.7 scope;
 - it has tests or clearly documented manual verification;
 - it updates docs/changelog if behavior changed;
-- it does not add hidden SaaS/AI/production scope;
+- it does not add hidden SaaS, AI arbitration, production, or out-of-scope integration work;
 - it is understandable to a reviewer;
 - it does not degrade local demo readiness.

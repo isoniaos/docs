@@ -1,4 +1,4 @@
-# IsoniaOS — Repository Boundaries
+# IsoniaOS - Repository Boundaries
 
 ## Public repositories
 

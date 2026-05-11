@@ -1,27 +1,10 @@
 # IsoniaOS Documentation Update Manifest
 
 **Prepared for:** `isoniaos/docs`  
-**Prepared date:** 2026-05-05  
-**Purpose:** DAO-first strategic documentation refresh, updated whitepaper and roadmap, and Codex-friendly development process docs.
+**Current documentation target:** v0.7 alpha
+**Purpose:** Track the documentation transition from the archived v0.6 baseline to the active v0.7 protocol-hardening line.
 
-## How to apply
-
-Unzip this archive into the root of the `isoniaos/docs` repository.
-
-Suggested local flow:
-
-```bash
-git checkout main
-git pull
-git checkout -b docs/dao-first-strategy-refresh
-unzip isoniaos-docs-update.zip -d .
-git status
-git diff
-```
-
-Then review the diff and commit.
-
-## Files included
+## Active documentation
 
 Root:
 
@@ -43,33 +26,44 @@ Strategy:
 - `strategy/TRUST-AND-SECURITY.md`
 - `strategy/AI-POLICY.md`
 - `strategy/SAAS-AND-OPEN-CORE.md`
+- `strategy/TENANT-AND-DOMAIN-MODEL.md`
+- `strategy/STORAGE-AND-IPFS-MODEL.md`
 - `strategy/NARRATIVE-AND-MESSAGING.md`
 
-v0.6:
+v0.7:
 
-- `v0.6/README.md`
-- `v0.6/design-partner-demo.md`
-- `v0.6/review-checklist.md`
-- `v0.6/codex-task-prompts.md`
+- `v0.7/README.md`
+- `v0.7/roadmap.md`
+- `v0.7/protocol-roadmap.md`
+- `v0.7/bootstrap-finalization.md`
+- `v0.7/admin-batch-activation.md`
+- `v0.7/proposal-action-builder.md`
+- `v0.7/storage-and-metadata.md`
+- `v0.7/control-plane-roadmap.md`
+- `v0.7/app-core-roadmap.md`
+- `v0.7/compatibility-matrix.md`
+- `v0.7/design-partner-demo-plan.md`
 
 ## Review priorities
 
-1. Confirm that the first market is DAO/Web3 governance, not civic/state governance.
-2. Confirm that the long-term civic/public-governance direction remains present but sequenced later.
-3. Confirm that v0.6 remains demo-readiness only: no SaaS, AI assistant, Safe integration, token voting, delegation, or production claims.
-4. Confirm that `VERSIONING.md` now treats `v0.6/` as active and `archive/v0.5/` as historical.
-5. Decide whether the strategy docs should stay public or whether selected sales/partner content should later move to a private repo.
+1. Confirm that `v0.7/` is the active documentation context.
+2. Confirm that v0.6 is treated as an archived baseline, not the current target.
+3. Confirm that v0.7 remains focused on protocol hardening: typed admin batch activation, bootstrap finalization/admin handoff, lifecycle state, Proposal Action Builder design, and metadata/storage schemas.
+4. Confirm that serial activation remains the reliable fallback.
+5. Confirm that typed contract-level admin batch activation is the v0.7 reliable optimization path.
+6. Confirm that EIP-5792 remains gated/prototype/diagnostics only, not the primary path.
+7. Confirm that v0.7 non-goals remain intact: no production SaaS billing, custom domains, full IPFS upload service, Safe integration, multi-chain execution, token-weighted voting, delegation, AI arbitration, production audit readiness, full Proposal Action Builder production release, or tenant provisioning.
 
-## Main strategic shift
+## Main transition
 
-The refreshed docs keep the long-term vision but sharpen the launch wedge:
+The active line is now:
 
 ```text
-IsoniaOS closes the loop between DAO decisions and execution.
+v0.7 protocol hardening alpha
 ```
 
-The launch category is:
+The v0.6 line is now:
 
 ```text
-DAO Governance Control Plane
+archived governance console alpha baseline
 ```

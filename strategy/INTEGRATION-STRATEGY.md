@@ -20,7 +20,7 @@ Keep your tools. Connect the lifecycle.
 IsoniaOS should become the place where these tools are connected into one governance record:
 
 ```text
-Proposal → Discussion → Vote / Approval → Execution → Evidence → Accountability → Memory
+Proposal -> Discussion -> Vote / Approval -> Execution -> Evidence -> Accountability -> Memory
 ```
 
 ---
@@ -350,11 +350,11 @@ Suggested fields:
 
 ---
 
-## 6. v0.7 Integration Preview Scope
+## 6. Post-v0.7 Integration Work
 
-v0.7 should not attempt deep automation.
+v0.7 is focused on protocol hardening. Integration preview work should come after the v0.7 foundation unless explicitly reprioritized.
 
-Recommended v0.7 deliverables:
+Recommended future integration deliverables:
 
 - external resource model;
 - proposal external links;

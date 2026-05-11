@@ -125,7 +125,7 @@ IsoniaOS may provide native modules where useful, but its strategic role is to o
 Governance must be represented as a full decision lifecycle:
 
 ```text
-Idea → Proposal → Review → Deliberation → Decision → Execution → Accountability → Memory
+Idea -> Proposal -> Review -> Deliberation -> Decision -> Execution -> Accountability -> Memory
 ```
 
 Voting remains important, but it becomes one stage inside a larger process.
@@ -183,7 +183,7 @@ Each organization has its own governance environment:
 Proposals should move through a structured lifecycle:
 
 ```text
-Draft → Review → Discussion → Ready for Vote → Voting → Passed / Rejected / Expired → Awaiting Execution → In Progress → Completed / Failed / Cancelled / Archived
+Draft -> Review -> Discussion -> Ready for Vote -> Voting -> Passed / Rejected / Expired -> Awaiting Execution -> In Progress -> Completed / Failed / Cancelled / Archived
 ```
 
 Different proposal types may include treasury requests, protocol upgrades, parameter changes, grants, contributor compensation, working group mandates, policy proposals, delegate elections, and emergency proposals.
@@ -261,21 +261,21 @@ Optional managed or self-hosted intelligence for summaries, risk checklists, sta
 
 ## 8. Initial Product Focus
 
-The current active target is v0.6 alpha.
+The current active target is v0.7 alpha.
 
-v0.6 should make the v0.5 Developer Preview usable as a coherent local governance console demo.
+v0.6 made the v0.5 Developer Preview usable as a coherent local governance console demo. v0.7 is the first step after that baseline: protocol hardening before broader product expansion.
 
-A developer or design partner should be able to:
+The v0.7 focus is:
 
-1. run IsoniaOS locally;
-2. create a Simple DAO+ organization;
-3. inspect governance bodies and policy routes;
-4. create a proposal;
-5. move the proposal through approval, veto, timelock, and execution;
-6. understand what happened without reading source code;
-7. use diagnostics to identify chain, indexer, projection, API, config, and wallet issues.
+1. typed contract-level admin batch activation;
+2. serial activation as the reliable fallback;
+3. EIP-5792 as gated/prototype/diagnostics only;
+4. bootstrap finalization and admin handoff;
+5. explicit lifecycle state from bootstrap to finalized governance;
+6. Control Plane and App Core support for those protocol states;
+7. Proposal Action Builder, storage, and metadata design.
 
-v0.6 is not a production release, SaaS release, AI release, Safe integration release, token voting release, or audit-ready release.
+v0.7 is not a production release, SaaS release, Safe integration release, multi-chain execution release, token voting release, AI arbitration release, or audit-ready release.
 
 ---
 
@@ -316,7 +316,7 @@ Some tools focus on voting and signaling. Some focus on onchain execution. Some 
 IsoniaOS differentiates by connecting the full lifecycle:
 
 ```text
-Proposal → Review → Vote / Approval → Execution → Accountability → Memory
+Proposal -> Review -> Vote / Approval -> Execution -> Accountability -> Memory
 ```
 
 IsoniaOS should integrate with strong existing tools rather than frame them as enemies.
@@ -372,35 +372,35 @@ strategy/TRUST-AND-SECURITY.md
 
 ## 13. Roadmap Summary
 
-### v0.6 — Usable Governance Console Alpha
+### v0.6 - Usable Governance Console Alpha
 
-Local demo readiness: Simple DAO+ setup wizard, proposal lifecycle demo, route explanation, setup execution UX, diagnostics, and clear documentation.
+Archived baseline: Simple DAO+ setup wizard, proposal lifecycle demo, route explanation, setup execution UX, diagnostics, and clear documentation.
 
-### v0.7 — Integration Preview
+### v0.7 - Protocol Hardening Alpha
 
-First linked/imported integrations with existing DAO tools, especially Snapshot, Safe, Tally/Agora, Discourse, GitHub, and block explorers.
+Typed admin batch activation, bootstrap finalization/admin handoff, explicit lifecycle state, protocol-aware Control Plane read models, App Core finalization UX, Proposal Action Builder design, and metadata/storage schema direction.
 
-### v0.8 — Public Governance Archive and Accountability Dashboard
+### v0.8 - Public Governance Archive, Accountability Dashboard, and Integration Preview
 
-Public decision records, execution status, responsible parties, due dates, transaction proofs, external evidence, and basic accountability records.
+Public decision records, execution status, responsible parties, due dates, transaction proofs, external evidence, basic accountability records, and first linked/imported integrations with existing DAO tools.
 
-### v0.9 — Optional AI Governance Digest
+### v0.9 - Optional AI Governance Digest
 
 Advisory proposal summaries, risk checklists, status explanations, similar proposal search, and unresolved question detection.
 
-### v1.0 — Design Partner Release
+### v1.0 - Design Partner Release
 
 A stable release suitable for real design-partner workflows on non-critical governance processes.
 
-### v1.x — Modular Governance
+### v1.x - Modular Governance
 
 Templates, policy configuration, pluggable strategies, advanced permissions, analytics, delegate views, and expanded integrations.
 
-### v2.x — Accountability and Dispute Intelligence
+### v2.x - Accountability and Dispute Intelligence
 
 Milestone tracking, post-execution reviews, contributor/delegate accountability, structured disputes, AI-assisted dispute summaries, and governance health reports.
 
-### v3.x+ — Ecosystem and Institutional Expansion
+### v3.x+ - Ecosystem and Institutional Expansion
 
 Plugin marketplace, advanced identity/reputation modules, optional arbitration frameworks, enterprise deployments, civic pilots, and broader governance infrastructure.
 

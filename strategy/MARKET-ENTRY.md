@@ -58,7 +58,7 @@ The DAO funded a project. Did the project deliver?
 IsoniaOS wedge:
 
 ```text
-Application → Review → Funding Decision → Milestones → Evidence → Completion Review
+Application -> Review -> Funding Decision -> Milestones -> Evidence -> Completion Review
 ```
 
 ### 3.2 Protocol governance teams
@@ -79,7 +79,7 @@ Was the approved proposal executed correctly, safely, and transparently?
 IsoniaOS wedge:
 
 ```text
-Proposal → Review Route → Vote / Approval → Timelock → Execution Proof → Governance Memory
+Proposal -> Review Route -> Vote / Approval -> Timelock -> Execution Proof -> Governance Memory
 ```
 
 ### 3.3 DAO operations and working groups
@@ -99,7 +99,7 @@ Who owns this decision, what is the status, and what evidence proves completion?
 IsoniaOS wedge:
 
 ```text
-Decision → Responsible Party → Deadline → Status → Evidence → Review
+Decision -> Responsible Party -> Deadline -> Status -> Evidence -> Review
 ```
 
 ### 3.4 Delegate-heavy governance
@@ -204,13 +204,13 @@ See what happened after the vote.
 Current state:
 
 ```text
-Forum post → Snapshot vote → Safe transaction → Discord update → spreadsheet → forgotten archive
+Forum post -> Snapshot vote -> Safe transaction -> Discord update -> spreadsheet -> forgotten archive
 ```
 
 IsoniaOS target state:
 
 ```text
-Proposal record → Review route → Vote / approval → Execution proof → Accountability record → Governance memory
+Proposal record -> Review route -> Vote / approval -> Execution proof -> Accountability record -> Governance memory
 ```
 
 ### Execution opacity
@@ -445,27 +445,27 @@ AI is optional, advisory, and non-binding by default. The core works without AI.
 
 ## 14. Recommended First 90 Days After Docs Refresh
 
-### Days 1–30
+### Days 1-30
 
 - finalize docs;
-- finish v0.6 alpha sequence;
-- prepare public demo script;
+- complete the v0.7 documentation transition;
+- prepare the v0.7 protocol preview script;
 - create 1 polished demo organization;
 - prepare landing-page copy around execution accountability;
-- identify 10–20 potential design partners.
+- identify 10-20 potential design partners.
 
-### Days 31–60
+### Days 31-60
 
 - run demos with DAO operators and grants teams;
 - collect discovery answers;
-- refine integration priority;
+- refine protocol-hardening and integration priority;
 - publish one technical/dev update;
-- publish one narrative post: “Governance is not a vote.”
+- publish one narrative post: "Governance is not a vote."
 
-### Days 61–90
+### Days 61-90
 
-- choose 2–3 design partners;
+- choose 2-3 design partners;
 - define non-critical pilot workflows;
-- scope v0.7 integration preview based on feedback;
-- prepare v0.8 accountability dashboard requirements;
+- scope post-v0.7 integration work based on feedback;
+- prepare v0.8 accountability and integration requirements;
 - convert feedback into issues and Codex tasks.

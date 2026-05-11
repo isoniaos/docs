@@ -4,7 +4,7 @@ These rules apply to Codex and other AI agents working in this repository.
 
 ## Active target
 
-The active documentation target is **IsoniaOS v0.6 alpha**.
+The active documentation target is **IsoniaOS v0.7 alpha**.
 
 Read first:
 
@@ -13,7 +13,7 @@ Read first:
 - `AGENTS.md`
 - `DEVELOPMENT-PROCESS.md`
 - `strategy/`
-- `v0.6/`
+- `v0.7/`
 
 Archived documents are historical references only.
 
@@ -26,32 +26,39 @@ Archived documents are historical references only.
 - Keep the core thesis visible: **Governance is not a vote. Governance is a lifecycle.**
 - Keep the launch wedge visible: **IsoniaOS closes the loop between DAO decisions and execution.**
 
-## v0.6 scope rules
+## v0.7 scope rules
 
-v0.6 may improve:
+v0.7 may improve:
 
-- local demo readiness;
-- setup wizard UX;
-- proposal lifecycle demo;
-- route explanation;
-- setup execution UX;
-- diagnostics;
-- documentation and troubleshooting.
+- protocol design docs;
+- typed admin batch activation;
+- bootstrap finalization and admin handoff;
+- Control Plane read models for new protocol states;
+- App Core support for protocol finalization and batch activation;
+- Proposal Action Builder design;
+- metadata and storage schemas;
+- design partner protocol preview.
 
-v0.6 must not add:
+v0.7 must not add:
 
-- SaaS billing;
-- tenant management;
-- production deployment claims;
-- smart contract audit claims;
+- production SaaS billing;
+- custom domains;
+- full IPFS upload service;
 - Safe integration;
-- delegation;
+- multi-chain execution;
 - token-weighted voting;
-- multi-chain production indexing;
-- AI assistant;
+- delegation;
 - AI arbitration;
-- custom theme loading from private Git repositories;
-- final brand/marketing design.
+- production audit readiness;
+- full Proposal Action Builder production release;
+- tenant provisioning.
+
+v0.7 activation rules:
+
+- serial activation remains the reliable fallback;
+- typed contract-level admin batch activation is the reliable optimization path;
+- EIP-5792 remains gated/prototype/diagnostics only, not the primary path;
+- bootstrap finalization/admin handoff is the key protocol hardening concern.
 
 ## Documentation rules
 
@@ -59,7 +66,7 @@ v0.6 must not add:
 - Keep user-facing statements concrete and non-hype.
 - Do not make legal, audit, production-security, or compliance claims unless the supporting work exists.
 - Update `CHANGELOG.md` under `Unreleased` when adding or changing docs.
-- Do not edit `archive/v0.5/` or `archive/v0.1/` unless explicitly instructed.
+- Do not edit `archive/` unless explicitly instructed.
 - Do not create future-version docs unless the version is explicitly scoped.
 - Do not create or update tags unless explicitly instructed.
 

@@ -17,16 +17,17 @@ The project should be honest about what is authoritative, what is advisory, what
 
 ## 2. Release Trust Posture
 
-### v0.6 alpha
+### v0.7 alpha
 
-v0.6 is a local governance console alpha.
+v0.7 is a protocol hardening alpha built on the v0.6 local governance console baseline.
 
 It is intended for:
 
-- local developer demos;
-- design partner demonstrations;
-- product validation;
-- governance lifecycle explanation;
+- protocol design validation;
+- typed admin batch activation design and implementation;
+- bootstrap finalization/admin handoff design and implementation;
+- lifecycle and finalization read-model work;
+- design partner protocol previews;
 - non-production experimentation.
 
 It is not intended for:

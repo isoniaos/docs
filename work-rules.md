@@ -1,4 +1,4 @@
-# IsoniaOS — Engineering Work Rules
+# IsoniaOS - Engineering Work Rules
 
 ## 1. General rules
 
@@ -11,8 +11,10 @@
 
 - use custom errors
 - emit events for every critical transition
-- no proxy upgradeability in v0.1
-- for v0.1, execution is allowed only through a safe demo target or whitelist
+- for v0.7, prioritize typed admin batch activation over arbitrary calldata multicall
+- for v0.7, model bootstrap finalization and admin handoff explicitly
+- keep serial activation as the reliable fallback
+- keep EIP-5792 gated/prototype/diagnostics only
 
 ## 3. TypeScript / Control Plane
 

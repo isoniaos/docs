@@ -46,7 +46,7 @@ The core differentiator is not “we also have proposals” or “we also have v
 The differentiator is:
 
 ```text
-Proposal → Review → Vote / Approval → Execution → Accountability → Memory
+Proposal -> Review -> Vote / Approval -> Execution -> Accountability -> Memory
 ```
 
 IsoniaOS should become the place where a DAO can see how decisions move through the full lifecycle across existing governance tools.
@@ -229,7 +229,7 @@ Snapshot is a major DAO voting/signaling platform. Its documentation describes s
 
 IsoniaOS should integrate with Snapshot early because many DAOs already use it.
 
-Recommended v0.7 integration:
+Recommended future integration:
 
 - link/import Snapshot proposals;
 - show voting status and result where available;

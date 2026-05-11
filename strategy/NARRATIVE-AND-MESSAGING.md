@@ -123,7 +123,7 @@ DAO governance is scattered across forums, voting tools, multisigs, chats, block
 IsoniaOS connects the governance lifecycle:
 
 ```text
-Proposal → Review → Vote / Approval → Execution → Accountability → Memory
+Proposal -> Review -> Vote / Approval -> Execution -> Accountability -> Memory
 ```
 
 ### Differentiation section
@@ -136,51 +136,51 @@ Connect proposals, discussions, votes, transactions, milestones, evidence, and s
 
 ## 6. Deck Outline
 
-### Slide 1 — Title
+### Slide 1 - Title
 
 IsoniaOS: DAO Governance Control Plane
 
-### Slide 2 — Problem
+### Slide 2 - Problem
 
 Governance is fragmented. Voting tools show what passed. DAOs still lose the execution trail.
 
-### Slide 3 — Insight
+### Slide 3 - Insight
 
 Governance is not a vote. Governance is a lifecycle.
 
-### Slide 4 — Product
+### Slide 4 - Product
 
-Proposal → Review → Decision → Execution → Accountability → Memory
+Proposal -> Review -> Decision -> Execution -> Accountability -> Memory
 
-### Slide 5 — Initial wedge
+### Slide 5 - Initial wedge
 
 From proposal to proof of execution.
 
-### Slide 6 — First market
+### Slide 6 - First market
 
 DAOs, protocol foundations, grants programs, and onchain communities.
 
-### Slide 7 — Demo
+### Slide 7 - Demo
 
 Simple DAO+ proposal lifecycle: approval, veto, timelock, execution, public record.
 
-### Slide 8 — Integrations
+### Slide 8 - Integrations
 
 Snapshot, Safe, Tally/Agora, Discourse, GitHub, block explorers, attestations.
 
-### Slide 9 — AI
+### Slide 9 - AI
 
 Optional advisory intelligence: summaries, risk checklists, route explanations, memory search.
 
-### Slide 10 — Business model
+### Slide 10 - Business model
 
 Open core + managed SaaS.
 
-### Slide 11 — Roadmap
+### Slide 11 - Roadmap
 
-v0.6 alpha → v0.7 integrations → v0.8 accountability → v1.0 design partners.
+v0.6 alpha baseline -> v0.7 protocol hardening -> v0.8 accountability and integrations -> v1.0 design partners.
 
-### Slide 12 — Ask
+### Slide 12 - Ask
 
 Design partners, contributors, governance operators, and ecosystem collaborators.
 
@@ -198,11 +198,11 @@ Governance is not a vote. Governance is a lifecycle.
 
 ### Builder update
 
-The v0.6 alpha focuses on one thing: making the governance lifecycle understandable in a local demo.
+The v0.7 alpha focuses on protocol hardening after the local demo baseline.
 
-Create a Simple DAO+, inspect routes, create a proposal, approve, veto, queue, execute, and see the result.
+Typed admin batch activation, bootstrap finalization, and clear lifecycle state make the governance foundation more accountable before broader product expansion.
 
-Before we scale governance, we need to make it legible.
+Before we scale governance, we need to make authority explicit.
 
 ### Design partner outreach
 

@@ -1,6 +1,6 @@
 # IsoniaOS Documentation
 
-This repository contains the active IsoniaOS v0.6 alpha documentation, DAO-first strategy documents, and archived historical material.
+This repository contains the active IsoniaOS v0.7 alpha documentation, DAO-first strategy documents, and archived historical material.
 
 ## Active project position
 
@@ -9,7 +9,7 @@ IsoniaOS is a governance operating system for accountable digital organizations.
 The first market is DAO and Web3 governance. IsoniaOS is designed to help DAOs, protocols, foundations, grants programs, and onchain communities manage the full governance lifecycle:
 
 ```text
-Idea → Proposal → Review → Decision → Execution → Accountability → Memory
+Idea -> Proposal -> Review -> Decision -> Execution -> Accountability -> Memory
 ```
 
 The long-term vision may expand into cooperatives, civic initiatives, public-good organizations, institutional governance, and eventually public governance experiments. Those are later milestones, not the immediate product claim.
@@ -43,15 +43,19 @@ IsoniaOS closes the loop between DAO decisions and execution.
 - [Storage and IPFS Model](strategy/STORAGE-AND-IPFS-MODEL.md)
 - [Narrative and Messaging](strategy/NARRATIVE-AND-MESSAGING.md)
 
-### v0.6 alpha
+### v0.7 alpha
 
-- [v0.6 Documentation Index](v0.6/README.md)
-- [v0.6 Roadmap](v0.6/roadmap.md)
-- [v0.6 Scope and Non-Goals](v0.6/scope-and-non-goals.md)
-- [v0.6 Design Partner Demo](v0.6/design-partner-demo.md)
-- [v0.6 Review Checklist](v0.6/review-checklist.md)
-- [v0.6 Codex Task Prompts](v0.6/codex-task-prompts.md)
-- [v0.6 Codex Implementation Rules](v0.6/codex-implementation-rules.md)
+- [v0.7 Documentation Index](v0.7/README.md)
+- [v0.7 Roadmap](v0.7/roadmap.md)
+- [v0.7 Protocol Roadmap](v0.7/protocol-roadmap.md)
+- [Bootstrap Finalization and Admin Handoff](v0.7/bootstrap-finalization.md)
+- [Typed Admin Batch Activation](v0.7/admin-batch-activation.md)
+- [Proposal Action Builder](v0.7/proposal-action-builder.md)
+- [Storage and Metadata](v0.7/storage-and-metadata.md)
+- [Control Plane v0.7 Roadmap](v0.7/control-plane-roadmap.md)
+- [App Core v0.7 Roadmap](v0.7/app-core-roadmap.md)
+- [v0.7 Compatibility Matrix](v0.7/compatibility-matrix.md)
+- [v0.7 Design Partner Demo Plan](v0.7/design-partner-demo-plan.md)
 
 ### Development process
 
@@ -62,11 +66,12 @@ IsoniaOS closes the loop between DAO decisions and execution.
 
 ## Archived documentation
 
+- v0.6 Governance Console Alpha documents are archived under `archive/v0.6/`.
 - v0.5 Developer Preview documents are archived under `archive/v0.5/`.
 - The v0.5 known-good tag set is recorded in [archive/v0.5/compatibility-matrix.md](archive/v0.5/compatibility-matrix.md).
 - Historical v0.1 documents are archived under `archive/v0.1/`.
 
-Archived v0.1 and v0.5 documents are historical references and are not part of the active v0.6 documentation surface.
+Archived v0.1, v0.5, and v0.6 documents are historical references and are not part of the active v0.7 documentation surface.
 
 ## Public repository note
 
