@@ -10,6 +10,8 @@
 ## 2. Solidity
 
 - use custom errors
+- use modifiers for access control and simple entry-point preconditions when appropriate
+- if a helper exists only to support a modifier, move the logic into the modifier instead of keeping a redundant helper
 - emit events for every critical transition
 - for v0.7, prioritize typed admin batch activation over arbitrary calldata multicall
 - for v0.7, model bootstrap finalization and admin handoff explicitly

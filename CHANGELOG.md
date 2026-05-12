@@ -11,6 +11,7 @@ Git tags use SemVer with a leading `v`, for example `v0.7.0-alpha.1`.
 - Updated the active documentation target from v0.6 to v0.7 across non-archived docs.
 - Reframed v0.7 as the protocol hardening alpha focused on typed admin batch activation, bootstrap finalization/admin handoff, lifecycle state, Proposal Action Builder design, and metadata/storage schemas.
 - Moved v0.6 references into archived-baseline language where they remain relevant.
+- Added Solidity work rules for using modifiers on access control and simple entry-point preconditions.
 
 ## 0.6.0-alpha.8
 
