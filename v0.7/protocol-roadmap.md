@@ -17,13 +17,13 @@ The admin can perform setup actions such as:
 - assign mandates;
 - set policy rules.
 
-This is acceptable for bootstrap and demo flows, but it should not become the permanent governance model.
+This remains acceptable before activation/finalization because the governance structure is still being created. It should not become the permanent governance model because the bootstrap admin would be able to unilaterally rewrite roles, mandates, bodies, and policy routes outside governance.
 
 ## Target v0.7 protocol themes
 
 ### 1. Typed admin batch activation
 
-The protocol should support a reliable contract-level batch activation path.
+The protocol supports a reliable contract-level batch activation path in the current v0.7 alpha stack.
 
 This is preferred over EIP-5792 as the default activation optimization because EIP-5792 support depends on wallet, account type, chain, and local network behavior.
 
@@ -40,7 +40,7 @@ The typed batch path should:
 
 The protocol should define a point where bootstrap authority ends.
 
-After finalization, admin should no longer have unilateral authority over core governance configuration unless that authority is explicitly scoped and represented in the governance model.
+After finalization, the bootstrap admin should no longer have unilateral authority over core governance configuration unless that authority is explicitly scoped and represented in the governance model.
 
 Core areas to protect after finalization:
 
@@ -49,6 +49,14 @@ Core areas to protect after finalization:
 - mandates;
 - policy rules;
 - proposal route rules.
+
+Recommended v0.7 alpha direction:
+
+- explicit irreversible finalization by bootstrap admin after activation review;
+- indexable finalization event;
+- bootstrap admin functions blocked after finalization;
+- future changes handled through governance-controlled routes or explicitly scoped authority;
+- emergency/recovery left as an explicit open design area.
 
 ### 3. Organization lifecycle
 
@@ -59,6 +67,13 @@ Created -> Activating -> Active -> Finalized
 ```
 
 The exact state names may change during implementation, but the protocol should expose enough state for App Core and Control Plane to represent lifecycle clearly.
+
+Conceptual meanings:
+
+- `Created`: organization root exists, but governance structure is absent or incomplete;
+- `Activating`: bootstrap configuration is in progress through serial or typed batch setup;
+- `Active`: governance structure is usable, but bootstrap authority may still exist;
+- `Finalized`: bootstrap-only admin authority has ended and governance-critical changes must follow governed or explicitly scoped paths.
 
 ### 4. Governed changes after finalization
 
@@ -96,6 +111,12 @@ Future reliable optimization:
 contract-level typed admin batch activation
 ```
 
+Current v0.7 alpha status:
+
+```text
+typed contract batch activation implemented across the stack
+```
+
 Optional UX optimization:
 
 ```text
@@ -108,10 +129,23 @@ EIP-5792 should remain behind a feature flag or diagnostics surface.
 
 v0.7 protocol work should produce:
 
-- typed batch activation design;
-- bootstrap finalization design;
+- completed typed batch activation baseline;
+- bootstrap finalization/admin handoff design;
 - lifecycle event/state design;
-- implementation in `evm-contracts`;
+- finalization implementation in `evm-contracts`;
 - tests;
 - ABI update notes;
 - downstream update notes for `types`, `sdk`, `control-plane`, `app-core`, and `demo-stack`.
+
+## Sequencing
+
+The current sequence is:
+
+```text
+completed baseline docs and typed admin batch activation
+  -> bootstrap finalization design
+  -> evm-contracts implementation
+  -> types/sdk/control-plane/app-core/demo-stack alignment
+```
+
+Do not claim finalization support for `evm-contracts@v0.7.0-alpha.1`; this document defines the next design baseline.

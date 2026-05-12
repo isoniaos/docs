@@ -14,9 +14,25 @@ Show that IsoniaOS can help an organization move through:
 create organization
 activate governance structure
 review authority model
-finalize bootstrap
-operate with clearer governance constraints
+preview bootstrap finalization
+discuss clearer governance constraints
 ```
+
+For the current v0.7 alpha line, separate demo-ready behavior from upcoming protocol-hardening preview.
+
+Demo-ready behavior:
+
+- typed contract batch activation;
+- serial activation fallback;
+- capabilities endpoint;
+- capability-aware App Core setup.
+
+Upcoming protocol-hardening preview:
+
+- finalization/admin handoff design;
+- lifecycle/finalization state direction;
+- post-finalization admin restriction model;
+- not yet production governance enforcement.
 
 ## What to demonstrate
 
@@ -34,17 +50,19 @@ Show how the product communicates state without overwhelming the user.
 
 Show that serial activation remains the reliable fallback.
 
-If typed batch activation is implemented by preview time, show it as the preferred optimized path.
+Show typed contract batch activation as the current preferred optimized path.
 
 Do not position EIP-5792 as the default reliable path.
 
 ### 3. Bootstrap finalization
 
-Show why finalization matters:
+Preview why finalization matters:
 
 - before finalization, bootstrap admin can complete setup;
 - after finalization, unilateral admin control is restricted;
 - future changes should flow through governance routes or scoped authority.
+
+Be explicit that finalization/admin handoff is the next protocol-hardening design area and is not yet production governance enforcement.
 
 ### 4. Governance Structure
 
@@ -111,15 +129,7 @@ Explain that one customer workspace is normally one primary organization, even i
 
 Show activation.
 
-If batch activation is ready:
-
-- show typed batch activation;
-- mention serial fallback.
-
-If not:
-
-- show serial activation;
-- explain batch activation is the v0.7 protocol hardening direction.
+Show typed batch activation and mention serial fallback.
 
 ### Step 4 - Review Governance Structure
 
@@ -129,9 +139,9 @@ Explain authority relationships and policy routes in plain language.
 
 ### Step 5 - Finalize bootstrap
 
-Show finalization or the designed finalization flow.
+Show the designed finalization flow.
 
-Explain that this is where the bootstrap admin hands off unilateral authority.
+Explain that this is where the bootstrap admin would hand off unilateral authority after protocol implementation. Do not claim production enforcement until contracts, types, Control Plane, App Core, and demo stack all support the flow.
 
 ### Step 6 - Discuss next execution layer
 

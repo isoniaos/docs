@@ -35,11 +35,11 @@ Non-goal:
 
 - no runtime implementation.
 
-### v0.7-alpha.2 - Protocol design for admin batch activation
+### v0.7-alpha.2 - Typed admin batch activation stack alignment
 
-Design contract-level typed batch activation functions.
+Typed contract-level batch activation is the completed v0.7 activation hardening baseline across the current alpha stack.
 
-Preferred direction:
+The stable direction is:
 
 - typed batch functions instead of arbitrary calldata multicall;
 - deterministic events;
@@ -57,7 +57,7 @@ Possible function families:
 
 ### v0.7-alpha.3 - Bootstrap finalization / admin handoff design
 
-Design organization lifecycle:
+Refine the organization lifecycle and finalization model:
 
 ```text
 Created -> Activating -> Active -> Finalized
@@ -72,9 +72,16 @@ Clarify:
 - whether emergency recovery exists;
 - how scoped administrative authority works after handoff.
 
+Preferred v0.7 alpha path:
+
+- explicit irreversible finalization by bootstrap admin after activation review;
+- bootstrap admin functions for bodies, roles, mandates, and policy rules blocked after finalization;
+- future changes routed through governance-controlled mechanisms or explicitly scoped authority;
+- emergency/recovery treated as an open design area, not a hidden admin escape hatch.
+
 ### v0.7-alpha.4 - EVM contracts implementation
 
-Implement typed batch activation and bootstrap finalization in `evm-contracts`.
+Implement bootstrap finalization in `evm-contracts`.
 
 Requirements:
 
@@ -93,7 +100,7 @@ Expected indexing/read-model updates:
 - lifecycle state;
 - bootstrap finalization status;
 - admin handoff status;
-- batch activation effects;
+- finalization event projection;
 - policy and mandate change history where needed.
 
 ### v0.7-alpha.6 - App Core support
@@ -108,6 +115,19 @@ Expected UX updates:
 - post-finalization admin restrictions are explained;
 - Governance Structure reflects finalized state;
 - warnings are calm and precise.
+
+## Current sequence
+
+The v0.7 baseline docs and typed admin batch activation stack are complete for the current alpha line. The next sequence is:
+
+```text
+bootstrap finalization design
+  -> evm-contracts finalization implementation
+  -> types/sdk/control-plane/app-core alignment
+  -> demo-stack verification
+```
+
+Do not present finalization/admin handoff as implemented until the downstream repositories are updated and released.
 
 ### v0.7-alpha.7 - Proposal Action Builder design
 

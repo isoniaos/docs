@@ -26,6 +26,8 @@ App Core should support both:
 - serial activation as reliable fallback;
 - contract-level typed batch activation when available.
 
+Typed contract batch activation is the current v0.7 alpha baseline. EIP-5792 remains optional diagnostics/prototype behavior, not the default reliable path.
+
 Recommended behavior:
 
 1. detect typed batch support;
@@ -46,6 +48,8 @@ The finalization step should explain:
 - whether finalization is irreversible.
 
 Avoid fear-based language. Use clear accountability language.
+
+Until protocol finalization is implemented and indexed, App Core should treat this as planned protocol-hardening behavior rather than completed governance enforcement.
 
 ## Post-finalization restrictions
 
@@ -76,6 +80,8 @@ The Governance Structure page should reflect:
 Do not show fake health scores.
 
 Use real/indexed/modeled/needs-data states.
+
+When finalization support exists, show a clear finalized state badge. When the organization is active but not finalized, show calm copy that bootstrap admin authority still exists.
 
 ## Diagnostics access
 
@@ -115,6 +121,19 @@ Maintain current coding standards:
 - hooks use `useSomething.ts`;
 - helper modules use `kebab-case.ts`;
 - directories use `kebab-case`.
+
+## Sequencing
+
+App Core finalization UI should follow protocol, shared type, SDK, and Control Plane support.
+
+Expected order:
+
+```text
+evm-contracts finalization implementation
+  -> types/sdk support
+  -> Control Plane lifecycle/finalization read model
+  -> App Core finalization step and post-finalization restrictions
+```
 
 ## Open questions
 

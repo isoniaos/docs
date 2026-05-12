@@ -12,6 +12,10 @@ Control Plane currently supports the demo-ready UX foundation through read model
 
 v0.7 should extend this without turning normal product pages into debug consoles.
 
+## Current v0.7 status
+
+Typed admin batch activation is the current v0.7 alpha baseline across the stack. Bootstrap finalization/admin handoff is still design-stage and must not be exposed as implemented until the protocol emits/indexes real lifecycle and finalization state.
+
 ## Required v0.7 read-model additions
 
 ### Organization lifecycle
@@ -36,6 +40,8 @@ Expose:
 - finalization block/timestamp if available;
 - finalizing actor if available;
 - whether admin setup actions are still available.
+
+Do not derive finalization from App Core wizard completion. Use the final protocol event, contract state, or both, depending on the implementation.
 
 ### Batch activation effects
 
@@ -62,6 +68,8 @@ unsupported
 ```
 
 Final naming should be defined in `types`.
+
+For older contracts or pre-finalization releases, expose `unsupported` or `unknown`; do not fake finalized state.
 
 ### Policy/mandate change history
 
@@ -120,6 +128,19 @@ Recommended checks:
 - finalization event updates read model;
 - post-finalization blocked actions do not create invalid read-model transitions;
 - older contract ABI is handled gracefully.
+
+## Sequencing
+
+Control Plane implementation follows the `evm-contracts` and `types` finalization work.
+
+Expected order:
+
+```text
+evm-contracts finalization event/state
+  -> shared lifecycle/finalization types
+  -> Control Plane indexing/read model
+  -> App Core and demo-stack consumption
+```
 
 ## Open questions
 

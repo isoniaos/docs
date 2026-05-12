@@ -2,7 +2,7 @@
 
 IsoniaOS v0.7 moves the project from a demo-ready product foundation toward protocol hardening and real governance execution foundations.
 
-v0.6 established the user-facing UX baseline: organization creation, activation, proposal flows, governance structure visualization, diagnostics consolidation, theme polish, and demo-stack readiness. v0.7 should not restart that work. It should build on it by clarifying the next protocol layer before implementation starts.
+v0.6 established the user-facing UX baseline: organization creation, activation, proposal flows, governance structure visualization, diagnostics consolidation, theme polish, and demo-stack readiness. v0.7 should not restart that work. It should build on it by clarifying each next protocol layer before implementation starts.
 
 ## Positioning
 
@@ -48,10 +48,10 @@ This folder contains the planning baseline for v0.7:
 v0.7 should focus on:
 
 1. protocol design docs;
-2. typed admin batch activation;
-3. bootstrap finalization / admin handoff;
-4. Control Plane read-model updates for new protocol states;
-5. App Core support for protocol finalization and batch activation;
+2. completed typed admin batch activation stack alignment;
+3. bootstrap finalization / admin handoff design;
+4. Control Plane read-model updates for new protocol states after protocol implementation;
+5. App Core support for protocol finalization and batch activation after protocol/read-model support exists;
 6. Proposal Action Builder design;
 7. metadata and storage schemas;
 8. demo-stack alignment;
@@ -73,22 +73,36 @@ The following should not be included in v0.7 unless explicitly reprioritized:
 - full Proposal Action Builder production release;
 - tenant provisioning.
 
-## Baseline release line
+## Current v0.7 release set
 
-Use the following as the latest known v0.6 baseline unless newer tags are verified:
+Use the following as the current v0.7 alpha release set for planning unless newer tags are verified:
 
 ```text
-app-core        v0.6.0-alpha.18
-docs            v0.6.0-alpha.8
-evm-contracts   v0.6.0-alpha.4
-types           v0.6.0-alpha.2
-sdk             v0.6.0-alpha.4
-control-plane   v0.6.0-alpha.2
-theme-default   v0.6.0-alpha.3
-demo-stack      final v0.6 demo release
+docs            v0.7.0-alpha.1
+evm-contracts   v0.7.0-alpha.1
+types           v0.7.0-alpha.1
+sdk             v0.7.0-alpha.1
+control-plane   v0.7.0-alpha.1
+app-core        v0.7.0-alpha.1
+demo-stack      ed050f6bc33dfde0c1fa8ef974a23adfbe0e441d
 ```
 
 Always verify current tags before making release decisions.
+
+## Current sequence
+
+v0.7 has established the baseline docs and typed contract batch activation path across the stack. The next design area is bootstrap finalization/admin handoff.
+
+Implementation should proceed in this order:
+
+```text
+bootstrap finalization design
+  -> evm-contracts implementation
+  -> types/sdk/control-plane/app-core alignment
+  -> demo-stack verification
+```
+
+Do not claim finalization is implemented until the protocol, shared types, read models, UI, and demo stack are aligned.
 
 ## Release process rule
 

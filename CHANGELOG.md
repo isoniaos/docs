@@ -8,6 +8,7 @@ Git tags use SemVer with a leading `v`, for example `v0.7.0-alpha.1`.
 
 ### Changed
 
+- Refined the v0.7 bootstrap finalization/admin handoff design baseline, including lifecycle semantics, irreversible alpha finalization, repository implications, roadmap sequencing, compatibility status, and design partner demo framing.
 - Updated the active documentation target from v0.6 to v0.7 across non-archived docs.
 - Reframed v0.7 as the protocol hardening alpha focused on typed admin batch activation, bootstrap finalization/admin handoff, lifecycle state, Proposal Action Builder design, and metadata/storage schemas.
 - Moved v0.6 references into archived-baseline language where they remain relevant.
