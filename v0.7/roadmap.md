@@ -123,6 +123,7 @@ The v0.7 baseline docs and typed admin batch activation stack are complete for t
 ```text
 bootstrap finalization design
   -> evm-contracts finalization implementation
+  -> local deploy/seed script surface simplification
   -> types/sdk/control-plane/app-core alignment
   -> demo-stack verification
 ```

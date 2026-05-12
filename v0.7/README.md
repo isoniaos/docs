@@ -79,7 +79,7 @@ Use the following as the current v0.7 alpha release set for planning unless newe
 
 ```text
 docs            v0.7.0-alpha.1
-evm-contracts   v0.7.0-alpha.1
+evm-contracts   v0.7.0-alpha.2
 types           v0.7.0-alpha.1
 sdk             v0.7.0-alpha.1
 control-plane   v0.7.0-alpha.1
@@ -98,11 +98,19 @@ Implementation should proceed in this order:
 ```text
 bootstrap finalization design
   -> evm-contracts implementation
+  -> local deploy/seed script surface simplification
   -> types/sdk/control-plane/app-core alignment
   -> demo-stack verification
 ```
 
 Do not claim finalization is implemented until the protocol, shared types, read models, UI, and demo stack are aligned.
+
+For local protocol work, use only the canonical contracts commands:
+
+```text
+corepack pnpm deploy:local
+corepack pnpm seed:local
+```
 
 ## Release process rule
 
