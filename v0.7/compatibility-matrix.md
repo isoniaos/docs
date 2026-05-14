@@ -30,7 +30,7 @@ demo-stack      v0.7.0-alpha.4 / 1c3e17341a3a925c4e0e9df4d45d68c3fa5d8dec
 | Organization lifecycle | Partial/implicit | Explicit lifecycle/finalization state supported where compatible | Created/Activating/Active/Finalized or equivalent. |
 | Control Plane finalization indexing | Not available | Implemented in current alpha stack where event/state is available | Must expose real state only. |
 | App Core finalization UX | Not available | Implemented where compatible | Includes finalization transaction UX and post-finalization restrictions. |
-| Proposal Action Builder | Backlog | Design only | Full production release is non-goal. |
+| Proposal Action Builder | Backlog | Design baseline | First MVP is one EVM write call per proposal action; full production release is non-goal. |
 | Metadata schemas | Informal | Defined | Storage service implementation is non-goal. |
 | Full IPFS upload service | Not available | Non-goal | Never expose Kubo write RPC publicly. |
 | Safe integration | Not available | Non-goal | Later. |

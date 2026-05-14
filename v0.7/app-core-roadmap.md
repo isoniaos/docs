@@ -93,9 +93,26 @@ Waiting/failure states may include subtle diagnostics links.
 
 ## Proposal Action Builder design surface
 
-v0.7 may include design docs or low-risk mock surfaces for Proposal Action Builder, but a full production implementation is not required.
+v0.7 defines the Proposal Action Builder design baseline. A full production implementation is not required.
 
-If any UI prototype is added, label it clearly as design/prototype and avoid unsupported claims.
+The future first MVP should support one EVM write call per proposal action. App Core should make the action understandable through progressive disclosure instead of making raw calldata the primary surface.
+
+Expected future surfaces:
+
+- action builder form;
+- ABI paste/upload area;
+- function selector;
+- parameter editor;
+- plain-language action preview;
+- warning panel;
+- advanced technical disclosure;
+- hash preview;
+- simulation status panel;
+- final review step before proposal submission.
+
+If any UI prototype is added in v0.7, label it clearly as design/prototype and avoid unsupported claims.
+
+Do not implement or claim support for multi-call bundles, explorer import, Safe integration, provider simulation integration, or hidden late-bound execution values in the v0.7 App Core baseline.
 
 ## Compatibility behavior
 

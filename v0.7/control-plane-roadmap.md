@@ -110,6 +110,24 @@ GET /v1/diagnostics
 
 The exact routes should match current Control Plane conventions.
 
+## Proposal Action Builder metadata direction
+
+Future Control Plane support for Action Builder should remain explanatory and read-model oriented.
+
+Control Plane may later:
+
+- store action metadata references;
+- validate action metadata schemas;
+- expose action summaries;
+- show mismatch warnings when indexed payloads and metadata diverge;
+- cache ABI labels where supported;
+- expose simulation status;
+- index on-chain action payload references where available.
+
+Control Plane must not become execution truth. For on-chain execution, contracts and on-chain target/value/calldata remain authoritative.
+
+The v0.7 baseline does not require Control Plane to implement production action storage, explorer import, simulation provider integration, Safe integration, or multi-call execution modeling.
+
 ## Compatibility
 
 Control Plane should handle older contracts gracefully.

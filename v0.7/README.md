@@ -52,10 +52,12 @@ v0.7 should focus on:
 3. bootstrap finalization / admin handoff implemented across the current alpha stack where compatible;
 4. Control Plane read-model support for lifecycle and finalization state where compatible;
 5. App Core support for protocol finalization and batch activation where compatible;
-6. Proposal Action Builder design;
+6. Proposal Action Builder design baseline;
 7. metadata and storage schemas;
 8. demo-stack alignment;
 9. design partner protocol preview.
+
+The Proposal Action Builder baseline is design-only in v0.7. The first MVP should support one EVM write call per proposal action, manual ABI paste/upload first, human-readable action intent review, calldata hash verification, optional simulation status, and rejection of hidden late-bound values. Multi-call bundles, explorer import implementation, provider simulation integration, Safe integration, and full builder implementation remain out of scope for v0.7.
 
 ## v0.7 non-goals
 

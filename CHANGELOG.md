@@ -4,6 +4,12 @@ All notable changes to the IsoniaOS documentation repository are documented here
 
 Git tags use SemVer with a leading `v`, for example `v0.7.0-alpha.1`.
 
+## Unreleased
+
+### Added
+
+- Define the v0.7 Proposal Action Builder design baseline, including MVP scope, ABI source priority, action intent model, hash semantics, simulation posture, and dynamic value policy.
+
 ## 0.7.0-alpha.2
 
 ### Changed

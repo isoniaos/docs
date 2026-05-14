@@ -139,30 +139,21 @@ Do not present the current alpha stack as production governance enforcement or a
 
 ### v0.7-alpha.7 - Proposal Action Builder design
 
-Design the Proposal Action Builder.
+Define the Proposal Action Builder design baseline.
 
 This milestone is design-first. Full production implementation is not required in v0.7.
 
-Design decisions that remain open:
+Baseline decisions:
 
-- single write call first or multi-call first;
-- manual ABI paste or explorer import first;
-- simulation required or optional;
-- unsupported dynamic/late-bound values rejected or constrained;
-- how builder-generated metadata is stored and verified.
-
-The design should cover:
-
-- ABI import from Etherscan-compatible explorers;
-- manual ABI paste/upload;
-- NatSpec extraction;
-- human-readable calldata;
-- human-readable `dataHash`;
-- multiple write calls;
-- read-call dependencies;
-- late-bound execution values;
-- simulation/dry-run;
-- chain-specific explorer adapters.
+- first MVP supports one EVM write call per proposal action;
+- manual ABI paste/upload is the first ABI source;
+- verified explorer import, Sourcify/verified metadata, and NatSpec enrichment are future adapters or enrichments;
+- default review is human-readable, with raw calldata and hash detail behind advanced disclosure;
+- action intent metadata explains the payload but does not replace on-chain target/value/calldata as execution truth;
+- `calldataHash`, metadata hash/CID, and action intent are separate concepts;
+- simulation is recommended but optional;
+- hidden late-bound values are rejected in the first MVP;
+- multi-call bundles remain future work.
 
 ### v0.7-alpha.8 - Metadata/storage schemas
 

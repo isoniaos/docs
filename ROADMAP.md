@@ -152,9 +152,11 @@ v0.7 should establish:
 3. explicit organization lifecycle state;
 4. Control Plane read models for new protocol states;
 5. App Core support for finalization and batch activation;
-6. Proposal Action Builder design;
+6. Proposal Action Builder design baseline;
 7. metadata and storage schema direction;
 8. design partner protocol preview.
+
+The v0.7 Proposal Action Builder baseline is design-only. It recommends a first MVP with one EVM write call per proposal action, manual ABI paste/upload first, human-readable action intent review, clear calldata hash versus metadata reference semantics, optional simulation status, no hidden late-bound values, and multi-call bundles as future work.
 
 ## Activation path
 

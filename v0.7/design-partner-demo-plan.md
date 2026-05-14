@@ -83,9 +83,18 @@ Avoid fake health scores.
 
 ### 5. Proposal Action Builder direction
 
-Show design direction only unless implementation exists.
+Show design direction only.
 
-Explain that the goal is to make executable governance actions understandable before submission.
+Explain that the v0.7 baseline is a design milestone, not production support. The goal is to make executable governance actions understandable before submission.
+
+Use the baseline decisions as the preview frame:
+
+- first MVP supports one EVM write call per proposal action;
+- manual ABI paste/upload comes first;
+- explorer import and Sourcify/verified metadata are future adapters;
+- action intent metadata explains the payload but does not replace on-chain execution truth;
+- simulation is recommended but optional;
+- hidden late-bound values and multi-call bundles are future design areas.
 
 ### 6. Metadata/storage direction
 
@@ -154,11 +163,15 @@ Show Proposal Action Builder design.
 
 Explain future action authoring:
 
-- ABI import;
+- single EVM write call first;
+- manual ABI paste/upload;
+- future explorer and verified metadata adapters;
 - human-readable calldata;
+- canonical action intent metadata;
+- calldata hash and metadata reference distinction;
 - action metadata;
-- simulation/dry-run;
-- chain-specific adapters.
+- optional simulation/dry-run status;
+- no hidden late-bound execution values in the first MVP.
 
 ## Feedback questions
 

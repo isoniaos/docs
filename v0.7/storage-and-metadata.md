@@ -100,22 +100,30 @@ Potential fields:
 {
   "schema": "isonia.action.metadata.v1",
   "summary": "Transfer 25,000 USDC to Core Contributors multisig.",
-  "chainId": 1,
-  "target": "0x0000000000000000000000000000000000000000",
-  "functionSignature": "transfer(address,uint256)",
-  "humanReadableParams": [
-    {
-      "name": "recipient",
-      "value": "0x0000000000000000000000000000000000000000",
-      "display": "Core Contributors multisig"
-    },
-    {
-      "name": "amount",
-      "value": "25000000000",
-      "display": "25,000 USDC"
-    }
-  ],
-  "calldataHash": "0x...",
+  "actionIntent": {
+    "schema": "isonia.action.intent.v1",
+    "chainId": 1,
+    "target": "0x0000000000000000000000000000000000000000",
+    "value": "0",
+    "functionSignature": "transfer(address,uint256)",
+    "args": [
+      {
+        "name": "recipient",
+        "type": "address",
+        "value": "0x0000000000000000000000000000000000000000",
+        "display": "Core Contributors multisig"
+      },
+      {
+        "name": "amount",
+        "type": "uint256",
+        "value": "25000000000",
+        "display": "25,000 USDC"
+      }
+    ],
+    "calldata": "0x...",
+    "calldataHash": "0x...",
+    "metadataCid": null
+  },
   "simulation": {
     "status": "not_available",
     "provider": null,
@@ -129,7 +137,10 @@ Guidelines:
 - metadata should help users understand executable intent;
 - metadata must not be treated as execution truth;
 - on-chain target/value/calldata remain authoritative for execution;
+- `calldataHash` identifies the encoded calldata, not the explanatory metadata;
+- `metadataCid` or `actionMetadataHash` identifies explanatory metadata, not the executable payload;
 - mismatch warnings should be displayed where possible.
+- hidden late-bound execution values should be rejected in the first MVP.
 
 ## Upload intent model
 
