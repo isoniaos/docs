@@ -6,6 +6,14 @@ Move from a demo-ready UX/product foundation to protocol hardening and real gove
 
 v0.7 should establish the governance lifecycle, reliable activation path, finalization/admin handoff model, and the first concrete design for safer proposal execution authoring.
 
+Current alpha status:
+
+- typed admin batch activation is the completed activation baseline;
+- bootstrap finalization is implemented across the current alpha stack where deployed contracts support it;
+- shared types, SDK, Control Plane, App Core, and demo stack have compatible downstream alignment;
+- serial activation remains the reliable fallback;
+- EIP-5792 remains optional diagnostics/prototype behavior, not the reliable path.
+
 ## Product direction
 
 v0.7 should preserve the v0.6 UX foundation and avoid turning the app into an engineering console.
@@ -55,15 +63,15 @@ Possible function families:
 - `batchSetPolicyRules`;
 - typed bootstrap activation bundle if justified.
 
-### v0.7-alpha.3 - Bootstrap finalization / admin handoff design
+### v0.7-alpha.3 - Bootstrap finalization / admin handoff model
 
-Refine the organization lifecycle and finalization model:
+Refined the organization lifecycle and finalization model:
 
 ```text
 Created -> Activating -> Active -> Finalized
 ```
 
-Clarify:
+Clarified:
 
 - who can finalize;
 - whether finalization is reversible;
@@ -72,7 +80,7 @@ Clarify:
 - whether emergency recovery exists;
 - how scoped administrative authority works after handoff.
 
-Preferred v0.7 alpha path:
+Selected v0.7 alpha path:
 
 - explicit irreversible finalization by bootstrap admin after activation review;
 - bootstrap admin functions for bodies, roles, mandates, and policy rules blocked after finalization;
@@ -81,7 +89,7 @@ Preferred v0.7 alpha path:
 
 ### v0.7-alpha.4 - EVM contracts implementation
 
-Implement bootstrap finalization in `evm-contracts`.
+Implemented bootstrap finalization in `evm-contracts`.
 
 Requirements:
 
@@ -93,7 +101,7 @@ Requirements:
 
 ### v0.7-alpha.5 - Control Plane indexing/read models
 
-Index and expose new protocol state.
+Index and expose new protocol state where deployed contracts support it.
 
 Expected indexing/read-model updates:
 
@@ -105,7 +113,7 @@ Expected indexing/read-model updates:
 
 ### v0.7-alpha.6 - App Core support
 
-Update UI flows for the new protocol state.
+Update UI flows for the new protocol state where deployed contracts and read models support it.
 
 Expected UX updates:
 
@@ -118,23 +126,30 @@ Expected UX updates:
 
 ## Current sequence
 
-The v0.7 baseline docs and typed admin batch activation stack are complete for the current alpha line. The next sequence is:
+The current sequence is:
 
 ```text
-bootstrap finalization design
-  -> evm-contracts finalization implementation
-  -> local deploy/seed script surface simplification
-  -> types/sdk/control-plane/app-core alignment
-  -> demo-stack verification
+typed batch activation baseline completed
+  -> bootstrap finalization implemented across the current alpha stack
+  -> downstream alignment exists across types/sdk/control-plane/app-core
+  -> remaining work: docs alignment, clean demo-stack verification, Proposal Action Builder design, metadata/storage schemas, and design partner preview
 ```
 
-Do not present finalization/admin handoff as implemented until the downstream repositories are updated and released.
+Do not present the current alpha stack as production governance enforcement or audit-ready infrastructure.
 
 ### v0.7-alpha.7 - Proposal Action Builder design
 
 Design the Proposal Action Builder.
 
 This milestone is design-first. Full production implementation is not required in v0.7.
+
+Design decisions that remain open:
+
+- single write call first or multi-call first;
+- manual ABI paste or explorer import first;
+- simulation required or optional;
+- unsupported dynamic/late-bound values rejected or constrained;
+- how builder-generated metadata is stored and verified.
 
 The design should cover:
 
@@ -168,6 +183,14 @@ Expected outputs:
 Prepare a small design partner preview showing the v0.7 protocol improvements.
 
 The goal is not mass-market launch. The goal is focused feedback from a small group of technical and governance-aware users.
+
+Remaining work before this preview:
+
+- finish this v0.7 docs alignment;
+- run clean demo-stack verification against the compatible alpha release set;
+- keep Proposal Action Builder as a design milestone;
+- keep metadata/storage as schema and architecture direction;
+- prepare selected design partner preview materials.
 
 ## Non-goals
 

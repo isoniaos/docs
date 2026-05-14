@@ -170,9 +170,9 @@ See [`storage-and-metadata.md`](./storage-and-metadata.md) for schema direction.
 
 ## Open questions
 
-- Should the first implementation support only one write call?
+- Should the first implementation support a single write call first or multi-call first?
+- Should manual ABI paste or explorer import come first?
 - Which explorers should be supported first?
-- Is manual ABI paste enough for v0.8 MVP?
 - Should simulation be required before submission or optional?
-- Should unsupported dynamic values be rejected initially?
+- Should unsupported dynamic or late-bound values be rejected or constrained initially?
 - How should builder-generated metadata be stored and verified?

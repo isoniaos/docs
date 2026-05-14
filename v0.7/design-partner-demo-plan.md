@@ -14,25 +14,30 @@ Show that IsoniaOS can help an organization move through:
 create organization
 activate governance structure
 review authority model
-preview bootstrap finalization
+finalize bootstrap where compatible
 discuss clearer governance constraints
 ```
 
-For the current v0.7 alpha line, separate demo-ready behavior from upcoming protocol-hardening preview.
+For the current v0.7 alpha line, separate demo-ready behavior from production readiness claims.
 
 Demo-ready behavior:
 
 - typed contract batch activation;
 - serial activation fallback;
 - capabilities endpoint;
-- capability-aware App Core setup.
+- capability-aware App Core setup;
+- lifecycle/finalization read model where compatible;
+- finalization flow where deployed contracts support it;
+- App Core finalization UX where compatible.
 
-Upcoming protocol-hardening preview:
+Still out of scope for the preview:
 
-- finalization/admin handoff design;
-- lifecycle/finalization state direction;
-- post-finalization admin restriction model;
-- not yet production governance enforcement.
+- audit-ready production governance enforcement for critical treasuries;
+- Safe integration;
+- multi-chain execution;
+- token voting;
+- delegation;
+- full Proposal Action Builder production release.
 
 ## What to demonstrate
 
@@ -56,13 +61,13 @@ Do not position EIP-5792 as the default reliable path.
 
 ### 3. Bootstrap finalization
 
-Preview why finalization matters:
+Show why finalization matters where the deployed stack supports it:
 
 - before finalization, bootstrap admin can complete setup;
 - after finalization, unilateral admin control is restricted;
 - future changes should flow through governance routes or scoped authority.
 
-Be explicit that finalization/admin handoff is the next protocol-hardening design area and is not yet production governance enforcement.
+Be explicit that current finalization support is alpha protocol hardening, not audit-ready production governance enforcement for critical treasuries.
 
 ### 4. Governance Structure
 
@@ -139,9 +144,9 @@ Explain authority relationships and policy routes in plain language.
 
 ### Step 5 - Finalize bootstrap
 
-Show the designed finalization flow.
+Show the finalization flow where the deployed contracts support it.
 
-Explain that this is where the bootstrap admin would hand off unilateral authority after protocol implementation. Do not claim production enforcement until contracts, types, Control Plane, App Core, and demo stack all support the flow.
+Explain that this is where the bootstrap admin hands off unilateral authority in compatible current alpha deployments. Do not claim production enforcement, audit readiness, Safe integration, multi-chain execution, token voting, delegation, or full Proposal Action Builder readiness.
 
 ### Step 6 - Discuss next execution layer
 

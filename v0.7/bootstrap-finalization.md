@@ -6,7 +6,7 @@ Bootstrap finalization defines the moment when an IsoniaOS organization moves fr
 
 The v0.6 admin-driven bootstrap model is useful for demos and initial setup. It is not a permanent governance model.
 
-This document is the v0.7 alpha design baseline. Exact Solidity names and storage layout can evolve during implementation, but downstream repositories need a stable conceptual model for lifecycle, finalization, and post-bootstrap authority.
+This document began as the v0.7 alpha design baseline. In the current v0.7 alpha stack, the recommended finalization model is implemented where deployed contracts support it, and downstream repositories expose compatible lifecycle/finalization status. Exact Solidity, DTO, and read-model names must follow the released repositories, but the conceptual model remains stable: lifecycle, finalization, and post-bootstrap authority must be explicit.
 
 ## Problem
 
@@ -23,13 +23,13 @@ This authority is acceptable before activation and finalization because the orga
 
 It is not acceptable as permanent governance authority. If bootstrap admin power remains available forever, the admin can unilaterally change roles, mandates, bodies, and policy rules outside governance. The organization would appear governed by its configured structure, but the bootstrap admin would still be able to rewrite that structure.
 
-## Proposed lifecycle
+## Lifecycle model
 
 ```text
 Created -> Activating -> Active -> Finalized
 ```
 
-The exact enum names may change during Solidity implementation. The product and protocol model should remain stable: an organization is created, configured, activated, reviewed, and then explicitly finalized.
+The exact enum names may vary by released contract and shared DTO version. The product and protocol model should remain stable: an organization is created, configured, activated, reviewed, and then explicitly finalized.
 
 ### Created
 
@@ -103,7 +103,7 @@ Protocol meaning:
 
 Finalization should be a first-class protocol transition, not a UI-only flag.
 
-Proposed v0.7 alpha semantics:
+Current v0.7 alpha semantics where compatible:
 
 - finalization is explicit;
 - finalization is irreversible by default;
@@ -204,11 +204,11 @@ Risks:
 - requires careful governance design, events, and user-facing explanation;
 - should not be smuggled into v0.7 alpha as owner power.
 
-## Recommended v0.7 alpha path
+## Current v0.7 alpha path
 
-Implement explicit irreversible finalization by the bootstrap admin after activation review.
+The current v0.7 alpha path is explicit irreversible finalization by the bootstrap admin after activation review, where deployed contracts support finalization.
 
-Recommended behavior:
+Expected behavior:
 
 - the bootstrap admin can finalize an active organization;
 - finalization emits an event;
@@ -258,7 +258,7 @@ It should not silently recreate global admin power.
 
 ## Event requirements
 
-The protocol should emit an event when finalization happens.
+The protocol must emit an event when finalization happens.
 
 Possible shape:
 
@@ -307,7 +307,7 @@ Avoid:
 
 ### EVM contracts
 
-Expected implementation implications:
+Current alpha implementation baseline where compatible:
 
 - add lifecycle enum/state or equivalent lifecycle representation;
 - add explicit finalization transition;
@@ -319,7 +319,7 @@ Expected implementation implications:
 
 ### Types
 
-Expected implementation implications:
+Current alpha alignment baseline where compatible:
 
 - add shared lifecycle enum/type;
 - add finalization status DTO;
@@ -328,7 +328,7 @@ Expected implementation implications:
 
 ### SDK
 
-Expected implementation implications:
+Current alpha alignment baseline where compatible:
 
 - expose finalization support detection or planning helpers if needed;
 - expose typed contract helpers only after ABI support exists;
@@ -336,7 +336,7 @@ Expected implementation implications:
 
 ### Control Plane
 
-Expected implementation implications:
+Current alpha alignment baseline where compatible:
 
 - index the finalization event;
 - expose lifecycle and finalization status in organization diagnostics/read models;
@@ -345,7 +345,7 @@ Expected implementation implications:
 
 ### App Core
 
-Expected implementation implications:
+Current alpha alignment baseline where compatible:
 
 - add finalization step to the activation wizard or post-activation review flow;
 - warn calmly when an organization is active but not finalized;
@@ -355,11 +355,11 @@ Expected implementation implications:
 
 ### Demo Stack
 
-Expected implementation implications:
+Current alpha alignment baseline where compatible:
 
-- align env/docs after the implementation exists;
+- align env/docs with the compatible release set;
 - verify the finalization flow in the local demo;
-- do not imply production governance enforcement before contracts and read models support it.
+- do not imply production governance enforcement or audit readiness.
 
 ## Non-goals
 

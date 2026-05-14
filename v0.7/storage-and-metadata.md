@@ -33,6 +33,8 @@ v0.7 should define schemas for:
 - proposal metadata;
 - action metadata.
 
+It should also define the upload intent model, CID registry model, gateway policy, and privacy/encryption guidance. It should not ship or imply a production storage service.
+
 ## Organization metadata
 
 Potential fields:

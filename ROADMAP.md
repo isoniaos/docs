@@ -119,6 +119,13 @@ Move from a demo-ready UX/product foundation to protocol hardening and real gove
 
 v0.7 should clarify how an organization moves from bootstrap setup into governed operation, without turning App Core into an engineering console.
 
+Current alpha status:
+
+- typed admin batch activation is the completed activation baseline;
+- bootstrap finalization is implemented across the current alpha stack where compatible;
+- shared types, SDK, Control Plane, App Core, and demo stack are aligned around compatible lifecycle/finalization support;
+- remaining v0.7 work is docs alignment, clean demo-stack verification, Proposal Action Builder design, metadata/storage schemas, and selected design partner preview preparation.
+
 ## Source of truth
 
 The active v0.7 documentation pack lives under:
@@ -182,6 +189,8 @@ Created -> Activating -> Active -> Finalized
 ```
 
 After finalization, bootstrap admin should no longer have unilateral authority over governance-critical configuration unless that authority is explicitly scoped and represented in the governance model.
+
+In the current alpha stack, this is supported where deployed contracts expose the finalization state/event. Older deployments must be represented as `unsupported` or `unknown`, not silently treated as finalized.
 
 ## v0.7 non-goals
 

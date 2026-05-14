@@ -4,11 +4,18 @@ All notable changes to the IsoniaOS documentation repository are documented here
 
 Git tags use SemVer with a leading `v`, for example `v0.7.0-alpha.1`.
 
-## Unreleased
+## 0.7.0-alpha.2
 
 ### Changed
 
-- Documented the simplified v0.7 local contracts command surface using only `deploy:local` and `seed:local`, and aligned the current v0.7 docs set with `evm-contracts` v0.7.0-alpha.2.
+- Aligned the v0.7 documentation pack with the current alpha stack: `evm-contracts` v0.7.0-alpha.6, `types` v0.7.0-alpha.2, `sdk` v0.7.0-alpha.2, `control-plane` v0.7.0-alpha.2, `app-core` v0.7.0-alpha.4, and `demo-stack` v0.7.0-alpha.4.
+- Updated finalization, lifecycle, design partner preview, Proposal Action Builder, and storage/metadata wording to reflect current alpha support while preserving v0.7 production non-goals.
+- Documented the simplified v0.7 local contracts command surface using only `deploy:local` and `seed:local`.
+
+## 0.7.0-alpha.1
+
+### Changed
+
 - Refined the v0.7 bootstrap finalization/admin handoff design baseline, including lifecycle semantics, irreversible alpha finalization, repository implications, roadmap sequencing, compatibility status, and design partner demo framing.
 - Updated the active documentation target from v0.6 to v0.7 across non-archived docs.
 - Reframed v0.7 as the protocol hardening alpha focused on typed admin batch activation, bootstrap finalization/admin handoff, lifecycle state, Proposal Action Builder design, and metadata/storage schemas.

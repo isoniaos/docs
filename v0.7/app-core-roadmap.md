@@ -38,7 +38,7 @@ Recommended behavior:
 
 ## Finalization UX
 
-After activation, App Core should guide the user toward finalization.
+After activation, App Core should guide the user toward finalization where deployed contracts and read models support it.
 
 The finalization step should explain:
 
@@ -49,7 +49,7 @@ The finalization step should explain:
 
 Avoid fear-based language. Use clear accountability language.
 
-Until protocol finalization is implemented and indexed, App Core should treat this as planned protocol-hardening behavior rather than completed governance enforcement.
+For older contracts or incomplete read-model data, App Core should show `unsupported` or `not available` instead of faking finalized state. For compatible current alpha deployments, App Core may show the finalization transaction UX and post-finalization restrictions.
 
 ## Post-finalization restrictions
 
@@ -124,15 +124,15 @@ Maintain current coding standards:
 
 ## Sequencing
 
-App Core finalization UI should follow protocol, shared type, SDK, and Control Plane support.
+App Core finalization UI follows protocol, shared type, SDK, and Control Plane support. The current alpha stack is aligned where compatible.
 
-Expected order:
+Current order:
 
 ```text
-evm-contracts finalization implementation
-  -> types/sdk support
-  -> Control Plane lifecycle/finalization read model
-  -> App Core finalization step and post-finalization restrictions
+typed batch activation baseline completed
+  -> bootstrap finalization implemented across the current alpha stack
+  -> downstream alignment exists across types/sdk/control-plane/app-core
+  -> remaining work: docs alignment, clean demo-stack verification, Proposal Action Builder design, metadata/storage schemas, and design partner preview
 ```
 
 ## Open questions

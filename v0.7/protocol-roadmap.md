@@ -4,7 +4,14 @@
 
 The purpose of v0.7 protocol work is to move IsoniaOS beyond bootstrap/demo authority toward a clearer governance lifecycle and safer execution foundation.
 
-v0.6 proved that an organization can be created, activated, visualized, and operated through a demo-ready UX. v0.7 should define how that organization becomes less dependent on unilateral bootstrap admin power.
+v0.6 proved that an organization can be created, activated, visualized, and operated through a demo-ready UX. v0.7 defines how that organization becomes less dependent on unilateral bootstrap admin power and implements the first alpha version of that handoff where compatible.
+
+Current alpha status:
+
+- typed contract batch activation is implemented as the v0.7 activation baseline;
+- bootstrap finalization is implemented across the current alpha stack where deployed contracts support it;
+- downstream alignment exists across shared types, SDK, Control Plane, App Core, and demo stack where compatible;
+- older contracts may still expose finalization as `unsupported` or `unknown`.
 
 ## Current protocol concern
 
@@ -50,7 +57,7 @@ Core areas to protect after finalization:
 - policy rules;
 - proposal route rules.
 
-Recommended v0.7 alpha direction:
+Implemented v0.7 alpha direction where compatible:
 
 - explicit irreversible finalization by bootstrap admin after activation review;
 - indexable finalization event;
@@ -130,8 +137,8 @@ EIP-5792 should remain behind a feature flag or diagnostics surface.
 v0.7 protocol work should produce:
 
 - completed typed batch activation baseline;
-- bootstrap finalization/admin handoff design;
-- lifecycle event/state design;
+- bootstrap finalization/admin handoff model;
+- lifecycle event/state support;
 - finalization implementation in `evm-contracts`;
 - tests;
 - ABI update notes;
@@ -142,10 +149,10 @@ v0.7 protocol work should produce:
 The current sequence is:
 
 ```text
-completed baseline docs and typed admin batch activation
-  -> bootstrap finalization design
-  -> evm-contracts implementation
-  -> types/sdk/control-plane/app-core/demo-stack alignment
+typed batch activation baseline completed
+  -> bootstrap finalization implemented across the current alpha stack
+  -> downstream alignment exists across types/sdk/control-plane/app-core
+  -> remaining work: docs alignment, clean demo-stack verification, Proposal Action Builder design, metadata/storage schemas, and design partner preview
 ```
 
-Do not claim finalization support for `evm-contracts@v0.7.0-alpha.1`; this document defines the next design baseline.
+Do not claim finalization support for older pre-finalization contract deployments. Do not claim production governance enforcement or production audit readiness for the current alpha stack.

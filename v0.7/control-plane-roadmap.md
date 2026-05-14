@@ -14,7 +14,9 @@ v0.7 should extend this without turning normal product pages into debug consoles
 
 ## Current v0.7 status
 
-Typed admin batch activation is the current v0.7 alpha baseline across the stack. Bootstrap finalization/admin handoff is still design-stage and must not be exposed as implemented until the protocol emits/indexes real lifecycle and finalization state.
+Typed admin batch activation is the current v0.7 alpha baseline across the stack. Bootstrap finalization/admin handoff is implemented in the current alpha stack where deployed contracts expose real lifecycle/finalization event or state.
+
+Control Plane must still expose `unsupported` or `unknown` for older contracts and must not infer or fake finalized state from App Core wizard completion.
 
 ## Required v0.7 read-model additions
 
@@ -131,15 +133,15 @@ Recommended checks:
 
 ## Sequencing
 
-Control Plane implementation follows the `evm-contracts` and `types` finalization work.
+Control Plane finalization support follows the `evm-contracts` and `types` finalization work and is aligned in the current compatible alpha stack.
 
-Expected order:
+Current order:
 
 ```text
-evm-contracts finalization event/state
-  -> shared lifecycle/finalization types
-  -> Control Plane indexing/read model
-  -> App Core and demo-stack consumption
+typed batch activation baseline completed
+  -> bootstrap finalization implemented across the current alpha stack
+  -> downstream alignment exists across types/sdk/control-plane/app-core
+  -> remaining work: docs alignment, clean demo-stack verification, Proposal Action Builder design, metadata/storage schemas, and design partner preview
 ```
 
 ## Open questions
