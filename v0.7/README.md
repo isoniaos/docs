@@ -53,11 +53,13 @@ v0.7 should focus on:
 4. Control Plane read-model support for lifecycle and finalization state where compatible;
 5. App Core support for protocol finalization and batch activation where compatible;
 6. Proposal Action Builder design baseline;
-7. metadata and storage schemas;
+7. metadata/storage schema baseline;
 8. demo-stack alignment;
 9. design partner protocol preview.
 
 The Proposal Action Builder baseline is design-only in v0.7. The first MVP should support one EVM write call per proposal action, manual ABI paste/upload first, human-readable action intent review, calldata hash verification, optional simulation status, and rejection of hidden late-bound values. Multi-call bundles, explorer import implementation, provider simulation integration, Safe integration, and full builder implementation remain out of scope for v0.7.
+
+The storage and metadata baseline is also design-only in v0.7. It defines metadata object taxonomy, schema versioning, upload intents, CID registry entries, managed gateway policy, privacy/encryption guidance, and Control Plane/App Core responsibility boundaries. It does not ship or imply a production storage service, upload API, IPFS pinning implementation, managed gateway implementation, or encryption/key management implementation.
 
 ## v0.7 non-goals
 
@@ -66,6 +68,9 @@ The following should not be included in v0.7 unless explicitly reprioritized:
 - production SaaS billing;
 - custom domains;
 - full IPFS upload service;
+- production storage service;
+- managed gateway implementation;
+- encryption/key management implementation;
 - Safe integration;
 - multi-chain execution;
 - token-weighted voting;
@@ -101,7 +106,7 @@ Current sequence:
 typed batch activation baseline completed
   -> bootstrap finalization implemented across the current alpha stack
   -> downstream alignment exists across types/sdk/control-plane/app-core
-  -> remaining work: docs alignment, clean demo-stack verification, Proposal Action Builder design, metadata/storage schemas, and design partner preview
+  -> remaining work: docs alignment, clean demo-stack verification, Proposal Action Builder design, metadata/storage schema baseline, and design partner preview
 ```
 
 Do not claim production governance enforcement, production audit readiness, or full Proposal Action Builder readiness from the current alpha stack.

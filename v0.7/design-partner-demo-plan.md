@@ -38,6 +38,7 @@ Still out of scope for the preview:
 - token voting;
 - delegation;
 - full Proposal Action Builder production release.
+- production storage service or public upload service.
 
 ## What to demonstrate
 
@@ -100,15 +101,18 @@ Use the baseline decisions as the preview frame:
 
 Explain that IsoniaOS will not expose public IPFS write RPC.
 
-Show the future posture:
+Show the schema and trust-boundary posture:
 
+- organization, proposal, action, action intent, and attachment metadata schemas;
 - upload intents;
-- quotas;
+- purpose and size limits;
 - schema validation;
 - CID registry;
-- gateway policy;
-- abuse/takedown workflow;
+- managed gateway policy;
+- abuse/takedown status;
 - encryption guidance for sensitive data.
+
+Do not claim upload service availability, IPFS pinning availability, managed gateway availability, malware scanning, or production encryption/key management unless those capabilities are implemented in a later task.
 
 ## What not to demonstrate
 
@@ -123,6 +127,11 @@ Do not present the following as v0.7-ready unless explicitly implemented later:
 - AI arbitration;
 - production audit readiness;
 - full Proposal Action Builder release;
+- production storage service;
+- upload API;
+- IPFS pinning service;
+- managed gateway service;
+- encryption/key management;
 - tenant provisioning.
 
 ## Suggested demo script

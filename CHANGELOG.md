@@ -4,6 +4,12 @@ All notable changes to the IsoniaOS documentation repository are documented here
 
 Git tags use SemVer with a leading `v`, for example `v0.7.0-alpha.1`.
 
+## 0.7.0-alpha.4
+
+### Added
+
+- Define the v0.7 storage and metadata schema baseline, including metadata object taxonomy, schema versioning, upload intents, CID registry, gateway policy, and privacy guidance.
+
 ## 0.7.0-alpha.3
 
 ### Added

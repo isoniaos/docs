@@ -152,7 +152,7 @@ The current sequence is:
 typed batch activation baseline completed
   -> bootstrap finalization implemented across the current alpha stack
   -> downstream alignment exists across types/sdk/control-plane/app-core
-  -> remaining work: docs alignment, clean demo-stack verification, Proposal Action Builder design, metadata/storage schemas, and design partner preview
+  -> remaining work: docs alignment, clean demo-stack verification, Proposal Action Builder design, metadata/storage schema baseline, and design partner preview
 ```
 
 Do not claim finalization support for older pre-finalization contract deployments. Do not claim production governance enforcement or production audit readiness for the current alpha stack.

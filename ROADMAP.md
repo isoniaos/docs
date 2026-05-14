@@ -124,7 +124,7 @@ Current alpha status:
 - typed admin batch activation is the completed activation baseline;
 - bootstrap finalization is implemented across the current alpha stack where compatible;
 - shared types, SDK, Control Plane, App Core, and demo stack are aligned around compatible lifecycle/finalization support;
-- remaining v0.7 work is docs alignment, clean demo-stack verification, Proposal Action Builder design, metadata/storage schemas, and selected design partner preview preparation.
+- remaining v0.7 work is docs alignment, clean demo-stack verification, Proposal Action Builder design, metadata/storage schema baseline, and selected design partner preview preparation.
 
 ## Source of truth
 
@@ -153,10 +153,12 @@ v0.7 should establish:
 4. Control Plane read models for new protocol states;
 5. App Core support for finalization and batch activation;
 6. Proposal Action Builder design baseline;
-7. metadata and storage schema direction;
+7. metadata/storage schema baseline;
 8. design partner protocol preview.
 
 The v0.7 Proposal Action Builder baseline is design-only. It recommends a first MVP with one EVM write call per proposal action, manual ABI paste/upload first, human-readable action intent review, clear calldata hash versus metadata reference semantics, optional simulation status, no hidden late-bound values, and multi-call bundles as future work.
+
+The v0.7 storage and metadata baseline is design-only. It defines metadata object taxonomy, schema versioning, upload intents, CID registry entries, managed gateway policy, privacy/encryption guidance, and Control Plane/App Core responsibility boundaries. It does not ship a production storage service, upload API, IPFS pinning implementation, managed gateway implementation, or encryption/key management implementation.
 
 ## Activation path
 
@@ -201,6 +203,9 @@ Do not include unless explicitly reprioritized:
 - production SaaS billing;
 - custom domains;
 - full IPFS upload service;
+- production storage service;
+- managed gateway implementation;
+- encryption/key management implementation;
 - Safe integration;
 - multi-chain execution;
 - token-weighted voting;

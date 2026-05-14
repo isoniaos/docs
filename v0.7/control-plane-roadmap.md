@@ -128,6 +128,24 @@ Control Plane must not become execution truth. For on-chain execution, contracts
 
 The v0.7 baseline does not require Control Plane to implement production action storage, explorer import, simulation provider integration, Safe integration, or multi-call execution modeling.
 
+## Storage and metadata schema direction
+
+v0.7 defines the metadata/storage schema baseline. A production storage service is not required.
+
+Future Control Plane support may:
+
+- validate metadata schemas;
+- store CID registry entries;
+- expose metadata status;
+- expose metadata/execution mismatch warnings;
+- enforce upload intent constraints;
+- apply gateway and takedown policy for an IsoniaOS managed gateway;
+- expose unsupported, stale, unavailable, disabled, or removed metadata states.
+
+Control Plane must never treat organization, proposal, action, or attachment metadata as execution truth. On-chain protocol state and executable payloads remain authoritative.
+
+Do not claim support for a production upload service, IPFS pinning service, managed gateway service, malware scanning, or production encryption/key management in the v0.7 Control Plane baseline.
+
 ## Compatibility
 
 Control Plane should handle older contracts gracefully.
@@ -159,7 +177,7 @@ Current order:
 typed batch activation baseline completed
   -> bootstrap finalization implemented across the current alpha stack
   -> downstream alignment exists across types/sdk/control-plane/app-core
-  -> remaining work: docs alignment, clean demo-stack verification, Proposal Action Builder design, metadata/storage schemas, and design partner preview
+  -> remaining work: docs alignment, clean demo-stack verification, Proposal Action Builder design, metadata/storage schema baseline, and design partner preview
 ```
 
 ## Open questions

@@ -33,7 +33,7 @@ Expected outputs:
 - bootstrap finalization design;
 - admin batch activation design;
 - Proposal Action Builder design;
-- storage and metadata schema direction;
+- storage and metadata schema baseline;
 - Control Plane roadmap;
 - App Core roadmap;
 - compatibility matrix;
@@ -132,7 +132,7 @@ The current sequence is:
 typed batch activation baseline completed
   -> bootstrap finalization implemented across the current alpha stack
   -> downstream alignment exists across types/sdk/control-plane/app-core
-  -> remaining work: docs alignment, clean demo-stack verification, Proposal Action Builder design, metadata/storage schemas, and design partner preview
+  -> remaining work: docs alignment, clean demo-stack verification, Proposal Action Builder design, metadata/storage schema baseline, and design partner preview
 ```
 
 Do not present the current alpha stack as production governance enforcement or audit-ready infrastructure.
@@ -155,15 +155,20 @@ Baseline decisions:
 - hidden late-bound values are rejected in the first MVP;
 - multi-call bundles remain future work.
 
-### v0.7-alpha.8 - Metadata/storage schemas
+### v0.7-alpha.8 - Metadata/storage schema baseline
 
-Define metadata and storage models.
+Define metadata and storage schemas and trust boundaries.
+
+This milestone is design-first. It does not require or imply a production storage service, upload API, IPFS pinning implementation, managed gateway implementation, or encryption/key management implementation.
 
 Expected outputs:
 
 - organization metadata schema;
 - proposal metadata schema;
 - action metadata schema;
+- action intent schema;
+- attachment metadata schema;
+- schema versioning rules;
 - upload intent model;
 - CID registry model;
 - gateway policy;
@@ -180,7 +185,7 @@ Remaining work before this preview:
 - finish this v0.7 docs alignment;
 - run clean demo-stack verification against the compatible alpha release set;
 - keep Proposal Action Builder as a design milestone;
-- keep metadata/storage as schema and architecture direction;
+- keep metadata/storage as schema and architecture direction, not production storage service availability;
 - prepare selected design partner preview materials.
 
 ## Non-goals

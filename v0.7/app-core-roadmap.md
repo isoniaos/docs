@@ -114,6 +114,21 @@ If any UI prototype is added in v0.7, label it clearly as design/prototype and a
 
 Do not implement or claim support for multi-call bundles, explorer import, Safe integration, provider simulation integration, or hidden late-bound execution values in the v0.7 App Core baseline.
 
+## Storage and metadata design surface
+
+v0.7 defines the metadata/storage schema baseline. A production storage service is not required.
+
+Future App Core support should:
+
+- render sanitized organization, proposal, action, action intent, and attachment metadata;
+- show missing, unsupported, stale, disabled, and unavailable metadata states;
+- show public/private warnings before any future upload flow;
+- show metadata/execution mismatch warnings;
+- avoid fake labels;
+- avoid hiding unknowns.
+
+Do not claim support for a production upload service, IPFS pinning service, managed gateway service, malware scanning, or production encryption/key management in the v0.7 App Core baseline.
+
 ## Compatibility behavior
 
 For older contracts or unsupported Control Plane data:
@@ -149,7 +164,7 @@ Current order:
 typed batch activation baseline completed
   -> bootstrap finalization implemented across the current alpha stack
   -> downstream alignment exists across types/sdk/control-plane/app-core
-  -> remaining work: docs alignment, clean demo-stack verification, Proposal Action Builder design, metadata/storage schemas, and design partner preview
+  -> remaining work: docs alignment, clean demo-stack verification, Proposal Action Builder design, metadata/storage schema baseline, and design partner preview
 ```
 
 ## Open questions
