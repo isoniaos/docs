@@ -6,6 +6,8 @@ The v0.7 design partner preview should show that IsoniaOS is moving from a demo-
 
 The audience should be small and selected: DAO operators, protocol founders, governance contributors, ecosystem partners, and technical design partners.
 
+Use [`design-partner-preview-pack.md`](./design-partner-preview-pack.md) as the concrete call artifact for selected partner walkthroughs. This document remains the longer planning backdrop for the v0.7 preview.
+
 ## Demo goal
 
 Show that IsoniaOS can help an organization move through:

@@ -56,6 +56,7 @@ IsoniaOS closes the loop between DAO decisions and execution.
 - [App Core v0.7 Roadmap](v0.7/app-core-roadmap.md)
 - [v0.7 Compatibility Matrix](v0.7/compatibility-matrix.md)
 - [v0.7 Design Partner Demo Plan](v0.7/design-partner-demo-plan.md)
+- [v0.7 Design Partner Preview Pack](v0.7/design-partner-preview-pack.md)
 
 ### Development process
 

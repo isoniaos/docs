@@ -176,7 +176,7 @@ Expected outputs:
 
 ### v0.7-beta.1 - Design partner protocol preview
 
-Prepare a small design partner preview showing the v0.7 protocol improvements.
+Prepare the [`Design Partner Preview Pack`](./design-partner-preview-pack.md) and use it for small selected-partner walkthroughs showing the v0.7 protocol improvements.
 
 The goal is not mass-market launch. The goal is focused feedback from a small group of technical and governance-aware users.
 
@@ -186,7 +186,7 @@ Remaining work before this preview:
 - run clean demo-stack verification against the compatible alpha release set;
 - keep Proposal Action Builder as a design milestone;
 - keep metadata/storage as schema and architecture direction, not production storage service availability;
-- prepare selected design partner preview materials.
+- prepare selected design partner preview materials with audience, readiness level, demo narrative, honest scope boundaries, feedback questions, success criteria, and call-notes template.
 
 ## Non-goals
 

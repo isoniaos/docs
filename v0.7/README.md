@@ -42,6 +42,7 @@ This folder contains the planning baseline for v0.7:
 - [`app-core-roadmap.md`](./app-core-roadmap.md)
 - [`compatibility-matrix.md`](./compatibility-matrix.md)
 - [`design-partner-demo-plan.md`](./design-partner-demo-plan.md)
+- [`design-partner-preview-pack.md`](./design-partner-preview-pack.md)
 
 ## v0.7 scope summary
 
@@ -56,6 +57,8 @@ v0.7 should focus on:
 7. metadata/storage schema baseline;
 8. demo-stack alignment;
 9. design partner protocol preview.
+
+Use [`design-partner-preview-pack.md`](./design-partner-preview-pack.md) as the concrete call artifact for selected v0.7 design partner walkthroughs. Use [`design-partner-demo-plan.md`](./design-partner-demo-plan.md) as the longer planning backdrop.
 
 The Proposal Action Builder baseline is design-only in v0.7. The first MVP should support one EVM write call per proposal action, manual ABI paste/upload first, human-readable action intent review, calldata hash verification, optional simulation status, and rejection of hidden late-bound values. Multi-call bundles, explorer import implementation, provider simulation integration, Safe integration, and full builder implementation remain out of scope for v0.7.
 

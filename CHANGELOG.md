@@ -4,6 +4,12 @@ All notable changes to the IsoniaOS documentation repository are documented here
 
 Git tags use SemVer with a leading `v`, for example `v0.7.0-alpha.1`.
 
+## 0.7.0-alpha.5
+
+### Added
+
+- Add the v0.7 design partner preview pack with readiness level, demo narrative, honest scope boundaries, feedback questions, success criteria, and call-notes template.
+
 ## 0.7.0-alpha.4
 
 ### Added
