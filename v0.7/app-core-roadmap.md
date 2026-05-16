@@ -19,6 +19,17 @@ Preserve v0.6 principles:
 - explain disabled actions;
 - use red `*` only for required fields.
 
+### Navigation and transaction UI polish
+
+- Use `IsoSteps` for multi-step setup, activation, and transaction progress instead of dense tables or custom numbered lists.
+- Prefer vertical steps for modal and wizard flows.
+- Use `IsoBreadcrumbs` for hierarchy/navigation at the top of pages instead of ad-hoc blue text links.
+- Keep setup and transaction flows light, with fewer frames and more spacing.
+- Buttons should use capitalize text without bold typography.
+- Primary write actions use the primary color; secondary close/cancel actions use outline or subtle styling.
+- Keep activation wizards focused on the active group and its action list. Do not reintroduce review-table steps or broad technical status panels into the primary setup path.
+- Surface wallet/admin preflight failures inside the transaction modal near the write action, using calm red authority alerts instead of converting the wizard itself into an error dashboard.
+
 ## Activation updates
 
 App Core should support both:
@@ -32,9 +43,10 @@ Recommended behavior:
 
 1. detect typed batch support;
 2. prefer typed batch for suitable setups;
-3. fall back to serial activation when unsupported or too large;
-4. keep EIP-5792 behind feature flag/diagnostics;
-5. use transaction modal for all write flows.
+3. keep EIP-5792 behind feature flag/diagnostics;
+4. use transaction modal for all write flows.
+
+The current App Core activation wizard presents one contract-batch action per group where the compatible stack supports it. Do not expose per-action single transaction buttons in the primary wizard path.
 
 ## Finalization UX
 
@@ -50,6 +62,8 @@ The finalization step should explain:
 Avoid fear-based language. Use clear accountability language.
 
 For older contracts or incomplete read-model data, App Core should show `unsupported` or `not available` instead of faking finalized state. For compatible current alpha deployments, App Core may show the finalization transaction UX and post-finalization restrictions.
+
+After compatible finalization is indexed, the setup activation route should no longer behave like an active workspace task. App Core should route the user to Governance Structure, hide `Setup / Activation` from the organization navigation, and return the setup route as not found for that finalized organization.
 
 ## Post-finalization restrictions
 
@@ -169,7 +183,6 @@ typed batch activation baseline completed
 
 ## Open questions
 
-- Should finalization be part of the activation wizard or a separate review screen?
 - Should single-org tenant mode change the default home page in v0.7?
 - How should lifecycle warnings appear in developer-demo mode versus normal customer mode?
 - Should Governance Structure include an export/share affordance in v0.7 or later?

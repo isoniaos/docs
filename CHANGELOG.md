@@ -4,6 +4,13 @@ All notable changes to the IsoniaOS documentation repository are documented here
 
 Git tags use SemVer with a leading `v`, for example `v0.7.0-alpha.1`.
 
+## 0.7.0-alpha.6
+
+### Changed
+
+- Documented App Core step, breadcrumb, transaction modal, and button polish direction for the v0.7 design partner preview.
+- Added the App Core v0.7 design guide for minimal wizards, transaction modal authority alerts, finalization navigation, breadcrumbs, and button behavior.
+
 ## 0.7.0-alpha.5
 
 ### Added

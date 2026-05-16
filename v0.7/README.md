@@ -40,6 +40,7 @@ This folder contains the planning baseline for v0.7:
 - [`storage-and-metadata.md`](./storage-and-metadata.md)
 - [`control-plane-roadmap.md`](./control-plane-roadmap.md)
 - [`app-core-roadmap.md`](./app-core-roadmap.md)
+- [`app-core-design-guide.md`](./app-core-design-guide.md)
 - [`compatibility-matrix.md`](./compatibility-matrix.md)
 - [`design-partner-demo-plan.md`](./design-partner-demo-plan.md)
 - [`design-partner-preview-pack.md`](./design-partner-preview-pack.md)
