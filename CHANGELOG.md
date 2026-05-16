@@ -4,6 +4,12 @@ All notable changes to the IsoniaOS documentation repository are documented here
 
 Git tags use SemVer with a leading `v`, for example `v0.7.0-alpha.1`.
 
+## Unreleased
+
+### Added
+
+- Added the v0.8 accountability and integration preview documentation baseline covering Public Governance Archive, Basic Accountability Dashboard, Integration Preview, trust-boundary guidance, and historical decision records.
+
 ## 0.7.0-alpha.6
 
 ### Changed

@@ -1,6 +1,6 @@
 # IsoniaOS Documentation
 
-This repository contains the active IsoniaOS v0.7 alpha documentation, DAO-first strategy documents, and archived historical material.
+This repository contains the active IsoniaOS v0.7 alpha documentation, the v0.8 accountability planning baseline, DAO-first strategy documents, and archived historical material.
 
 ## Active project position
 
@@ -57,6 +57,11 @@ IsoniaOS closes the loop between DAO decisions and execution.
 - [v0.7 Compatibility Matrix](v0.7/compatibility-matrix.md)
 - [v0.7 Design Partner Demo Plan](v0.7/design-partner-demo-plan.md)
 - [v0.7 Design Partner Preview Pack](v0.7/design-partner-preview-pack.md)
+
+### v0.8 planning baseline
+
+- [v0.8 Documentation Index](v0.8/README.md)
+- [Accountability and Integration Preview](v0.8/accountability-and-integration-preview.md)
 
 ### Development process
 

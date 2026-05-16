@@ -223,6 +223,19 @@ Do not include unless explicitly reprioritized:
 
 Make accountability the product center while beginning careful external tool linkage after the v0.7 protocol foundation is clear.
 
+## Source of truth
+
+The v0.8 planning baseline lives under:
+
+```text
+v0.8/
+```
+
+Read first:
+
+- [`v0.8/README.md`](v0.8/README.md)
+- [`v0.8/accountability-and-integration-preview.md`](v0.8/accountability-and-integration-preview.md)
+
 ## Scope
 
 ### Public Governance Archive
@@ -263,6 +276,7 @@ Make accountability the product center while beginning careful external tool lin
 - A DAO can show the public what happened to approved decisions.
 - The product demonstrates the proposal-to-proof-of-execution wedge.
 - External records are linked or imported without overclaiming authority.
+- Manual accountability updates are clearly presented as annotations, not protocol truth.
 
 ---
 
