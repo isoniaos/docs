@@ -24,4 +24,4 @@ docs tag                  v0.5.0-alpha.4
 - [Design Partner Alpha Plan](design-partner-alpha-plan.md)
 - [Setup and Template Architecture](setup-and-template-architecture.md)
 
-Historical v0.1 material is archived under `../archive/v0.1/` and is not the active documentation surface.
+Historical v0.1 material is archived under `../v0.1/` and is not the active documentation surface.

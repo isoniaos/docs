@@ -13,8 +13,8 @@
 - use modifiers for access control and simple entry-point preconditions when appropriate
 - if a helper exists only to support a modifier, move the logic into the modifier instead of keeping a redundant helper
 - emit events for every critical transition
-- for v0.7, prioritize typed admin batch activation over arbitrary calldata multicall
-- for v0.7, model bootstrap finalization and admin handoff explicitly
+- preserve the archived v0.7 decision to prioritize typed admin batch activation over arbitrary calldata multicall
+- preserve the archived v0.7 finalization/admin handoff model unless explicitly superseded
 - keep serial activation as the reliable fallback
 - keep EIP-5792 gated/prototype/diagnostics only
 

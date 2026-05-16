@@ -4,7 +4,7 @@
 **Project:** IsoniaOS  
 **Working product title:** IsoniaOS - A Governance Control Plane for Accountable Digital Organizations
 **Status:** Draft  
-**Active target:** v0.7 alpha
+**Active target:** v0.8 accountability and integration preview
 **Primary market:** DAO and Web3 governance  
 **Language:** English
 
@@ -31,8 +31,8 @@ The long-term goal is governance that is structured, transparent, verifiable, ac
 ## Version Strategy
 
 - **v0.6** - usable governance console alpha. Archived baseline.
-- **v0.7** - protocol hardening alpha. Active target.
-- **v0.8** - public governance archive, accountability dashboard, and integration preview.
+- **v0.7** - protocol hardening alpha. Archived protocol foundation.
+- **v0.8** - public governance archive, accountability dashboard, and integration preview. Active target.
 - **v0.9** - optional AI governance digest preview.
 - **v1.0** - design partner release.
 - **v1.x** - modular governance expansion.
@@ -113,107 +113,43 @@ Archived v0.6 docs are historical references. They should not be treated as the 
 
 # Phase 2 - v0.7: Protocol Hardening Alpha
 
-## Goal
+## Status
 
-Move from a demo-ready UX/product foundation to protocol hardening and real governance execution foundations.
+v0.7 is archived and is no longer the active documentation target.
 
-v0.7 should clarify how an organization moves from bootstrap setup into governed operation, without turning App Core into an engineering console.
+Its purpose was to move from a demo-ready UX/product foundation to protocol hardening and real governance execution foundations.
 
-Current alpha status:
+## Archived outcomes
 
-- typed admin batch activation is the completed activation baseline;
-- bootstrap finalization is implemented across the current alpha stack where compatible;
-- shared types, SDK, Control Plane, App Core, and demo stack are aligned around compatible lifecycle/finalization support;
-- remaining v0.7 work is docs alignment, clean demo-stack verification, Proposal Action Builder design, metadata/storage schema baseline, and selected design partner preview preparation.
-
-## Source of truth
-
-The active v0.7 documentation pack lives under:
-
-```text
-v0.7/
-```
-
-Read first:
-
-- [`v0.7/README.md`](v0.7/README.md)
-- [`v0.7/roadmap.md`](v0.7/roadmap.md)
-- [`v0.7/protocol-roadmap.md`](v0.7/protocol-roadmap.md)
-- [`v0.7/bootstrap-finalization.md`](v0.7/bootstrap-finalization.md)
-- [`v0.7/admin-batch-activation.md`](v0.7/admin-batch-activation.md)
-- [`v0.7/compatibility-matrix.md`](v0.7/compatibility-matrix.md)
-
-## Primary outcomes
-
-v0.7 should establish:
+v0.7 established:
 
 1. typed admin batch activation;
 2. bootstrap finalization and admin handoff;
 3. explicit organization lifecycle state;
-4. Control Plane read models for new protocol states;
-5. App Core support for finalization and batch activation;
+4. Control Plane read-model direction for new protocol states;
+5. App Core support direction for finalization and batch activation;
 6. Proposal Action Builder design baseline;
 7. metadata/storage schema baseline;
-8. design partner protocol preview.
+8. design partner protocol preview materials.
 
-The v0.7 Proposal Action Builder baseline is design-only. It recommends a first MVP with one EVM write call per proposal action, manual ABI paste/upload first, human-readable action intent review, clear calldata hash versus metadata reference semantics, optional simulation status, no hidden late-bound values, and multi-call bundles as future work.
+The v0.7 Proposal Action Builder and storage/metadata baselines are design foundations for later work. They do not imply production storage, upload APIs, IPFS pinning, managed gateway implementation, encryption/key management, full Proposal Action Builder readiness, Safe integration, or audit readiness.
 
-The v0.7 storage and metadata baseline is design-only. It defines metadata object taxonomy, schema versioning, upload intents, CID registry entries, managed gateway policy, privacy/encryption guidance, and Control Plane/App Core responsibility boundaries. It does not ship a production storage service, upload API, IPFS pinning implementation, managed gateway implementation, or encryption/key management implementation.
+## Archived docs
 
-## Activation path
-
-Reliable current path:
+v0.7 documentation lives under:
 
 ```text
-serial activation
+archive/v0.7/
 ```
 
-v0.7 reliable optimization path:
+Read as historical foundation:
 
-```text
-contract-level typed admin batch activation
-```
-
-Optional gated prototype/diagnostics path:
-
-```text
-EIP-5792 when wallet, account, chain, and local environment support it
-```
-
-EIP-5792 must not be presented as the primary or reliable activation path.
-
-## Bootstrap finalization
-
-Bootstrap finalization/admin handoff is the key v0.7 protocol hardening concern.
-
-The target lifecycle is:
-
-```text
-Created -> Activating -> Active -> Finalized
-```
-
-After finalization, bootstrap admin should no longer have unilateral authority over governance-critical configuration unless that authority is explicitly scoped and represented in the governance model.
-
-In the current alpha stack, this is supported where deployed contracts expose the finalization state/event. Older deployments must be represented as `unsupported` or `unknown`, not silently treated as finalized.
-
-## v0.7 non-goals
-
-Do not include unless explicitly reprioritized:
-
-- production SaaS billing;
-- custom domains;
-- full IPFS upload service;
-- production storage service;
-- managed gateway implementation;
-- encryption/key management implementation;
-- Safe integration;
-- multi-chain execution;
-- token-weighted voting;
-- delegation;
-- AI arbitration;
-- production audit readiness;
-- full Proposal Action Builder production release;
-- tenant provisioning.
+- [`archive/v0.7/README.md`](archive/v0.7/README.md)
+- [`archive/v0.7/roadmap.md`](archive/v0.7/roadmap.md)
+- [`archive/v0.7/protocol-roadmap.md`](archive/v0.7/protocol-roadmap.md)
+- [`archive/v0.7/bootstrap-finalization.md`](archive/v0.7/bootstrap-finalization.md)
+- [`archive/v0.7/admin-batch-activation.md`](archive/v0.7/admin-batch-activation.md)
+- [`archive/v0.7/compatibility-matrix.md`](archive/v0.7/compatibility-matrix.md)
 
 ---
 
@@ -221,11 +157,11 @@ Do not include unless explicitly reprioritized:
 
 ## Goal
 
-Make accountability the product center while beginning careful external tool linkage after the v0.7 protocol foundation is clear.
+Make accountability the product center while beginning careful external tool linkage after the archived v0.7 protocol foundation is clear.
 
 ## Source of truth
 
-The v0.8 planning baseline lives under:
+The active v0.8 planning and architecture baseline lives under:
 
 ```text
 v0.8/
@@ -235,6 +171,9 @@ Read first:
 
 - [`v0.8/README.md`](v0.8/README.md)
 - [`v0.8/accountability-and-integration-preview.md`](v0.8/accountability-and-integration-preview.md)
+- [`v0.8/testing-and-demo-strategy.md`](v0.8/testing-and-demo-strategy.md)
+- [`v0.8/demo-organization-and-governance-process.md`](v0.8/demo-organization-and-governance-process.md)
+- [`v0.8/backlog-and-implementation-sequence.md`](v0.8/backlog-and-implementation-sequence.md)
 
 ## Scope
 

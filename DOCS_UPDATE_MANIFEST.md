@@ -1,8 +1,8 @@
 # IsoniaOS Documentation Update Manifest
 
 **Prepared for:** `isoniaos/docs`  
-**Current documentation target:** v0.7 alpha
-**Purpose:** Track the documentation transition from the archived v0.6 baseline to the active v0.7 protocol-hardening line.
+**Current documentation target:** v0.8 accountability and integration preview
+**Purpose:** Track the documentation transition from the archived v0.7 protocol-hardening foundation to the active v0.8 accountability and integration preview baseline.
 
 ## Active documentation
 
@@ -30,40 +30,49 @@ Strategy:
 - `strategy/STORAGE-AND-IPFS-MODEL.md`
 - `strategy/NARRATIVE-AND-MESSAGING.md`
 
-v0.7:
+v0.8:
 
-- `v0.7/README.md`
-- `v0.7/roadmap.md`
-- `v0.7/protocol-roadmap.md`
-- `v0.7/bootstrap-finalization.md`
-- `v0.7/admin-batch-activation.md`
-- `v0.7/proposal-action-builder.md`
-- `v0.7/storage-and-metadata.md`
-- `v0.7/control-plane-roadmap.md`
-- `v0.7/app-core-roadmap.md`
-- `v0.7/compatibility-matrix.md`
-- `v0.7/design-partner-demo-plan.md`
+- `v0.8/README.md`
+- `v0.8/accountability-and-integration-preview.md`
+- `v0.8/testing-and-demo-strategy.md`
+- `v0.8/demo-organization-and-governance-process.md`
+- `v0.8/backlog-and-implementation-sequence.md`
+
+Archived foundation:
+
+- `archive/v0.7/README.md`
+- `archive/v0.7/roadmap.md`
+- `archive/v0.7/protocol-roadmap.md`
+- `archive/v0.7/bootstrap-finalization.md`
+- `archive/v0.7/admin-batch-activation.md`
+- `archive/v0.7/proposal-action-builder.md`
+- `archive/v0.7/storage-and-metadata.md`
+- `archive/v0.7/control-plane-roadmap.md`
+- `archive/v0.7/app-core-roadmap.md`
+- `archive/v0.7/compatibility-matrix.md`
+- `archive/v0.7/design-partner-demo-plan.md`
+- `archive/v0.7/design-partner-preview-pack.md`
 
 ## Review priorities
 
-1. Confirm that `v0.7/` is the active documentation context.
-2. Confirm that v0.6 is treated as an archived baseline, not the current target.
-3. Confirm that v0.7 remains focused on protocol hardening: typed admin batch activation, bootstrap finalization/admin handoff, lifecycle state, Proposal Action Builder design, and metadata/storage schemas.
-4. Confirm that serial activation remains the reliable fallback.
-5. Confirm that typed contract-level admin batch activation is the v0.7 reliable optimization path.
-6. Confirm that EIP-5792 remains gated/prototype/diagnostics only, not the primary path.
-7. Confirm that v0.7 non-goals remain intact: no production SaaS billing, custom domains, full IPFS upload service, Safe integration, multi-chain execution, token-weighted voting, delegation, AI arbitration, production audit readiness, full Proposal Action Builder production release, or tenant provisioning.
+1. Confirm that `v0.8/` is the active documentation context.
+2. Confirm that v0.7 is treated as an archived protocol-hardening foundation, not the current target.
+3. Confirm that v0.8 remains focused on Public Governance Archive, Basic Accountability Dashboard, Integration Preview, local deterministic demo flow, and external evidence trust boundaries.
+4. Confirm that external records are linked evidence or context unless explicitly modeled as authority for a specific field.
+5. Confirm that manual accountability updates are annotations, not protocol truth.
+6. Confirm that local testing does not depend on Snapshot, Safe, Tally, Agora, Discourse, GitHub, or block explorer availability.
+7. Confirm that v0.8 non-goals remain intact: no production SaaS, audit-ready claims, full integrations, NFT voting runtime, production-grade indexer, AI governance, or external records as authority by default.
 
 ## Main transition
 
 The active line is now:
 
 ```text
-v0.7 protocol hardening alpha
+v0.8 accountability and integration preview
 ```
 
-The v0.6 line is now:
+The v0.7 line is now:
 
 ```text
-archived governance console alpha baseline
+archived protocol hardening foundation
 ```

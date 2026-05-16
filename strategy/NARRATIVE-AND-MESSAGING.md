@@ -198,11 +198,11 @@ Governance is not a vote. Governance is a lifecycle.
 
 ### Builder update
 
-The v0.7 alpha focuses on protocol hardening after the local demo baseline.
+The active v0.8 baseline focuses on accountability after the archived v0.7 protocol-hardening foundation.
 
-Typed admin batch activation, bootstrap finalization, and clear lifecycle state make the governance foundation more accountable before broader product expansion.
+Public decision records, execution status, linked evidence, and trust-boundary labels make the governance lifecycle more accountable without pretending external tools are governance authority by default.
 
-Before we scale governance, we need to make authority explicit.
+Before we scale governance, we need to make authority and evidence boundaries explicit.
 
 ### Design partner outreach
 

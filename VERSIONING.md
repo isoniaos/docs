@@ -1,6 +1,6 @@
 # Versioning Rules
 
-**Active target:** IsoniaOS v0.7 alpha
+**Active target:** IsoniaOS v0.8 accountability and integration preview
 
 IsoniaOS uses SemVer package versions and Git tags with a leading `v`.
 
@@ -9,16 +9,16 @@ IsoniaOS uses SemVer package versions and Git tags with a leading `v`.
 Active docs live under:
 
 ```text
-v0.7/
+v0.8/
 ```
 
 The active product target is:
 
 ```text
-v0.7 - Protocol Hardening Alpha
+v0.8 - Public Governance Archive, Accountability Dashboard, and Integration Preview
 ```
 
-The v0.6 Governance Console Alpha and older docs are archived and must not be treated as the active documentation surface.
+The v0.7 Protocol Hardening Alpha and older docs are archived and must not be treated as the active documentation surface.
 
 ## Archived Compatibility Set
 
@@ -44,7 +44,11 @@ Do not update archived compatibility data unless explicitly correcting archive m
 
 ## v0.7 Compatibility Matrix
 
-A v0.7 compatibility matrix should be created or updated only when v0.7 package/tag sets are actually prepared.
+The v0.7 compatibility matrix is archived at:
+
+```text
+archive/v0.7/compatibility-matrix.md
+```
 
 Do not invent v0.7 tag sets.
 
@@ -77,17 +81,18 @@ v0.7.0
 1. `package.json.version` values use SemVer without a leading `v`.
 2. Git tags use the same version with a leading `v`.
 3. GitHub dependency refs use tag names, for example `github:isoniaos/types#v0.7.0-alpha.1`.
-4. Active v0.7 docs live under `v0.7/`.
+4. Active v0.8 docs live under `v0.8/`.
 5. Strategic/root docs may live at repository root or under `strategy/`.
-6. Historical v0.6 docs live under `archive/v0.6/` and should not be edited as active docs.
-7. Historical v0.5 docs live under `archive/v0.5/` and should not be edited as active docs.
-8. Historical v0.1 docs live under `archive/v0.1/` and should not be edited as active docs.
-9. Do not create future-version documentation until that version is explicitly scoped.
-10. Do not tag automatically during pre-tag hardening.
-11. Do not invent compatibility sets before tags exist.
-12. When a package depends on a tag from the same compatibility set, create the upstream tag first, then refresh the consumer lockfile before tagging the consumer package.
-13. Keep `CHANGELOG.md` under `Unreleased` until a release is intentionally cut.
-14. Codex tasks must not create tags or release sections unless explicitly instructed.
+6. Historical v0.7 docs live under `archive/v0.7/` and should not be edited as active docs.
+7. Historical v0.6 docs live under `archive/v0.6/` and should not be edited as active docs.
+8. Historical v0.5 docs live under `archive/v0.5/` and should not be edited as active docs.
+9. Historical v0.1 docs live under `archive/v0.1/` and should not be edited as active docs.
+10. Do not create future-version documentation until that version is explicitly scoped.
+11. Do not tag automatically during pre-tag hardening.
+12. Do not invent compatibility sets before tags exist.
+13. When a package depends on a tag from the same compatibility set, create the upstream tag first, then refresh the consumer lockfile before tagging the consumer package.
+14. Keep `CHANGELOG.md` under `Unreleased` until a release is intentionally cut.
+15. Codex tasks must not create tags or release sections unless explicitly instructed.
 
 ## Version Communication
 
@@ -102,7 +107,7 @@ For package/API compatibility, use SemVer precisely.
 ## Active Roadmap Labels
 
 - `v0.6` - Usable Governance Console Alpha. Archived baseline.
-- `v0.7` - Protocol Hardening Alpha.
-- `v0.8` - Public Governance Archive, Accountability Dashboard, and Integration Preview.
+- `v0.7` - Protocol Hardening Alpha. Archived protocol foundation.
+- `v0.8` - Public Governance Archive, Accountability Dashboard, and Integration Preview. Active target.
 - `v0.9` - Optional AI Governance Digest Preview.
 - `v1.0` - Design Partner Release.

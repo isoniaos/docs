@@ -4,7 +4,7 @@
 
 v0.8 defines the accountability and integration preview baseline for IsoniaOS.
 
-v0.7 hardens the protocol foundation. v0.8 uses that foundation to make accountability the product center: not only whether a proposal passed, but what happened after it passed.
+v0.7 is archived as the protocol foundation. v0.8 uses that foundation to make accountability the product center: not only whether a proposal passed, but what happened after it passed.
 
 The v0.8 product wedge is:
 
@@ -605,7 +605,7 @@ UX rules:
 
 ## Relationship to storage and metadata
 
-The v0.7 storage and metadata baseline remains the reference for schema versioning, user-facing metadata, CID registry direction, upload intents, and gateway policy.
+The archived v0.7 storage and metadata baseline remains the reference for schema versioning, user-facing metadata, CID registry direction, upload intents, and gateway policy.
 
 v0.8 adds accountability and external-resource concepts that may later reference:
 
@@ -616,7 +616,7 @@ v0.8 adds accountability and external-resource concepts that may later reference
 - transaction proof links;
 - manually attached proof.
 
-These records should follow the same posture defined in [`../v0.7/storage-and-metadata.md`](../v0.7/storage-and-metadata.md): metadata and evidence help explain governance, but they do not redefine authority.
+These records should follow the same posture defined in [`../archive/v0.7/storage-and-metadata.md`](../archive/v0.7/storage-and-metadata.md): metadata and evidence help explain governance, but they do not redefine authority.
 
 ## Future implementation notes
 

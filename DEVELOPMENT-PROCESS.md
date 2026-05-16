@@ -27,9 +27,8 @@ Before any implementation work, read:
 - `AGENTS.md`
 - `WHITEPAPER.md`
 - `ROADMAP.md`
-- `v0.7/README.md`
-- `v0.7/roadmap.md`
-- relevant feature docs under `v0.7/`
+- `v0.8/README.md`
+- relevant feature docs under `v0.8/`
 - relevant strategy docs under `strategy/`
 
 Archived docs are historical context only.
@@ -53,7 +52,7 @@ A good Codex task has:
 Avoid tasks like:
 
 ```text
-Implement the v0.7 roadmap.
+Implement the v0.8 roadmap.
 ```
 
 Prefer tasks like:
@@ -69,12 +68,11 @@ Implement AddressInput checksum validation in app-core and add tests. Do not cha
 ```text
 You are working on IsoniaOS.
 
-Active target: v0.7 alpha.
+Active target: v0.8 accountability and integration preview.
 
 Read first:
 - AGENTS.md
-- docs/v0.7/README.md
-- docs/v0.7/roadmap.md
+- docs/v0.8/README.md
 - [specific feature doc]
 
 Task:
@@ -91,8 +89,10 @@ Do not change:
 - full IPFS upload service
 - Safe integration
 - multi-chain execution
-- token voting/delegation
+- NFT voting runtime
+- production-grade indexer
 - AI arbitration
+- AI governance
 - production audit readiness
 - full Proposal Action Builder production release
 - tenant provisioning
@@ -116,9 +116,9 @@ Report:
 Recommended branch names:
 
 - `docs/...`
-- `feat/v0.7-...`
-- `fix/v0.7-...`
-- `chore/v0.7-...`
+- `feat/v0.8-...`
+- `fix/v0.8-...`
+- `chore/v0.8-...`
 
 Recommended PR shape:
 
@@ -138,7 +138,7 @@ Recommended PR shape:
 Before merge, verify:
 
 - scope matches active docs;
-- no out-of-scope v0.7 features introduced;
+- no out-of-scope v0.8 features introduced;
 - package boundaries remain clean;
 - public app-core does not include SaaS-only logic;
 - UI uses theme tokens where appropriate;
@@ -155,7 +155,7 @@ Docs must be updated when behavior changes.
 
 Update:
 
-- feature doc under `v0.7/`;
+- feature doc under `v0.8/`;
 - `CHANGELOG.md` under Unreleased;
 - compatibility matrix after tags exist;
 - troubleshooting docs when new failure modes are discovered;
@@ -232,14 +232,14 @@ References:
 
 ---
 
-## 12. Definition of Done for v0.7 Tasks
+## 12. Definition of Done for v0.8 Tasks
 
-A v0.7 task is done when:
+A v0.8 task is done when:
 
 - it satisfies the relevant doc;
-- it stays within v0.7 scope;
+- it stays within v0.8 scope;
 - it has tests or clearly documented manual verification;
 - it updates docs/changelog if behavior changed;
-- it does not add hidden SaaS, AI arbitration, production, or out-of-scope integration work;
+- it does not add hidden SaaS, AI governance, production, or out-of-scope integration work;
 - it is understandable to a reviewer;
 - it does not degrade local demo readiness.

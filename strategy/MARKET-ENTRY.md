@@ -448,8 +448,8 @@ AI is optional, advisory, and non-binding by default. The core works without AI.
 ### Days 1-30
 
 - finalize docs;
-- complete the v0.7 documentation transition;
-- prepare the v0.7 protocol preview script;
+- complete the v0.8 documentation transition;
+- prepare the v0.8 accountability and integration preview script;
 - create 1 polished demo organization;
 - prepare landing-page copy around execution accountability;
 - identify 10-20 potential design partners.
@@ -466,6 +466,6 @@ AI is optional, advisory, and non-binding by default. The core works without AI.
 
 - choose 2-3 design partners;
 - define non-critical pilot workflows;
-- scope post-v0.7 integration work based on feedback;
-- prepare v0.8 accountability and integration requirements;
+- scope v0.8 integration preview work based on feedback;
+- prepare shared DTO, demo-stack, Control Plane, and App Core handoff requirements;
 - convert feedback into issues and Codex tasks.

@@ -1,6 +1,6 @@
 # IsoniaOS Documentation
 
-This repository contains the active IsoniaOS v0.7 alpha documentation, the v0.8 accountability planning baseline, DAO-first strategy documents, and archived historical material.
+This repository contains the active IsoniaOS v0.8 accountability and integration preview baseline, DAO-first strategy documents, and archived historical material.
 
 ## Active project position
 
@@ -26,6 +26,8 @@ Launch wedge:
 IsoniaOS closes the loop between DAO decisions and execution.
 ```
 
+v0.8 keeps that DAO-first and accountability-centered position. It should not be presented as production SaaS, audit-ready infrastructure, full Safe/Snapshot/Tally/Agora integration, or AI governance. External records are linked evidence or context unless explicit source modeling makes a source authoritative for a specific field.
+
 ## Active documentation
 
 ### Product and strategy
@@ -43,25 +45,28 @@ IsoniaOS closes the loop between DAO decisions and execution.
 - [Storage and IPFS Model](strategy/STORAGE-AND-IPFS-MODEL.md)
 - [Narrative and Messaging](strategy/NARRATIVE-AND-MESSAGING.md)
 
-### v0.7 alpha
-
-- [v0.7 Documentation Index](v0.7/README.md)
-- [v0.7 Roadmap](v0.7/roadmap.md)
-- [v0.7 Protocol Roadmap](v0.7/protocol-roadmap.md)
-- [Bootstrap Finalization and Admin Handoff](v0.7/bootstrap-finalization.md)
-- [Typed Admin Batch Activation](v0.7/admin-batch-activation.md)
-- [Proposal Action Builder](v0.7/proposal-action-builder.md)
-- [Storage and Metadata](v0.7/storage-and-metadata.md)
-- [Control Plane v0.7 Roadmap](v0.7/control-plane-roadmap.md)
-- [App Core v0.7 Roadmap](v0.7/app-core-roadmap.md)
-- [v0.7 Compatibility Matrix](v0.7/compatibility-matrix.md)
-- [v0.7 Design Partner Demo Plan](v0.7/design-partner-demo-plan.md)
-- [v0.7 Design Partner Preview Pack](v0.7/design-partner-preview-pack.md)
-
-### v0.8 planning baseline
+### v0.8 active baseline
 
 - [v0.8 Documentation Index](v0.8/README.md)
 - [Accountability and Integration Preview](v0.8/accountability-and-integration-preview.md)
+- [Testing and Demo Strategy](v0.8/testing-and-demo-strategy.md)
+- [Demo Organization and Governance Process](v0.8/demo-organization-and-governance-process.md)
+- [Backlog and Implementation Sequence](v0.8/backlog-and-implementation-sequence.md)
+
+### v0.7 archived protocol foundation
+
+- [v0.7 Documentation Index](v0.7/README.md)
+- [Archived v0.7 Roadmap](archive/v0.7/roadmap.md)
+- [Archived v0.7 Protocol Roadmap](archive/v0.7/protocol-roadmap.md)
+- [Bootstrap Finalization and Admin Handoff](archive/v0.7/bootstrap-finalization.md)
+- [Typed Admin Batch Activation](archive/v0.7/admin-batch-activation.md)
+- [Proposal Action Builder](archive/v0.7/proposal-action-builder.md)
+- [Storage and Metadata](archive/v0.7/storage-and-metadata.md)
+- [Archived Control Plane v0.7 Roadmap](archive/v0.7/control-plane-roadmap.md)
+- [Archived App Core v0.7 Roadmap](archive/v0.7/app-core-roadmap.md)
+- [Archived v0.7 Compatibility Matrix](archive/v0.7/compatibility-matrix.md)
+- [Archived v0.7 Design Partner Demo Plan](archive/v0.7/design-partner-demo-plan.md)
+- [Archived v0.7 Design Partner Preview Pack](archive/v0.7/design-partner-preview-pack.md)
 
 ### Development process
 
@@ -72,12 +77,13 @@ IsoniaOS closes the loop between DAO decisions and execution.
 
 ## Archived documentation
 
+- v0.7 Protocol Hardening Alpha documents are archived under `archive/v0.7/`.
 - v0.6 Governance Console Alpha documents are archived under `archive/v0.6/`.
 - v0.5 Developer Preview documents are archived under `archive/v0.5/`.
 - The v0.5 known-good tag set is recorded in [archive/v0.5/compatibility-matrix.md](archive/v0.5/compatibility-matrix.md).
 - Historical v0.1 documents are archived under `archive/v0.1/`.
 
-Archived v0.1, v0.5, and v0.6 documents are historical references and are not part of the active v0.7 documentation surface.
+Archived v0.1, v0.5, v0.6, and v0.7 documents are historical references and are not part of the active v0.8 documentation surface.
 
 ## Public repository note
 

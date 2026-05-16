@@ -64,10 +64,10 @@ addresses that App Core uses in `isonia.config.json`.
 indexer, and projection worker in local development.
 
 For local environment setup, see the archived
-[Local End-to-End Demo](../archive/v0.1/local-e2e-demo-v0.1.md).
+[Local End-to-End Demo](../v0.1/local-e2e-demo-v0.1.md).
 For the diagnostics response shape, see
-[REST API Spec - Diagnostics response](../archive/v0.1/api-rest-v0.1.md#diagnostics-response)
-and [Control Plane Spec - Diagnostics DTO](../archive/v0.1/control-plane-spec-v0.1.md#123-diagnostics-dto).
+[REST API Spec - Diagnostics response](../v0.1/api-rest-v0.1.md#diagnostics-response)
+and [Control Plane Spec - Diagnostics DTO](../v0.1/control-plane-spec-v0.1.md#123-diagnostics-dto).
 
 ## Open the Setup Flow
 
@@ -446,7 +446,7 @@ v0.5 feedback rather than treating them as production incidents.
 
 - [v0.5 Design Partner Alpha Plan](design-partner-alpha-plan.md)
 - [v0.5 Setup and Template Architecture](setup-and-template-architecture.md)
-- [REST API Spec - Diagnostics response](../archive/v0.1/api-rest-v0.1.md#diagnostics-response)
-- [Control Plane Spec - Diagnostics DTO](../archive/v0.1/control-plane-spec-v0.1.md#123-diagnostics-dto)
-- [Event Processing Spec - Diagnostics](../archive/v0.1/event-processing-v0.1.md#diagnostics)
-- [Local End-to-End Demo](../archive/v0.1/local-e2e-demo-v0.1.md)
+- [REST API Spec - Diagnostics response](../v0.1/api-rest-v0.1.md#diagnostics-response)
+- [Control Plane Spec - Diagnostics DTO](../v0.1/control-plane-spec-v0.1.md#123-diagnostics-dto)
+- [Event Processing Spec - Diagnostics](../v0.1/event-processing-v0.1.md#diagnostics)
+- [Local End-to-End Demo](../v0.1/local-e2e-demo-v0.1.md)

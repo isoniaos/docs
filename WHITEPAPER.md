@@ -261,21 +261,21 @@ Optional managed or self-hosted intelligence for summaries, risk checklists, sta
 
 ## 8. Initial Product Focus
 
-The current active target is v0.7 alpha.
+The current active target is v0.8 accountability and integration preview.
 
-v0.6 made the v0.5 Developer Preview usable as a coherent local governance console demo. v0.7 is the first step after that baseline: protocol hardening before broader product expansion.
+v0.6 made the v0.5 Developer Preview usable as a coherent local governance console demo. v0.7 is now archived as the protocol-hardening foundation. v0.8 builds on that foundation by making accountability and public decision memory the product center.
 
-The v0.7 focus is:
+The v0.8 focus is:
 
-1. typed contract-level admin batch activation;
-2. serial activation as the reliable fallback;
-3. EIP-5792 as gated/prototype/diagnostics only;
-4. bootstrap finalization and admin handoff;
-5. explicit lifecycle state from bootstrap to finalized governance;
-6. Control Plane and App Core support for those protocol states;
-7. Proposal Action Builder, storage, and metadata design.
+1. Public Governance Archive;
+2. Basic Accountability Dashboard;
+3. Integration Preview;
+4. linked evidence and source labels;
+5. trust-boundary warnings for external records;
+6. local deterministic demo flows for proposal-to-proof-of-execution;
+7. careful handoff to shared types, contracts, Control Plane, SDK, App Core, and demo-stack work.
 
-v0.7 is not a production release, SaaS release, Safe integration release, multi-chain execution release, token voting release, AI arbitration release, or audit-ready release.
+v0.8 is not a production SaaS release, audit-ready release, full Safe/Snapshot/Tally/Agora integration release, NFT voting runtime release, AI governance release, or production-grade indexer release. External records remain linked evidence or context unless explicit source modeling makes a source authoritative for a specific field.
 
 ---
 
@@ -378,7 +378,7 @@ Archived baseline: Simple DAO+ setup wizard, proposal lifecycle demo, route expl
 
 ### v0.7 - Protocol Hardening Alpha
 
-Typed admin batch activation, bootstrap finalization/admin handoff, explicit lifecycle state, protocol-aware Control Plane read models, App Core finalization UX, Proposal Action Builder design, and metadata/storage schema direction.
+Archived protocol foundation: typed admin batch activation, bootstrap finalization/admin handoff, explicit lifecycle state, protocol-aware Control Plane read models, App Core finalization UX, Proposal Action Builder design, and metadata/storage schema direction.
 
 ### v0.8 - Public Governance Archive, Accountability Dashboard, and Integration Preview
 

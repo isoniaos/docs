@@ -19,7 +19,7 @@ The project should be honest about what is authoritative, what is advisory, what
 
 ### v0.7 alpha
 
-v0.7 is a protocol hardening alpha built on the v0.6 local governance console baseline.
+v0.7 is an archived protocol hardening alpha built on the v0.6 local governance console baseline.
 
 It is intended for:
 
@@ -38,6 +38,29 @@ It is not intended for:
 - regulated workflows;
 - legal compliance guarantees;
 - production SaaS.
+
+### v0.8 accountability and integration preview
+
+v0.8 is the active accountability and integration preview baseline. It builds on the archived v0.7 protocol foundation and focuses on public decision records, execution/accountability status, linked evidence, and trust-boundary warnings.
+
+It is intended for:
+
+- Public Governance Archive design and early implementation;
+- Basic Accountability Dashboard design and early implementation;
+- local deterministic proposal-to-proof-of-execution demo flows;
+- link-first external evidence previews;
+- source labels and stale/missing/unknown state handling;
+- non-production experimentation.
+
+It is not intended for:
+
+- production SaaS;
+- audit-ready governance;
+- full Safe/Snapshot/Tally/Agora integration;
+- NFT voting runtime;
+- production-grade indexing;
+- AI governance;
+- treating external records as authority by default.
 
 ### v1.0 design partner release
 

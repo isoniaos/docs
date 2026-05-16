@@ -4,7 +4,7 @@ These rules apply to Codex and other AI agents working in this repository.
 
 ## Active target
 
-The active documentation target is **IsoniaOS v0.7 alpha**.
+The active documentation target is **IsoniaOS v0.8 accountability and integration preview**.
 
 Read first:
 
@@ -13,7 +13,7 @@ Read first:
 - `AGENTS.md`
 - `DEVELOPMENT-PROCESS.md`
 - `strategy/`
-- `v0.7/`
+- `v0.8/`
 
 Archived documents are historical references only.
 
@@ -26,39 +26,44 @@ Archived documents are historical references only.
 - Keep the core thesis visible: **Governance is not a vote. Governance is a lifecycle.**
 - Keep the launch wedge visible: **IsoniaOS closes the loop between DAO decisions and execution.**
 
-## v0.7 scope rules
+## v0.8 scope rules
 
-v0.7 may improve:
+v0.8 may improve:
 
-- protocol design docs;
-- typed admin batch activation;
-- bootstrap finalization and admin handoff;
-- Control Plane read models for new protocol states;
-- App Core support for protocol finalization and batch activation;
-- Proposal Action Builder design;
-- metadata and storage schemas;
-- design partner protocol preview.
+- Public Governance Archive design;
+- Basic Accountability Dashboard design;
+- integration preview design;
+- external evidence link-first posture;
+- trust-boundary guidance for external records;
+- local deterministic demo flows;
+- expanded demo organization/governance process;
+- docs-to-types/contracts/control-plane/app-core handoff sequencing.
 
-v0.7 must not add:
+v0.8 must not add or claim:
 
 - production SaaS billing;
 - custom domains;
 - full IPFS upload service;
 - Safe integration;
+- full Snapshot write/import lifecycle;
+- full Tally/Agora integration;
 - multi-chain execution;
-- token-weighted voting;
-- delegation;
+- NFT voting runtime;
+- production-grade indexer;
 - AI arbitration;
+- AI governance;
 - production audit readiness;
 - full Proposal Action Builder production release;
 - tenant provisioning.
 
-v0.7 activation rules:
+v0.8 authority and evidence rules:
 
-- serial activation remains the reliable fallback;
-- typed contract-level admin batch activation is the reliable optimization path;
-- EIP-5792 remains gated/prototype/diagnostics only, not the primary path;
-- bootstrap finalization/admin handoff is the key protocol hardening concern.
+- contracts remain authoritative for modeled onchain governance state;
+- Control Plane/App Core are explanatory and operational layers;
+- external records are linked evidence or context unless explicitly modeled as authority for a specific field;
+- manual accountability updates are annotations, not protocol truth;
+- imported external records must keep source labels, trust boundaries, and stale/error/unknown states visible;
+- EIP-5792 is not the primary v0.8 path.
 
 ## Documentation rules
 

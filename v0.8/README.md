@@ -2,7 +2,7 @@
 
 IsoniaOS v0.8 is the accountability and integration preview baseline.
 
-v0.7 hardens the protocol foundation: typed admin batch activation, bootstrap finalization, admin handoff, lifecycle visibility, Proposal Action Builder design, and storage/metadata schema direction. v0.8 builds on that foundation by making the post-decision record the product center.
+v0.7 is archived as the protocol foundation: typed admin batch activation, bootstrap finalization, admin handoff, lifecycle visibility, Proposal Action Builder design, and storage/metadata schema direction. v0.8 builds on that foundation by making the post-decision record the product center.
 
 The v0.8 wedge is:
 
@@ -23,6 +23,17 @@ Contracts remain authoritative for onchain governance state. Control Plane and A
 This folder contains the planning baseline for v0.8:
 
 - [`accountability-and-integration-preview.md`](./accountability-and-integration-preview.md)
+- [`testing-and-demo-strategy.md`](./testing-and-demo-strategy.md)
+- [`demo-organization-and-governance-process.md`](./demo-organization-and-governance-process.md)
+- [`backlog-and-implementation-sequence.md`](./backlog-and-implementation-sequence.md)
+
+## Read order
+
+1. [`README.md`](./README.md)
+2. [`accountability-and-integration-preview.md`](./accountability-and-integration-preview.md)
+3. [`testing-and-demo-strategy.md`](./testing-and-demo-strategy.md)
+4. [`demo-organization-and-governance-process.md`](./demo-organization-and-governance-process.md)
+5. [`backlog-and-implementation-sequence.md`](./backlog-and-implementation-sequence.md)
 
 ## v0.8 scope summary
 
@@ -33,7 +44,10 @@ v0.8 should focus on:
 3. Integration Preview;
 4. trust-boundary guidance for external records;
 5. historical decision records;
-6. route and UX sketches for future App Core and public archive work.
+6. local testing, fork/read-only validation, and optional testnet smoke posture;
+7. expanded demo organization scenarios for accountable follow-through;
+8. route and UX sketches for future App Core and public archive work;
+9. backlog and implementation-sequence guidance for future runtime tasks.
 
 ## v0.8 non-goals
 
@@ -57,9 +71,9 @@ v0.8 depends on the v0.7 foundations:
 - storage and metadata schemas clarify how explanatory records relate to protocol truth;
 - Control Plane read models make public archive and accountability surfaces possible without making the backend a source of governance authority.
 
-See the v0.7 docs for those baselines:
+See the archived v0.7 docs for those baselines:
 
-- [`../v0.7/bootstrap-finalization.md`](../v0.7/bootstrap-finalization.md)
-- [`../v0.7/proposal-action-builder.md`](../v0.7/proposal-action-builder.md)
-- [`../v0.7/storage-and-metadata.md`](../v0.7/storage-and-metadata.md)
-- [`../v0.7/control-plane-roadmap.md`](../v0.7/control-plane-roadmap.md)
+- [`../archive/v0.7/bootstrap-finalization.md`](../archive/v0.7/bootstrap-finalization.md)
+- [`../archive/v0.7/proposal-action-builder.md`](../archive/v0.7/proposal-action-builder.md)
+- [`../archive/v0.7/storage-and-metadata.md`](../archive/v0.7/storage-and-metadata.md)
+- [`../archive/v0.7/control-plane-roadmap.md`](../archive/v0.7/control-plane-roadmap.md)

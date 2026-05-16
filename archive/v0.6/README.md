@@ -36,15 +36,15 @@ v0.6 is scoped to alpha, local-demo, and self-hosted readiness. It is not a prod
 
 Read the root and strategy docs when making product decisions:
 
-- [Whitepaper](../WHITEPAPER.md)
-- [Roadmap](../ROADMAP.md)
-- [Market Entry Strategy](../strategy/MARKET-ENTRY.md)
-- [Integration Strategy](../strategy/INTEGRATION-STRATEGY.md)
-- [Accountability Model](../strategy/ACCOUNTABILITY-MODEL.md)
-- [Trust and Security](../strategy/TRUST-AND-SECURITY.md)
-- [AI Policy](../strategy/AI-POLICY.md)
-- [Tenant and Domain Model](../strategy/TENANT-AND-DOMAIN-MODEL.md)
-- [Storage and IPFS Model](../strategy/STORAGE-AND-IPFS-MODEL.md)
+- [Whitepaper](../../WHITEPAPER.md)
+- [Roadmap](../../ROADMAP.md)
+- [Market Entry Strategy](../../strategy/MARKET-ENTRY.md)
+- [Integration Strategy](../../strategy/INTEGRATION-STRATEGY.md)
+- [Accountability Model](../../strategy/ACCOUNTABILITY-MODEL.md)
+- [Trust and Security](../../strategy/TRUST-AND-SECURITY.md)
+- [AI Policy](../../strategy/AI-POLICY.md)
+- [Tenant and Domain Model](../../strategy/TENANT-AND-DOMAIN-MODEL.md)
+- [Storage and IPFS Model](../../strategy/STORAGE-AND-IPFS-MODEL.md)
 
 ## Historical References
 

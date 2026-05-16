@@ -350,9 +350,9 @@ Suggested fields:
 
 ---
 
-## 6. Post-v0.7 Integration Work
+## 6. v0.8 Integration Preview Work
 
-v0.7 is focused on protocol hardening. Integration preview work should come after the v0.7 foundation unless explicitly reprioritized.
+v0.7 is archived as the protocol-hardening foundation. v0.8 is the active integration preview baseline and should keep integrations link-first unless explicit source modeling makes a field authoritative.
 
 Recommended future integration deliverables:
 
