@@ -1,9 +1,9 @@
 # IsoniaOS: A Governance Control Plane for Accountable Digital Organizations
 
-**Version:** Draft 0.2  
-**Status:** Working Whitepaper  
-**Project:** IsoniaOS  
-**Primary market:** DAO and Web3 governance  
+**Version:** Draft 0.2
+**Status:** Working Whitepaper
+**Project:** IsoniaOS
+**Primary market:** DAO and Web3 governance
 **Long-term direction:** Accountable digital organizations, civic governance experiments, and public governance infrastructure
 
 ---
@@ -112,9 +112,10 @@ IsoniaOS is not:
 - a state operating system in its first market;
 - a political party platform;
 - a legal substitute for contracts, bylaws, foundation documents, or regulatory advice;
-- production-audited governance security until the relevant audits and controls exist.
+- production-audited governance security until the relevant audits and controls exist;
+- primarily a token project.
 
-IsoniaOS may provide native modules where useful, but its strategic role is to orchestrate governance processes and preserve accountability across tools.
+IsoniaOS may provide native modules where useful, but its strategic role is to orchestrate governance processes and preserve accountability across tools. ISO tokenomics is a supporting funding and protocol self-governance layer for IsoniaOS itself, not the main product story.
 
 ---
 
@@ -257,11 +258,13 @@ Connects Snapshot, Safe, Tally, Agora, Discourse, GitHub, block explorers, EAS-s
 
 Optional managed or self-hosted intelligence for summaries, risk checklists, status explanations, search, and dispute understanding. AI remains advisory by default.
 
+The ISO funding and protocol self-governance architecture is documented separately in [ISO Architecture](ISO_ARCHITECTURE.md).
+
 ---
 
 ## 8. Initial Product Focus
 
-The current active target is v0.8 accountability and integration preview.
+The current active product target is v0.8 accountability and integration preview.
 
 v0.6 made the v0.5 Developer Preview usable as a coherent local governance console demo. v0.7 is now archived as the protocol-hardening foundation. v0.8 builds on that foundation by making accountability and public decision memory the product center.
 
@@ -275,7 +278,7 @@ The v0.8 focus is:
 6. local deterministic demo flows for proposal-to-proof-of-execution;
 7. careful handoff to shared types, contracts, Control Plane, SDK, App Core, and demo-stack work.
 
-v0.8 is not a production SaaS release, audit-ready release, full Safe/Snapshot/Tally/Agora integration release, NFT voting runtime release, AI governance release, or production-grade indexer release. External records remain linked evidence or context unless explicit source modeling makes a source authoritative for a specific field.
+v0.8 is not a production SaaS release, audit-ready release, full Safe/Snapshot/Tally/Agora integration release, NFT voting runtime release, AI governance release, token launch release, or production-grade indexer release. External records remain linked evidence or context unless explicit source modeling makes a source authoritative for a specific field.
 
 ---
 
@@ -349,7 +352,35 @@ Open where trust matters. Commercial where reliability, convenience, and intelli
 
 ---
 
-## 12. Security and Trust
+## 12. Funding and Protocol Self-Governance Layer: ISO / Isonia
+
+IsoniaOS may use ISO as a planned funding and protocol self-governance layer for IsoniaOS itself.
+
+- Token name: Isonia.
+- Token symbol: ISO.
+- ISO is not the core product. The core product remains the IsoniaOS governance control plane.
+- Full tokenomics are documented in [Tokenomics](TOKENOMICS.md).
+- Governance power requires verified identity and activation/staking.
+- Curve Reserve is not treasury.
+- Launch reserve and redemption asset is native USDC only.
+- ETH may be used only as a non-reserve treasury/grant/donation asset or future research item.
+
+No revenue-sharing rights exist at launch. Any future economic participation module will require a separate governance proposal, independent legal review, updated disclosures, and, where required, a regulated structure.
+
+Supporting documents:
+
+- [Tokenomics](TOKENOMICS.md)
+- [Governance](GOVERNANCE.md)
+- [Identity](IDENTITY.md)
+- [Treasury](TREASURY.md)
+- [Legal Roadmap](LEGAL_ROADMAP.md)
+- [Risk Register](RISK_REGISTER.md)
+- [Decision Log](DECISION_LOG.md)
+- [ISO Architecture](ISO_ARCHITECTURE.md)
+
+---
+
+## 13. Security and Trust
 
 Key trust principles:
 
@@ -370,7 +401,7 @@ strategy/TRUST-AND-SECURITY.md
 
 ---
 
-## 13. Roadmap Summary
+## 14. Roadmap Summary
 
 ### v0.6 - Usable Governance Console Alpha
 
@@ -404,9 +435,11 @@ Milestone tracking, post-execution reviews, contributor/delegate accountability,
 
 Plugin marketplace, advanced identity/reputation modules, optional arbitration frameworks, enterprise deployments, civic pilots, and broader governance infrastructure.
 
+ISO tokenomics and protocol self-governance work proceeds in parallel. Token launch is not required for v0.8 accountability and integration preview.
+
 ---
 
-## 14. Long-Term Vision
+## 15. Long-Term Vision
 
 The first market is DAO and Web3 governance. This is where the pain is already formed and where IsoniaOS can prove competence.
 
@@ -418,7 +451,7 @@ The long-term vision is not blockchain for governance as ideology. The goal is g
 
 ---
 
-## 15. Conclusion
+## 16. Conclusion
 
 IsoniaOS is built for organizations that need governance to be more than a vote.
 
@@ -436,32 +469,35 @@ IsoniaOS is a governance control plane for accountable digital organizations.
 
 ---
 
-## Appendix A — Core Narrative
+## Appendix A - Core Narrative
 
-**Core message:**  
+**Core message:**
 Governance is not a vote. Governance is a lifecycle.
 
-**Launch wedge:**  
+**Launch wedge:**
 IsoniaOS closes the loop between DAO decisions and execution.
 
-**Product category:**  
+**Product category:**
 DAO Governance Control Plane / Governance Operating System.
 
-**Primary audience:**  
+**Primary audience:**
 DAOs, Web3 protocols, foundations, grants programs, public-good communities, and onchain organizations.
 
-**Long-term audience:**  
+**Long-term audience:**
 Cooperatives, associations, civic initiatives, institutional governance pilots, and public governance experiments.
 
-**Differentiation:**  
+**Differentiation:**
 IsoniaOS connects proposals, review, voting, execution, accountability, dispute intelligence, and institutional memory into one modular governance lifecycle.
 
-**AI positioning:**  
+**AI positioning:**
 AI does not govern by default. AI helps governance become more understandable, transparent, and accountable.
+
+**ISO positioning:**
+ISO tokenomics is a supporting funding and protocol self-governance layer. It is not the core product narrative.
 
 ---
 
-## Appendix B — Suggested Short Positioning Statements
+## Appendix B - Suggested Short Positioning Statements
 
 - IsoniaOS is a governance control plane for accountable DAOs and digital organizations.
 - Governance is not a vote. Governance is a lifecycle.

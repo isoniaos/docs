@@ -1,11 +1,12 @@
 # IsoniaOS Roadmap
 
-**Document version:** 1.2
-**Project:** IsoniaOS  
+**Document version:** 1.3
+**Project:** IsoniaOS
 **Working product title:** IsoniaOS - A Governance Control Plane for Accountable Digital Organizations
-**Status:** Draft  
-**Active target:** v0.8 accountability and integration preview
-**Primary market:** DAO and Web3 governance  
+**Status:** Draft
+**Active product target:** v0.8 accountability and integration preview
+**Parallel design target:** ISO / Isonia Draft v0.2 funding and protocol self-governance layer
+**Primary market:** DAO and Web3 governance
 **Language:** English
 
 ---
@@ -22,7 +23,8 @@ The roadmap follows several principles:
 - keep contracts authoritative for onchain governance state;
 - treat Control Plane, App Core, diagnostics, and AI as explanatory or operational layers unless authority is explicitly modeled;
 - introduce advanced governance capabilities gradually;
-- keep AI as an assistance layer by default, not as a source of authority.
+- keep AI as an assistance layer by default, not as a source of authority;
+- keep ISO tokenomics as a parallel funding and protocol self-governance layer, not as the main product roadmap.
 
 The long-term goal is governance that is structured, transparent, verifiable, accountable, and understandable.
 
@@ -32,7 +34,7 @@ The long-term goal is governance that is structured, transparent, verifiable, ac
 
 - **v0.6** - usable governance console alpha. Archived baseline.
 - **v0.7** - protocol hardening alpha. Archived protocol foundation.
-- **v0.8** - public governance archive, accountability dashboard, and integration preview. Active target.
+- **v0.8** - public governance archive, accountability dashboard, and integration preview. Active product target.
 - **v0.9** - optional AI governance digest preview.
 - **v1.0** - design partner release.
 - **v1.x** - modular governance expansion.
@@ -85,7 +87,7 @@ v0.6 is the completed baseline and is no longer the active documentation target.
 
 Its purpose was to make the v0.5 Developer Preview usable as a coherent local governance console demo.
 
-## Baseline outcomes
+## Baseline Outcomes
 
 v0.6 established:
 
@@ -99,7 +101,7 @@ v0.6 established:
 - demo-stack readiness;
 - documentation for reproducible local demos.
 
-## Archived docs
+## Archived Docs
 
 v0.6 documentation lives under:
 
@@ -119,7 +121,7 @@ v0.7 is archived and is no longer the active documentation target.
 
 Its purpose was to move from a demo-ready UX/product foundation to protocol hardening and real governance execution foundations.
 
-## Archived outcomes
+## Archived Outcomes
 
 v0.7 established:
 
@@ -134,7 +136,7 @@ v0.7 established:
 
 The v0.7 Proposal Action Builder and storage/metadata baselines are design foundations for later work. They do not imply production storage, upload APIs, IPFS pinning, managed gateway implementation, encryption/key management, full Proposal Action Builder readiness, Safe integration, or audit readiness.
 
-## Archived docs
+## Archived Docs
 
 v0.7 documentation lives under:
 
@@ -159,7 +161,7 @@ Read as historical foundation:
 
 Make accountability the product center while beginning careful external tool linkage after the archived v0.7 protocol foundation is clear.
 
-## Source of truth
+## Source of Truth
 
 The active v0.8 planning and architecture baseline lives under:
 
@@ -216,6 +218,7 @@ Read first:
 - The product demonstrates the proposal-to-proof-of-execution wedge.
 - External records are linked or imported without overclaiming authority.
 - Manual accountability updates are clearly presented as annotations, not protocol truth.
+- v0.8 does not require token launch or ISO tokenomics implementation.
 
 ---
 
@@ -303,3 +306,137 @@ AI may assist with dispute summaries and mediation suggestions, but remains non-
 Expand IsoniaOS into a governance ecosystem with plugins, advanced modules, optional arbitration frameworks, enterprise deployments, and carefully scoped civic/institutional pilots.
 
 Civic and public-governance use cases require legal, compliance, business-development, procurement, privacy, and institutional expertise. They should not be overclaimed before DAO-market validation.
+
+---
+
+## Parallel Track - ISO Funding and Protocol Self-Governance
+
+This track covers ISO/Isonia tokenomics, funding, treasury separation, identity-aware protocol self-governance, legal phasing, and reserve policy.
+
+It is a parallel non-product track. Product milestones are not blocked by tokenomics milestones unless explicitly stated. Token launch is not required for v0.8 accountability and integration preview. Legal and tokenomics work proceeds as funding becomes available.
+
+No revenue-sharing rights exist at launch. Any future economic participation module will require a separate governance proposal, independent legal review, updated disclosures, and, where required, a regulated structure.
+
+### Track A - ISO Design Freeze v0.2
+
+- ISO / Isonia naming.
+- Bonding curve formula.
+- Immutable curve parameters.
+- USDC-only settlement.
+- Reserve Asset Decision: USDC Curve Reserve, ETH Alignment Layer.
+- Curve Reserve invariant.
+- No fee-on-transfer decision.
+- Governance threshold draft.
+- Logarithmic voting with x10 cap draft.
+- IdentityRegistry source-of-truth draft.
+- Council design draft.
+- People's Veto draft.
+- No revenue-sharing at launch language.
+- Legal fund and treasury fund split draft.
+- Risk register and decision log.
+
+### Track B - Technical Specification for ISO Layer
+
+- `BondingCurve` spec.
+- Curve Reserve spec.
+- `TreasurySplitter` spec.
+- `IdentityRegistry` spec.
+- `GovernanceVault` spec.
+- `CouncilRegistry` spec.
+- People's Veto spec.
+- AI validation spec.
+- USDC impairment emergency clause.
+- Market Stability & Ethereum Alignment Fund accounting rules.
+- Future ETH Payment Adapter specification outline.
+
+### Track C - Testnet Tokenomics Simulation
+
+- Standard ERC-20 ISO mock.
+- USDC mock.
+- Bonding curve simulation.
+- Reserve accounting.
+- Fee distribution simulation.
+- Staking and cooldown simulation.
+- Identity registry mock.
+- Governance voting simulation.
+- Whale premium and governance concentration premium simulation.
+- USDC impairment pause/migration rehearsal.
+
+### Track D - Identity-Aware Governance MVP
+
+- Verified account flow.
+- Founding Member / governance credential concept.
+- Council candidate profiles.
+- Delegation.
+- Public proposal lifecycle.
+- AI proposal summaries.
+- Public voting history.
+- Council rationale history.
+- People's Veto signaling.
+
+### Track E - Treasury and Legal Fund
+
+- Fee fund accounting.
+- Legal & Compliance Fund.
+- Security & Audit Fund.
+- Operations Reserve.
+- Market Stability & Ethereum Alignment Fund.
+- Initial legal provider selection process.
+- Treasury reporting format.
+- Curve Reserve isolation checks.
+
+### Track F - Organization Setup
+
+- Association/foundation-like entity roadmap.
+- Commercial Lda roadmap.
+- IP assignment/licensing plan.
+- Quarterly aggregated reporting.
+- Commercial transparency and confidentiality policy.
+- Legal fund executor procurement process.
+
+### Track G - Public Launch Readiness
+
+- Legal sanity check.
+- Smart contract audit.
+- Public docs review.
+- Security review.
+- Emergency pause policy.
+- USDC impairment migration procedure.
+- Governance launch parameters.
+- Token communications review.
+- KYC/KYB/privacy flow review if identity verification is required at launch.
+- Jurisdictional restrictions review.
+
+### Track H - Future Value-Accrual Research
+
+- No revenue-sharing by default.
+- Research legally compliant mechanisms.
+- Legal review.
+- Independent legal opinion where appropriate.
+- Governance vote.
+- Updated disclosures.
+- Regulated module only if legally allowed.
+
+### Track I - Future ETH Payment Adapter Research
+
+Future high-level flow:
+
+```text
+User pays ETH
+-> ETH Payment Adapter
+-> approved DEX swap ETH to USDC
+-> BondingCurve receives USDC
+-> ISO is minted
+-> baseCost goes to Curve Reserve
+-> fees/premiums go to TreasurySplitter
+```
+
+This is not launch scope. It requires separate specification, MEV/slippage analysis, security review, accounting review, and governance approval.
+
+### Track J - Future ETH-Denominated Reserve Research
+
+ETH-denominated bonding curve reserves may be researched in the future but are not part of the launch design.
+
+If researched, the design must clearly define whether ISO price is denominated in ETH or USD-equivalent ETH. If denominated in ETH, ISO/USD price will move with ETH/USD. If denominated in USD-equivalent ETH, oracle and overcollateralization problems must be solved.
+
+No ETH-denominated reserve migration should be promised. Any reserve asset change requires governance approval, independent legal review, security review, and updated disclosures.

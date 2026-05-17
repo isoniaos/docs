@@ -1,10 +1,10 @@
 # IsoniaOS Documentation
 
-This repository contains the active IsoniaOS v0.8 accountability and integration preview baseline, DAO-first strategy documents, and archived historical material.
+This repository contains the active IsoniaOS v0.8 accountability and integration preview baseline, DAO-first strategy documents, the Draft v0.2 ISO funding/self-governance design, and archived historical material.
 
-## Active project position
+## Active Project Position
 
-IsoniaOS is a governance operating system for accountable digital organizations.
+IsoniaOS is a governance operating system and governance control plane for accountable digital organizations.
 
 The first market is DAO and Web3 governance. IsoniaOS is designed to help DAOs, protocols, foundations, grants programs, and onchain communities manage the full governance lifecycle:
 
@@ -26,14 +26,15 @@ Launch wedge:
 IsoniaOS closes the loop between DAO decisions and execution.
 ```
 
-v0.8 keeps that DAO-first and accountability-centered position. It should not be presented as production SaaS, audit-ready infrastructure, full Safe/Snapshot/Tally/Agora integration, or AI governance. External records are linked evidence or context unless explicit source modeling makes a source authoritative for a specific field.
+v0.8 keeps that DAO-first and accountability-centered position. It should not be presented as production SaaS, audit-ready infrastructure, full Safe/Snapshot/Tally/Agora integration, token launch, or AI governance. External records are linked evidence or context unless explicit source modeling makes a source authoritative for a specific field.
 
-## Active documentation
+## Active Documentation
 
-### Product and strategy
+### Product and Strategy
 
 - [Whitepaper](WHITEPAPER.md)
 - [Roadmap](ROADMAP.md)
+- [Product Architecture](ARCHITECTURE.md)
 - [Market Entry Strategy](strategy/MARKET-ENTRY.md)
 - [Competitive Landscape](strategy/COMPETITIVE-LANDSCAPE.md)
 - [Integration Strategy](strategy/INTEGRATION-STRATEGY.md)
@@ -45,7 +46,7 @@ v0.8 keeps that DAO-first and accountability-centered position. It should not be
 - [Storage and IPFS Model](strategy/STORAGE-AND-IPFS-MODEL.md)
 - [Narrative and Messaging](strategy/NARRATIVE-AND-MESSAGING.md)
 
-### v0.8 active baseline
+### v0.8 Active Product Baseline
 
 - [v0.8 Documentation Index](v0.8/README.md)
 - [Accountability and Integration Preview](v0.8/accountability-and-integration-preview.md)
@@ -53,7 +54,22 @@ v0.8 keeps that DAO-first and accountability-centered position. It should not be
 - [Demo Organization and Governance Process](v0.8/demo-organization-and-governance-process.md)
 - [Backlog and Implementation Sequence](v0.8/backlog-and-implementation-sequence.md)
 
-### v0.7 archived protocol foundation
+### Funding and Protocol Self-Governance Design
+
+Draft v0.2 describes ISO/Isonia tokenomics, identity-aware governance, treasury separation, legal phasing, Protocol Council, and reserve policy.
+
+It is a supporting layer, not a replacement for the product roadmap.
+
+- [Tokenomics](TOKENOMICS.md)
+- [Governance](GOVERNANCE.md)
+- [Identity](IDENTITY.md)
+- [Treasury](TREASURY.md)
+- [Legal Roadmap](LEGAL_ROADMAP.md)
+- [Risk Register](RISK_REGISTER.md)
+- [Decision Log](DECISION_LOG.md)
+- [ISO Architecture](ISO_ARCHITECTURE.md)
+
+### v0.7 Archived Protocol Foundation
 
 - [v0.7 Documentation Index](v0.7/README.md)
 - [Archived v0.7 Roadmap](archive/v0.7/roadmap.md)
@@ -68,14 +84,14 @@ v0.8 keeps that DAO-first and accountability-centered position. It should not be
 - [Archived v0.7 Design Partner Demo Plan](archive/v0.7/design-partner-demo-plan.md)
 - [Archived v0.7 Design Partner Preview Pack](archive/v0.7/design-partner-preview-pack.md)
 
-### Development process
+### Development Process
 
 - [Development Process](DEVELOPMENT-PROCESS.md)
 - [Agent Rules](AGENTS.md)
 - [Versioning Rules](VERSIONING.md)
 - [Documentation Changelog](CHANGELOG.md)
 
-## Archived documentation
+## Archived Documentation
 
 - v0.7 Protocol Hardening Alpha documents are archived under `archive/v0.7/`.
 - v0.6 Governance Console Alpha documents are archived under `archive/v0.6/`.
@@ -83,8 +99,8 @@ v0.8 keeps that DAO-first and accountability-centered position. It should not be
 - The v0.5 known-good tag set is recorded in [archive/v0.5/compatibility-matrix.md](archive/v0.5/compatibility-matrix.md).
 - Historical v0.1 documents are archived under `archive/v0.1/`.
 
-Archived v0.1, v0.5, v0.6, and v0.7 documents are historical references and are not part of the active v0.8 documentation surface.
+Archived v0.1, v0.5, v0.6, and v0.7 documents are historical references and are not part of the active v0.8 product baseline or Draft v0.2 ISO design surface.
 
-## Public repository note
+## Public Repository Note
 
 Some strategy documents are intentionally public because IsoniaOS is infrastructure that needs trust. Keep sensitive partner details, pricing negotiations, private pipeline notes, and internal fundraising material out of this repository unless the team explicitly decides otherwise.

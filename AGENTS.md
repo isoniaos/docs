@@ -2,31 +2,69 @@
 
 These rules apply to Codex and other AI agents working in this repository.
 
-## Active target
+## Active Targets
 
-The active documentation target is **IsoniaOS v0.8 accountability and integration preview**.
+Primary active product documentation target:
+
+```text
+IsoniaOS v0.8 accountability and integration preview
+```
+
+Parallel design target:
+
+```text
+ISO / Isonia Draft v0.2 funding and protocol self-governance layer
+```
+
+These targets are complementary. Draft v0.2 tokenomics does not supersede the v0.8 product baseline.
 
 Read first:
 
 - `WHITEPAPER.md`
 - `ROADMAP.md`
+- `ARCHITECTURE.md`
 - `AGENTS.md`
 - `DEVELOPMENT-PROCESS.md`
 - `strategy/`
 - `v0.8/`
 
+For ISO/tokenomics work, also read:
+
+- `TOKENOMICS.md`
+- `GOVERNANCE.md`
+- `IDENTITY.md`
+- `TREASURY.md`
+- `LEGAL_ROADMAP.md`
+- `RISK_REGISTER.md`
+- `DECISION_LOG.md`
+- `ISO_ARCHITECTURE.md`
+
 Archived documents are historical references only.
 
-## Product positioning rules
+## Product Positioning Rules
 
 - Treat DAO/Web3 governance as the first market.
 - Treat civic, public-sector, political, and state-level governance as a long-term expansion path, not immediate product scope.
 - Describe IsoniaOS as a governance control plane / governance operating system for accountable digital organizations.
-- Do not describe IsoniaOS as only a voting app, DAO launcher, treasury wallet, AI governor, or state operating system.
+- Do not describe IsoniaOS as only a voting app, DAO launcher, treasury wallet, AI governor, state operating system, or token project.
 - Keep the core thesis visible: **Governance is not a vote. Governance is a lifecycle.**
 - Keep the launch wedge visible: **IsoniaOS closes the loop between DAO decisions and execution.**
+- Never replace product docs with tokenomics docs.
+- `WHITEPAPER.md` and `ROADMAP.md` are product-first.
 
-## v0.8 scope rules
+## Source-of-Truth Rules
+
+- `TOKENOMICS.md` is the source of truth for ISO economics.
+- `GOVERNANCE.md` is the source of truth for Protocol Council, People's Veto, cooldowns, voting caps, and constitution/AI validation.
+- `IDENTITY.md` is the source of truth for IdentityRegistry and verifier adapters.
+- `TREASURY.md` is the source of truth for Curve Reserve, treasury funds, Legal & Compliance Fund, Market Stability & Ethereum Alignment Fund, SaaS contribution logic, and commercial confidentiality logic.
+- `LEGAL_ROADMAP.md` is the source of truth for legal phasing.
+- `RISK_REGISTER.md` is the source of truth for tokenomics and product risk tracking.
+- `DECISION_LOG.md` is the source of truth for recorded product/context and ISO design decisions.
+- `ISO_ARCHITECTURE.md` is the source of truth for ISO funding and protocol self-governance architecture.
+- `ARCHITECTURE.md` is the source of truth for product architecture.
+
+## v0.8 Scope Rules
 
 v0.8 may improve:
 
@@ -54,7 +92,8 @@ v0.8 must not add or claim:
 - AI governance;
 - production audit readiness;
 - full Proposal Action Builder production release;
-- tenant provisioning.
+- tenant provisioning;
+- token launch requirement.
 
 v0.8 authority and evidence rules:
 
@@ -65,7 +104,32 @@ v0.8 authority and evidence rules:
 - imported external records must keep source labels, trust boundaries, and stale/error/unknown states visible;
 - EIP-5792 is not the primary v0.8 path.
 
-## Documentation rules
+## ISO v0.2 Scope Rules
+
+ISO / Isonia Draft v0.2 may document:
+
+- token name and symbol;
+- standard ERC-20 design;
+- native USDC-only bonding curve settlement/redemption at launch;
+- immutable polynomial curve;
+- Curve Reserve invariant;
+- treasury funds;
+- Legal & Compliance Fund;
+- identity-aware protocol self-governance;
+- Protocol Council;
+- People's Veto;
+- legal phasing;
+- ETH alignment as non-reserve treasury/grant/donation asset or future research item.
+
+It must not claim:
+
+- revenue-sharing rights at launch;
+- equity, shares, dividends, profit rights, passive income, or guaranteed yield;
+- Curve Reserve can fund operations;
+- ETH backs ISO redemptions at launch;
+- token launch is required for v0.8 product work.
+
+## Documentation Rules
 
 - Keep active docs in English.
 - Keep user-facing statements concrete and non-hype.
@@ -75,16 +139,16 @@ v0.8 authority and evidence rules:
 - Do not create future-version docs unless the version is explicitly scoped.
 - Do not create or update tags unless explicitly instructed.
 
-## Implementation rules
+## Implementation Rules
 
 - Prefer small, reviewable changes.
 - Use docs as the source of truth before code.
-- Do not merge unrelated protocol, UI, SaaS, AI, and integration work into one patch.
+- Do not merge unrelated protocol, UI, SaaS, AI, tokenomics, and integration work into one patch.
 - Keep package boundaries clean.
 - Run relevant tests, linters, or type checks when code changes.
 - Report uncertainty, failing tests, or unverified assumptions.
 
-## Trust rules
+## Trust Rules
 
 - Contracts are authoritative for onchain state.
 - UI and diagnostics are explanatory layers, not sources of governance authority.

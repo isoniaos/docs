@@ -27,11 +27,13 @@ Before any implementation work, read:
 - `AGENTS.md`
 - `WHITEPAPER.md`
 - `ROADMAP.md`
+- `ARCHITECTURE.md` for product architecture scope;
+- `TOKENOMICS.md`, `GOVERNANCE.md`, `IDENTITY.md`, `TREASURY.md`, `LEGAL_ROADMAP.md`, `RISK_REGISTER.md`, `DECISION_LOG.md`, and `ISO_ARCHITECTURE.md` when ISO tokenomics, governance, identity, treasury, legal, risk, decision, or token architecture scope is involved;
 - `v0.8/README.md`
 - relevant feature docs under `v0.8/`
 - relevant strategy docs under `strategy/`
 
-Archived docs are historical context only.
+Archived docs are historical context only. v0.8 is the active accountability/product implementation baseline. Draft v0.2 is the parallel ISO funding and protocol self-governance design baseline.
 
 ---
 
@@ -68,11 +70,15 @@ Implement AddressInput checksum validation in app-core and add tests. Do not cha
 ```text
 You are working on IsoniaOS.
 
-Active target: v0.8 accountability and integration preview.
+Active target: v0.8 accountability and integration preview for product implementation tasks. Use Draft v0.2 ISO funding and protocol self-governance design only if the task touches ISO, reserve, treasury, identity, Council, legal phasing, risk, or token architecture.
 
 Read first:
 - AGENTS.md
-- docs/v0.8/README.md
+- docs/WHITEPAPER.md
+- docs/ROADMAP.md
+- docs/ARCHITECTURE.md when product architecture is relevant
+- docs/TOKENOMICS.md, docs/GOVERNANCE.md, docs/IDENTITY.md, docs/TREASURY.md, docs/LEGAL_ROADMAP.md, docs/RISK_REGISTER.md, docs/DECISION_LOG.md, and docs/ISO_ARCHITECTURE.md when ISO design is relevant
+- docs/v0.8/README.md when relevant
 - [specific feature doc]
 
 Task:
