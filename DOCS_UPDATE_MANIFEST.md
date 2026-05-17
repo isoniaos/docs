@@ -1,18 +1,26 @@
 # IsoniaOS Documentation Update Manifest
 
 **Prepared for:** `isoniaos/docs`
-**Current tokenomics/governance target:** Draft v0.2
-**Current accountability/product baseline:** v0.8 accountability and integration preview
-**Purpose:** Track the active documentation transition to the Draft v0.2 ISO tokenomics, governance, treasury, identity, legal, risk, decision, and architecture baseline while preserving v0.8 as the accountability implementation context.
+**Current product target:** v0.8 accountability and integration preview
+**Parallel design target:** ISO / Isonia Draft v0.2 funding and protocol self-governance layer
+**Purpose:** Track the repaired documentation hierarchy: IsoniaOS remains product-first, while ISO tokenomics remains a supporting layer.
 
 ## Active Documentation
 
-Root:
+Product/root:
 
 - `README.md`
 - `AGENTS.md`
 - `WHITEPAPER.md`
 - `ROADMAP.md`
+- `ARCHITECTURE.md`
+- `VERSIONING.md`
+- `CHANGELOG.md`
+- `DEVELOPMENT-PROCESS.md`
+- `DOCS_UPDATE_MANIFEST.md`
+
+ISO funding and protocol self-governance:
+
 - `TOKENOMICS.md`
 - `GOVERNANCE.md`
 - `IDENTITY.md`
@@ -20,11 +28,7 @@ Root:
 - `LEGAL_ROADMAP.md`
 - `RISK_REGISTER.md`
 - `DECISION_LOG.md`
-- `ARCHITECTURE.md`
-- `VERSIONING.md`
-- `CHANGELOG.md`
-- `DEVELOPMENT-PROCESS.md`
-- `DOCS_UPDATE_MANIFEST.md`
+- `ISO_ARCHITECTURE.md`
 
 Strategy:
 
@@ -39,7 +43,7 @@ Strategy:
 - `strategy/STORAGE-AND-IPFS-MODEL.md`
 - `strategy/NARRATIVE-AND-MESSAGING.md`
 
-v0.8 accountability/product baseline:
+v0.8:
 
 - `v0.8/README.md`
 - `v0.8/accountability-and-integration-preview.md`
@@ -64,27 +68,27 @@ Archived foundation:
 
 ## Review Priorities
 
-1. Confirm that Draft v0.2 is the active tokenomics/governance design baseline.
-2. Confirm that v0.8 remains the accountability/product implementation baseline.
-3. Confirm that launch Curve Reserve is native USDC-only.
-4. Confirm that ETH is not presented as the launch redemption asset or launch unit of account.
-5. Confirm that Curve Reserve is not treasury, protocol revenue, or operational runway.
-6. Confirm that ISO is a standard ERC-20 with no fee-on-transfer and no transfer tax.
-7. Confirm that governance power requires verified identity and governance activation/staking.
-8. Confirm that public docs do not claim revenue-sharing rights, equity, guaranteed yield, or guaranteed returns at launch.
-9. Confirm that future economic participation, ETH payment adapter work, and ETH-denominated reserve research remain conditional, legally reviewed, security reviewed, and governance-approved.
-10. Confirm that archived docs remain historical references and are not edited as active docs unless explicitly instructed.
+1. Confirm that `WHITEPAPER.md`, `ROADMAP.md`, and `ARCHITECTURE.md` are product-first.
+2. Confirm that `v0.8/` remains the active product implementation/accountability baseline.
+3. Confirm that ISO Draft v0.2 is a parallel funding and protocol self-governance design layer.
+4. Confirm that `TOKENOMICS.md` is the source of truth for ISO economics.
+5. Confirm that `GOVERNANCE.md` is the source of truth for Protocol Council and People's Veto.
+6. Confirm that `TREASURY.md` is the source of truth for Curve Reserve and treasury funds.
+7. Confirm that `LEGAL_ROADMAP.md` is the source of truth for legal phasing.
+8. Confirm that `ISO_ARCHITECTURE.md` contains tokenomics architecture and `ARCHITECTURE.md` contains product architecture.
+9. Confirm that token launch is not required for v0.8 accountability/integration preview.
+10. Confirm that no active doc claims revenue-sharing rights, equity, guaranteed yield, Curve Reserve operational funding, or ETH-backed launch redemptions.
 
-## Main Transition
+## Main Lines
 
-The active tokenomics/governance line is now:
-
-```text
-Draft v0.2 ISO tokenomics and identity-aware governance design
-```
-
-The active accountability/product implementation line remains:
+The active product line is:
 
 ```text
 v0.8 accountability and integration preview
+```
+
+The parallel ISO design line is:
+
+```text
+Draft v0.2 ISO / Isonia funding and protocol self-governance layer
 ```

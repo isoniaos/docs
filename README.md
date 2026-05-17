@@ -1,12 +1,18 @@
 # IsoniaOS Documentation
 
-This repository contains the active IsoniaOS public documentation, strategy documents, and archived historical material.
+This repository contains the active IsoniaOS v0.8 accountability and integration preview baseline, DAO-first strategy documents, the Draft v0.2 ISO funding/self-governance design, and archived historical material.
 
-## Active Documentation Baseline
+## Active Project Position
 
-The active public design baseline is **Draft v0.2** for ISO tokenomics, identity-aware governance, treasury separation, legal phasing, and reserve asset policy.
+IsoniaOS is a governance operating system and governance control plane for accountable digital organizations.
 
-IsoniaOS is a governance architecture layer for accountable digital organizations. It is designed to make authority visible, scoped, delegated, constrained, auditable, and eventually recallable.
+The first market is DAO and Web3 governance. IsoniaOS is designed to help DAOs, protocols, foundations, grants programs, and onchain communities manage the full governance lifecycle:
+
+```text
+Idea -> Proposal -> Review -> Decision -> Execution -> Accountability -> Memory
+```
+
+The long-term vision may expand into cooperatives, civic initiatives, public-good organizations, institutional governance, and eventually public governance experiments. Those are later milestones, not the immediate product claim.
 
 Core thesis:
 
@@ -14,45 +20,21 @@ Core thesis:
 Governance is not a vote. Governance is a lifecycle.
 ```
 
-Core architecture principle:
+Launch wedge:
 
 ```text
-Authority on-chain.
-Intelligence off-chain.
-Verification public.
+IsoniaOS closes the loop between DAO decisions and execution.
 ```
 
-The v0.2 design keeps the launch token architecture conservative:
-
-- token name: Isonia;
-- token symbol: ISO;
-- standard ERC-20;
-- no fee-on-transfer;
-- no transfer tax;
-- native USDC-only launch bonding curve settlement and redemption;
-- Curve Reserve is not treasury or operational runway;
-- ETH is not the launch redemption asset and does not back ISO redemptions at launch;
-- ETH may be used for grants, donations, non-reserve treasury allocation, and future adapter research;
-- verified identity and activation/staking are required for governance power;
-- no revenue-sharing rights exist at launch.
+v0.8 keeps that DAO-first and accountability-centered position. It should not be presented as production SaaS, audit-ready infrastructure, full Safe/Snapshot/Tally/Agora integration, token launch, or AI governance. External records are linked evidence or context unless explicit source modeling makes a source authoritative for a specific field.
 
 ## Active Documentation
 
-### v0.2 design baseline
+### Product and Strategy
 
 - [Whitepaper](WHITEPAPER.md)
 - [Roadmap](ROADMAP.md)
-- [Tokenomics](TOKENOMICS.md)
-- [Governance](GOVERNANCE.md)
-- [Identity](IDENTITY.md)
-- [Treasury](TREASURY.md)
-- [Legal Roadmap](LEGAL_ROADMAP.md)
-- [Risk Register](RISK_REGISTER.md)
-- [Decision Log](DECISION_LOG.md)
-- [Architecture](ARCHITECTURE.md)
-
-### Product and strategy
-
+- [Product Architecture](ARCHITECTURE.md)
 - [Market Entry Strategy](strategy/MARKET-ENTRY.md)
 - [Competitive Landscape](strategy/COMPETITIVE-LANDSCAPE.md)
 - [Integration Strategy](strategy/INTEGRATION-STRATEGY.md)
@@ -64,7 +46,7 @@ The v0.2 design keeps the launch token architecture conservative:
 - [Storage and IPFS Model](strategy/STORAGE-AND-IPFS-MODEL.md)
 - [Narrative and Messaging](strategy/NARRATIVE-AND-MESSAGING.md)
 
-### v0.8 accountability and integration preview
+### v0.8 Active Product Baseline
 
 - [v0.8 Documentation Index](v0.8/README.md)
 - [Accountability and Integration Preview](v0.8/accountability-and-integration-preview.md)
@@ -72,7 +54,22 @@ The v0.2 design keeps the launch token architecture conservative:
 - [Demo Organization and Governance Process](v0.8/demo-organization-and-governance-process.md)
 - [Backlog and Implementation Sequence](v0.8/backlog-and-implementation-sequence.md)
 
-### v0.7 archived protocol foundation
+### Funding and Protocol Self-Governance Design
+
+Draft v0.2 describes ISO/Isonia tokenomics, identity-aware governance, treasury separation, legal phasing, Protocol Council, and reserve policy.
+
+It is a supporting layer, not a replacement for the product roadmap.
+
+- [Tokenomics](TOKENOMICS.md)
+- [Governance](GOVERNANCE.md)
+- [Identity](IDENTITY.md)
+- [Treasury](TREASURY.md)
+- [Legal Roadmap](LEGAL_ROADMAP.md)
+- [Risk Register](RISK_REGISTER.md)
+- [Decision Log](DECISION_LOG.md)
+- [ISO Architecture](ISO_ARCHITECTURE.md)
+
+### v0.7 Archived Protocol Foundation
 
 - [v0.7 Documentation Index](v0.7/README.md)
 - [Archived v0.7 Roadmap](archive/v0.7/roadmap.md)
@@ -87,7 +84,7 @@ The v0.2 design keeps the launch token architecture conservative:
 - [Archived v0.7 Design Partner Demo Plan](archive/v0.7/design-partner-demo-plan.md)
 - [Archived v0.7 Design Partner Preview Pack](archive/v0.7/design-partner-preview-pack.md)
 
-### Development process
+### Development Process
 
 - [Development Process](DEVELOPMENT-PROCESS.md)
 - [Agent Rules](AGENTS.md)
@@ -102,7 +99,7 @@ The v0.2 design keeps the launch token architecture conservative:
 - The v0.5 known-good tag set is recorded in [archive/v0.5/compatibility-matrix.md](archive/v0.5/compatibility-matrix.md).
 - Historical v0.1 documents are archived under `archive/v0.1/`.
 
-Archived v0.1, v0.5, v0.6, and v0.7 documents are historical references and are not part of the active v0.2 tokenomics/governance design surface.
+Archived v0.1, v0.5, v0.6, and v0.7 documents are historical references and are not part of the active v0.8 product baseline or Draft v0.2 ISO design surface.
 
 ## Public Repository Note
 

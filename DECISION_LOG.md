@@ -9,7 +9,7 @@
 
 ## 1. Purpose
 
-This log records draft v0.2 design decisions for ISO tokenomics, governance, treasury, legal phasing, reserve assets, and ETH alignment.
+This log records product/context decisions and draft v0.2 design decisions for ISO tokenomics, governance, treasury, legal phasing, reserve assets, and ETH alignment.
 
 These are design decisions, not deployed implementation.
 
@@ -19,6 +19,14 @@ These are design decisions, not deployed implementation.
 
 | Decision | Draft v0.2 outcome | Rationale / notes |
 | --- | --- | --- |
+| Product hierarchy | IsoniaOS is product-first | IsoniaOS is a governance control plane for accountable digital organizations, not primarily a token project. |
+| First market | DAO/Web3 governance | The first market remains DAOs, protocols, foundations, grants programs, and onchain communities. |
+| Active product baseline | v0.8 accountability and integration preview | v0.8 remains the active product implementation/accountability baseline. |
+| ISO layer position | Parallel funding and protocol self-governance layer | ISO tokenomics supports IsoniaOS funding and self-governance; it does not replace the product roadmap. |
+| Main whitepaper and roadmap | Product-first | `WHITEPAPER.md` and `ROADMAP.md` should explain the governance control plane before tokenomics. |
+| Product architecture | Product-first `ARCHITECTURE.md` | The main architecture doc covers product lifecycle, integrations, accountability, memory, and AI advisory architecture. |
+| ISO architecture | Separate `ISO_ARCHITECTURE.md` | Token issuance, reserve, treasury, and ISO governance flows are separated from main product architecture. |
+| ISO economics source of truth | `TOKENOMICS.md` | Detailed bonding curve, reserve, fees, premiums, and economic constraints belong in `TOKENOMICS.md`. |
 | Token name | Isonia | Public token name for the planned IsoniaOS token. |
 | Token symbol | ISO | Intended symbol. No claim that ISO is globally unique as a ticker. |
 | Payment asset | Native USDC only | Simpler accounting, redemption predictability, legal fund stability, and lower launch complexity. |

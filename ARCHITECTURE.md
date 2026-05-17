@@ -1,340 +1,233 @@
-# IsoniaOS Architecture
+# IsoniaOS Product Architecture
 
 **Version:** Draft v0.2
 **Status:** Draft
 **Project:** IsoniaOS
+**Primary product baseline:** v0.8 accountability and integration preview
 **Language:** English
 
 ---
 
 ## 1. Purpose
 
-This document describes the high-level draft v0.2 architecture for ISO issuance, reserve accounting, treasury routing, identity-aware governance activation, Council governance, and future ETH alignment.
+This document describes the product-first architecture of IsoniaOS as a governance control plane for accountable digital organizations.
 
-It is documentation-only and does not define deployed contracts.
-
----
-
-## 2. Core Modules
-
-Draft modules:
-
-- `ISO`: standard ERC-20 token.
-- `BondingCurve`: primary ISO mint/redeem venue.
-- `CurveReserve`: native USDC-only redemption reserve.
-- `TreasurySplitter`: routes fees and premiums to treasury funds.
-- `GovernanceVault`: governance activation/staking and cooldown lots.
-- `IdentityRegistry`: source of truth for verified identities.
-- `CouncilRegistry`: Council seats, candidate profiles, bonds, delegations, and slashing records.
-- `ProposalEngine`: proposal lifecycle, votes, timelocks, and execution routing.
-- `AIPolicyValidator`: advisory proposal validation and summaries.
-- `ConstitutionRegistry`: reference to constitution rules and versioned policy constraints.
-
-The exact names may change during technical specification. The boundaries should remain clear.
+IsoniaOS is not primarily a token project. The ISO funding and protocol self-governance layer is documented separately in [ISO Architecture](ISO_ARCHITECTURE.md).
 
 ---
 
-## 3. ERC-20 Boundary
+## 2. Product Architecture
 
-ISO should be a standard ERC-20 token.
+IsoniaOS combines:
 
-The token contract should keep these exclusions:
+- EVM governance contracts where onchain authority is needed;
+- Control Plane indexing, projection, diagnostics, and REST APIs;
+- shared TypeScript domain types;
+- SDK clients and helpers;
+- App Core governance console;
+- theme packages;
+- external governance integrations;
+- optional advisory AI features;
+- public governance archive and accountability records.
 
-- no fee-on-transfer logic;
-- no transfer tax;
-- no identity checks inside transfer logic;
-- no whale premium on simple ERC-20 transfers;
-- no complex governance logic.
-
-The token should remain compatible with DEXs, wallets, indexers, accounting systems, and bridges.
+The product architecture exists to connect decision context, authority, execution, evidence, and memory.
 
 ---
 
-## 4. Immutable Bonding Curve
+## 3. Governance Lifecycle Architecture
 
-The planned primary issuance mechanism is an immutable polynomial bonding curve.
+The core product lifecycle is:
 
 ```text
-P(S) = P0 * (1 + S / B)^k
+Idea -> Proposal -> Review -> Decision -> Execution -> Accountability -> Memory
 ```
 
-Where:
+IsoniaOS should model:
 
-- `P(S)` is the spot mint price of the next ISO token.
-- `P0 = 1 USDC`.
-- `k = 1.15`.
-- `B = CurveSupplyCap / 10`.
-- `S` is the amount of ISO already issued through the bonding curve.
-- `CurveSupplyCap` is the maximum amount of ISO that can be issued through the bonding curve.
+- proposal draft and metadata;
+- proposal type and policy route;
+- review and discussion context;
+- decision mechanism and result;
+- approval, veto, and timelock status;
+- execution action and transaction evidence;
+- accountability obligations;
+- completion, failure, or cancellation state;
+- historical memory and related decisions.
 
-`P0`, `k`, `B`, `CurveSupplyCap`, and the core integral formula are immutable after public launch.
-
-Purchase formula:
-
-```text
-baseCost(amount) =
-P0 * B / (k + 1) *
-[
-  (1 + (S + amount) / B)^(k + 1)
-  -
-  (1 + S / B)^(k + 1)
-]
-```
-
-Redemption formula:
-
-```text
-baseReturn(amount) =
-P0 * B / (k + 1) *
-[
-  (1 + S / B)^(k + 1)
-  -
-  (1 + (S - amount) / B)^(k + 1)
-]
-```
-
-Fees and premiums are separate from Curve Reserve.
+Voting is one stage inside this lifecycle. It is not the whole product.
 
 ---
 
-## 5. Primary Buy Flow
+## 4. Authority Model
 
-```text
-User
--> BondingCurve
--> IdentityRegistry check
--> calculate baseCost
--> calculate buy fee
--> calculate whale premium if applicable
--> USDC baseCost to Curve Reserve
--> fees/premiums to TreasurySplitter
--> mint ISO to user
-```
+Contracts are authoritative for onchain state they control.
 
-Notes:
+Control Plane, App Core, diagnostics, and AI are explanatory or operational layers unless explicit authority is modeled.
 
-- Launch settlement asset is native USDC only.
-- `baseCost` goes to Curve Reserve.
-- Fees and premiums go to treasury funds.
-- Whale premium applies to bonding curve purchases, not ERC-20 transfers.
+External tools are authoritative only for their own records:
+
+- Snapshot for its offchain vote records;
+- Safe for Safe transaction state;
+- Tally/Agora/Governor systems for their governance records;
+- GitHub for repository and pull request state;
+- block explorers as views into chain data;
+- Discourse or forums for their discussion records.
+
+IsoniaOS should preserve source labels and trust boundaries across all imported or linked records.
 
 ---
 
-## 6. Redeem Flow
+## 5. External Integration Architecture
 
-```text
-User
--> BondingCurve
--> burn ISO
--> calculate baseReturn
--> subtract sell fee
--> USDC payout from Curve Reserve
--> fee to TreasurySplitter
-```
+IsoniaOS should integrate with existing DAO tools before trying to replace them.
 
-Notes:
+Relevant integrations include:
 
-- Launch redemption asset is native USDC only.
-- ETH is not the launch redemption asset.
-- Sell fee is separate from Curve Reserve.
+- Snapshot proposal links/import previews;
+- Safe transaction proof links;
+- Tally and Agora proposal links;
+- Discourse and forum context links;
+- GitHub pull request and commit context;
+- block explorer transaction proofs;
+- EAS-style attestations;
+- ERC-4824-style metadata;
+- treasury dashboards and grant systems later.
 
----
-
-## 7. Governance Activation Flow
-
-```text
-User
--> GovernanceVault
--> IdentityRegistry check
--> stake ISO
--> calculate concentration premium if applicable
--> create cooldown lot
--> calculate effectiveStake over time
--> calculate voicePower with x10 cap
-```
-
-Cooldown schedule:
-
-| Time after staking | Governance power |
-| --- | ---: |
-| `0-7 days` | `0%` |
-| `8-30 days` | `25%` |
-| `31-90 days` | `50%` |
-| `91-180 days` | `75%` |
-| `180+ days` | `100%` |
-
-Cooldown is based on activation/staking timestamp, not purchase timestamp.
+Integration records should show whether data is linked, imported, synced, verified, stale, missing, or failed.
 
 ---
 
-## 8. Voting Power Formula
+## 6. Accountability and Memory Architecture
 
-```text
-VotingEligibilityThreshold = max(100 ISO, 0.0001% of GovernanceReferenceSupply)
-```
+The v0.8 accountability baseline focuses on public decision records and proof of execution.
 
-```text
-if effectiveStake < VotingEligibilityThreshold:
-  voicePower = 0
+Accountability records may include:
 
-else:
-  voicePower = min(
-    10,
-    1 + 9 * ln(effectiveStake / VotingEligibilityThreshold)
-          / ln(CapStake / VotingEligibilityThreshold)
-  )
-```
+- responsible party;
+- due date;
+- execution status;
+- linked transaction hash;
+- external proof;
+- manual status update;
+- failure or cancellation reason;
+- completion confirmation;
+- trust boundary and source label.
 
-Draft:
+Manual accountability updates are annotations, not protocol truth. Imported external records are evidence or context unless explicitly modeled as authority for a specific field.
 
-```text
-CapStake = 0.1% of GovernanceReferenceSupply
-```
-
-Delegated voting power must be tracked separately from own identity power.
+The governance memory layer should preserve proposals, discussions, decisions, execution proofs, rationales, failures, disputes, policy changes, delegate history, and similar historical proposals.
 
 ---
 
-## 9. Proposal Flow
+## 7. Control Plane Architecture
 
-```text
-Verified participant or Council member
--> proposal submission
--> AI validation
--> constitution check
--> discussion period
--> vote
--> possible Soft People's Veto or Hard People's Veto
--> timelock
--> execution if approved
-```
+Control Plane is the indexing, query, diagnostic, and operational backend.
 
-AI validation is advisory. Final authority remains with governance, Council, and applicable legal structures.
+It should provide:
 
----
+- chain event ingestion;
+- raw event storage;
+- idempotent processing;
+- replayable projections;
+- REST API;
+- route explanation;
+- governance graph generation;
+- diagnostics;
+- external resource modeling;
+- accountability read models.
 
-## 10. Treasury Flow
-
-```text
-BondingCurve baseCost
--> Curve Reserve
--> redemption payouts only
-```
-
-```text
-buy fees / sell fees / whale premiums / activation premiums
--> TreasurySplitter
--> Protocol Treasury Fund
--> Legal & Compliance Fund
--> Security & Audit Fund
--> Operations Reserve
--> Market Stability & Ethereum Alignment Fund
-```
-
-Curve Reserve must not fund operations.
+Control Plane is not the source of governance authority. It explains and projects authority from contracts and explicitly trusted external sources.
 
 ---
 
-## 11. Reserve Asset Decision: USDC Curve Reserve, ETH Alignment Layer
+## 8. App Core Architecture
 
-Launch bonding curve remains denominated in native USDC.
+App Core is the public self-hostable governance console.
 
-Launch Curve Reserve remains native USDC-only.
+It should provide:
 
-ETH is not the launch redemption asset.
+- organization dashboard;
+- proposal list/detail;
+- governance structure views;
+- route explanation;
+- action and execution status views;
+- public governance archive;
+- accountability dashboard;
+- diagnostics;
+- integration evidence views;
+- theme adapter.
 
-ETH is not the launch unit of account for ISO bonding curve.
-
-The decision is based on redemption predictability, accounting clarity, legal fund stability, and simpler smart contract security.
-
-USDC has issuer, blacklisting, depeg, and regulatory risks. ETH has stronger decentralization properties, but introduces reserve volatility and accounting uncertainty.
-
-ETH-denominated reserves may increase market volatility, but also make ISO/USD price depend on ETH/USD movements.
-
-Reserve volatility should not be used as a substitute for product value, governance credibility, or protocol adoption.
-
-```text
-Reserve should be boring. Token upside should come from adoption, utility, governance demand and legally compliant future value-accrual mechanisms, not from unnecessary reserve volatility.
-```
+App Core should not contain SaaS-only billing or private tenant management logic.
 
 ---
 
-## 12. USDC Risk Acknowledgement
+## 9. AI Advisory Architecture
 
-USDC carries centralized issuer risk.
+AI is an interpretability and assistance layer.
 
-USDC may be subject to blacklisting, freezing, regulatory, or operational constraints.
+Allowed roles include:
 
-The protocol should include a USDC impairment emergency clause allowing governance to pause new mint/redeem operations and begin a legally compliant migration procedure if USDC becomes materially impaired, frozen, unavailable, depegged, or legally unsuitable.
+- proposal summaries;
+- discussion summaries;
+- route explanation summaries;
+- risk checklists;
+- unresolved question detection;
+- similar proposal search;
+- execution status summaries;
+- public objection summaries.
 
-Do not imply that migration can recover funds if the Curve Reserve address itself becomes frozen. Blacklisting of the reserve address could be an existential operational risk.
-
----
-
-## 13. Future ETH Payment Adapter
-
-Future flow:
-
-```text
-User pays ETH
--> ETH Payment Adapter
--> approved DEX swap ETH to USDC
--> BondingCurve receives USDC
--> ISO is minted
--> baseCost goes to Curve Reserve
--> fees/premiums go to TreasurySplitter
-```
-
-Rules:
-
-- Not launch scope.
-- The adapter swaps ETH to USDC before minting.
-- ISO minting occurs only after the `BondingCurve` receives required USDC.
-- Requires separate specification, MEV/slippage analysis, audit, accounting review, and governance approval.
-
-Risks:
-
-- slippage;
-- MEV;
-- DEX dependency;
-- quote manipulation;
-- failed swap handling;
-- audit complexity;
-- accounting complexity.
+AI must not be the default final authority for proposal validity, voting decisions, execution approval, dispute resolution, or completion confirmation.
 
 ---
 
-## 14. Future ETH-Denominated Reserve Research
+## 10. ISO Supporting Layer
 
-ETH-denominated bonding curve may be researched in the future but is not part of the launch design.
+ISO tokenomics is a supporting funding and protocol self-governance layer for IsoniaOS itself.
 
-If researched, it must clearly define whether ISO price is denominated in ETH or USD-equivalent ETH.
+It is not required for v0.8 accountability and integration preview. Token launch is not required for product milestones unless explicitly stated in a future roadmap.
 
-If denominated in ETH, ISO/USD price will move with ETH/USD.
+The ISO layer is documented in:
 
-If denominated in USD-equivalent ETH, oracle and overcollateralization problems must be solved.
+- [Tokenomics](TOKENOMICS.md)
+- [Governance](GOVERNANCE.md)
+- [Identity](IDENTITY.md)
+- [Treasury](TREASURY.md)
+- [Legal Roadmap](LEGAL_ROADMAP.md)
+- [Risk Register](RISK_REGISTER.md)
+- [Decision Log](DECISION_LOG.md)
+- [ISO Architecture](ISO_ARCHITECTURE.md)
 
-No ETH-denominated reserve migration should be promised.
+Key constraints:
 
-Any reserve asset change requires governance approval, independent legal review, security review, and updated disclosures.
-
----
-
-## 15. Architecture Invariants
-
-- Curve Reserve is not treasury.
-- Curve Reserve receives `baseCost` from bonding curve mints.
-- Curve Reserve pays redemptions.
-- Curve Reserve cannot be used for operations.
-- Fees and premiums are not Curve Reserve.
-- ISO ERC-20 transfers are standard and do not run identity checks.
-- Governance power requires verified identity and activation/staking.
-- ETH does not back launch redemptions.
-- AI is advisory, not final authority.
-- Future economic participation is conditional and legally reviewed.
+- no revenue-sharing rights exist at launch;
+- Curve Reserve is not treasury;
+- launch reserve and redemption asset is native USDC only;
+- ETH does not back ISO redemptions at launch;
+- governance power requires verified identity and activation/staking.
 
 ---
 
-## 16. Legal Boundary
+## 11. Non-Goals
 
-No revenue-sharing rights exist at launch. Any future economic participation module will require a separate governance proposal, independent legal review, updated disclosures, and, where required, a regulated structure.
+The product architecture does not require:
+
+- token launch for v0.8;
+- production SaaS billing;
+- full Safe/Snapshot/Tally/Agora integration at v0.8;
+- NFT voting runtime;
+- production-grade indexer;
+- binding AI governance;
+- production audit readiness;
+- custom domains;
+- full IPFS upload service.
+
+---
+
+## 12. Related Documents
+
+- [Whitepaper](WHITEPAPER.md)
+- [Roadmap](ROADMAP.md)
+- [v0.8 Accountability and Integration Preview](v0.8/accountability-and-integration-preview.md)
+- [Trust and Security](strategy/TRUST-AND-SECURITY.md)
+- [AI Policy](strategy/AI-POLICY.md)
+- [ISO Architecture](ISO_ARCHITECTURE.md)
