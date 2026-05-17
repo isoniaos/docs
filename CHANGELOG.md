@@ -4,6 +4,17 @@ All notable changes to the IsoniaOS documentation repository are documented here
 
 Git tags use SemVer with a leading `v`, for example `v0.7.0-alpha.1`.
 
+## Unreleased
+
+### Added
+
+- Added the Draft v0.2 tokenomics, governance, identity, treasury, legal roadmap, risk register, decision log, and architecture documentation pack for ISO.
+
+### Changed
+
+- Updated the whitepaper, roadmap, and README navigation for the native USDC-only launch Curve Reserve, ETH alignment layer, Curve Reserve invariant, standard ERC-20 design, identity-aware governance, Protocol Council, legal phasing, and no revenue-sharing-at-launch posture.
+- Aligned documentation metadata files so Draft v0.2 is the active tokenomics/governance design baseline while v0.8 remains the accountability/product implementation baseline.
+
 ## v0.8.0-alpha.1
 
 ### Added

@@ -1,10 +1,11 @@
 # IsoniaOS Documentation Update Manifest
 
-**Prepared for:** `isoniaos/docs`  
-**Current documentation target:** v0.8 accountability and integration preview
-**Purpose:** Track the documentation transition from the archived v0.7 protocol-hardening foundation to the active v0.8 accountability and integration preview baseline.
+**Prepared for:** `isoniaos/docs`
+**Current tokenomics/governance target:** Draft v0.2
+**Current accountability/product baseline:** v0.8 accountability and integration preview
+**Purpose:** Track the active documentation transition to the Draft v0.2 ISO tokenomics, governance, treasury, identity, legal, risk, decision, and architecture baseline while preserving v0.8 as the accountability implementation context.
 
-## Active documentation
+## Active Documentation
 
 Root:
 
@@ -12,6 +13,14 @@ Root:
 - `AGENTS.md`
 - `WHITEPAPER.md`
 - `ROADMAP.md`
+- `TOKENOMICS.md`
+- `GOVERNANCE.md`
+- `IDENTITY.md`
+- `TREASURY.md`
+- `LEGAL_ROADMAP.md`
+- `RISK_REGISTER.md`
+- `DECISION_LOG.md`
+- `ARCHITECTURE.md`
 - `VERSIONING.md`
 - `CHANGELOG.md`
 - `DEVELOPMENT-PROCESS.md`
@@ -30,7 +39,7 @@ Strategy:
 - `strategy/STORAGE-AND-IPFS-MODEL.md`
 - `strategy/NARRATIVE-AND-MESSAGING.md`
 
-v0.8:
+v0.8 accountability/product baseline:
 
 - `v0.8/README.md`
 - `v0.8/accountability-and-integration-preview.md`
@@ -53,26 +62,29 @@ Archived foundation:
 - `archive/v0.7/design-partner-demo-plan.md`
 - `archive/v0.7/design-partner-preview-pack.md`
 
-## Review priorities
+## Review Priorities
 
-1. Confirm that `v0.8/` is the active documentation context.
-2. Confirm that v0.7 is treated as an archived protocol-hardening foundation, not the current target.
-3. Confirm that v0.8 remains focused on Public Governance Archive, Basic Accountability Dashboard, Integration Preview, local deterministic demo flow, and external evidence trust boundaries.
-4. Confirm that external records are linked evidence or context unless explicitly modeled as authority for a specific field.
-5. Confirm that manual accountability updates are annotations, not protocol truth.
-6. Confirm that local testing does not depend on Snapshot, Safe, Tally, Agora, Discourse, GitHub, or block explorer availability.
-7. Confirm that v0.8 non-goals remain intact: no production SaaS, audit-ready claims, full integrations, NFT voting runtime, production-grade indexer, AI governance, or external records as authority by default.
+1. Confirm that Draft v0.2 is the active tokenomics/governance design baseline.
+2. Confirm that v0.8 remains the accountability/product implementation baseline.
+3. Confirm that launch Curve Reserve is native USDC-only.
+4. Confirm that ETH is not presented as the launch redemption asset or launch unit of account.
+5. Confirm that Curve Reserve is not treasury, protocol revenue, or operational runway.
+6. Confirm that ISO is a standard ERC-20 with no fee-on-transfer and no transfer tax.
+7. Confirm that governance power requires verified identity and governance activation/staking.
+8. Confirm that public docs do not claim revenue-sharing rights, equity, guaranteed yield, or guaranteed returns at launch.
+9. Confirm that future economic participation, ETH payment adapter work, and ETH-denominated reserve research remain conditional, legally reviewed, security reviewed, and governance-approved.
+10. Confirm that archived docs remain historical references and are not edited as active docs unless explicitly instructed.
 
-## Main transition
+## Main Transition
 
-The active line is now:
+The active tokenomics/governance line is now:
+
+```text
+Draft v0.2 ISO tokenomics and identity-aware governance design
+```
+
+The active accountability/product implementation line remains:
 
 ```text
 v0.8 accountability and integration preview
-```
-
-The v0.7 line is now:
-
-```text
-archived protocol hardening foundation
 ```

@@ -1,18 +1,12 @@
 # IsoniaOS Documentation
 
-This repository contains the active IsoniaOS v0.8 accountability and integration preview baseline, DAO-first strategy documents, and archived historical material.
+This repository contains the active IsoniaOS public documentation, strategy documents, and archived historical material.
 
-## Active project position
+## Active Documentation Baseline
 
-IsoniaOS is a governance operating system for accountable digital organizations.
+The active public design baseline is **Draft v0.2** for ISO tokenomics, identity-aware governance, treasury separation, legal phasing, and reserve asset policy.
 
-The first market is DAO and Web3 governance. IsoniaOS is designed to help DAOs, protocols, foundations, grants programs, and onchain communities manage the full governance lifecycle:
-
-```text
-Idea -> Proposal -> Review -> Decision -> Execution -> Accountability -> Memory
-```
-
-The long-term vision may expand into cooperatives, civic initiatives, public-good organizations, institutional governance, and eventually public governance experiments. Those are later milestones, not the immediate product claim.
+IsoniaOS is a governance architecture layer for accountable digital organizations. It is designed to make authority visible, scoped, delegated, constrained, auditable, and eventually recallable.
 
 Core thesis:
 
@@ -20,20 +14,45 @@ Core thesis:
 Governance is not a vote. Governance is a lifecycle.
 ```
 
-Launch wedge:
+Core architecture principle:
 
 ```text
-IsoniaOS closes the loop between DAO decisions and execution.
+Authority on-chain.
+Intelligence off-chain.
+Verification public.
 ```
 
-v0.8 keeps that DAO-first and accountability-centered position. It should not be presented as production SaaS, audit-ready infrastructure, full Safe/Snapshot/Tally/Agora integration, or AI governance. External records are linked evidence or context unless explicit source modeling makes a source authoritative for a specific field.
+The v0.2 design keeps the launch token architecture conservative:
 
-## Active documentation
+- token name: Isonia;
+- token symbol: ISO;
+- standard ERC-20;
+- no fee-on-transfer;
+- no transfer tax;
+- native USDC-only launch bonding curve settlement and redemption;
+- Curve Reserve is not treasury or operational runway;
+- ETH is not the launch redemption asset and does not back ISO redemptions at launch;
+- ETH may be used for grants, donations, non-reserve treasury allocation, and future adapter research;
+- verified identity and activation/staking are required for governance power;
+- no revenue-sharing rights exist at launch.
 
-### Product and strategy
+## Active Documentation
+
+### v0.2 design baseline
 
 - [Whitepaper](WHITEPAPER.md)
 - [Roadmap](ROADMAP.md)
+- [Tokenomics](TOKENOMICS.md)
+- [Governance](GOVERNANCE.md)
+- [Identity](IDENTITY.md)
+- [Treasury](TREASURY.md)
+- [Legal Roadmap](LEGAL_ROADMAP.md)
+- [Risk Register](RISK_REGISTER.md)
+- [Decision Log](DECISION_LOG.md)
+- [Architecture](ARCHITECTURE.md)
+
+### Product and strategy
+
 - [Market Entry Strategy](strategy/MARKET-ENTRY.md)
 - [Competitive Landscape](strategy/COMPETITIVE-LANDSCAPE.md)
 - [Integration Strategy](strategy/INTEGRATION-STRATEGY.md)
@@ -45,7 +64,7 @@ v0.8 keeps that DAO-first and accountability-centered position. It should not be
 - [Storage and IPFS Model](strategy/STORAGE-AND-IPFS-MODEL.md)
 - [Narrative and Messaging](strategy/NARRATIVE-AND-MESSAGING.md)
 
-### v0.8 active baseline
+### v0.8 accountability and integration preview
 
 - [v0.8 Documentation Index](v0.8/README.md)
 - [Accountability and Integration Preview](v0.8/accountability-and-integration-preview.md)
@@ -75,7 +94,7 @@ v0.8 keeps that DAO-first and accountability-centered position. It should not be
 - [Versioning Rules](VERSIONING.md)
 - [Documentation Changelog](CHANGELOG.md)
 
-## Archived documentation
+## Archived Documentation
 
 - v0.7 Protocol Hardening Alpha documents are archived under `archive/v0.7/`.
 - v0.6 Governance Console Alpha documents are archived under `archive/v0.6/`.
@@ -83,8 +102,8 @@ v0.8 keeps that DAO-first and accountability-centered position. It should not be
 - The v0.5 known-good tag set is recorded in [archive/v0.5/compatibility-matrix.md](archive/v0.5/compatibility-matrix.md).
 - Historical v0.1 documents are archived under `archive/v0.1/`.
 
-Archived v0.1, v0.5, v0.6, and v0.7 documents are historical references and are not part of the active v0.8 documentation surface.
+Archived v0.1, v0.5, v0.6, and v0.7 documents are historical references and are not part of the active v0.2 tokenomics/governance design surface.
 
-## Public repository note
+## Public Repository Note
 
 Some strategy documents are intentionally public because IsoniaOS is infrastructure that needs trust. Keep sensitive partner details, pricing negotiations, private pipeline notes, and internal fundraising material out of this repository unless the team explicitly decides otherwise.

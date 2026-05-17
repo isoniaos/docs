@@ -4,12 +4,25 @@ These rules apply to Codex and other AI agents working in this repository.
 
 ## Active target
 
-The active documentation target is **IsoniaOS v0.8 accountability and integration preview**.
+The active tokenomics/governance documentation target is **IsoniaOS Draft v0.2**.
+
+The v0.8 accountability and integration preview remains the active product/accountability implementation baseline. Treat these as complementary scopes:
+
+- Draft v0.2 governs ISO tokenomics, reserve policy, treasury, identity-aware governance, Council design, legal phasing, risk register, decision log, and high-level token architecture.
+- v0.8 governs Public Governance Archive, Basic Accountability Dashboard, integration preview, evidence labels, and local accountability demo flow.
 
 Read first:
 
 - `WHITEPAPER.md`
 - `ROADMAP.md`
+- `TOKENOMICS.md`
+- `GOVERNANCE.md`
+- `IDENTITY.md`
+- `TREASURY.md`
+- `LEGAL_ROADMAP.md`
+- `RISK_REGISTER.md`
+- `DECISION_LOG.md`
+- `ARCHITECTURE.md`
 - `AGENTS.md`
 - `DEVELOPMENT-PROCESS.md`
 - `strategy/`

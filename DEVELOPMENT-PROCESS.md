@@ -27,11 +27,12 @@ Before any implementation work, read:
 - `AGENTS.md`
 - `WHITEPAPER.md`
 - `ROADMAP.md`
+- `TOKENOMICS.md`, `GOVERNANCE.md`, `IDENTITY.md`, `TREASURY.md`, `LEGAL_ROADMAP.md`, `RISK_REGISTER.md`, `DECISION_LOG.md`, and `ARCHITECTURE.md` when tokenomics, governance, identity, treasury, legal, or architecture scope is involved;
 - `v0.8/README.md`
 - relevant feature docs under `v0.8/`
 - relevant strategy docs under `strategy/`
 
-Archived docs are historical context only.
+Archived docs are historical context only. Draft v0.2 is the active tokenomics/governance design baseline. v0.8 remains the active accountability/product implementation baseline.
 
 ---
 
@@ -68,11 +69,14 @@ Implement AddressInput checksum validation in app-core and add tests. Do not cha
 ```text
 You are working on IsoniaOS.
 
-Active target: v0.8 accountability and integration preview.
+Active target: Draft v0.2 tokenomics/governance design if the task touches ISO, reserve, treasury, identity, Council, legal phasing, risk, or token architecture. Use v0.8 accountability and integration preview for accountability/product implementation tasks.
 
 Read first:
 - AGENTS.md
-- docs/v0.8/README.md
+- docs/WHITEPAPER.md
+- docs/ROADMAP.md
+- docs/TOKENOMICS.md, docs/GOVERNANCE.md, docs/IDENTITY.md, docs/TREASURY.md, docs/LEGAL_ROADMAP.md, docs/RISK_REGISTER.md, docs/DECISION_LOG.md, and docs/ARCHITECTURE.md when relevant
+- docs/v0.8/README.md when relevant
 - [specific feature doc]
 
 Task:
