@@ -1,7 +1,7 @@
 # Versioning Rules
 
 **Active product target:** IsoniaOS v0.8 accountability and integration preview
-**Parallel design target:** ISO / Isonia Draft v0.2 funding and protocol self-governance layer
+**Supporting design target:** ISO / Isonia Draft v0.2 funding and protocol self-governance layer
 
 IsoniaOS uses SemVer package versions and Git tags with a leading `v`.
 
@@ -10,7 +10,7 @@ IsoniaOS uses SemVer package versions and Git tags with a leading `v`.
 The active product implementation/accountability baseline is:
 
 ```text
-v0.8 - Public Governance Archive, Accountability Dashboard, and Integration Preview
+v0.8 - Public Governance Archive, Accountability Dashboard, Integration Preview, and public beta readiness planning
 ```
 
 Active v0.8 docs live under:
@@ -19,7 +19,13 @@ Active v0.8 docs live under:
 v0.8/
 ```
 
-The parallel ISO funding/governance design baseline is:
+The v0.8 strategic correction for integration-lab separation, public beta readiness, SaaS baseline, ISO readiness baseline, and template guardrails is:
+
+```text
+v0.8/integration-lab-and-public-beta-replan.md
+```
+
+The supporting ISO funding/governance design baseline is:
 
 ```text
 Draft v0.2 - ISO / Isonia funding and protocol self-governance layer
@@ -38,7 +44,7 @@ DECISION_LOG.md
 ISO_ARCHITECTURE.md
 ```
 
-These are complementary targets. Draft v0.2 tokenomics does not supersede the v0.8 product baseline.
+These are complementary targets. Draft v0.2 tokenomics does not supersede the v0.8 product baseline, and token launch is a separate explicit decision rather than an implied product milestone.
 
 The v0.7 Protocol Hardening Alpha and older docs are archived and must not be treated as the active documentation surface.
 
@@ -105,7 +111,7 @@ v0.7.0
 3. GitHub dependency refs use tag names, for example `github:isoniaos/types#v0.7.0-alpha.1`.
 4. Active product docs remain product-first.
 5. Active v0.8 docs live under `v0.8/`.
-6. Draft v0.2 tokenomics docs are a parallel ISO funding and protocol self-governance design baseline.
+6. Draft v0.2 tokenomics docs are a supporting ISO funding and protocol self-governance design baseline integrated into public beta planning only where relevant.
 7. `WHITEPAPER.md`, `ROADMAP.md`, and `ARCHITECTURE.md` remain product-first.
 8. Strategic/root docs may live at repository root or under `strategy/`.
 9. Historical v0.7 docs live under `archive/v0.7/` and should not be edited as active docs.
@@ -118,6 +124,7 @@ v0.7.0
 16. When a package depends on a tag from the same compatibility set, create the upstream tag first, then refresh the consumer lockfile before tagging the consumer package.
 17. Keep `CHANGELOG.md` under `Unreleased` until a release is intentionally cut.
 18. Codex tasks must not create tags or release sections unless explicitly instructed.
+19. Public beta readiness is a gated decision after production-shaped cleanup, integration-lab validation, hosted dev/stage posture, SaaS readiness baseline, ISO readiness baseline, template guardrails, security review or audit, and claims review.
 
 ## Pre-Beta Tagging Discipline
 
@@ -134,7 +141,7 @@ This discipline complements the SemVer and tag-format rules above. It does not c
 For public roadmap communication, use product milestone labels:
 
 ```text
-v0.7 -> v0.8 -> v0.9 -> v1.0 -> v1.x -> v2.x -> v3.x+
+v0.7 -> v0.8 -> public beta readiness wave -> v0.9 -> v1.0 -> v1.x -> v2.x -> v3.x+
 ```
 
 For ISO design communication, use:
@@ -150,6 +157,7 @@ For package/API compatibility, use SemVer precisely.
 - `v0.6` - Usable Governance Console Alpha. Archived baseline.
 - `v0.7` - Protocol Hardening Alpha. Archived protocol foundation.
 - `v0.8` - Public Governance Archive, Accountability Dashboard, and Integration Preview. Active product target.
+- `Public beta readiness wave` - Gated product readiness planning after v0.8 runtime preview; not a tag or release by itself.
 - `v0.9` - Optional AI Governance Digest Preview.
 - `v1.0` - Design Partner Release.
-- `Draft v0.2 ISO` - Parallel funding and protocol self-governance design.
+- `Draft v0.2 ISO` - Supporting funding and protocol self-governance design.

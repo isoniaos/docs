@@ -11,14 +11,19 @@ Git tags use SemVer with a leading `v`, for example `v0.7.0-alpha.1`.
 - Added the Draft v0.2 tokenomics, governance, identity, treasury, legal roadmap, risk register, decision log, and architecture documentation pack for ISO.
 - Added product-context risks and product hierarchy decisions to the risk register and decision log.
 - Added v0.8 execution discipline and beta-readiness guidance covering durable docs source-of-truth rules, demo-stack runtime scope, pre-beta tagging waves, deferred contract hardening, and public beta preflight gates.
+- Added the v0.8 integration lab and public beta replan covering demo/code isolation, Sepolia validation lanes, generic proof/action metadata, provider adapters, SaaS readiness baseline, ISO readiness baseline, custom template guardrails, and public beta gates.
 
 ### Changed
 
 - Updated the whitepaper, roadmap, and README navigation for the native USDC-only launch Curve Reserve, ETH alignment layer, Curve Reserve invariant, standard ERC-20 design, identity-aware governance, Protocol Council, legal phasing, and no revenue-sharing-at-launch posture.
 - Restored the whitepaper, roadmap, README, and product architecture hierarchy so IsoniaOS remains product-first and ISO tokenomics is documented as a supporting funding and protocol self-governance layer.
 - Renamed the tokenomics architecture content to `ISO_ARCHITECTURE.md` and added a product-first `ARCHITECTURE.md`.
-- Aligned documentation metadata files so v0.8 remains the active product baseline while Draft v0.2 remains the parallel ISO funding/governance design baseline.
+- Aligned documentation metadata files so v0.8 remains the active product baseline while Draft v0.2 remains the supporting ISO funding/governance design baseline.
 - Updated v0.8 process, versioning, roadmap, testing, and backlog docs with wave-based pre-beta release discipline and late beta-readiness requirements.
+- Updated the roadmap to make public beta readiness an explicit product-first wave and to integrate ISO funding/protocol self-governance readiness without making token launch a product dependency.
+- Clarified SaaS public beta readiness as a hosted dev/stage, managed indexer/Postgres, provisioning, credentials, monitoring, backup, and open-core boundary baseline rather than a production SaaS claim.
+- Clarified integration lab ownership and repository boundaries so provider experiments and presentation scenarios do not pollute core contracts, Control Plane internals, or App Core product logic.
+- Added custom template roadmap guardrails for versioned organization, proposal, route, accountability, evidence, action metadata, and integration/source templates.
 
 ## v0.8.0-alpha.1
 

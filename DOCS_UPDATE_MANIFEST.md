@@ -2,8 +2,8 @@
 
 **Prepared for:** `isoniaos/docs`
 **Current product target:** v0.8 accountability and integration preview
-**Parallel design target:** ISO / Isonia Draft v0.2 funding and protocol self-governance layer
-**Purpose:** Track the repaired documentation hierarchy: IsoniaOS remains product-first, while ISO tokenomics remains a supporting layer.
+**Supporting design target:** ISO / Isonia Draft v0.2 funding and protocol self-governance layer
+**Purpose:** Track the repaired documentation hierarchy: IsoniaOS remains product-first, while ISO tokenomics remains a supporting layer integrated into public beta planning where relevant.
 
 ## Active Documentation
 
@@ -50,6 +50,8 @@ v0.8:
 - `v0.8/testing-and-demo-strategy.md`
 - `v0.8/demo-organization-and-governance-process.md`
 - `v0.8/backlog-and-implementation-sequence.md`
+- `v0.8/execution-discipline-and-beta-readiness.md`
+- `v0.8/integration-lab-and-public-beta-replan.md`
 
 Archived foundation:
 
@@ -70,14 +72,14 @@ Archived foundation:
 
 1. Confirm that `WHITEPAPER.md`, `ROADMAP.md`, and `ARCHITECTURE.md` are product-first.
 2. Confirm that `v0.8/` remains the active product implementation/accountability baseline.
-3. Confirm that ISO Draft v0.2 is a parallel funding and protocol self-governance design layer.
+3. Confirm that ISO Draft v0.2 is a supporting funding and protocol self-governance design layer integrated into public beta planning without replacing product milestones.
 4. Confirm that `TOKENOMICS.md` is the source of truth for ISO economics.
 5. Confirm that `GOVERNANCE.md` is the source of truth for Protocol Council and People's Veto.
 6. Confirm that `TREASURY.md` is the source of truth for Curve Reserve and treasury funds.
 7. Confirm that `LEGAL_ROADMAP.md` is the source of truth for legal phasing.
 8. Confirm that `ISO_ARCHITECTURE.md` contains tokenomics architecture and `ARCHITECTURE.md` contains product architecture.
-9. Confirm that token launch is not required for v0.8 accountability/integration preview.
-10. Confirm that no active doc claims revenue-sharing rights, equity, guaranteed yield, Curve Reserve operational funding, or ETH-backed launch redemptions.
+9. Confirm that token launch is not required for v0.8 accountability/integration preview or product public beta unless a future roadmap explicitly decides otherwise.
+10. Confirm that no active doc claims revenue-sharing rights, equity, guaranteed yield, Curve Reserve operational funding, ETH-backed launch redemptions, audit readiness, legal readiness, production SaaS readiness, or provider integration completeness.
 
 ## Main Lines
 
@@ -87,7 +89,7 @@ The active product line is:
 v0.8 accountability and integration preview
 ```
 
-The parallel ISO design line is:
+The supporting ISO design line is:
 
 ```text
 Draft v0.2 ISO / Isonia funding and protocol self-governance layer

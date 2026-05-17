@@ -26,7 +26,7 @@ Launch wedge:
 IsoniaOS closes the loop between DAO decisions and execution.
 ```
 
-v0.8 keeps that DAO-first and accountability-centered position. It should not be presented as production SaaS, audit-ready infrastructure, full Safe/Snapshot/Tally/Agora integration, token launch, or AI governance. External records are linked evidence or context unless explicit source modeling makes a source authoritative for a specific field.
+v0.8 keeps that DAO-first and accountability-centered position. It should not be presented as production SaaS, audit-ready infrastructure, full Safe/Snapshot/Tally/Agora integration, token launch, or AI governance. External records are linked evidence or context unless explicit source modeling makes a source authoritative for a specific field. Public beta readiness requires a later explicit readiness wave covering production-shaped cleanup, integration lab validation, hosted dev/stage posture, SaaS baseline, ISO readiness baseline, templates, security review or audit, and claims review.
 
 ## Active Documentation
 
@@ -54,6 +54,7 @@ v0.8 keeps that DAO-first and accountability-centered position. It should not be
 - [Demo Organization and Governance Process](v0.8/demo-organization-and-governance-process.md)
 - [Backlog and Implementation Sequence](v0.8/backlog-and-implementation-sequence.md)
 - [Execution Discipline and Beta Readiness](v0.8/execution-discipline-and-beta-readiness.md)
+- [Integration Lab and Public Beta Replan](v0.8/integration-lab-and-public-beta-replan.md)
 
 ### Funding and Protocol Self-Governance Design
 

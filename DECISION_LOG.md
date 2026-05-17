@@ -22,7 +22,7 @@ These are design decisions, not deployed implementation.
 | Product hierarchy | IsoniaOS is product-first | IsoniaOS is a governance control plane for accountable digital organizations, not primarily a token project. |
 | First market | DAO/Web3 governance | The first market remains DAOs, protocols, foundations, grants programs, and onchain communities. |
 | Active product baseline | v0.8 accountability and integration preview | v0.8 remains the active product implementation/accountability baseline. |
-| ISO layer position | Parallel funding and protocol self-governance layer | ISO tokenomics supports IsoniaOS funding and self-governance; it does not replace the product roadmap. |
+| ISO layer position | Supporting funding and protocol self-governance layer integrated into public beta planning where relevant | ISO tokenomics supports IsoniaOS funding and self-governance; it does not replace the product roadmap, and token launch remains a separate explicit decision. |
 | Main whitepaper and roadmap | Product-first | `WHITEPAPER.md` and `ROADMAP.md` should explain the governance control plane before tokenomics. |
 | Product architecture | Product-first `ARCHITECTURE.md` | The main architecture doc covers product lifecycle, integrations, accountability, memory, and AI advisory architecture. |
 | ISO architecture | Separate `ISO_ARCHITECTURE.md` | Token issuance, reserve, treasury, and ISO governance flows are separated from main product architecture. |

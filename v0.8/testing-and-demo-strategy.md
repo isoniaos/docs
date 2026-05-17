@@ -4,9 +4,21 @@
 
 This document defines the v0.8 test posture for the Public Governance Archive, Basic Accountability Dashboard, and Integration Preview.
 
-v0.8 testing should prove that IsoniaOS can show what happened after a DAO decision without overclaiming authority from external tools. Local flows are the primary product-development lab. Forks and public testnets are validation layers, not substitutes for deterministic local coverage.
+v0.8 testing should prove that IsoniaOS can show what happened after a DAO decision without overclaiming authority from external tools. Local flows are the primary product-development lab. Pinned Sepolia forks and live Sepolia workflows are validation layers, not substitutes for deterministic local coverage.
 
 This is a docs baseline only. It does not implement runtime tests, contracts, Control Plane, SDK, App Core, demo-stack, or external integrations.
+
+## Validation Lane Summary
+
+Use three distinct lanes:
+
+| Lane | Purpose | Should prove | Should not claim |
+| --- | --- | --- | --- |
+| Local deterministic tests | Fast, provider-independent product regression. | Lifecycle, accountability, evidence, and trust-boundary behavior. | Real provider completeness. |
+| Pinned Sepolia forks | Repeatable validation against known public chain data. | Known event, transaction, Governor-like, Safe-like, and explorer proof assumptions. | Live provider availability or workflow completeness. |
+| Live Sepolia workflows | Real-world smoke validation and field discovery. | One or more public proposal-to-proof scenarios can be demonstrated with real testnet records. | Production readiness, audit readiness, or full integration support. |
+
+Integration-lab scenarios belong in `integration-lab/`, not in core product repositories.
 
 ## Local Node: Primary Product-Development Lab
 
@@ -34,25 +46,26 @@ Local tests should cover both the happy path and incomplete-state cases:
 - manual completion annotation;
 - imported preview state that is stale, missing, unsupported, or unknown.
 
-## Fork or Fixture-Backed Validation
+## Pinned Sepolia Fork or Fixture-Backed Validation
 
-Forked chain or fixture-backed validation is useful for checking real-world formats.
+Pinned Sepolia fork or fixture-backed validation is useful for checking real-world formats while keeping regression behavior repeatable.
 
 Use fork/read-only validation to inspect:
 
+- known Sepolia blocks and transactions;
 - existing transaction formats;
 - Governor-like proposal and execution records;
 - Safe-like transaction evidence shapes;
 - block explorer link formats;
 - historical execution proof assumptions.
 
-Fork testing is useful but not sufficient for external integration coverage. A fork can show that a format exists and can be read, but it does not prove that a provider API is stable, that an external workflow is complete, or that an external record is governance authority.
+Fork testing is useful but not sufficient for external integration coverage. A pinned fork can show that a format exists and can be read consistently, but it does not prove that a provider API is stable, that an external workflow is complete, or that an external record is governance authority.
 
 When fork data is used in v0.8, display it as observed evidence, imported preview, or context unless explicit source modeling says otherwise.
 
-## Testnet Public Proof Smoke
+## Live Sepolia Public Proof Smoke
 
-v0.8 should include a minimal public proof smoke test, recommended on Sepolia unless the project later changes the default network.
+v0.8 should include a minimal live public proof smoke test, recommended on Sepolia unless the project later changes the default network.
 
 The smoke should:
 
@@ -65,7 +78,23 @@ The smoke should:
 7. optionally attach Safe, Snapshot, Tally, Agora, GitHub, or Discourse links as evidence or context;
 8. verify that the public archive shows the decision, execution state, proof link, source labels, and trust-boundary warnings.
 
-This smoke test should validate the proposal-to-proof-of-execution wedge in public. It should not become a blocker for every docs or runtime iteration. Local deterministic flows remain the primary development and regression path.
+This smoke test should validate the proposal-to-proof-of-execution wedge in public. It should produce field notes for provider gaps and workflow assumptions. It should not become a blocker for every docs or runtime iteration. Local deterministic flows remain the primary development and regression path.
+
+## Integration Lab Boundary
+
+The future or sibling `integration-lab/` repository should own public testnet validation artifacts:
+
+- Sepolia deployment manifests;
+- Snapshot testnet space workflow;
+- Safe Sepolia transaction proof workflow;
+- Tally/OpenZeppelin Governor compatibility experiment;
+- Agora research/linking lane;
+- GitHub, Discourse, and block explorer evidence fixtures;
+- pinned Sepolia fork configs;
+- presentation-ready QA scenarios;
+- field notes and issue log.
+
+The integration lab is not core product code. Its fixtures, demo contracts, provider experiments, and presentation flows must not define Control Plane authority semantics or audited contract scope.
 
 ## Demo-Stack Runtime Scope
 
@@ -99,9 +128,9 @@ Provider previews must preserve:
 
 ## Test Matrix
 
-| Area | Local fixture | Fork/read-only | Testnet smoke | Authority boundary |
+| Area | Local fixture | Pinned fork/read-only | Live Sepolia smoke | Authority boundary |
 | --- | --- | --- | --- | --- |
-| Public Governance Archive | Seed proposal, decision, execution, and evidence states. | Compare with historical proposal and transaction shapes. | Show one public decision page with execution proof. | Contract/read-model state is distinct from linked evidence. |
+| Public Governance Archive | Seed proposal, decision, execution, and evidence states. | Compare with pinned Sepolia proposal and transaction shapes. | Show one public decision page with execution proof. | Contract/read-model state is distinct from linked evidence. |
 | Accountability records | Seed statuses, due dates, responsible parties, notes, and reasons. | Validate realistic follow-through metadata shapes where available. | Attach one accountability record to a public decision. | Manual updates are annotations, not protocol truth. |
 | Execution state rendering | Seed executed, pending, failed, cancelled, and unknown states. | Check transaction/event formats from real contracts. | Capture one executed target transaction hash. | Execution proof is evidence unless protocol execution state is modeled. |
 | External evidence links | Use Snapshot, Safe, Tally, Agora, Discourse, GitHub, explorer, and custom URL fixtures. | Validate URL and reference formats against real examples. | Attach optional public links with labels. | External records are context/evidence unless explicitly modeled as authority. |

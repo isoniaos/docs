@@ -435,7 +435,7 @@ Milestone tracking, post-execution reviews, contributor/delegate accountability,
 
 Plugin marketplace, advanced identity/reputation modules, optional arbitration frameworks, enterprise deployments, civic pilots, and broader governance infrastructure.
 
-ISO tokenomics and protocol self-governance work proceeds in parallel. Token launch is not required for v0.8 accountability and integration preview.
+ISO tokenomics and protocol self-governance work proceeds as a supporting readiness track for the IsoniaOS project. Token launch is not required for v0.8 accountability and integration preview or for product public beta unless a future roadmap explicitly makes that decision.
 
 ---
 

@@ -87,6 +87,23 @@ Managed SaaS can provide:
 - compliance-oriented exports later;
 - private deployments for larger organizations later.
 
+## 4.1 Public Beta SaaS Readiness Baseline
+
+Managed SaaS is part of the public beta path, but public beta planning must not imply production SaaS readiness.
+
+Before public beta readiness is claimed, the roadmap should define:
+
+- hosted Control Plane and App Core deployment path;
+- managed Postgres/indexer infrastructure direction;
+- environment separation for dev, stage, and eventually production;
+- custom domain direction without claiming custom domain implementation is complete;
+- monitoring, logging, backups, and restore expectations;
+- tenant and organization provisioning plan;
+- integration credential management direction;
+- open-core boundary between inspectable/self-hostable components and managed service conveniences.
+
+This baseline is planning/spec unless a future implementation task explicitly scopes runtime SaaS infrastructure. Public App Core must remain useful for self-hosting and must not absorb SaaS-only billing, private tenant admin, or operator console logic.
+
 ---
 
 ## 5. What Must Not Leak Into Public App Core

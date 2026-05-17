@@ -35,10 +35,11 @@ Before any implementation work, read:
 - `TOKENOMICS.md`, `GOVERNANCE.md`, `IDENTITY.md`, `TREASURY.md`, `LEGAL_ROADMAP.md`, `RISK_REGISTER.md`, `DECISION_LOG.md`, and `ISO_ARCHITECTURE.md` when ISO tokenomics, governance, identity, treasury, legal, risk, decision, or token architecture scope is involved;
 - `v0.8/README.md`
 - `v0.8/execution-discipline-and-beta-readiness.md`
+- `v0.8/integration-lab-and-public-beta-replan.md`
 - relevant feature docs under `v0.8/`
 - relevant strategy docs under `strategy/`
 
-Archived docs are historical context only. v0.8 is the active accountability/product implementation baseline. Draft v0.2 is the parallel ISO funding and protocol self-governance design baseline.
+Archived docs are historical context only. v0.8 is the active accountability/product implementation baseline. Draft v0.2 is the supporting ISO funding and protocol self-governance design baseline.
 
 ---
 
@@ -84,6 +85,7 @@ Read first:
 - docs/ARCHITECTURE.md when product architecture is relevant
 - docs/TOKENOMICS.md, docs/GOVERNANCE.md, docs/IDENTITY.md, docs/TREASURY.md, docs/LEGAL_ROADMAP.md, docs/RISK_REGISTER.md, docs/DECISION_LOG.md, and docs/ISO_ARCHITECTURE.md when ISO design is relevant
 - docs/v0.8/README.md when relevant
+- docs/v0.8/integration-lab-and-public-beta-replan.md when public beta readiness, integrations, SaaS readiness, ISO readiness, templates, or integration-lab scope is relevant
 - [specific feature doc]
 
 Task:
@@ -107,6 +109,9 @@ Do not change:
 - production audit readiness
 - full Proposal Action Builder production release
 - tenant provisioning
+- public beta readiness claim
+- demo-specific code in core product paths
+- arbitrary code execution through templates
 
 Acceptance criteria:
 - [specific behavior]
@@ -148,6 +153,8 @@ Before public beta, IsoniaOS may move in coherent implementation waves instead o
 
 Codex tasks should be specific enough to avoid missed details, but they should not force every small commit into a tagged release. After public beta, shift toward smaller release steps with tighter validation, compatibility checks, and release notes.
 
+Public beta readiness is not implied by v0.8 runtime progress. Before a public beta readiness claim, the roadmap requires production-shaped core cleanup, integration-lab validation, hosted dev/stage posture, SaaS readiness baseline, ISO funding/protocol self-governance readiness baseline, custom template guardrails, security review or audit gate, and docs/claims review.
+
 ---
 
 ## 7. Review Gates
@@ -158,6 +165,9 @@ Before merge, verify:
 - no out-of-scope v0.8 features introduced;
 - package boundaries remain clean;
 - public app-core does not include SaaS-only logic;
+- demo, mock, and integration-lab behavior does not leak into audited/product core;
+- provider-specific integration code stays behind adapter boundaries;
+- templates are treated as versioned configuration, not silent authority grants or executable code;
 - UI uses theme tokens where appropriate;
 - errors are specific, not generic;
 - diagnostics distinguish chain/indexer/projection/API/config/wallet issues;

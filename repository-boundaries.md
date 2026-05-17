@@ -35,6 +35,22 @@ Contains the default theme:
 
 Contains the marketing and docs website.
 
+### `integration-lab`
+
+Contains integration validation harnesses, not core product code:
+
+- Sepolia deployment manifests
+- Snapshot testnet space workflows
+- Safe Sepolia transaction proof workflows
+- Tally/OpenZeppelin Governor compatibility experiments
+- Agora research and linking notes
+- GitHub, Discourse, and block explorer evidence fixtures
+- pinned Sepolia fork configs
+- presentation-ready QA scenarios
+- field notes and issue logs
+
+`integration-lab` must not define audited core contract behavior or Control Plane authority semantics.
+
 ## Private repositories
 
 ### `isonia-control-plane`
@@ -72,3 +88,4 @@ Architectural decisions, specifications, and rules.
 - control-plane is not the source of truth
 - the default theme must be replaceable without rewriting app-core
 - protocol versioning is separate from frontend versioning
+- integration-lab scenarios must not pollute audited/product core

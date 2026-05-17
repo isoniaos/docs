@@ -117,6 +117,22 @@ Trust model:
 - requires security review;
 - should come later and be narrow in scope.
 
+## 2.1 Real-World Validation Lanes
+
+External integration is a core product requirement, but real-world validation must be separated from core product code.
+
+Use three lanes:
+
+- local deterministic tests for fast, provider-independent regression coverage;
+- pinned Sepolia forks for repeatable validation against known public chain data and provider-adjacent formats;
+- live Sepolia workflows for end-to-end smoke validation, provider discovery, public transaction proofs, and field notes.
+
+Live provider workflows are allowed to reveal breakage in APIs, testnet UX, or assumptions. They should create integration-lab field notes and issues, not replace deterministic local tests.
+
+The `integration-lab/` repository or workspace area should own Sepolia deployment manifests, Snapshot testnet workflows, Safe Sepolia proof workflows, Tally/OpenZeppelin Governor experiments, Agora research/linking, evidence fixtures, pinned fork configs, presentation QA scenarios, and issue logs.
+
+The integration lab is not the source of governance authority and must not pollute audited core contracts, Control Plane internals, or App Core product behavior.
+
 ---
 
 ## 3. Initial Integration Targets
@@ -410,6 +426,10 @@ Suggested adapter responsibilities:
 - last sync recording.
 
 Adapters should not contain product-specific UI logic.
+
+Control Plane should model generic proof, evidence, external resource, and action metadata concepts in core. Provider adapters can normalize Snapshot, Safe, Tally, Agora, GitHub, Discourse, or explorer records into those concepts.
+
+Avoid hardcoding customer-specific or demo-specific target contracts into Control Plane route explanation or execution/accountability logic. A provider adapter must not silently upgrade linked context into authority.
 
 ---
 

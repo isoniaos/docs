@@ -16,7 +16,10 @@ P0 items define the baseline needed before runtime work should expand.
 - Shared conceptual model alignment for `DecisionRecord`, `AccountabilityRecord`, `ExternalResource`, source labels, trust boundaries, and authority claims.
 - Stale App Core `/` copy cleanup from `v0.6 local demo`.
 - External evidence link-first posture.
+- Integration-lab separation from core product repositories.
 - Local deterministic demo flow.
+- Generic proof/action metadata and provider adapter direction.
+- Custom template guardrails as versioned configuration, not authority.
 - Basic public archive and accountability UI shape later.
 - Docs-to-types/contracts handoff.
 
@@ -31,6 +34,8 @@ P1 items should follow the P0 baseline and remain careful about authority claims
 - Safe proof link preview.
 - Snapshot/Tally/Agora link preview.
 - Testnet smoke script.
+- Pinned Sepolia fork fixtures.
+- Integration-lab field notes and issue log.
 - Updated design partner preview pack.
 
 ## Explicit Non-Goals for v0.8
@@ -38,7 +43,9 @@ P1 items should follow the P0 baseline and remain careful about authority claims
 v0.8 should not include or claim:
 
 - production SaaS;
+- production SaaS readiness;
 - audit-ready claims;
+- public beta readiness claims before the readiness wave is complete;
 - full Safe integration;
 - full Snapshot write/import lifecycle;
 - full Tally/Agora integration;
@@ -47,18 +54,74 @@ v0.8 should not include or claim:
 - AI governance;
 - treating external records as authority by default;
 - EIP-5792 as the primary path.
+- arbitrary code execution through templates.
 
 ## Recommended Implementation Order After Docs
 
 1. `types/sdk/control-plane`: define shared v0.8 DTO/enums for archive, accountability, and external resources.
 2. `evm-contracts`: add or prepare demo governance targets and an ERC20Votes-style local DAO process, without making contracts responsible for manual or external evidence truth.
-3. `demo-stack`: seed deterministic v0.8 scenarios and local flow, directly orchestrating only `app-core`, `control-plane`, and `evm-contracts`.
-4. `control-plane`: expose read-model or fixture-backed archive and accountability DTOs.
+3. `control-plane`: move toward generic proof/action metadata, external resource/evidence records, and provider adapter boundaries without hardcoded customer/demo target contracts.
+4. `demo-stack`: seed deterministic v0.8 scenarios and local flow, directly orchestrating only `app-core`, `control-plane`, and `evm-contracts`.
 5. `app-core`: implement public archive/accountability surfaces and fix stale homepage copy.
-6. `demo-stack` plus optional testnet smoke: validate the proposal-to-proof-of-execution wedge.
-7. Late v0.8 beta preflight: contract organization/refactor/security-hardening, UI polish, docs/claims review, and strict security review or audit before public beta readiness claims.
+6. `integration-lab`: validate provider assumptions with pinned Sepolia forks, live Sepolia workflows, field notes, and presentation QA scenarios outside core product code.
+7. `demo-stack` plus optional testnet smoke: validate the proposal-to-proof-of-execution wedge.
+8. Late v0.8 beta preflight: production-shaped core cleanup, hosted dev/stage baseline, SaaS readiness baseline, ISO readiness baseline, custom template baseline, UI polish, docs/claims review, and strict security review or audit before public beta readiness claims.
 
 The late beta-preflight phase is required before public beta or design-partner beta, but it is not the immediate next runtime task. Current v0.8 runtime work should continue through Control Plane and App Core archive/accountability surfaces before broad contract cleanup is started.
+
+## Integration Lab Backlog
+
+The `integration-lab/` repository or workspace area should become the source of truth for real-world validation, not core product behavior.
+
+Baseline contents:
+
+- Sepolia deployment manifests;
+- Snapshot testnet space workflow;
+- Safe Sepolia transaction proof workflow;
+- Tally/OpenZeppelin Governor compatibility experiment;
+- Agora research and linking lane;
+- GitHub, Discourse, and block explorer evidence fixtures;
+- pinned Sepolia fork configs;
+- presentation-ready QA scenarios;
+- field notes and issue log.
+
+Integration lab work should discover provider constraints, prove public testnet flows, and generate issues for product work. It should not add demo-specific target assumptions to Control Plane route logic or audited contract scope.
+
+## Public Beta Readiness Backlog
+
+Before any public beta readiness claim, schedule a product-first readiness wave covering:
+
+- production-shaped core cleanup;
+- integration lab validation on Sepolia;
+- hosted dev and stage environments;
+- SaaS readiness baseline;
+- ISO funding/protocol self-governance readiness baseline;
+- custom organization/governance template baseline;
+- security review or audit gate;
+- claims/docs review.
+
+ISO readiness means the funding/protocol self-governance plan, simulations, legal/security review path, treasury/identity/governance assumptions, and communications posture are coherent enough for an explicit future decision. It does not mean token launch is required.
+
+## Custom Template Backlog
+
+Templates should be versioned configuration blueprints. They may cover:
+
+- organization templates;
+- proposal type templates;
+- policy route templates;
+- accountability requirement templates;
+- external evidence requirement templates;
+- action metadata templates;
+- integration/source templates.
+
+Guardrails:
+
+- templates cannot silently grant authority;
+- authority-changing output must require explicit governed setup or activation;
+- templates should be exportable/importable;
+- risky/custom templates should show warnings;
+- SaaS may later support private/team templates;
+- templates must not allow arbitrary code execution in core.
 
 ## Handoff Boundaries
 

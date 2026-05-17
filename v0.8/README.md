@@ -27,6 +27,7 @@ This folder contains the planning baseline for v0.8:
 - [`demo-organization-and-governance-process.md`](./demo-organization-and-governance-process.md)
 - [`backlog-and-implementation-sequence.md`](./backlog-and-implementation-sequence.md)
 - [`execution-discipline-and-beta-readiness.md`](./execution-discipline-and-beta-readiness.md)
+- [`integration-lab-and-public-beta-replan.md`](./integration-lab-and-public-beta-replan.md)
 
 ## Read order
 
@@ -36,6 +37,7 @@ This folder contains the planning baseline for v0.8:
 4. [`demo-organization-and-governance-process.md`](./demo-organization-and-governance-process.md)
 5. [`backlog-and-implementation-sequence.md`](./backlog-and-implementation-sequence.md)
 6. [`execution-discipline-and-beta-readiness.md`](./execution-discipline-and-beta-readiness.md)
+7. [`integration-lab-and-public-beta-replan.md`](./integration-lab-and-public-beta-replan.md)
 
 ## v0.8 scope summary
 
@@ -50,7 +52,8 @@ v0.8 should focus on:
 7. expanded demo organization scenarios for accountable follow-through;
 8. route and UX sketches for future App Core and public archive work;
 9. backlog and implementation-sequence guidance for future runtime tasks;
-10. execution discipline, demo-stack runtime boundaries, and late beta-readiness gates.
+10. execution discipline, demo-stack runtime boundaries, and late beta-readiness gates;
+11. integration-lab separation, Sepolia validation lanes, SaaS readiness baseline, ISO readiness baseline, and custom template guardrails before any public beta claim.
 
 ## v0.8 non-goals
 
@@ -63,7 +66,18 @@ Do not present v0.8 as:
 - a full Tally or Agora integration;
 - AI governance;
 - a replacement for onchain authority;
+- production SaaS or hosted service readiness;
+- token launch readiness;
+- arbitrary code execution through templates;
 - a system that treats external records as authoritative unless explicitly modeled as authority.
+
+## Public beta readiness posture
+
+The v0.8 runtime preview is not the same as public beta readiness.
+
+Public beta readiness requires a later wave for production-shaped core cleanup, integration lab validation on Sepolia, hosted dev/stage environments, SaaS readiness baseline, ISO funding/protocol self-governance readiness baseline, custom template design, security review or audit gate, and docs/claims review.
+
+See [`integration-lab-and-public-beta-replan.md`](./integration-lab-and-public-beta-replan.md).
 
 ## Relationship to v0.7
 

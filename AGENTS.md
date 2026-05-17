@@ -10,7 +10,7 @@ Primary active product documentation target:
 IsoniaOS v0.8 accountability and integration preview
 ```
 
-Parallel design target:
+Supporting design target:
 
 ```text
 ISO / Isonia Draft v0.2 funding and protocol self-governance layer
@@ -27,6 +27,7 @@ Read first:
 - `DEVELOPMENT-PROCESS.md`
 - `strategy/`
 - `v0.8/`
+- `v0.8/integration-lab-and-public-beta-replan.md`
 
 For ISO/tokenomics work, also read:
 
@@ -63,7 +64,7 @@ Archived documents are historical references only.
 - `DECISION_LOG.md` is the source of truth for recorded product/context and ISO design decisions.
 - `ISO_ARCHITECTURE.md` is the source of truth for ISO funding and protocol self-governance architecture.
 - `ARCHITECTURE.md` is the source of truth for product architecture.
-- `DEVELOPMENT-PROCESS.md` and `v0.8/execution-discipline-and-beta-readiness.md` are the source of truth for Codex process, v0.8 execution discipline, demo-stack runtime boundaries, and beta-readiness gates.
+- `DEVELOPMENT-PROCESS.md`, `v0.8/execution-discipline-and-beta-readiness.md`, and `v0.8/integration-lab-and-public-beta-replan.md` are the source of truth for Codex process, v0.8 execution discipline, demo-stack runtime boundaries, integration-lab boundaries, and beta-readiness gates.
 
 Repository docs are more durable than chat history or project memory. Use chat context as guidance only; record new cross-repository constraints in active docs before relying on them in future tasks. Always inspect current repository state and active docs instead of assuming older chat context still applies.
 
@@ -77,6 +78,7 @@ v0.8 may improve:
 - external evidence link-first posture;
 - trust-boundary guidance for external records;
 - local deterministic demo flows;
+- integration-lab validation planning;
 - expanded demo organization/governance process;
 - docs-to-types/contracts/control-plane/app-core handoff sequencing.
 
@@ -97,6 +99,7 @@ v0.8 must not add or claim:
 - full Proposal Action Builder production release;
 - tenant provisioning;
 - token launch requirement.
+- public beta readiness claim.
 
 v0.8 authority and evidence rules:
 
@@ -113,7 +116,33 @@ v0.8 demo-stack runtime scope:
 - do not make `docs`, `types`, `sdk`, or `theme-default` first-class demo-stack runtime pins unless demo-stack directly consumes them;
 - shared packages may still be dependencies inside App Core or Control Plane.
 
-Late v0.8 beta-preflight work must include contracts refactor/hardening, UI polish, strict security review or audit, and docs/claims review. This is required before public beta readiness claims, but it is not the next runtime task unless explicitly scoped.
+Late v0.8 beta-preflight work must include production-shaped core cleanup, demo/mock/integration-lab isolation, UI polish, hosted dev/stage baseline, SaaS readiness baseline, ISO funding/protocol self-governance readiness baseline, custom template guardrails, strict security review or audit, and docs/claims review. This is required before public beta readiness claims, but it is not the next runtime task unless explicitly scoped.
+
+## Integration Lab Rules
+
+External tool integration is a core product requirement, but provider experiments and presentation harnesses must stay isolated from core product code.
+
+Use `integration-lab/` as the future/sibling source of truth for:
+
+- Sepolia deployment manifests;
+- Snapshot testnet space workflows;
+- Safe Sepolia transaction proof workflows;
+- Tally/OpenZeppelin Governor compatibility experiments;
+- Agora research/linking;
+- GitHub, Discourse, and block explorer evidence fixtures;
+- pinned Sepolia fork configs;
+- presentation-ready QA scenarios;
+- field notes and issue logs.
+
+The integration lab must not define core governance authority, pollute audited contracts, or hardcode customer/demo targets into Control Plane internals.
+
+## Template Rules
+
+Custom organization and governance templates are versioned configuration blueprints, not authority by themselves.
+
+Templates may describe organizations, proposal types, policy routes, accountability requirements, external evidence requirements, action metadata, and integration/source defaults.
+
+Templates must not silently grant authority, must be versioned, should be exportable/importable, should warn on risky custom use, and must not allow arbitrary code execution in core.
 
 ## ISO v0.2 Scope Rules
 

@@ -5,7 +5,7 @@
 **Working product title:** IsoniaOS - A Governance Control Plane for Accountable Digital Organizations
 **Status:** Draft
 **Active product target:** v0.8 accountability and integration preview
-**Parallel design target:** ISO / Isonia Draft v0.2 funding and protocol self-governance layer
+**Supporting design target:** ISO / Isonia Draft v0.2 funding and protocol self-governance layer
 **Primary market:** DAO and Web3 governance
 **Language:** English
 
@@ -24,7 +24,7 @@ The roadmap follows several principles:
 - treat Control Plane, App Core, diagnostics, and AI as explanatory or operational layers unless authority is explicitly modeled;
 - introduce advanced governance capabilities gradually;
 - keep AI as an assistance layer by default, not as a source of authority;
-- keep ISO tokenomics as a parallel funding and protocol self-governance layer, not as the main product roadmap.
+- keep ISO funding and protocol self-governance as a supporting readiness track integrated into public beta planning, not as the main product roadmap.
 
 The long-term goal is governance that is structured, transparent, verifiable, accountable, and understandable.
 
@@ -35,6 +35,7 @@ The long-term goal is governance that is structured, transparent, verifiable, ac
 - **v0.6** - usable governance console alpha. Archived baseline.
 - **v0.7** - protocol hardening alpha. Archived protocol foundation.
 - **v0.8** - public governance archive, accountability dashboard, and integration preview. Active product target.
+- **Public beta readiness wave** - production-shaped cleanup, integration lab validation, hosted dev/stage baseline, SaaS baseline, ISO readiness baseline, templates baseline, security review/audit gate, and claims review before any public beta claim.
 - **v0.9** - optional AI governance digest preview.
 - **v1.0** - design partner release.
 - **v1.x** - modular governance expansion.
@@ -177,6 +178,7 @@ Read first:
 - [`v0.8/demo-organization-and-governance-process.md`](v0.8/demo-organization-and-governance-process.md)
 - [`v0.8/backlog-and-implementation-sequence.md`](v0.8/backlog-and-implementation-sequence.md)
 - [`v0.8/execution-discipline-and-beta-readiness.md`](v0.8/execution-discipline-and-beta-readiness.md)
+- [`v0.8/integration-lab-and-public-beta-replan.md`](v0.8/integration-lab-and-public-beta-replan.md)
 
 ## Scope
 
@@ -217,10 +219,15 @@ Read first:
 
 Before public beta or design-partner beta readiness is claimed, v0.8 must include a late preflight phase:
 
-- contracts refactor and security-hardening wave;
-- UI polish for public archive, accountability dashboard, and demo flow;
-- strict security review or audit gate with special scrutiny for authority, proposal execution, access control, and demo/mock isolation;
-- docs and claims review to avoid production, SaaS, audit-ready, integration-complete, or tokenomics runtime overclaims.
+- production-shaped core cleanup across contracts, Control Plane, App Core, shared types, SDK, and docs;
+- demo, mock, and integration harness isolation from audited/product core;
+- integration lab validation on Sepolia;
+- hosted dev/stage environment baseline for App Core and Control Plane;
+- SaaS readiness baseline;
+- ISO funding/protocol self-governance readiness baseline;
+- custom organization/governance templates baseline;
+- strict security review or audit gate with special scrutiny for authority, proposal execution, access control, integration trust boundaries, and demo/mock isolation;
+- docs and claims review to avoid production, SaaS, audit-ready, legal-ready, integration-complete, or tokenomics runtime overclaims.
 
 This phase should not block the current Control Plane and App Core v0.8 runtime steps. It is required late-roadmap work before public beta readiness claims.
 
@@ -231,6 +238,153 @@ This phase should not block the current Control Plane and App Core v0.8 runtime 
 - External records are linked or imported without overclaiming authority.
 - Manual accountability updates are clearly presented as annotations, not protocol truth.
 - v0.8 does not require token launch or ISO tokenomics implementation.
+
+---
+
+# Phase 3B - Public Beta Readiness Wave
+
+## Goal
+
+Convert the v0.8 accountability and integration preview into a production-shaped public beta candidate without claiming production readiness, audit readiness, legal readiness, full provider integration, production SaaS, or token launch readiness.
+
+This wave happens after the core v0.8 runtime surfaces are stable enough to harden. It is required before a public beta readiness claim, but it should not interrupt the immediate v0.8 Control Plane and App Core accountability/archive implementation path.
+
+## Source of Truth
+
+The strategic correction note is:
+
+- [`v0.8/integration-lab-and-public-beta-replan.md`](v0.8/integration-lab-and-public-beta-replan.md)
+
+## Required Workstreams
+
+### Production-Shaped Core Cleanup
+
+- isolate demo-only contracts, mocks, fixtures, and harnesses from audited/product core;
+- remove hardcoded customer/demo target assumptions from Control Plane and App Core;
+- ensure shared domain types model generic evidence, action metadata, source labels, authority claims, and provider status;
+- keep external integrations adapter-based instead of provider-specific logic leaking into route explanation;
+- verify docs, contracts, types, SDK, Control Plane, App Core, demo-stack, and integration-lab boundaries.
+
+### Integration Lab on Sepolia
+
+Create or maintain an `integration-lab/` source of truth for real-world validation that is separate from core product code.
+
+Expected contents:
+
+- Sepolia deployment manifests;
+- Snapshot testnet space workflow;
+- Safe Sepolia transaction proof workflow;
+- Tally/OpenZeppelin Governor compatibility experiment;
+- Agora research and linking lane;
+- GitHub, Discourse, and block explorer evidence fixtures;
+- pinned Sepolia fork configs;
+- presentation-ready QA scenarios;
+- field notes and issue log.
+
+The integration lab should validate external evidence and provider assumptions without polluting audited core contracts, Control Plane internals, or App Core business logic.
+
+### Hosted Dev/Stage Environments
+
+Before public beta readiness can be claimed, the project needs a hosted environment path for:
+
+- dev Control Plane and App Core deployments;
+- stage Control Plane and App Core deployments;
+- managed Postgres/indexer baseline;
+- reproducible environment configuration;
+- staged testnet contract/address configuration;
+- observable chain/indexer/projection/API health.
+
+Production environment claims are separate and require stronger operational controls.
+
+### SaaS Readiness Baseline
+
+SaaS readiness for public beta planning means the project has a documented and partially exercised managed-service path. It does not mean production SaaS is complete.
+
+Baseline:
+
+- hosted Control Plane and App Core deployment path;
+- managed Postgres/indexer infrastructure direction;
+- environment separation: dev, stage, and eventually production;
+- custom domain direction without claiming implementation is done;
+- monitoring, logging, backups, and restore expectations;
+- tenant and organization provisioning plan;
+- integration credential management direction;
+- open-core boundary between inspectable/self-hostable components and managed service conveniences.
+
+Public App Core must remain self-hostable and must not absorb SaaS-only billing, tenant admin, or private operator workflows.
+
+### ISO Funding and Protocol Self-Governance Readiness Baseline
+
+ISO readiness is integrated into public beta planning as a supporting gate for the IsoniaOS project, not as a replacement for product milestones.
+
+Define separately:
+
+- Product public beta readiness: product surfaces, integration posture, security gate, docs, and hosted baseline are ready for a public beta decision.
+- ISO funding/protocol self-governance readiness: tokenomics, governance, treasury, identity, legal, risk, communications, and security/audit plans are coherent enough for an explicit future decision.
+- Tokenomics simulation/readiness: economic and governance assumptions have been simulated and reviewed enough to inform that decision.
+- Legal/security/audit gates: required before claims that depend on them.
+- Token launch: a separate explicit decision, not required for v0.8 runtime work and not automatically required for product public beta.
+
+Do not claim legal readiness, audit readiness, compliant token distribution, or token launch readiness until the relevant work exists.
+
+### Custom Organization and Governance Templates
+
+Templates should be versioned configuration blueprints, not governance authority by themselves.
+
+Template families:
+
+- organization template;
+- proposal type template;
+- policy route template;
+- accountability requirement template;
+- external evidence requirement template;
+- action metadata template;
+- integration/source template.
+
+Guardrails:
+
+- templates cannot silently grant authority;
+- authority-changing template output must go through explicit governed setup or activation;
+- templates should be versioned, exportable, and importable;
+- risky/custom templates should show warnings;
+- SaaS may later support private/team templates;
+- templates must not allow arbitrary code execution in core.
+
+### Security Review / Audit Gate
+
+The gate must specifically review:
+
+- authority and access control;
+- proposal route and execution semantics;
+- timelock, veto, approval, and cancellation behavior;
+- integration trust boundaries;
+- provider adapter behavior and stale/error states;
+- demo/mock/integration-lab isolation;
+- SaaS operational assumptions if public beta uses hosted services;
+- docs and public claims.
+
+The gate can be an internal security review, external audit, or staged combination depending on scope. The roadmap must not claim audit readiness until the work exists.
+
+### Claims and Docs Review
+
+Before a public beta claim, review all public-facing docs and messaging for overclaims around:
+
+- production readiness;
+- production SaaS readiness;
+- audit/security readiness;
+- legal/compliance readiness;
+- provider integration completeness;
+- token launch readiness;
+- external records as governance authority.
+
+## Success Criteria
+
+- v0.8 product surfaces are no longer local-demo-shaped.
+- External integrations have deterministic local tests, pinned fork validation where useful, and live Sepolia field notes where needed.
+- SaaS readiness is represented as a baseline path, not as a production claim.
+- ISO readiness is integrated as a supporting gate without moving tokenomics above the product roadmap.
+- Custom templates have a clear guarded design direction.
+- Public beta readiness can be evaluated by concrete gates instead of implied by the v0.8 feature list.
 
 ---
 
@@ -264,6 +418,8 @@ AI must not vote, execute, approve or reject proposals, invalidate proposals as 
 Support real design partner workflows on non-critical DAO processes.
 
 v1.0 should be stable enough for selected DAOs, protocol foundations, or grant programs to use IsoniaOS for a real governance lifecycle that does not create unacceptable production risk.
+
+Any public beta or design-partner beta claim before v1.0 must pass the Phase 3B readiness wave or an explicitly scoped successor gate.
 
 ## Target Design Partner Workflows
 
@@ -321,11 +477,19 @@ Civic and public-governance use cases require legal, compliance, business-develo
 
 ---
 
-## Parallel Track - ISO Funding and Protocol Self-Governance
+## Integrated Product-Support Track - ISO Funding and Protocol Self-Governance
 
 This track covers ISO/Isonia tokenomics, funding, treasury separation, identity-aware protocol self-governance, legal phasing, and reserve policy.
 
-It is a parallel non-product track. Product milestones are not blocked by tokenomics milestones unless explicitly stated. Token launch is not required for v0.8 accountability and integration preview. Legal and tokenomics work proceeds as funding becomes available.
+It is a supporting track integrated into public beta planning, not the product roadmap itself. Product milestones are not blocked by tokenomics milestones unless explicitly stated. Token launch is not required for v0.8 accountability and integration preview or for product public beta unless a future roadmap deliberately makes that decision. Legal and tokenomics work proceeds as funding becomes available.
+
+For public beta planning, distinguish:
+
+- product public beta readiness;
+- ISO funding/protocol self-governance readiness;
+- tokenomics simulation/readiness;
+- legal, security, and audit gates;
+- token launch, if any, as a separate explicit decision.
 
 No revenue-sharing rights exist at launch. Any future economic participation module will require a separate governance proposal, independent legal review, updated disclosures, and, where required, a regulated structure.
 
