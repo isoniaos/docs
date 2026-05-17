@@ -63,6 +63,9 @@ Archived documents are historical references only.
 - `DECISION_LOG.md` is the source of truth for recorded product/context and ISO design decisions.
 - `ISO_ARCHITECTURE.md` is the source of truth for ISO funding and protocol self-governance architecture.
 - `ARCHITECTURE.md` is the source of truth for product architecture.
+- `DEVELOPMENT-PROCESS.md` and `v0.8/execution-discipline-and-beta-readiness.md` are the source of truth for Codex process, v0.8 execution discipline, demo-stack runtime boundaries, and beta-readiness gates.
+
+Repository docs are more durable than chat history or project memory. Use chat context as guidance only; record new cross-repository constraints in active docs before relying on them in future tasks. Always inspect current repository state and active docs instead of assuming older chat context still applies.
 
 ## v0.8 Scope Rules
 
@@ -104,6 +107,14 @@ v0.8 authority and evidence rules:
 - imported external records must keep source labels, trust boundaries, and stale/error/unknown states visible;
 - EIP-5792 is not the primary v0.8 path.
 
+v0.8 demo-stack runtime scope:
+
+- `demo-stack` should directly track only `app-core`, `control-plane`, and `evm-contracts`;
+- do not make `docs`, `types`, `sdk`, or `theme-default` first-class demo-stack runtime pins unless demo-stack directly consumes them;
+- shared packages may still be dependencies inside App Core or Control Plane.
+
+Late v0.8 beta-preflight work must include contracts refactor/hardening, UI polish, strict security review or audit, and docs/claims review. This is required before public beta readiness claims, but it is not the next runtime task unless explicitly scoped.
+
 ## ISO v0.2 Scope Rules
 
 ISO / Isonia Draft v0.2 may document:
@@ -138,6 +149,7 @@ It must not claim:
 - Do not edit `archive/` unless explicitly instructed.
 - Do not create future-version docs unless the version is explicitly scoped.
 - Do not create or update tags unless explicitly instructed.
+- Before public beta, do not tag every commit. Tag only after a coherent implementation wave is complete, validated, and intentionally prepared for release.
 
 ## Implementation Rules
 

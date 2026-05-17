@@ -176,6 +176,7 @@ Read first:
 - [`v0.8/testing-and-demo-strategy.md`](v0.8/testing-and-demo-strategy.md)
 - [`v0.8/demo-organization-and-governance-process.md`](v0.8/demo-organization-and-governance-process.md)
 - [`v0.8/backlog-and-implementation-sequence.md`](v0.8/backlog-and-implementation-sequence.md)
+- [`v0.8/execution-discipline-and-beta-readiness.md`](v0.8/execution-discipline-and-beta-readiness.md)
 
 ## Scope
 
@@ -211,6 +212,17 @@ Read first:
 - Discourse/GitHub context links;
 - block explorer transaction proof links;
 - source labels and trust-boundary warnings.
+
+### Late v0.8 Beta Preflight
+
+Before public beta or design-partner beta readiness is claimed, v0.8 must include a late preflight phase:
+
+- contracts refactor and security-hardening wave;
+- UI polish for public archive, accountability dashboard, and demo flow;
+- strict security review or audit gate with special scrutiny for authority, proposal execution, access control, and demo/mock isolation;
+- docs and claims review to avoid production, SaaS, audit-ready, integration-complete, or tokenomics runtime overclaims.
+
+This phase should not block the current Control Plane and App Core v0.8 runtime steps. It is required late-roadmap work before public beta readiness claims.
 
 ## Success Criteria
 

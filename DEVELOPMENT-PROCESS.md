@@ -12,6 +12,10 @@ IsoniaOS should be developed docs-first.
 
 Governance infrastructure is sensitive. Product scope, authority model, trust boundaries, and user expectations must be clear before implementation.
 
+Repository docs are the durable source of truth for Codex and contributors. Chat history and project memory may guide a task, but future tasks must not rely on them as durable policy. New constraints that affect work across repositories should be recorded in active docs before they are assumed by implementation, release, or demo-stack tasks.
+
+Future Codex tasks should inspect repository state and the active docs before changing code or process. Archived docs and prior chat context are supporting context only unless an active doc explicitly carries the decision forward.
+
 Recommended process:
 
 ```text
@@ -30,6 +34,7 @@ Before any implementation work, read:
 - `ARCHITECTURE.md` for product architecture scope;
 - `TOKENOMICS.md`, `GOVERNANCE.md`, `IDENTITY.md`, `TREASURY.md`, `LEGAL_ROADMAP.md`, `RISK_REGISTER.md`, `DECISION_LOG.md`, and `ISO_ARCHITECTURE.md` when ISO tokenomics, governance, identity, treasury, legal, risk, decision, or token architecture scope is involved;
 - `v0.8/README.md`
+- `v0.8/execution-discipline-and-beta-readiness.md`
 - relevant feature docs under `v0.8/`
 - relevant strategy docs under `strategy/`
 
@@ -137,9 +142,15 @@ Recommended PR shape:
 - known limitations;
 - follow-up tasks.
 
+## 6. Pre-Beta Release Discipline
+
+Before public beta, IsoniaOS may move in coherent implementation waves instead of tagging every commit. Create tags only after a complete scope or wave is validated and intentionally prepared for release.
+
+Codex tasks should be specific enough to avoid missed details, but they should not force every small commit into a tagged release. After public beta, shift toward smaller release steps with tighter validation, compatibility checks, and release notes.
+
 ---
 
-## 6. Review Gates
+## 7. Review Gates
 
 Before merge, verify:
 
@@ -155,7 +166,7 @@ Before merge, verify:
 
 ---
 
-## 7. Documentation Gate
+## 8. Documentation Gate
 
 Docs must be updated when behavior changes.
 
@@ -171,7 +182,7 @@ Do not edit archived docs unless explicitly instructed.
 
 ---
 
-## 8. Changelog Style
+## 9. Changelog Style
 
 Use `CHANGELOG.md` under `Unreleased` until a version is cut.
 
@@ -188,7 +199,7 @@ Do not create release sections unless a release is actually being prepared.
 
 ---
 
-## 9. Test and Check Expectations
+## 10. Test and Check Expectations
 
 For code changes, run relevant checks.
 
@@ -207,7 +218,7 @@ If a check cannot be run, report why.
 
 ---
 
-## 10. Human Review Responsibilities
+## 11. Human Review Responsibilities
 
 Codex can propose patches, but humans must review:
 
@@ -226,7 +237,7 @@ Do not merge agent-generated changes into critical governance code without human
 
 ---
 
-## 11. Source Notes for Codex
+## 12. Source Notes for Codex
 
 OpenAI describes Codex as a coding agent that can read, edit, and run code, and cloud tasks run in sandboxed environments. OpenAI also emphasizes that users should manually review and validate agent-generated code before integration and execution.
 
@@ -238,7 +249,7 @@ References:
 
 ---
 
-## 12. Definition of Done for v0.8 Tasks
+## 13. Definition of Done for v0.8 Tasks
 
 A v0.8 task is done when:
 

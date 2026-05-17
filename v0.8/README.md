@@ -26,6 +26,7 @@ This folder contains the planning baseline for v0.8:
 - [`testing-and-demo-strategy.md`](./testing-and-demo-strategy.md)
 - [`demo-organization-and-governance-process.md`](./demo-organization-and-governance-process.md)
 - [`backlog-and-implementation-sequence.md`](./backlog-and-implementation-sequence.md)
+- [`execution-discipline-and-beta-readiness.md`](./execution-discipline-and-beta-readiness.md)
 
 ## Read order
 
@@ -34,6 +35,7 @@ This folder contains the planning baseline for v0.8:
 3. [`testing-and-demo-strategy.md`](./testing-and-demo-strategy.md)
 4. [`demo-organization-and-governance-process.md`](./demo-organization-and-governance-process.md)
 5. [`backlog-and-implementation-sequence.md`](./backlog-and-implementation-sequence.md)
+6. [`execution-discipline-and-beta-readiness.md`](./execution-discipline-and-beta-readiness.md)
 
 ## v0.8 scope summary
 
@@ -47,7 +49,8 @@ v0.8 should focus on:
 6. local testing, fork/read-only validation, and optional testnet smoke posture;
 7. expanded demo organization scenarios for accountable follow-through;
 8. route and UX sketches for future App Core and public archive work;
-9. backlog and implementation-sequence guidance for future runtime tasks.
+9. backlog and implementation-sequence guidance for future runtime tasks;
+10. execution discipline, demo-stack runtime boundaries, and late beta-readiness gates.
 
 ## v0.8 non-goals
 

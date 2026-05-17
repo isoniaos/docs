@@ -53,6 +53,7 @@ v0.8 keeps that DAO-first and accountability-centered position. It should not be
 - [Testing and Demo Strategy](v0.8/testing-and-demo-strategy.md)
 - [Demo Organization and Governance Process](v0.8/demo-organization-and-governance-process.md)
 - [Backlog and Implementation Sequence](v0.8/backlog-and-implementation-sequence.md)
+- [Execution Discipline and Beta Readiness](v0.8/execution-discipline-and-beta-readiness.md)
 
 ### Funding and Protocol Self-Governance Design
 

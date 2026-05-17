@@ -67,6 +67,16 @@ The smoke should:
 
 This smoke test should validate the proposal-to-proof-of-execution wedge in public. It should not become a blocker for every docs or runtime iteration. Local deterministic flows remain the primary development and regression path.
 
+## Demo-Stack Runtime Scope
+
+For v0.8, `demo-stack` should directly orchestrate only:
+
+- `app-core`;
+- `control-plane`;
+- `evm-contracts`.
+
+Do not present `docs`, `types`, `sdk`, or `theme-default` as first-class demo-stack runtime package pins unless `demo-stack` truly consumes them directly. `types`, `sdk`, and theme packages may still be dependencies inside App Core or Control Plane, and docs remain the source of architecture and acceptance criteria. The demo-stack boundary is about direct runtime orchestration, top-level version variables, and demo tasks.
+
 ## External Tool Test Posture
 
 Provider-specific expectations:

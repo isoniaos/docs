@@ -119,6 +119,16 @@ v0.7.0
 17. Keep `CHANGELOG.md` under `Unreleased` until a release is intentionally cut.
 18. Codex tasks must not create tags or release sections unless explicitly instructed.
 
+## Pre-Beta Tagging Discipline
+
+Before public beta, active implementation may move in larger validated waves. Do not tag every commit.
+
+Create tags only after a coherent scope or wave is complete, validated, and intentionally prepared for release. Codex tasks should be narrow enough to preserve implementation quality, but not so tiny that each small commit becomes a release event.
+
+After public beta, release steps should become smaller and more careful, with tighter validation, compatibility checks, and release notes.
+
+This discipline complements the SemVer and tag-format rules above. It does not change the rule that package versions omit the leading `v` and Git tags include the leading `v`.
+
 ## Version Communication
 
 For public roadmap communication, use product milestone labels:

@@ -10,6 +10,7 @@ Git tags use SemVer with a leading `v`, for example `v0.7.0-alpha.1`.
 
 - Added the Draft v0.2 tokenomics, governance, identity, treasury, legal roadmap, risk register, decision log, and architecture documentation pack for ISO.
 - Added product-context risks and product hierarchy decisions to the risk register and decision log.
+- Added v0.8 execution discipline and beta-readiness guidance covering durable docs source-of-truth rules, demo-stack runtime scope, pre-beta tagging waves, deferred contract hardening, and public beta preflight gates.
 
 ### Changed
 
@@ -17,6 +18,7 @@ Git tags use SemVer with a leading `v`, for example `v0.7.0-alpha.1`.
 - Restored the whitepaper, roadmap, README, and product architecture hierarchy so IsoniaOS remains product-first and ISO tokenomics is documented as a supporting funding and protocol self-governance layer.
 - Renamed the tokenomics architecture content to `ISO_ARCHITECTURE.md` and added a product-first `ARCHITECTURE.md`.
 - Aligned documentation metadata files so v0.8 remains the active product baseline while Draft v0.2 remains the parallel ISO funding/governance design baseline.
+- Updated v0.8 process, versioning, roadmap, testing, and backlog docs with wave-based pre-beta release discipline and late beta-readiness requirements.
 
 ## v0.8.0-alpha.1
 
