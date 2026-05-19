@@ -20,6 +20,7 @@ P0 items define the baseline needed before runtime work should expand.
 - Local deterministic demo flow.
 - Generic proof/action metadata and provider adapter direction.
 - Custom template guardrails as versioned configuration, not authority.
+- Client contract authority and managed execution baseline covering org-scoped executors, selector-level permissions, value policy, and future parameter constraints.
 - Basic public archive and accountability UI shape later.
 - Docs-to-types/contracts handoff.
 
@@ -37,6 +38,7 @@ P1 items should follow the P0 baseline and remain careful about authority claims
 - Pinned Sepolia fork fixtures.
 - Integration-lab field notes and issue log.
 - Updated design partner preview pack.
+- Integration-lab validation plan for at least one Ownable-style target and one role-based or AccessManager/AccessManaged-style target.
 
 ## Explicit Non-Goals for v0.8
 
@@ -65,7 +67,7 @@ v0.8 should not include or claim:
 5. `app-core`: implement public archive/accountability surfaces and fix stale homepage copy.
 6. `integration-lab`: validate provider assumptions with pinned Sepolia forks, live Sepolia workflows, field notes, and presentation QA scenarios outside core product code.
 7. `demo-stack` plus optional testnet smoke: validate the proposal-to-proof-of-execution wedge.
-8. Late v0.8 beta preflight: production-shaped core cleanup, hosted dev/stage baseline, SaaS readiness baseline, ISO readiness baseline, custom template baseline, UI polish, docs/claims review, and strict security review or audit before public beta readiness claims.
+8. Late v0.8 beta preflight: production-shaped core cleanup, hosted dev/stage baseline, SaaS readiness baseline, ISO readiness baseline, custom template baseline, managed client-contract execution review, UI polish, docs/claims review, and strict security review or audit before public beta readiness claims.
 
 The late beta-preflight phase is required before public beta or design-partner beta, but it is not the immediate next runtime task. Current v0.8 runtime work should continue through Control Plane and App Core archive/accountability surfaces before broad contract cleanup is started.
 
@@ -98,6 +100,7 @@ Before any public beta readiness claim, schedule a product-first readiness wave 
 - ISO funding/protocol self-governance readiness baseline;
 - custom organization/governance template baseline;
 - security review or audit gate;
+- client contract authority, managed executor, and parameter-constraint model review;
 - claims/docs review.
 
 ISO readiness means the funding/protocol self-governance plan, simulations, legal/security review path, treasury/identity/governance assumptions, and communications posture are coherent enough for an explicit future decision. It does not mean token launch is required.
@@ -112,7 +115,8 @@ Templates should be versioned configuration blueprints. They may cover:
 - accountability requirement templates;
 - external evidence requirement templates;
 - action metadata templates;
-- integration/source templates.
+- integration/source templates;
+- managed execution permission templates.
 
 Guardrails:
 
@@ -122,6 +126,7 @@ Guardrails:
 - risky/custom templates should show warnings;
 - SaaS may later support private/team templates;
 - templates must not allow arbitrary code execution in core.
+- templates must not silently grant target-contract owner, role, selector, or value permissions.
 
 ## Handoff Boundaries
 
@@ -151,8 +156,11 @@ Before public beta, schedule a late v0.8 contract cleanup and hardening wave. Th
 - adding contract coverage reporting;
 - adding gas reporting;
 - performing strict security review or audit before public beta.
+- reviewing client contract authority, managed executor design, selector-level permissions, value limits, parameter constraints, role/ownership handoff, emergency controls, and target-contract event trust boundaries.
 
 This is a beta-readiness requirement, not a production audit claim. Audit scope and provider/process can be defined later.
+
+See [`client-contract-authority-and-managed-execution.md`](./client-contract-authority-and-managed-execution.md) for the v0.8 architecture baseline for client contract handoff and managed execution.
 
 ## Acceptance Baseline
 
@@ -164,4 +172,5 @@ The v0.8 backlog is ready for implementation planning when future tasks can iden
 - which App Core copy and surfaces should change;
 - which testnet smoke proves the wedge without blocking every iteration;
 - which v0.8 claims remain explicitly out of scope;
+- which client contract authority assumptions require integration-lab validation before beta review;
 - which late beta-preflight work remains before public beta readiness can be claimed.

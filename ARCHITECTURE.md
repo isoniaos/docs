@@ -30,6 +30,7 @@ IsoniaOS combines:
 - integration-lab validation harnesses kept outside core product code;
 - optional advisory AI features;
 - public governance archive and accountability records.
+- managed client-contract execution where authority has been explicitly handed to organization-scoped governance.
 
 The product architecture exists to connect decision context, authority, execution, evidence, and memory.
 
@@ -75,6 +76,8 @@ External tools are authoritative only for their own records:
 - Discourse or forums for their discussion records.
 
 IsoniaOS should preserve source labels and trust boundaries across all imported or linked records.
+
+IsoniaOS should not create a global company or protocol superadmin that can operate all customer contracts. Client contract authority must be scoped per organization through explicit handoff, onchain permissions, deployment manifests, governed executors, and public disclosure. Ownable, role-based, AccessManager/AccessManaged, and custom access-control targets require different compatibility treatment.
 
 ---
 
@@ -175,9 +178,29 @@ It should provide:
 
 Control Plane is not the source of governance authority. It explains and projects authority from contracts and explicitly trusted external sources.
 
+For managed client-contract execution, Control Plane should index IsoniaOS protocol and executor events as authoritative protocol events. It should not need to listen to every customer target contract by default. Customer target-contract logs are evidence or context unless a reviewed protocol design or adapter explicitly models a field as authority.
+
 ---
 
-## 8. App Core Architecture
+## 8. Managed Execution Architecture
+
+When IsoniaOS governs client contracts, the preferred baseline is an organization-scoped managed executor, timelock, Safe-like authority, or route-specific executor. That authority should enforce target address, selector, native value, calldata hash, and optional typed parameter constraints before calling the target contract.
+
+The model must distinguish:
+
+- `bytes4` selector as enforcement identity;
+- human-readable function signature as display metadata;
+- ABI or action schema as optional decoding and validation support;
+- calldata hash as the full payload commitment;
+- target-contract events as evidence unless explicitly modeled otherwise.
+
+For `Ownable` targets, the target contract cannot distinguish which governance route intended which function. Fine-grained policy must be enforced upstream by the governed executor. For role-based targets, role grants and revocations are governed actions, and `DEFAULT_ADMIN_ROLE` should be held by a governed or timelocked organization authority where possible. AccessManager/AccessManaged-style contracts are useful for new templates but are not required for all clients. Custom access-control implementations require explicit compatibility review before IsoniaOS should claim authority understanding.
+
+See [v0.8 Client Contract Authority and Managed Execution](v0.8/client-contract-authority-and-managed-execution.md).
+
+---
+
+## 9. App Core Architecture
 
 App Core is the public self-hostable governance console.
 
@@ -196,7 +219,7 @@ It should provide:
 
 App Core should not contain SaaS-only billing or private tenant management logic.
 
-### 8.1 Template Architecture
+### 9.1 Template Architecture
 
 Organization and governance templates should be versioned configuration blueprints. They help create structures, proposal types, policy routes, evidence expectations, action metadata, and integration/source defaults.
 
@@ -215,13 +238,14 @@ Template families may include:
 Guardrails:
 
 - templates cannot silently grant roles, permissions, execution rights, or veto rights;
+- templates cannot silently grant client-contract owner, role, selector, value, or parameter permissions;
 - authority-changing output must go through explicit setup, review, or governed activation;
 - templates should be exportable/importable as data;
 - custom or risky templates should display warnings;
 - SaaS may later support private/team templates;
 - templates must not allow arbitrary code execution in core.
 
-### 8.2 SaaS and Hosted Environment Boundary
+### 9.2 SaaS and Hosted Environment Boundary
 
 Managed SaaS is a deployment and operations layer over the product architecture. It should not become the source of governance authority.
 
@@ -239,7 +263,7 @@ Public App Core remains self-hostable. SaaS-only billing, private tenant adminis
 
 ---
 
-## 9. AI Advisory Architecture
+## 10. AI Advisory Architecture
 
 AI is an interpretability and assistance layer.
 
@@ -258,7 +282,7 @@ AI must not be the default final authority for proposal validity, voting decisio
 
 ---
 
-## 10. ISO Supporting Layer
+## 11. ISO Supporting Layer
 
 ISO tokenomics is a supporting funding and protocol self-governance layer for IsoniaOS itself.
 
@@ -285,7 +309,7 @@ Key constraints:
 
 ---
 
-## 11. Non-Goals
+## 12. Non-Goals
 
 The product architecture does not require:
 
@@ -299,15 +323,17 @@ The product architecture does not require:
 - custom domains;
 - full IPFS upload service.
 - arbitrary code execution through templates.
+- global superadmin authority over customer contracts.
 
 ---
 
-## 12. Related Documents
+## 13. Related Documents
 
 - [Whitepaper](WHITEPAPER.md)
 - [Roadmap](ROADMAP.md)
 - [v0.8 Accountability and Integration Preview](v0.8/accountability-and-integration-preview.md)
 - [v0.8 Integration Lab and Public Beta Replan](v0.8/integration-lab-and-public-beta-replan.md)
+- [v0.8 Client Contract Authority and Managed Execution](v0.8/client-contract-authority-and-managed-execution.md)
 - [Trust and Security](strategy/TRUST-AND-SECURITY.md)
 - [AI Policy](strategy/AI-POLICY.md)
 - [ISO Architecture](ISO_ARCHITECTURE.md)

@@ -28,6 +28,7 @@ This folder contains the planning baseline for v0.8:
 - [`backlog-and-implementation-sequence.md`](./backlog-and-implementation-sequence.md)
 - [`execution-discipline-and-beta-readiness.md`](./execution-discipline-and-beta-readiness.md)
 - [`integration-lab-and-public-beta-replan.md`](./integration-lab-and-public-beta-replan.md)
+- [`client-contract-authority-and-managed-execution.md`](./client-contract-authority-and-managed-execution.md)
 
 ## Read order
 
@@ -38,6 +39,7 @@ This folder contains the planning baseline for v0.8:
 5. [`backlog-and-implementation-sequence.md`](./backlog-and-implementation-sequence.md)
 6. [`execution-discipline-and-beta-readiness.md`](./execution-discipline-and-beta-readiness.md)
 7. [`integration-lab-and-public-beta-replan.md`](./integration-lab-and-public-beta-replan.md)
+8. [`client-contract-authority-and-managed-execution.md`](./client-contract-authority-and-managed-execution.md)
 
 ## v0.8 scope summary
 
@@ -53,7 +55,7 @@ v0.8 should focus on:
 8. route and UX sketches for future App Core and public archive work;
 9. backlog and implementation-sequence guidance for future runtime tasks;
 10. execution discipline, demo-stack runtime boundaries, and late beta-readiness gates;
-11. integration-lab separation, Sepolia validation lanes, SaaS readiness baseline, ISO readiness baseline, and custom template guardrails before any public beta claim.
+11. integration-lab separation, Sepolia validation lanes, SaaS readiness baseline, ISO readiness baseline, custom template guardrails, and managed client-contract execution guardrails before any public beta claim.
 
 ## v0.8 non-goals
 
@@ -69,6 +71,8 @@ Do not present v0.8 as:
 - production SaaS or hosted service readiness;
 - token launch readiness;
 - arbitrary code execution through templates;
+- a global Isonia superadmin over customer contracts;
+- automatic governability for all customer contracts;
 - a system that treats external records as authoritative unless explicitly modeled as authority.
 
 ## Public beta readiness posture
@@ -77,7 +81,9 @@ The v0.8 runtime preview is not the same as public beta readiness.
 
 Public beta readiness requires a later wave for production-shaped core cleanup, integration lab validation on Sepolia, hosted dev/stage environments, SaaS readiness baseline, ISO funding/protocol self-governance readiness baseline, custom template design, security review or audit gate, and docs/claims review.
 
-See [`integration-lab-and-public-beta-replan.md`](./integration-lab-and-public-beta-replan.md).
+That later wave must include client contract authority review, managed executor design review, parameter-constraint model review, and Sepolia validation against at least one Ownable-style target and one role-based or AccessManager/AccessManaged-style target.
+
+See [`integration-lab-and-public-beta-replan.md`](./integration-lab-and-public-beta-replan.md) and [`client-contract-authority-and-managed-execution.md`](./client-contract-authority-and-managed-execution.md).
 
 ## Relationship to v0.7
 

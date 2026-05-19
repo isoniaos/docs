@@ -22,6 +22,7 @@ v0.8 accountability and integration preview
 -> SaaS readiness baseline
 -> ISO funding/protocol self-governance readiness baseline
 -> templates baseline
+-> client contract authority and managed execution review
 -> security review or audit gate
 -> docs and claims review
 -> public beta readiness decision
@@ -44,6 +45,8 @@ Core repositories should avoid customer-specific or demo-specific target contrac
 
 The core product should model governance authority, proposal routes, accountability obligations, action metadata, and external evidence generically. Demo and integration-lab repositories may contain specific examples, seeded flows, provider experiments, mock targets, and presentation scenarios.
 
+Client contract authority follows the same separation. Core repositories may model org-scoped managed execution, selector-level permissions, value policy, parameter constraints, and source disclosure. Specific Sepolia targets, customer ABIs, target access-control experiments, and provider workflow notes belong in integration-lab until they are deliberately promoted through reviewed generic interfaces.
+
 ## Integration Lab Source of Truth
 
 A future or sibling `integration-lab/` repository should be the source of truth for real-world integration validation and presentation-grade scenarios.
@@ -59,6 +62,7 @@ Expected contents:
 - pinned Sepolia fork configs for reproducible read-only validation;
 - presentation-ready QA scenarios;
 - field notes and issue log for provider gaps, API limitations, broken assumptions, and follow-up tasks.
+- Ownable-style and role-based or AccessManager/AccessManaged target validation notes for managed execution handoff.
 
 The integration lab is not core product code. It must not pollute audited core contracts, Control Plane internals, App Core business logic, or shared domain types with demo-only behavior.
 
@@ -134,6 +138,7 @@ Preferred core concepts:
 - `ActionMetadata` for expected target, chain, value, calldata hash, method label, risk flags, and execution proof references;
 - provider adapter boundaries for URL parsing, metadata fetch, status normalization, verification checks, and stale/error states;
 - explicit authority claims, verification status, source labels, and last-sync metadata.
+- org-scoped execution permission metadata covering target address, selector, value policy, calldata hash, and optional parameter constraints.
 
 Provider adapters may know how to parse Snapshot, Safe, Tally, Agora, GitHub, Discourse, or explorer records. The core domain should continue to answer broader questions:
 
@@ -146,6 +151,8 @@ Provider adapters may know how to parse Snapshot, Safe, Tally, Agora, GitHub, Di
 - Does the evidence match the expected action metadata?
 
 If an integration cannot verify a field, it must not silently upgrade that field to authority.
+
+Control Plane should index IsoniaOS protocol and managed executor events as authority. It should not need to listen to every customer target contract by default. Target-contract logs may be linked as evidence or context when an adapter, importer, or integration-lab workflow supplies them.
 
 ## Evidence, Context, and Authority Boundaries
 
@@ -185,6 +192,9 @@ Guardrails:
 - risky or custom templates should display warnings before use;
 - SaaS may later support private/team templates without making them part of the open-core authority layer;
 - templates must not allow arbitrary code execution in core.
+- templates must not silently grant target-contract owner, role, selector, value, or parameter permissions.
+
+Managed execution permission templates may describe expected target permissions, parameter constraints, value limits, required evidence, and handoff steps. They become authority only after explicit governed setup and onchain state establish the permission.
 
 The roadmap can support curated public templates first and user-defined templates later. Runtime implementation is not part of this docs task.
 
@@ -230,7 +240,11 @@ Before public beta readiness can be claimed, the project needs:
 - SaaS readiness baseline documented and partially exercised where explicitly scoped;
 - ISO funding/protocol self-governance readiness baseline integrated into the public beta plan without requiring token launch;
 - versioned custom template design direction;
+- client contract authority model covering Ownable, AccessControl, AccessManager/AccessManaged, custom access-control, and unsupported targets;
+- managed execution and parameter-constraint model review;
 - security review or audit gate scoped to authority, execution, access control, integration trust boundaries, and demo/mock isolation;
+- Sepolia integration-lab validation with at least one Ownable-style target and one role-based or AccessManager/AccessManaged-style target;
 - docs and claims review covering product, SaaS, integrations, audit/security, legal, and ISO language;
 - no unresolved claim that v0.8 is production, integration-complete, legally reviewed, audited, or token-launch ready.
 
+See [`client-contract-authority-and-managed-execution.md`](./client-contract-authority-and-managed-execution.md) for the managed execution architecture baseline.

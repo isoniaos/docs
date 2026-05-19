@@ -179,6 +179,7 @@ Read first:
 - [`v0.8/backlog-and-implementation-sequence.md`](v0.8/backlog-and-implementation-sequence.md)
 - [`v0.8/execution-discipline-and-beta-readiness.md`](v0.8/execution-discipline-and-beta-readiness.md)
 - [`v0.8/integration-lab-and-public-beta-replan.md`](v0.8/integration-lab-and-public-beta-replan.md)
+- [`v0.8/client-contract-authority-and-managed-execution.md`](v0.8/client-contract-authority-and-managed-execution.md)
 
 ## Scope
 
@@ -226,6 +227,9 @@ Before public beta or design-partner beta readiness is claimed, v0.8 must includ
 - SaaS readiness baseline;
 - ISO funding/protocol self-governance readiness baseline;
 - custom organization/governance templates baseline;
+- client contract authority model review covering Ownable, AccessControl, AccessManager/AccessManaged, custom access-control, and unsupported targets;
+- managed execution and executor design review, including selector-level permissions, value limits, parameter constraints, emergency controls, and target-contract event trust boundaries;
+- Sepolia integration-lab validation with at least one Ownable-style target and one role-based or AccessManager/AccessManaged-style target;
 - strict security review or audit gate with special scrutiny for authority, proposal execution, access control, integration trust boundaries, and demo/mock isolation;
 - docs and claims review to avoid production, SaaS, audit-ready, legal-ready, integration-complete, or tokenomics runtime overclaims.
 
@@ -355,9 +359,15 @@ Guardrails:
 The gate must specifically review:
 
 - authority and access control;
+- client contract authority and explicit handoff;
+- managed executor design;
+- selector-level execution permissions;
+- value and parameter-constraint enforcement model;
 - proposal route and execution semantics;
 - timelock, veto, approval, and cancellation behavior;
+- emergency and break-glass controls;
 - integration trust boundaries;
+- target-contract events as evidence unless modeled otherwise;
 - provider adapter behavior and stale/error states;
 - demo/mock/integration-lab isolation;
 - SaaS operational assumptions if public beta uses hosted services;

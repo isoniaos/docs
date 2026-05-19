@@ -4,6 +4,16 @@ All notable changes to the IsoniaOS documentation repository are documented here
 
 Git tags use SemVer with a leading `v`, for example `v0.7.0-alpha.1`.
 
+## Unreleased
+
+### Added
+
+- Added the v0.8 client contract authority and managed execution ADR covering org-scoped executors, Ownable and role-based handoff, AccessManager/AccessManaged posture, custom access-control limits, selector-based enforcement identity, parameter constraints, target-event evidence boundaries, and public beta review gates.
+
+### Changed
+
+- Updated v0.8 navigation, architecture, roadmap, integration-lab, backlog, and agent guidance to reference managed execution review, client contract authority validation, parameter-constraint modeling, and Sepolia validation with Ownable-style and role-based or access-managed targets before public beta readiness claims.
+
 ## v0.8.0-alpha.3
 
 ### Added

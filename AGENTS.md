@@ -22,7 +22,7 @@ Supporting planning target:
 ISO / Isonia funding and protocol self-governance readiness baseline
 ```
 
-The v0.8 wave covers Public Governance Archive, Basic Accountability Dashboard, Integration Preview, external evidence/context with explicit trust boundaries, integration-lab validation, public beta gate planning, and late-v0.8 hardening/security readiness.
+The v0.8 wave covers Public Governance Archive, Basic Accountability Dashboard, Integration Preview, external evidence/context with explicit trust boundaries, integration-lab validation, managed client-contract execution architecture, public beta gate planning, and late-v0.8 hardening/security readiness.
 
 Public beta readiness is a future decision point, not a current claim.
 
@@ -68,6 +68,9 @@ Archived documents are historical references only. Do not edit archived docs unl
 - Manual accountability updates are annotations, not protocol truth.
 - Imported external records must keep source labels, trust boundaries, and stale/error/unknown states visible.
 - Templates are versioned configuration blueprints, not authority by themselves.
+- IsoniaOS must not create a global company or protocol superadmin over customer contracts.
+- Client contract authority must be org-scoped and established by explicit handoff, governed permissions, deployment manifests, and public disclosure.
+- Function enforcement identity must use selectors, calldata/value checks, and typed constraints where modeled; free-form function strings are display metadata only.
 
 ## v0.8 Scope Rules
 
@@ -86,6 +89,7 @@ v0.8 may document and refine:
 - SaaS readiness baseline;
 - ISO funding/protocol self-governance readiness baseline;
 - custom template and governance blueprint baseline;
+- client contract authority, managed execution, selector permissions, and parameter-constraint baseline;
 - late-v0.8 hardening, security review, audit-prep, and claims review.
 
 v0.8 must not claim:
