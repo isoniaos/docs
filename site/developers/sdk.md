@@ -1,17 +1,23 @@
 # SDK
 
-The SDK provides typed access to IsoniaOS contracts, Control Plane APIs, and shared domain models.
+The SDK provides typed clients and helpers for applications that use IsoniaOS services.
 
-## Responsibilities
+## Role
 
-- typed API clients;
-- contract interaction helpers where appropriate;
-- shared model helpers;
-- validation and normalization helpers that belong at the interface layer;
-- examples for application and script usage.
+The SDK should:
+
+- consume shared domain types;
+- expose typed Control Plane API clients;
+- provide helper utilities where they reduce integration risk;
+- avoid duplicating authority rules locally;
+- avoid React, provider, demo, or customer-specific assumptions.
 
 ## Boundary
 
-The SDK should not contain App Core UI behavior, provider-specific product policy, private operator workflows, or demo-only assumptions.
+The SDK does not create governance authority.
 
-SDK behavior should follow shared types and public contract/API semantics.
+It should preserve source labels, trust boundaries, authority claims, verification status, and stale/error states returned by the underlying APIs.
+
+## Current status
+
+SDK updates should follow shared type and Control Plane normalization. Public API details will be documented after those contracts are stable enough to publish accurately.

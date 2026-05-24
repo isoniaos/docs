@@ -1,22 +1,34 @@
 # Contracts
 
-The contracts repository models onchain governance state where the protocol needs verifiable authority.
+The contracts repository contains the onchain governance primitives for IsoniaOS.
 
-## Responsibilities
+## Role
 
-- organization and governance state where contract-backed;
-- role and permission events where contract-backed;
-- proposal lifecycle primitives where contract-backed;
-- approval, veto, timelock, and execution semantics where implemented;
-- events for indexed read models;
-- deployment artifacts and ABI output.
+Contracts should model authority where onchain verification is required:
 
-## Authority
+- organization state;
+- governance bodies;
+- roles and permissions;
+- proposal primitives;
+- approvals and vetoes;
+- timelocks;
+- execution;
+- lifecycle events.
 
-Contracts are authoritative only for the fields and actions they model.
+## Current normalization
 
-The docs should clearly distinguish contract state from projected state, external evidence, and manual annotations.
+The contracts area is being normalized in the current workspace cycle.
 
-## Development posture
+Expected direction:
 
-Contract changes should keep demos, mocks, fixtures, and provider experiments isolated from core protocol paths. Security-sensitive changes need focused tests and review.
+- isolate demo-only contracts from core;
+- isolate mocks from core;
+- separate core deployment from demo deployment;
+- preserve explicit authority and lifecycle state;
+- avoid arbitrary demo placeholders in product paths;
+- add tests for protocol correctness and authority-sensitive behavior;
+- complete security review or audit gate before readiness claims.
+
+## Trust boundary
+
+Contracts are authoritative for the state they model. External records, target-contract logs, and manual notes are evidence or context unless explicitly modeled otherwise.

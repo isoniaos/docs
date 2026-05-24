@@ -29,25 +29,32 @@ nav:
   - Roadmap: roadmap.md
   - Overview:
       - What is IsoniaOS: overview/what-is-isoniaos.md
-      - Governance lifecycle: overview/governance-lifecycle.md
+      - Why governance lifecycle: overview/why-governance-lifecycle.md
       - Architecture: overview/architecture.md
       - Authority model: overview/authority-model.md
       - Trust boundaries: overview/trust-boundaries.md
-  - Product:
-      - Accountability: product/accountability.md
-      - Execution: product/execution.md
-      - Governance memory: product/governance-memory.md
-      - Integrations: product/integrations.md
+  - Getting started:
+      - Self-hosted overview: getting-started/self-hosted-overview.md
+      - Local development: getting-started/local-development.md
+      - Configuration: getting-started/configuration.md
+  - Organizations:
+      - Create organization: organizations/create-organization.md
+      - Activation: organizations/activation.md
+      - Governance structure: organizations/governance-structure.md
+  - Proposals:
+      - Lifecycle: proposals/lifecycle.md
+      - Routes and approvals: proposals/routes-and-approvals.md
+      - Execution: proposals/execution.md
+      - Accountability and evidence: proposals/accountability-and-evidence.md
+      - Governance memory: proposals/governance-memory.md
   - Developers:
       - Repository map: developers/repository-map.md
       - Contracts: developers/contracts.md
       - Control Plane: developers/control-plane.md
       - SDK: developers/sdk.md
       - App Core: developers/app-core.md
+      - Integration Lab: developers/integration-lab.md
   - Operators:
-      - Self-hosting: operators/self-hosting.md
-      - Configuration: operators/configuration.md
+      - Deployment: operators/deployment.md
+      - Diagnostics: operators/diagnostics.md
       - Security posture: operators/security-posture.md
-  - Process:
-      - Documentation: process/documentation.md
-      - Release and versioning: process/release-and-versioning.md

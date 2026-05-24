@@ -1,61 +1,54 @@
 # Repository Map
 
-IsoniaOS public repositories are independent repositories with clear boundaries.
+IsoniaOS is developed across focused repositories.
 
-## `evm-contracts`
+## Public product repositories
 
-EVM governance contracts, tests, deployment scripts, ABI output, and contract-level documentation.
+### `docs`
 
-Boundary: contract code defines modeled onchain governance authority. Demos, mocks, and validation harnesses should remain isolated from core contract paths.
+Public product, developer, and operator documentation.
 
-## `types`
+### `evm-contracts`
 
-Shared TypeScript domain types, constants, enums, and data contracts used across IsoniaOS repositories.
+EVM protocol contracts, tests, deploy scripts, ABI, and contract docs.
 
-Boundary: shared interfaces only. No UI behavior, provider-specific business logic, or repository-private assumptions.
+Contracts are authoritative for modeled onchain governance state.
 
-## `control-plane`
+### `types`
 
-Indexing, projections, diagnostics, read APIs, and external evidence normalization.
+Shared domain types, DTOs, enums, and constants used across Control Plane, SDK, and App Core.
 
-Boundary: read and operational layer. It is not governance authority unless a specific field or action is explicitly modeled that way.
+### `control-plane`
 
-## `sdk`
+Indexing, projection, diagnostics, read APIs, and operational backend surfaces.
 
-Typed clients and helpers for contracts, Control Plane APIs, and shared IsoniaOS data models.
+Control Plane is not governance authority by itself.
 
-Boundary: interface layer. It should not absorb app UI logic or private operator workflows.
+### `sdk`
 
-## `app-core`
+Typed clients and helpers over shared types and Control Plane APIs.
 
-Self-hostable governance console for organization views, proposals, routes, execution status, accountability, evidence, and diagnostics.
+### `app-core`
 
-Boundary: local and public app core. It should not become the source of governance authority.
+Self-hostable governance console, public archive, proposal views, accountability surfaces, diagnostics, and integration evidence views.
 
-## `theme-default`
+### `theme-default`
 
-Default theme package for visual tokens and presentation components.
+Default replaceable theme package.
 
-Boundary: presentation only. It should not contain governance domain logic.
+### `integration-lab`
 
-## `integration-lab`
+Provider validation, Sepolia workflows, fixtures, field notes, and presentation QA outside core product authority.
 
-Provider validation, public testnet workflows, evidence fixtures, field notes, and integration experiments.
+## Private or separate areas
 
-Boundary: validation outside core. It must not define core contract behavior, Control Plane authority semantics, or App Core product logic.
+ISO token documentation, SaaS/business planning, and internal workspace planning are not active public product docs.
 
-## `docs`
+## Boundary rules
 
-Public IsoniaOS documentation and ReadTheDocs site configuration.
-
-Boundary: public product, protocol, developer, operator, authority, and trust-boundary docs only.
-
-## `web`
-
-Public-facing web presence if maintained as a separate repository.
-
-Boundary: website and project presentation. Source-of-truth product documentation lives in `docs`.
-
-## Private boundaries
-
-ISO token documentation and internal planning are separate from the public IsoniaOS docs repository.
+- Contracts own modeled onchain authority.
+- Control Plane projects and explains state.
+- App Core presents and interacts with state.
+- SDK should not invent authority.
+- Integration-lab must not define audited core behavior.
+- Public docs should not contain private planning or active version archives.

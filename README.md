@@ -2,13 +2,13 @@
 
 Public documentation for IsoniaOS.
 
-IsoniaOS is a governance operating system for accountable digital organizations.
+IsoniaOS is a governance control plane for accountable digital organizations.
 
 ## Read online
 
 The documentation is prepared for:
 
-```txt
+```text
 https://docs.isonia.org/
 ```
 
@@ -34,15 +34,15 @@ mkdocs serve
 
 - Whitepaper
 - Roadmap
-- Architecture
-- Authority model
-- Trust boundaries
-- Product docs
+- Overview and architecture
+- Getting started
+- Organizations
+- Proposals
 - Developer docs
 - Operator docs
 
-## Repository boundaries
+## Boundaries
 
-ISO token documentation is maintained in the separate ISO token repository.
+This repository is for public IsoniaOS documentation.
 
-Private planning and internal work notes are maintained in the private workspace.
+Private planning, internal work notes, SaaS planning, and detailed ISO token documentation are maintained outside this public docs repository.

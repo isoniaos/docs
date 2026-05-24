@@ -21,7 +21,7 @@ This repository must not contain:
 - sensitive partner/customer/fundraising notes;
 - ISO token/tokenomics implementation docs;
 - SaaS/internal commercial planning docs;
-- archive/version clutter in the active tree.
+- archive and version clutter in the active tree.
 
 ## Documentation posture
 

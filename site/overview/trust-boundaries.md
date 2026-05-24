@@ -1,53 +1,69 @@
 # Trust Boundaries
 
-IsoniaOS separates authority, projections, evidence, annotations, and provider records.
+IsoniaOS is governance infrastructure. It must be clear about what is authoritative, what is explanatory, what is evidence, and what is unknown.
 
-## Onchain contract state
+## Source labels
 
-Onchain contract state is authoritative only for the fields and actions the contracts model.
+Public pages should make source labels visible near relevant data:
 
-Contract state may include organization state, roles, permissions, proposal state, approvals, vetoes, timelocks, and execution events depending on the deployed contract design.
+- Contract state
+- Onchain transaction
+- External platform
+- Imported preview
+- Manual evidence
+- Discussion context
+- Implementation artifact
 
-## Indexed and read-model state
+## External evidence posture
 
-Indexed state and projections are read models.
+The initial integration posture is link-first.
 
-They can lag, fail, need backfill, or be affected by reorg handling. UIs and APIs should expose stale, error, unknown, and last-synced states instead of hiding indexing uncertainty.
+Examples:
 
-## External evidence
+- Snapshot proposal link;
+- Safe transaction link;
+- Tally or Agora proposal link;
+- Discourse discussion link;
+- GitHub pull request link;
+- block explorer transaction link;
+- custom evidence link.
 
-External evidence includes URLs, transactions, attestations, pull requests, forum threads, reports, and provider records.
+Linked evidence is useful. It does not override contract state.
 
-Evidence should include source labels, timestamps when available, verification status, and links back to the source.
+## Import and sync posture
 
-## Manual annotations
+When external metadata is imported or synced, the docs and UI should show:
 
-Manual annotations include status notes, responsibility updates, blocker notes, completion notes, and review comments.
+- provider;
+- relation to the governance record;
+- last sync or import time;
+- stale, failed, missing, unsupported, or unknown state;
+- verification status where available.
 
-They are useful for accountability, but they are not protocol truth unless a specific governance process models them as authoritative.
+If an integration cannot verify a field, it must not silently present that field as authority.
 
-## Integration and provider records
+## Manual updates
 
-Provider records may be linked, imported, synced, or verified.
+Manual updates should be clearly labeled as accountability annotations.
 
-IsoniaOS should distinguish:
+Suggested wording:
 
-- linked: a user supplied a reference;
-- imported: metadata was fetched once or periodically;
-- synced: external state is refreshed over time;
-- verified: source-specific checks confirm expected relationships.
+```text
+This manual update is an accountability annotation, not onchain governance state.
+```
 
-No provider-completeness claim is made by the existence of an adapter or link.
+## AI outputs
 
-## Stale, error, and unknown states
+AI output should be labeled advisory and source-limited.
 
-Every integration and read model should be able to represent:
+AI must not vote, execute, approve or reject proposals, invalidate proposals as final authority, perform binding arbitration, or mark obligations complete without human/community confirmation.
 
-- stale data;
-- failed fetch or projection;
-- missing source data;
-- unsupported provider behavior;
-- unknown status;
-- mismatch between expected and observed evidence.
+## Security posture
 
-These states are part of the trust model, not edge-case UI copy.
+Security and audit claims require scoped evidence.
+
+Public docs should avoid broad statements like "IsoniaOS is secure." Prefer precise claims about the current scope, limitations, and reviewed components.
+
+## Current normalization
+
+The current workspace cycle is normalizing source boundaries, external evidence models, and diagnostics. Public docs should not imply full provider automation or production control over high-value workflows.

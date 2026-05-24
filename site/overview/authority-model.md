@@ -1,47 +1,74 @@
 # Authority Model
 
-IsoniaOS must make authority visible.
+IsoniaOS must make authority visible and scoped.
 
-## Contracts
+The core rule is:
 
+```text
 Contracts are authoritative for modeled onchain governance state.
+```
 
-Examples include contract-backed organization state, roles, permissions, proposal lifecycle events, approvals, vetoes, timelocks, and execution state when those concepts are implemented in contracts.
+Everything else must be labeled by source and trust boundary.
 
-## Control Plane
+## Contract authority
 
-Control Plane is an indexer, projector, explainer, diagnostics layer, and read API.
+Contracts can be authoritative for:
 
-It reads chain events, builds replayable projections, normalizes external evidence, and serves application-facing data. It is not governance authority unless a specific protocol design explicitly gives it authority for a specific field or action.
+- organization creation and activation when contract-backed;
+- role assignment when contract-backed;
+- proposal submission;
+- approvals and vetoes;
+- voting outcomes;
+- queueing and timelocks;
+- execution;
+- cancellation;
+- lifecycle state.
 
-## App Core
+If a field is not modeled by contracts, the UI should not present it as contract truth.
 
-App Core is a local and self-hostable governance console.
+## Control Plane authority
 
-It can read IsoniaOS data, help users prepare actions, submit transactions through wallets, display evidence, and explain status. It is not governance authority. The UI must not silently convert display state into protocol truth.
+Control Plane indexes, projects, diagnoses, and exposes data.
 
-## SDK and types
+It can lag, fail, be rebuilt, or become stale. It is not the source of governance authority unless a specific contract or integration explicitly gives it authority for a scoped action.
 
-The SDK and shared types are interface layers.
+## App Core authority
 
-They define how applications, services, and scripts interact with contracts, Control Plane APIs, and shared data models. They do not create authority by themselves.
+App Core helps users inspect and interact with governance.
+
+It is not final authority over governance state. It should show where data came from and whether it is contract-derived, imported, linked, manual, stale, unsupported, or unknown.
 
 ## External records
 
-External records are evidence or context unless explicitly modeled as authority for a specific field.
+External records are useful but scoped:
 
-Examples:
+- Snapshot is authoritative for its own offchain vote records.
+- Safe is authoritative for Safe transaction state.
+- Tally, Agora, and Governor systems are authoritative within their own source models.
+- GitHub is authoritative for repository and pull request state.
+- Discourse or forums are authoritative for their own discussion records.
+- Block explorers show chain observations, not governance authority by themselves.
 
-- Snapshot records are source records for Snapshot proposals and votes.
-- Safe records are source records for Safe transaction state.
-- GitHub records are source records for issues, commits, and pull requests.
-- Block explorers are views into chain data.
-- Forums are source records for discussion context.
+External records do not override IsoniaOS contract state unless a reviewed model explicitly says so for a specific field.
 
-Provider records must keep source labels, sync status, and trust boundaries visible.
+## Manual accountability
 
-## Manual accountability updates
+Manual accountability updates are annotations.
 
-Manual accountability updates are annotations, not protocol truth.
+They can record responsible parties, status, reasons, completion notes, and evidence, but they are not protocol truth.
 
-They are useful for public accountability, progress reporting, blockers, completion notes, and evidence links. They must not override contract state or verified external records without explicit modeling and review.
+## Client contract authority
+
+When IsoniaOS governs client contracts, authority must be organization-scoped and explicit.
+
+IsoniaOS should not create a global operator or protocol superadmin that can operate all customer contracts.
+
+For governed execution, the public record should explain:
+
+- which organization authorized the action;
+- which proposal or policy route authorized it;
+- which executor or authority called the target;
+- which target and selector were called;
+- what value and calldata hash were committed;
+- what transaction executed the call;
+- what evidence is linked.

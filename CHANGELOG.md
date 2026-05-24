@@ -6,19 +6,20 @@ All notable public documentation changes are tracked here.
 
 ### Added
 
-- Added a MkDocs Material site under `site/`.
-- Added ReadTheDocs configuration for building `mkdocs.yml`.
-- Added current public pages for the whitepaper, roadmap, architecture, authority model, trust boundaries, product behavior, developer boundaries, operator posture, and documentation process.
+- Added human-facing public sections for getting started, organizations, proposals, developers, and operators.
+- Added public guidance for proposal lifecycle, routes, execution, accountability, governance memory, deployment, diagnostics, and integration-lab boundaries.
 
 ### Changed
 
-- Replaced the root README with a short public entrypoint.
-- Replaced repository agent rules with public-docs scope and claim boundaries.
-- Kept root whitepaper and roadmap files as short pointers to the site pages.
+- Restored the public whitepaper as a substantive product document.
+- Restored the public roadmap as a real version/work roadmap with readiness gates and claims boundaries.
+- Reworked MkDocs navigation around public product, developer, and operator questions.
+- Updated the README as a short public entrypoint.
 
 ### Removed
 
-- Removed token-specific, internal commercial-planning, archived-version, and old active-version documentation from the public active tree.
-- Removed the old Sphinx-oriented ReadTheDocs configuration.
+- Removed public navigation for internal process pages.
+- Removed active public product/process pages that were replaced by the new human-facing structure.
+- Kept token-specific, SaaS/internal planning, archived-version, and old active-version material out of the public active tree.
 
 Historical release notes remain available through Git history and tags.

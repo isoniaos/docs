@@ -1,22 +1,53 @@
-# What Is IsoniaOS
+# What is IsoniaOS
 
-IsoniaOS is a governance operating system for accountable digital organizations.
+IsoniaOS is a governance control plane for accountable digital organizations.
 
-It helps organizations connect proposals, reviews, decisions, execution, accountability, and memory across contracts, read models, user interfaces, and external evidence sources.
+It helps DAOs and Web3 organizations connect proposals, reviews, votes or approvals, execution, accountability, and governance memory into one visible lifecycle.
 
-The first public focus is DAO and Web3 governance. The core product problem is not how to create another voting surface. The problem is how to help organizations understand what was proposed, what was approved, what happened next, and what remains unresolved.
+## Why it exists
 
-## What it provides
+DAO governance is usually spread across many tools:
 
-- Structured governance lifecycle records.
-- Public governance archive.
-- Execution and accountability tracking.
-- Authority and trust-boundary labels.
-- Developer surfaces for contracts, shared types, Control Plane APIs, SDK clients, and App Core.
-- Operator guidance for self-hosted deployments and configuration.
+- forums or documents for proposal drafts;
+- Snapshot, Tally, Agora, Governor contracts, or custom systems for voting;
+- Safe or other wallets for execution;
+- GitHub for implementation work;
+- block explorers for transaction proof;
+- spreadsheets or operations tools for tracking;
+- chat platforms for discussion.
 
-## What it avoids
+Those tools solve important problems, but they often leave the organization without one durable record of what happened after a decision passed.
 
-IsoniaOS should not present itself as a voting-only product, a treasury wallet, a legal substitute, an AI governor, or a universal source of truth for external systems.
+IsoniaOS focuses on the missing connective layer:
 
-The system should make evidence and authority visible instead of hiding them behind a single status label.
+```text
+Proposal -> Review -> Decision -> Execution -> Accountability -> Memory
+```
+
+## Product focus
+
+The first public product focus is DAO and Web3 governance:
+
+- protocol governance;
+- grants programs;
+- treasury requests;
+- working group mandates;
+- contributor accountability;
+- public-good community decisions;
+- delegate and council workflows later.
+
+The long-term direction can include broader digital organizations and civic experiments, but those are later expansion paths.
+
+## What it is not
+
+IsoniaOS is not:
+
+- only a voting app;
+- a DAO launcher as its main product category;
+- a treasury wallet;
+- an AI governor;
+- a replacement for Snapshot, Safe, Tally, Agora, Discourse, or GitHub;
+- a legal substitute for organizational documents or legal advice;
+- a token project as the core product story.
+
+IsoniaOS is designed to orchestrate governance processes and preserve accountability across tools.

@@ -1,35 +1,41 @@
 # Security Posture
 
-IsoniaOS documentation should be conservative about security and readiness claims.
+IsoniaOS treats governance as a security boundary.
 
-## Current posture
+## Operator concerns
 
-This public site does not claim:
+Operators should review:
 
-- production readiness;
-- audit readiness;
-- public beta readiness;
-- provider-completeness;
-- token launch readiness;
-- legal readiness;
-- security completeness.
+- contract authority and admin powers;
+- upgrade assumptions;
+- wallet and key management;
+- chain and contract configuration;
+- Control Plane indexing and projection reliability;
+- external provider dependencies;
+- evidence verification limits;
+- data and privacy posture;
+- incident response process;
+- backup and restore expectations.
 
-## Boundaries
+## Public claim boundary
 
-Contracts are authoritative for modeled onchain governance state. Control Plane projections can lag or fail. App Core is an interaction and explanation layer. External records are evidence or context unless explicitly modeled as authority. Manual accountability updates are annotations.
+This public documentation does not claim production operations, audit completion, legal/compliance review, managed SaaS completion, full provider integration, or token launch readiness.
 
-## Planned evidence gates
+Any future security or audit claim must identify scope, version, reviewer, exclusions, and residual risks.
 
-Relevant gates include:
+## External evidence
 
-- contract threat model;
-- access-control review;
-- event and projection review;
-- integration trust-boundary review;
-- provider stale/error behavior checks;
-- self-hosting and configuration review;
-- incident response plan;
-- backup and restore plan where managed infrastructure exists;
-- security review or audit scoped to the exact components being claimed.
+External links, imported metadata, manual updates, and AI output should be treated according to their source labels and trust boundaries.
 
-Claims should name what was reviewed, who reviewed it, which version was reviewed, what was excluded, and what residual risks remain.
+When in doubt, verify contract state and transaction data directly.
+
+## Incident response principles
+
+If a serious issue occurs:
+
+1. identify affected components;
+2. distinguish chain state from read-model/UI state;
+3. pause or disable affected managed services if needed;
+4. publish remediation guidance;
+5. preserve evidence and logs;
+6. update docs and tests after review.

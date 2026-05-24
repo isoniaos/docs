@@ -1,25 +1,36 @@
 # App Core
 
-App Core is the self-hostable governance console for IsoniaOS.
+App Core is the public self-hostable governance console.
 
-## Responsibilities
+## Expected surfaces
+
+App Core should provide:
 
 - organization dashboard;
-- proposal list and detail views;
+- proposal list and detail pages;
+- governance structure views;
 - route explanation;
-- execution and accountability views;
+- action and execution status views;
 - public governance archive;
-- external evidence display;
+- accountability dashboard;
 - diagnostics;
-- wallet-mediated writes where supported;
-- theme integration.
+- integration evidence views;
+- theme adapter.
+
+## Configuration posture
+
+App Core should support self-hosted and managed deployments through configuration, not separate product cores.
+
+It should avoid committed demo target assumptions and should be able to derive wallet mode and runtime behavior from explicit configuration.
 
 ## Boundary
 
-App Core is not governance authority. It displays and helps users interact with contract state, Control Plane projections, external evidence, and manual annotations.
+App Core is not governance authority by itself.
 
-App Core should keep domain behavior separate from theme presentation and should avoid private operator workflows.
+It should show source labels and trust warnings near the data users rely on.
 
-## Configuration
+App Core should not contain SaaS-only billing, private tenant administration, commercial limits, or hidden platform operator workflows.
 
-App Core should be configurable for chains, contract addresses, Control Plane endpoints, wallet mode, and feature availability without hardcoded customer or demo targets in product code.
+## Current status
+
+This area is being normalized around public archive, accountability, runtime config, multi-chain-oriented configuration, and visible trust boundaries.

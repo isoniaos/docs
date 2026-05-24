@@ -1,24 +1,33 @@
 # Control Plane
 
-Control Plane is the indexing, projection, diagnostics, and read API layer for IsoniaOS.
+Control Plane is the indexing, projection, diagnostic, and API layer.
 
 ## Responsibilities
 
-- ingest contract events;
-- store raw event data where needed;
+Control Plane should:
+
+- ingest chain events;
+- preserve raw events;
+- process idempotently;
 - build replayable projections;
-- expose read APIs;
-- normalize external evidence;
-- track stale, error, failed, unsupported, and unknown states;
-- explain routes and status;
-- report diagnostics.
+- expose REST APIs;
+- explain routes and governance state;
+- model external resources and evidence;
+- expose accountability read models;
+- report diagnostics and stale states.
 
 ## Boundary
 
-Control Plane is not governance authority by default.
+Control Plane is not the source of governance authority by itself.
 
-It explains and projects contract state, external evidence, and annotations. If a future design gives Control Plane authority over a specific field or action, that authority must be explicitly modeled, documented, and reviewed.
+It explains and projects contract state and explicitly modeled external records. It can lag, fail, be rebuilt, or become stale.
 
-## Implementation expectations
+## Integration posture
 
-Projection logic should be idempotent and replay-safe. Provider adapters should live at integration boundaries and should not leak provider-specific assumptions into core governance semantics.
+Control Plane should use provider adapters at the edge for Snapshot, Safe, Tally, Agora, GitHub, Discourse, block explorers, and other sources.
+
+Core route and accountability logic should not hardcode customer/demo target contracts.
+
+## Current status
+
+This area is being normalized around generic proof/action metadata, external resource records, provider adapters, and diagnostics.
