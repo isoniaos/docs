@@ -2,7 +2,7 @@
 
 This repository contains public IsoniaOS documentation.
 
-When used inside the private workspace, read the workspace `AGENTS.md` first.
+When this repository is used inside the IsoniaOS workspace, read the workspace-level `../AGENTS.md` first, then return to this file for repository-specific instructions.
 
 ## Scope
 
