@@ -1,0 +1,53 @@
+site_name: IsoniaOS Docs
+site_url: https://docs.isonia.org/
+repo_url: https://github.com/isoniaos/docs
+repo_name: isoniaos/docs
+docs_dir: site
+site_dir: public
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - search.suggest
+    - search.highlight
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - tables
+  - pymdownx.details
+  - pymdownx.superfences
+
+nav:
+  - Home: index.md
+  - Whitepaper: whitepaper.md
+  - Roadmap: roadmap.md
+  - Overview:
+      - What is IsoniaOS: overview/what-is-isoniaos.md
+      - Governance lifecycle: overview/governance-lifecycle.md
+      - Architecture: overview/architecture.md
+      - Authority model: overview/authority-model.md
+      - Trust boundaries: overview/trust-boundaries.md
+  - Product:
+      - Accountability: product/accountability.md
+      - Execution: product/execution.md
+      - Governance memory: product/governance-memory.md
+      - Integrations: product/integrations.md
+  - Developers:
+      - Repository map: developers/repository-map.md
+      - Contracts: developers/contracts.md
+      - Control Plane: developers/control-plane.md
+      - SDK: developers/sdk.md
+      - App Core: developers/app-core.md
+  - Operators:
+      - Self-hosting: operators/self-hosting.md
+      - Configuration: operators/configuration.md
+      - Security posture: operators/security-posture.md
+  - Process:
+      - Documentation: process/documentation.md
+      - Release and versioning: process/release-and-versioning.md
