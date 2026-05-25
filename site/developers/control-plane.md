@@ -1,33 +1,36 @@
 # Control Plane
 
-Control Plane is the indexing, projection, diagnostic, and API layer.
+The [`control-plane`](https://github.com/isoniaos/control-plane/blob/main/README.md) repository owns indexing, projections, diagnostics, and REST read APIs.
 
 ## Responsibilities
 
-Control Plane should:
+- Connect to an EVM JSON-RPC endpoint.
+- Ingest configured governance contract events.
+- Store raw events before projection.
+- Build replayable read models in PostgreSQL.
+- Expose organization, proposal, route, archive, accountability, external resource, capability, and diagnostics APIs.
+- Distinguish stale, failed, unknown, and current states.
 
-- ingest chain events;
-- preserve raw events;
-- process idempotently;
-- build replayable projections;
-- expose REST APIs;
-- explain routes and governance state;
-- model external resources and evidence;
-- expose accountability read models;
-- report diagnostics and stale states.
+Control Plane is not governance authority. If a read model disagrees with modeled contract state, modeled contract state wins.
 
-## Boundary
+## API And Diagnostics
 
-Control Plane is not the source of governance authority by itself.
+System endpoints currently include:
 
-It explains and projects contract state and explicitly modeled external records. It can lag, fail, be rebuilt, or become stale.
+- `/v1/health`
+- `/v1/version`
+- `/v1/capabilities`
+- `/v1/diagnostics`
+- `/v1/diagnostics/indexer`
 
-## Integration posture
+Diagnostics should separate RPC failure, indexing delay, projection delay, stale configuration, contract mismatch, capability mismatch, and database failure.
 
-Control Plane should use provider adapters at the edge for Snapshot, Safe, Tally, Agora, GitHub, Discourse, block explorers, and other sources.
+## Configuration
 
-Core route and accountability logic should not hardcode customer/demo target contracts.
+Use the [`control-plane` README](https://github.com/isoniaos/control-plane/blob/main/README.md) and `.env.example` for exact variables. Important categories are API port/CORS, chain/RPC/indexing settings, contract addresses, capability metadata, and PostgreSQL connection settings.
 
-## Current status
+`DATABASE_URL` overrides individual `PG_*` values. `RPC_URL` wins over `RPC_HTTP_URL`. `API_PORT` wins over `PORT`. Contract addresses must be valid non-zero EVM addresses.
 
-This area is being normalized around generic proof/action metadata, external resource records, provider adapters, and diagnostics.
+## Developer Boundary
+
+Control Plane should use shared `@isonia/types` DTOs and preserve source disclosure. It should not hardcode demo targets, customer ABIs, provider assumptions, lab manifests, or package-version capability assumptions into core services.

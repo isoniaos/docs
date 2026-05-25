@@ -1,6 +1,6 @@
 # IsoniaOS Docs
 
-This repository owns the public product, developer, and operator documentation for IsoniaOS. The source pages live under [`site/`](site/), with the public entry point at [`site/index.md`](site/index.md) and the current repository orientation at [`site/developers/repository-map.md`](site/developers/repository-map.md).
+This repository owns the public product, developer, operator, and reference documentation for IsoniaOS. The source pages live under [`site/`](site/), with the public entry point at [`site/index.md`](site/index.md) and the repository orientation at [`site/developers/repository-map.md`](site/developers/repository-map.md).
 
 Private planning, detailed ISO token work, SaaS planning, and internal migration notes do not belong in this repository.
 
@@ -31,7 +31,7 @@ pip install -r requirements.txt
 - Material for MkDocs theme settings and navigation
 - `site_url: https://docs.isonia.org/`
 
-ReadTheDocs configuration is kept in [`.readthedocs.yaml`](.readthedocs.yaml). This repository does not require runtime environment variables for local documentation builds.
+Hosted documentation build configuration is kept in [`.readthedocs.yaml`](.readthedocs.yaml). This repository does not require runtime environment variables for local documentation builds.
 
 ## Run / Usage
 

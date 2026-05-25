@@ -1,34 +1,33 @@
 # Contracts
 
-The contracts repository contains the onchain governance primitives for IsoniaOS.
+The [`evm-contracts`](https://github.com/isoniaos/evm-contracts/blob/main/README.md) repository owns the Solidity contracts for modeled IsoniaOS governance authority.
 
-## Role
+## Current Surface
 
-Contracts should model authority where onchain verification is required:
+- `GovCore` models organizations, bodies, roles, mandates, policy rules, bootstrap setup, batch activation, and organization finalization.
+- `GovProposals` models proposal lifecycle, route checks, approvals, vetoes, timelocks, execution permission checks, and canonical execution receipts.
+- `GovTypes` and `GovErrors` hold shared protocol types and errors.
+- `IsoOrgExecutor` is an optional organization-scoped caller for managed execution handoff.
+- `DemoTarget` and demo token contracts are local/lab helpers, not product authority.
 
-- organization state;
-- governance bodies;
-- roles and permissions;
-- proposal primitives;
-- approvals and vetoes;
-- timelocks;
-- execution;
-- lifecycle events.
+## Execution Identity
 
-## Current normalization
+Proposal action identity is modeled as target, value, action selector, and calldata hash. Execution must validate configured target, selector, value, calldata selector, calldata hash, proposal status, approval/veto/timelock state, and executor authority before a call is made.
 
-The contracts area is being normalized in the current workspace cycle.
+`ProposalExecuted` is the canonical protocol execution receipt. Executor-local events can support evidence, but they do not replace the protocol receipt.
 
-Expected direction:
+## Local Development
 
-- isolate demo-only contracts from core;
-- isolate mocks from core;
-- separate core deployment from demo deployment;
-- preserve explicit authority and lifecycle state;
-- avoid arbitrary demo placeholders in product paths;
-- add tests for protocol correctness and authority-sensitive behavior;
-- complete security review or audit gate before readiness claims.
+Use the [`evm-contracts` README](https://github.com/isoniaos/evm-contracts/blob/main/README.md) for current commands:
 
-## Trust boundary
+- install dependencies;
+- run tests;
+- start a local Hardhat node;
+- deploy locally;
+- seed local organizations and lab actions.
 
-Contracts are authoritative for the state they model. External records, target-contract logs, and manual notes are evidence or context unless explicitly modeled otherwise.
+Sepolia variables and deployment notes are repository-local and should not be copied into public docs unless a testnet validation task explicitly requires it.
+
+## Boundary
+
+Contracts are authoritative only for state they model. They do not prove offchain work was completed, and local/lab helper contracts do not establish production behavior.

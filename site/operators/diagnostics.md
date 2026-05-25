@@ -1,31 +1,29 @@
 # Diagnostics
 
-Diagnostics help operators and users understand where a problem occurred.
+Diagnostics help separate failures across chain, indexer, projection, API, configuration, wallet, and UI layers.
 
-## Diagnostic layers
+## Control Plane Diagnostics
 
-IsoniaOS diagnostics should distinguish:
+Control Plane currently exposes:
 
-- chain state;
-- contract state;
-- wallet state;
-- indexer state;
-- projection state;
-- API state;
-- runtime configuration;
-- external provider state;
-- App Core rendering state.
+- `/v1/health`
+- `/v1/version`
+- `/v1/capabilities`
+- `/v1/diagnostics`
+- `/v1/diagnostics/indexer`
 
-## Why distinction matters
+Use these before assuming a proposal, execution receipt, or accountability record is missing from contract state.
 
-A transaction can be mined while the indexer is stale.
+## Common Distinctions
 
-An external provider can fail while contract state is healthy.
+| Problem | Meaning |
+| --- | --- |
+| Chain transaction exists but read model is stale | Indexer or projection lag may be the issue. |
+| API is healthy but browser calls fail | App Core `apiBaseUrl` or Control Plane CORS may be wrong. |
+| Contract addresses are missing | Control Plane can start without optional addresses, but protocol reads and capabilities may be incomplete. |
+| Capability metadata disagrees with runtime behavior | Check `ISONIA_PROTOCOL_PROFILE`, `ISONIA_DEPLOYMENT_CAPABILITIES_JSON`, ABI compatibility, and deployed contracts. |
+| Wallet write controls are disabled | Check App Core feature flags, chain ID, contract addresses, wallet mode, and connected account. |
 
-An App Core view can be misconfigured while Control Plane APIs are available.
+## Operator Rule
 
-Diagnostics should keep these cases separate so operators do not confuse read-model lag, provider failure, and governance execution failure.
-
-## Public posture
-
-Where state is stale, missing, unsupported, or unknown, public pages should say so. Unknown should not silently become success.
+Do not collapse stale, failed, unsupported, missing, or unknown state into success. The distinction is part of the public trust model.

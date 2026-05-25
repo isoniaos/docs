@@ -1,33 +1,26 @@
 # Integration Lab
 
-Integration-lab validates external provider assumptions outside core product authority.
+The [`integration-lab`](https://github.com/isoniaos/integration-lab/blob/main/README.md) repository isolates provider validation, Sepolia workflows, evidence templates, scenarios, and field notes from core product authority.
 
-## Purpose
+## What Belongs There
 
-External integrations are core to the product, but provider experiments, demo targets, presentation fixtures, and field notes must stay isolated from contracts, Control Plane internals, SDK models, and App Core product logic until promoted through reviewed generic interfaces.
+- Live Sepolia runbooks and manifests.
+- Pinned Sepolia fork replay notes.
+- Managed execution smoke manifests.
+- External evidence fixture templates.
+- Snapshot, Safe, Tally, Agora, GitHub, Discourse, and explorer research notes.
+- QA and presentation scenarios.
 
-## Expected contents
+## Validation
 
-Integration-lab may contain:
+The current dependency-free validation script checks the managed execution smoke manifest example:
 
-- Sepolia deployment manifests;
-- Snapshot testnet workflow notes;
-- Safe Sepolia transaction proof workflows;
-- Tally/OpenZeppelin Governor compatibility experiments;
-- Agora research and linking notes;
-- GitHub, Discourse, and block explorer evidence fixtures;
-- pinned Sepolia fork configs;
-- presentation QA scenarios;
-- field notes and issue logs.
+```bash
+node scripts/validate-sepolia-managed-execution-manifest.mjs sepolia/managed-execution-manifest.example.json
+```
 
-## Validation lanes
-
-- Local deterministic fixtures for fast regression coverage.
-- Pinned Sepolia forks for repeatable checks against known public data.
-- Live Sepolia workflows for smoke validation and provider discovery.
+Use the repository README and directory READMEs for scenario-specific guidance.
 
 ## Boundary
 
-Integration-lab is not governance authority.
-
-It should produce fixtures, field notes, and follow-up issues. It should not hardcode demo/customer target assumptions into core product repositories.
+Integration Lab records are evidence, context, compatibility experiments, or field notes. They are not protocol authority, audited behavior, production configuration, or proof that an external provider integration is complete.

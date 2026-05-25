@@ -1,36 +1,39 @@
 # App Core
 
-App Core is the public self-hostable governance console.
+The [`app-core`](https://github.com/isoniaos/app-core/blob/main/README.md) repository owns the public self-hostable governance console.
 
-## Expected surfaces
+## Role
 
-App Core should provide:
+App Core is a React/Vite application for reading, explaining, and interacting with IsoniaOS governance state through Control Plane APIs and configured EVM contracts. It presents:
 
-- organization dashboard;
-- proposal list and detail pages;
-- governance structure views;
-- route explanation;
-- action and execution status views;
-- public governance archive;
-- accountability dashboard;
+- organization and governance structure views;
+- setup and activation flows;
+- proposals, route explanation, and execution state;
+- public archive and accountability surfaces;
 - diagnostics;
-- integration evidence views;
-- theme adapter.
+- wallet transaction flows;
+- source disclosure and trust-boundary notices.
 
-## Configuration posture
+App Core is not governance authority. It should make authority and data freshness visible near affected data.
 
-App Core should support self-hosted and managed deployments through configuration, not separate product cores.
+## Runtime Configuration
 
-It should avoid committed demo target assumptions and should be able to derive wallet mode and runtime behavior from explicit configuration.
+App Core loads runtime config from:
+
+1. `/isonia.config.local.json`
+2. `/isonia.config.json`
+3. built-in local defaults
+
+The config includes app mode, API base URL, chain metadata, RPC URL, contract addresses, feature flags, theme, metadata, and wallet settings. See the [`app-core` README](https://github.com/isoniaos/app-core/blob/main/README.md) for the complete current field list.
+
+## Wallet Behavior
+
+Wallet connection mode can be `auto`, `appkit`, or `injected-only`. Local self-hosted chain `31337` defaults to injected-only. Missing Reown project ID or failed AppKit setup falls back to injected wallet mode with diagnostics.
+
+## Workspace Source Mode
+
+`ISONIA_WORKSPACE_SOURCES=true` is a Vite build-time switch for resolving adjacent `../sdk` and `../types` source trees during coordinated local development. It is not runtime config.
 
 ## Boundary
 
-App Core is not governance authority by itself.
-
-It should show source labels and trust warnings near the data users rely on.
-
-App Core should not contain SaaS-only billing, private tenant administration, commercial limits, or hidden platform operator workflows.
-
-## Current status
-
-This area is being normalized around public archive, accountability, runtime config, multi-chain-oriented configuration, and visible trust boundaries.
+App Core should not hide stale or unknown state, invent authority, or treat disabled billing/admin flags as active product functionality. Demo target behavior remains local/lab scoped.

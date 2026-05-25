@@ -1,23 +1,33 @@
 # SDK
 
-The SDK provides typed clients and helpers for applications that use IsoniaOS services.
+The [`sdk`](https://github.com/isoniaos/sdk/blob/main/README.md) repository owns the dependency-light TypeScript client and helper layer for IsoniaOS consumers.
 
 ## Role
 
-The SDK should:
+The SDK currently provides:
 
-- consume shared domain types;
-- expose typed Control Plane API clients;
-- provide helper utilities where they reduce integration risk;
-- avoid duplicating authority rules locally;
-- avoid React, provider, demo, or customer-specific assumptions.
+- typed Control Plane REST clients;
+- Control Plane path helpers;
+- proposal and execution helpers;
+- finalization helpers;
+- admin batch activation helpers;
+- error handling for non-OK API responses.
+
+It builds on `@isonia/types` and does not require runtime environment variables. Consumers pass a Control Plane base URL when creating a client.
+
+## Example
+
+```ts
+import { createIsoniaControlPlaneClient } from "@isonia/sdk";
+
+const client = createIsoniaControlPlaneClient({
+  baseUrl: "http://localhost:3000",
+});
+
+const health = await client.getHealth();
+const archive = await client.archive.get("1");
+```
 
 ## Boundary
 
-The SDK does not create governance authority.
-
-It should preserve source labels, trust boundaries, authority claims, verification status, and stale/error states returned by the underlying APIs.
-
-## Current status
-
-SDK updates should follow shared type and Control Plane normalization. Public API details will be documented after those contracts are stable enough to publish accurately.
+The SDK should stay generic and UI-free. It should not import App Core, Control Plane internals, provider UI packages, lab fixtures, or private hosted-service behavior. It should preserve source labels, trust boundaries, authority claims, verification status, and stale/error states returned by APIs.

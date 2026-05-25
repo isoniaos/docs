@@ -2,7 +2,7 @@
 
 ## Scope
 
-This repository owns the public IsoniaOS documentation site: whitepaper, public roadmap, product and protocol explanation, developer documentation, operator documentation, and the MkDocs/ReadTheDocs configuration.
+This repository owns the public IsoniaOS documentation site: whitepaper, public roadmap, product and protocol explanation, developer documentation, operator documentation, and the MkDocs plus hosted-build configuration.
 
 It does not own private planning, internal work notes, detailed ISO token implementation or tokenomics material, SaaS or commercial planning, release archive folders, or coding-agent workflow beyond this repository-local file.
 
@@ -24,7 +24,7 @@ If this repository is cloned standalone, use this file as the local agent entry 
 - Documentation source: `site/`
 - Site generator: MkDocs with Material for MkDocs from `requirements.txt`
 - Site config: `mkdocs.yml`
-- ReadTheDocs config: `.readthedocs.yaml`
+- Hosted-build config: `.readthedocs.yaml`
 
 Useful commands:
 

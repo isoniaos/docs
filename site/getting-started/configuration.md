@@ -1,38 +1,57 @@
 # Configuration
 
-IsoniaOS configuration is being normalized around explicit runtime boundaries.
+IsoniaOS configuration is split by layer. Configuration can describe where to read state or how to connect tools, but it should not silently create governance authority.
 
-This page describes the intended configuration categories without claiming a final public API.
+## Control Plane
 
-## Configuration categories
+Control Plane reads environment variables from `src/config/app-config.service.ts`. The exact source is the [`control-plane` README](https://github.com/isoniaos/control-plane/blob/main/README.md).
 
-A deployment should eventually configure:
+Key categories:
 
-- chain and network metadata;
-- contract addresses and deployment manifests;
-- Control Plane API base URL;
-- indexer/projection settings;
-- wallet connector settings;
-- enabled integrations;
-- external evidence provider settings;
-- theme package;
-- public organization context;
-- diagnostics visibility.
+| Category | Variables |
+| --- | --- |
+| API | `API_PORT`, `PORT`, `CORS_ORIGINS`, `CORS_CREDENTIALS` |
+| Chain | `CHAIN_ID`, `RPC_URL`, `RPC_HTTP_URL`, `START_BLOCK`, `CONFIRMATIONS`, `CONFIRMATION_DEPTH`, `BLOCK_RANGE_SIZE`, `MAX_BLOCK_RANGE`, `POLL_INTERVAL_MS` |
+| Contracts | `GOV_CORE_ADDRESS`, `GOV_PROPOSALS_ADDRESS` |
+| Capabilities | `ISONIA_PROTOCOL_PROFILE`, `ISONIA_DEPLOYMENT_CAPABILITIES_JSON` |
+| Database | `DATABASE_URL` or `PG_HOST`, `PG_PORT`, `PG_DATABASE`, `PG_USER`, `PG_PASSWORD` |
 
-## Authority-sensitive configuration
+Contract addresses must be non-zero EVM addresses. Capability metadata should come from configured deployment or profile evidence, not package versions.
 
-Configuration must not silently grant governance authority.
+## App Core
 
-Authority-changing setup should be explicit, reviewable, and backed by contract state or governed handoff. Templates and config files may describe intended routes or permissions, but they are not authority by themselves.
+App Core runtime configuration is loaded by [`src/config/runtime-config.tsx`](https://github.com/isoniaos/app-core/blob/main/src/config/runtime-config.tsx):
 
-## App Core posture
+1. `/isonia.config.local.json`
+2. `/isonia.config.json`
+3. built-in local defaults
 
-App Core should be self-hostable and multi-chain-oriented.
+Current runtime config covers:
 
-It should support runtime configuration without embedding demo target assumptions into the core product.
+- application mode and API base URL;
+- chain metadata and RPC URL;
+- contract addresses;
+- feature flags;
+- theme source;
+- metadata gateway settings;
+- wallet connection settings.
 
-## Current status
+`features.billing` and `features.saasAdmin` are parsed as disabled in the current App Core loader and must not be treated as active public functionality.
 
-This area is being normalized in the current workspace cycle.
+## Wallet Mode
 
-Use repository-local docs for exact commands and environment variables until this public page is updated with a supported path.
+App Core supports `auto`, `appkit`, and `injected-only` wallet modes. Local self-hosted chain `31337` defaults to injected-only behavior. When Reown AppKit is requested but `wallet.reownProjectId` is missing, or AppKit initialization fails, App Core falls back to injected wallet mode and records diagnostics.
+
+## Build-Time Workspace Sources
+
+App Core has one current Vite build-time switch:
+
+```bash
+ISONIA_WORKSPACE_SOURCES=true
+```
+
+When enabled, Vite resolves `@isonia/sdk` and `@isonia/types` from adjacent workspace source directories for coordinated local development. It is not a runtime configuration API.
+
+## Theme
+
+Theme Default has no runtime environment variables. App Core consumes the package through CSS variables, typed tokens, brand metadata, and assets. See the [`theme-default` README](https://github.com/isoniaos/theme-default/blob/main/README.md).
