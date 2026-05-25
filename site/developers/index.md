@@ -19,7 +19,6 @@ IsoniaOS development is repository-first. Public docs explain the system shape a
 | Typed clients and helpers | `sdk` | [SDK](sdk.md) |
 | Governance console | `app-core` | [App Core](app-core.md) |
 | Default theme | `theme-default` | [Repository map](repository-map.md) |
-| Lab validation | `integration-lab` | [Integration Lab](integration-lab.md) |
 
 ## Public-Safe Development Rules
 

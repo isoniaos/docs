@@ -8,7 +8,6 @@ The current public path is local development and evaluation. Exact commands live
 - Control Plane with PostgreSQL, event indexing, projections, REST APIs, and diagnostics.
 - App Core as a local React/Vite governance console.
 - SDK, shared types, and theme packages for local package development.
-- Integration Lab validation scripts and evidence templates outside the core runtime.
 
 ## Recommended Reading Order
 

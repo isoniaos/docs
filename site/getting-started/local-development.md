@@ -20,7 +20,3 @@ Use repository READMEs for exact commands. This page gives the high-level entry 
 | Frontend | `app-core` | React/Vite console pointed at Control Plane and configured contracts. |
 | Shared package work | `types`, `sdk`, `theme-default` | Shared DTOs, typed clients, and theme package development. |
 | Validation | `integration-lab` | Lab-only manifests, scenarios, and provider evidence. |
-
-## What Not To Use
-
-The old `demo-stack` path is archived and is not current setup guidance. Do not use old archive folders, old version-named docs, or lab manifests as product configuration.

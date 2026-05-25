@@ -7,7 +7,6 @@ Install the prerequisites required by the repositories you plan to run.
 - Git.
 - Node.js 22 or newer.
 - Corepack with pnpm.
-- Python 3 for this MkDocs repository.
 
 ## Runtime Dependencies
 

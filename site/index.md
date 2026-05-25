@@ -24,7 +24,3 @@ When a capability is not currently validated, the docs say so and point to the r
 3. Use [getting started](getting-started/index.md) to understand the local stack.
 4. Follow exact commands in the owning repository READMEs linked from the [repository map](developers/repository-map.md).
 5. Use [diagnostics](operators/diagnostics.md) when a chain, indexer, API, wallet, or UI layer is not behaving as expected.
-
-## Public Documentation Scope
-
-This site covers public product, developer, and operator guidance. Private planning, internal migration notes, managed-service planning, and ISO token-specific material are outside the current public product docs.

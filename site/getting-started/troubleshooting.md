@@ -22,7 +22,3 @@ Control Plane currently exposes:
 - `/v1/diagnostics/indexer`
 
 Use the [`control-plane` README](https://github.com/isoniaos/control-plane/blob/main/README.md) for exact commands and environment variables.
-
-## Unknown Is A State
-
-If a source is stale, missing, unsupported, unverified, or unknown, treat that as part of the record. Do not convert unknown state into success in docs, UI, scripts, or public claims.
