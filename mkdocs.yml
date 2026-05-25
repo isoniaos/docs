@@ -31,30 +31,26 @@ nav:
   - Home: index.md
   - Whitepaper: whitepaper.md
   - Roadmap: roadmap.md
-  - Getting started:
-      - Overview: getting-started/index.md
-      - Prerequisites: getting-started/prerequisites.md
-      - Local development: getting-started/local-development.md
-      - Configuration: getting-started/configuration.md
-      - Troubleshooting: getting-started/troubleshooting.md
-  - Concepts:
-      - Governance lifecycle: concepts/governance-lifecycle.md
-      - Accountability and evidence: concepts/accountability-and-evidence.md
-      - Authority and trust: concepts/authority-and-trust.md
+  - Learn:
+      - Overview: learn/index.md
+      - Governance lifecycle: learn/governance-lifecycle.md
+      - Organizations: learn/organizations.md
+      - Roles and permissions: learn/roles-and-permissions.md
+      - Templates: learn/templates.md
+      - Decisions, execution, and evidence: learn/decisions-execution-evidence.md
+      - Accountability: learn/accountability.md
+      - Trust and authority: learn/trust-and-authority.md
+  - User Guide:
+      - Overview: user-guide/index.md
+      - Create an organization: user-guide/create-organization.md
+      - Activate an organization: user-guide/activate-organization.md
+      - Roles and permissions: user-guide/roles.md
+      - Templates: user-guide/templates.md
+      - Proposals and decisions: user-guide/proposals.md
+      - Execution and evidence: user-guide/execution-and-evidence.md
+      - Accountability: user-guide/accountability.md
+      - Troubleshooting: user-guide/troubleshooting.md
   - Developers:
-      - Overview: developers/index.md
-      - Repository map: developers/repository-map.md
-      - Contracts: developers/contracts.md
-      - Control Plane: developers/control-plane.md
-      - SDK: developers/sdk.md
-      - App Core: developers/app-core.md
-  - Operators:
-      - Overview: operators/index.md
-      - Local runtime: operators/local-runtime.md
-      - Configuration boundaries: operators/configuration-boundaries.md
-      - Diagnostics: operators/diagnostics.md
-      - Current limitations: operators/limitations.md
+      - Technical overview: developers/index.md
   - Reference:
-      - Repository links: reference/repository-links.md
-      - Configuration summary: reference/configuration-summary.md
       - Glossary: reference/glossary.md

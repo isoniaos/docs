@@ -1,26 +1,53 @@
 # IsoniaOS
 
-IsoniaOS is a governance control plane for accountable digital organizations. It helps people understand how a governance decision moves from proposal, to approval, to execution, to evidence, to a durable public record.
+IsoniaOS is a governance control plane for accountable digital organizations.
 
-The first public focus is DAO and Web3 governance because the need is concrete: proposals, permissions, votes, execution transactions, external evidence, and accountability records often live in separate tools.
+It helps a community understand what happened to a decision after it was proposed, reviewed, approved, executed, checked, and remembered.
+
+```mermaid
+flowchart LR
+  A["Proposal"] --> B["Review"]
+  B --> C["Decision"]
+  C --> D["Execution"]
+  D --> E["Evidence"]
+  E --> F["Accountability"]
+  F --> G["Memory"]
+```
 
 ## Who It Is For
 
-- DAO contributors and operators who need clearer governance records.
-- Developers integrating contracts, indexers, APIs, SDKs, and frontends.
-- Operators running the local IsoniaOS stack for development or evaluation.
-- Governance participants who need to understand authority, trust boundaries, and evidence.
+IsoniaOS is for DAO contributors, organization admins, council members, working groups, community reviewers, evaluators, design partners, and technical developers who need one understandable record of governance follow-through.
+
+## The Problem It Solves
+
+Many organizations can approve a proposal but still lose track of what happened next. Discussion may live in one place, approval in another, execution somewhere else, and follow-up notes in a document no one can find later.
+
+IsoniaOS gives the organization a shared way to ask:
+
+- What was proposed?
+- Who reviewed it?
+- What was decided?
+- What action was expected?
+- What evidence shows what happened?
+- Who is responsible for follow-up?
+- What should future participants remember?
+
+## What You Can Do
+
+With the current product model, an organization can describe its governance structure, use templates for repeatable processes, create proposal records, connect decisions to execution evidence, track responsible people and due dates, and build a public memory of past decisions.
+
+Some of those flows are current developer-preview work and some are planned for public beta. Pages in this site call out limits where the current implementation is partial or not yet validated end to end.
 
 ## Current Maturity
 
-IsoniaOS is in developer-preview local development. The repositories are being normalized into production-shaped core components, but these docs do not claim production readiness, audit completion, public beta readiness, legal readiness, hosted-service readiness, provider completeness, or token launch readiness.
+IsoniaOS is in developer-preview development. The project is production-shaped, but these docs do not claim production operation, audit completion, public beta completion, legal completeness, external integration completeness, or security completeness.
 
-When a capability is not currently validated, the docs say so and point to the repository that owns the exact implementation.
+Use this site to understand the product and the current public model. Use repository READMEs from the [developer overview](developers/index.md) only when you need exact technical setup details.
 
-## Shortest Path
+## Where To Start
 
-1. Read the [whitepaper](whitepaper.md) for the product model.
-2. Read [governance lifecycle](concepts/governance-lifecycle.md) and [authority and trust](concepts/authority-and-trust.md).
-3. Use [getting started](getting-started/index.md) to understand the local stack.
-4. Follow exact commands in the owning repository READMEs linked from the [repository map](developers/repository-map.md).
-5. Use [diagnostics](operators/diagnostics.md) when a chain, indexer, API, wallet, or UI layer is not behaving as expected.
+- Read the [whitepaper](whitepaper.md) for the long-form product model.
+- Read [Learn](learn/index.md) for the core concepts in plain English.
+- Read the [User Guide](user-guide/index.md) for user-facing workflows.
+- Read the [Roadmap](roadmap.md) to see what is done, planned, and still uncertain.
+- Read the [Developer overview](developers/index.md) if you need implementation boundaries and repository links.

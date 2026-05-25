@@ -1,8 +1,8 @@
 # IsoniaOS Docs
 
-This repository owns the public product, developer, operator, and reference documentation for IsoniaOS. The source pages live under [`site/`](site/), with the public entry point at [`site/index.md`](site/index.md) and the repository orientation at [`site/developers/repository-map.md`](site/developers/repository-map.md).
+This repository owns the public product, user, developer, and reference documentation for IsoniaOS. The source pages live under [`site/`](site/), with the public entry point at [`site/index.md`](site/index.md) and the single developer overview at [`site/developers/index.md`](site/developers/index.md).
 
-Private planning, detailed ISO token work, SaaS planning, and internal migration notes do not belong in this repository.
+Private planning, business planning, and workspace migration notes do not belong in this repository.
 
 ## Installation
 
@@ -58,7 +58,7 @@ mkdocs build
 
 Read [`AGENTS.md`](AGENTS.md) before editing this repository. When changing user, developer, operator, configuration, or public-claim behavior, update the smallest relevant current page under `site/` and keep `mkdocs.yml` navigation valid.
 
-Do not copy private strategy, token-launch planning, SaaS planning, or internal agent workflow into public docs.
+Do not copy private strategy, business planning, or workspace automation workflow into public docs.
 
 ## License
 

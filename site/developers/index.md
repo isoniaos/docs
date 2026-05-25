@@ -1,28 +1,61 @@
-# Developer Overview
+# Technical Overview
 
-IsoniaOS development is repository-first. Public docs explain the system shape and boundaries; exact commands and implementation details live in the owning repository.
+This page is the single public developer block for IsoniaOS. It gives the system shape, repository ownership, and configuration boundaries at a high level. Exact commands, variables, scripts, and troubleshooting belong in the owning repository READMEs.
 
-## How Public Docs Relate To Repository Docs
+## Architecture
 
-- Use this site to understand product concepts, architecture, configuration categories, and public-safe boundaries.
-- Use repository `README.md` files for installation, exact commands, local configuration, troubleshooting, and package-specific notes.
-- Use repository `/docs` directories for implementation-adjacent details owned by that repository.
-- Update public docs when a feature addition, behavior change, configuration change, or operator-visible change affects users, developers, operators, or public claims.
+```mermaid
+flowchart LR
+  Wallet["User wallet"] --> App["App Core"]
+  App --> SDK["SDK"]
+  SDK --> API["Control Plane"]
+  API --> DB["Read models"]
+  API --> Chain["EVM contracts"]
+  Chain --> API
+  Theme["Default theme"] --> App
+  Types["Shared types"] --> SDK
+  Types --> API
+  Types --> App
+```
 
-## Main Development Surfaces
+## Repository Ownership
 
-| Surface | Repository | Start here |
+| Repository | Owns | Start here |
 | --- | --- | --- |
-| Protocol contracts | `evm-contracts` | [Contracts](contracts.md) |
-| Shared DTOs and enums | `types` | [Repository map](repository-map.md) |
-| Indexing and read APIs | `control-plane` | [Control Plane](control-plane.md) |
-| Typed clients and helpers | `sdk` | [SDK](sdk.md) |
-| Governance console | `app-core` | [App Core](app-core.md) |
-| Default theme | `theme-default` | [Repository map](repository-map.md) |
+| `docs` | Public product documentation. | [README](https://github.com/isoniaos/docs/blob/main/README.md) |
+| `evm-contracts` | Solidity contracts for modeled organization authority, proposal checks, roles, policy routes, and execution receipts. | [README](https://github.com/isoniaos/evm-contracts/blob/main/README.md) |
+| `types` | Shared TypeScript DTOs, enums, constants, events, activation shapes, archive records, accountability records, external resource records, and source-disclosure shapes. | [README](https://github.com/isoniaos/types/blob/main/README.md) |
+| `control-plane` | Event ingestion, raw event storage, read models, diagnostics, and REST read APIs. | [README](https://github.com/isoniaos/control-plane/blob/main/README.md) |
+| `sdk` | Dependency-light typed Control Plane clients, path helpers, proposal helpers, finalization helpers, and activation helpers. | [README](https://github.com/isoniaos/sdk/blob/main/README.md) |
+| `app-core` | React and Vite governance console for reading, explaining, and interacting with configured governance state. | [README](https://github.com/isoniaos/app-core/blob/main/README.md) |
+| `theme-default` | Default visual theme values, brand metadata, CSS variables, and assets consumed by App Core. | [README](https://github.com/isoniaos/theme-default/blob/main/README.md) |
 
-## Public-Safe Development Rules
+## Layer Relationship
 
-- Keep demo helpers, lab fixtures, and provider experiments out of core authority.
-- Preserve source labels, authority claims, trust boundaries, and stale/error/unknown states.
-- Do not infer capability from package version strings.
-- Do not publish private token, legal, hosted-service, or internal planning material in public docs.
+- Contracts model onchain organization state where that state is contract-backed.
+- Control Plane indexes and explains state; it does not create governance authority.
+- Shared types keep cross-repository data shapes aligned.
+- SDK gives typed clients and helpers without UI or chain ownership.
+- App Core presents state, shows data freshness, and starts configured wallet interactions.
+- Theme Default changes presentation without changing governance behavior.
+
+## Configuration Boundaries
+
+Configuration should describe how a runtime reads state and connects components. It should not quietly create authority.
+
+Important categories are:
+
+- chain ID and RPC endpoint;
+- deployed contract addresses;
+- Control Plane API, database, indexing, and CORS settings;
+- App Core API base URL, chain metadata, feature flags, wallet mode, metadata settings, and theme source;
+- SDK consumer base URL;
+- theme package consumption.
+
+Use repository READMEs for exact field names. Do not infer product capability from package versions. Capability claims should come from configured deployment data, observable contract state, API support, and documented product behavior.
+
+## Maturity Limits
+
+The public repositories are in active developer-preview work. Developers should expect cross-repository coordination when changing contracts, shared data shapes, Control Plane APIs, SDK helpers, or App Core user flows.
+
+Public documentation should stay conservative: contract state, read models, UI state, manual notes, and external records have different trust boundaries, and those boundaries should remain visible to users.

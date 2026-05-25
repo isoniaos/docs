@@ -1,63 +1,117 @@
 # Roadmap
 
-This roadmap is public product guidance. It is not an internal task tracker, release promise, or readiness claim.
+This roadmap is public product guidance. It is directional, not a release promise and not a readiness claim. A checked item means the current public repository evidence supports that limited statement. An unchecked item means planned, partial, not yet validated, or future work.
 
-## Current Cycle
+## How To Read This Roadmap
 
-The current cycle focuses on developer-preview accountability and integration foundations. Items are checked only when the public docs and repository baselines support the claim.
+- `[x]` means the item is supported by current repository evidence.
+- `[ ]` means the item is planned, partial, or future work.
+- Version bands describe product direction, not guaranteed dates.
+- Later items may change as implementation and user feedback clarify the path.
 
-- [x] Normalize repository READMEs and local agent instructions across active repositories.
-- [x] Refactor the public docs into user, developer, operator, and reference sections.
-- [x] Keep ISO token-specific material and managed-service planning outside active public product docs.
-- [ ] Normalize EVM protocol contracts around core authority and demo/lab isolation.
-- [ ] Align shared types for archive, accountability, external resources, source labels, trust boundaries, capabilities, diagnostics, and authority claims.
-- [ ] Align Control Plane indexing, projections, diagnostics, and REST APIs with the normalized contract and shared-type model.
-- [ ] Align SDK clients and helpers with the Control Plane API and shared types.
-- [ ] Align App Core runtime configuration, wallet behavior, archive/accountability surfaces, and visible trust-boundary UI.
-- [ ] Keep Theme Default focused on replaceable theme tokens, metadata, CSS variables, and assets.
-- [ ] Validate provider assumptions and Sepolia workflows in Integration Lab without promoting lab records into product authority.
+## Product Throughline
 
-## Product Target
-
-The near-term user question is:
+The product question is:
 
 ```text
 What happened after a governance decision passed?
 ```
 
-The intended answer combines:
+The roadmap grows toward an answer that includes:
 
 - decision records;
 - route and approval context;
 - execution identity and status;
 - responsible party and due date;
 - linked transaction or external evidence;
-- source labels and trust boundaries;
-- a durable public archive.
+- source disclosure and trust boundaries;
+- a durable governance memory.
 
-## Current Non-Goals
+## v0.1 - Product Thesis And Lifecycle Model
 
-The current cycle does not claim:
+- [x] Document the initial idea that governance is a lifecycle, not only a vote.
+- [x] Establish proposal, decision, execution, accountability, and memory as core concepts.
+- [ ] Validate a complete non-technical user journey end to end.
 
-- production operations;
-- audit completion;
-- public beta readiness;
-- legal readiness;
-- complete provider integrations;
-- hosted-service readiness;
-- automatic external execution;
-- token launch readiness.
+## v0.2 - Early Organization And Proposal Model
 
-## Later Work
+- [x] Define organizations, proposals, roles, permissions, and activation as central product objects.
+- [x] Capture the accountability loop as a product requirement.
+- [ ] Make every role and permission understandable in user-facing UI.
 
-Later work may include:
+## v0.3 - Repository Split And Shared Foundations
 
-- stronger organization templates and template guardrails;
-- deeper Snapshot, Safe, Tally, Agora, GitHub, Discourse, and explorer integration paths;
-- design-partner workflows for non-critical governance processes;
-- optional advisory AI summaries with source disclosure;
-- contributor, delegate, grant, and milestone accountability;
-- structured dispute and post-execution review workflows;
-- broader digital-organization and civic-governance experiments.
+- [x] Split public implementation work across focused repositories.
+- [x] Establish a shared TypeScript type package for cross-repository data shapes.
+- [x] Keep public docs separate from implementation repositories.
+- [ ] Remove all stale external links from older repository guidance.
 
-Future work must pass the same claims discipline: public docs should describe only what is implemented, validated, and scoped.
+## v0.4 - Onchain Authority And Execution Foundations
+
+- [x] Establish EVM contract surfaces for organization state, proposal checks, roles, policy routes, and execution receipts.
+- [x] Preserve the rule that contract-backed state is authoritative only for the facts it models.
+- [ ] Complete broad review of authority handoff and critical execution paths.
+
+## v0.5 - Control Plane Read Model Foundations
+
+- [x] Establish Control Plane ownership of event ingestion, raw event storage, read models, diagnostics, and REST read APIs.
+- [x] Document that read models can lag, fail, or disagree temporarily with source state.
+- [ ] Harden projection rebuild and stale-data user messaging across all main views.
+
+## v0.6 - SDK And App Core Foundations
+
+- [x] Establish a dependency-light SDK for typed Control Plane clients and helpers.
+- [x] Establish App Core as the React and Vite governance console.
+- [x] Establish the default theme package as presentation-only.
+- [ ] Complete all user-facing organization setup, activation, proposal, and accountability flows in a polished public beta path.
+
+## v0.7 - Diagnostics, Evidence, Archive, And Accountability Surfaces
+
+- [x] Add public concepts for diagnostics, evidence, archive records, accountability records, and source disclosure.
+- [x] Document trust boundaries between contracts, read models, UI views, manual notes, and external records.
+- [ ] Validate the full proposal-to-proof loop through current App Core and Control Plane flows.
+
+## v0.8 And v0.8.x - Documentation, Repository Normalization, And Developer-Preview Stabilization
+
+- [x] Preserve current public documentation around customer and user questions.
+- [x] Collapse developer material into a single technical overview.
+- [x] Keep public roadmap and whitepaper substantive but conservative.
+- [ ] Finish cross-repository normalization for contracts, shared types, Control Plane, SDK, App Core, and theme behavior.
+- [ ] Prove the local integrated flow consistently from organization creation through evidence and accountability review.
+
+## v0.9 - Integrated Local Candidate And User-Flow Hardening
+
+- [ ] Provide a coherent local evaluator path for creating an organization.
+- [ ] Harden activation, roles, templates, proposals, evidence, and accountability user flows.
+- [ ] Improve diagnostics so stale, failed, missing, and unknown states remain visible.
+- [ ] Review public docs against the current implementation before expanding claims.
+
+## v1.0 - Public Beta Target
+
+- [ ] Support usable organization onboarding for design partners.
+- [ ] Support activation with clear required settings and visible status.
+- [ ] Support role and permission review in plain language.
+- [ ] Support simple templates for repeatable governance patterns.
+- [ ] Support proposal, decision, execution evidence, and accountability flows.
+- [ ] Keep maturity limits visible where implementation remains constrained.
+
+## v1.x - Stabilization And UX Improvement
+
+- [ ] Improve accessibility, empty states, error states, and mobile readability.
+- [ ] Add clearer template guidance for grants, working groups, councils, and protocol operations.
+- [ ] Improve public archive, accountability review, and governance memory views.
+- [ ] Expand integration paths only where authority and evidence boundaries are clear.
+
+## v2.0 - Broader Integrations And Multi-Organization Usage
+
+- [ ] Support more mature multi-organization usage patterns.
+- [ ] Improve integration with external governance, execution, discussion, and proof systems.
+- [ ] Add stronger milestone tracking and post-execution review.
+- [ ] Improve contributor, delegate, and working-group accountability.
+
+## v3+ - Advanced Digital-Organization Workflows
+
+- [ ] Support advanced governance memory and historical comparison.
+- [ ] Support broader digital-organization workflows beyond early DAO use cases.
+- [ ] Explore structured disputes, review histories, and organization health reporting.
+- [ ] Support a larger ecosystem of extension points once the core lifecycle is stable.
