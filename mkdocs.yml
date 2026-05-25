@@ -41,7 +41,6 @@ nav:
       - Governance lifecycle: concepts/governance-lifecycle.md
       - Accountability and evidence: concepts/accountability-and-evidence.md
       - Authority and trust: concepts/authority-and-trust.md
-      - Repository and system map: concepts/repository-system-map.md
   - Developers:
       - Overview: developers/index.md
       - Repository map: developers/repository-map.md
@@ -49,8 +48,6 @@ nav:
       - Control Plane: developers/control-plane.md
       - SDK: developers/sdk.md
       - App Core: developers/app-core.md
-      - Integration Lab: developers/integration-lab.md
-      - Documentation maintenance: developers/documentation-maintenance.md
   - Operators:
       - Overview: operators/index.md
       - Local runtime: operators/local-runtime.md
