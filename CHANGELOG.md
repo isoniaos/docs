@@ -15,6 +15,7 @@ All notable public documentation changes are tracked here.
 - Repaired the public roadmap as a checklist-based current-cycle roadmap with separate future work.
 - Reworked MkDocs navigation around public user, developer, operator, and reference questions.
 - Updated the README as a short public entrypoint.
+- Updated the developer configuration boundary wording for App Core's deployment-array runtime config and Reown-derived wallet mode.
 
 ### Removed
 

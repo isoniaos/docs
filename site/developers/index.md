@@ -48,7 +48,7 @@ Important categories are:
 - chain ID and RPC endpoint;
 - deployed contract addresses;
 - Control Plane API, database, indexing, and CORS settings;
-- App Core API base URL, chain metadata, feature flags, wallet mode, metadata settings, and theme source;
+- App Core API base URL, deployment-array chain metadata, feature flags, Reown-derived wallet mode, metadata settings, and theme source;
 - SDK consumer base URL;
 - theme package consumption.
 
