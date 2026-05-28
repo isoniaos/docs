@@ -13,6 +13,7 @@ All notable public documentation changes are tracked here.
 
 - Repaired the public whitepaper as a concise product document with conservative claims.
 - Repaired the public roadmap as a checklist-based current-cycle roadmap with separate future work.
+- Updated the public roadmap to reflect completed cross-repository normalization while keeping integrated flow validation unchecked.
 - Reworked MkDocs navigation around public user, developer, operator, and reference questions.
 - Updated the README as a short public entrypoint.
 - Updated the developer configuration boundary wording for App Core's deployment-array runtime config and Reown-derived wallet mode.

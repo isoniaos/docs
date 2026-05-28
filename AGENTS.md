@@ -49,6 +49,18 @@ Update the smallest relevant current page under `site/` for public user, develop
 
 Do not publish private strategy, internal migration manifests, detailed token-launch material, tokenomics, treasury/legal planning, SaaS planning, customer notes, or internal Codex task templates.
 
+### Protected strategic documents
+
+`site/whitepaper.md` and `site/roadmap.md` are protected founder-governed strategic documents.
+
+Codex, coding agents, automated repair tasks, documentation cleanup tasks, and broad refactors must not rewrite, restructure, summarize, regenerate, auto-format, or materially edit these files.
+
+Allowed changes require an explicit founder/user instruction that names the exact protected document and describes the intended strategic change. If the instruction is not explicit, leave these files unchanged and report a proposed patch instead.
+
+Do not touch these files during routine MkDocs navigation cleanup, archive cleanup, stale-link cleanup, repository normalization, wording polish, or implementation-driven documentation updates.
+
+Every task report must state whether `site/whitepaper.md` and `site/roadmap.md` were changed or intentionally left unchanged.
+
 ## Testing and Validation
 
 For documentation changes, run:

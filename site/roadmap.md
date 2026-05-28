@@ -76,7 +76,7 @@ The roadmap grows toward an answer that includes:
 - [x] Preserve current public documentation around customer and user questions.
 - [x] Collapse developer material into a single technical overview.
 - [x] Keep public roadmap and whitepaper substantive but conservative.
-- [ ] Finish cross-repository normalization for contracts, shared types, Control Plane, SDK, App Core, and theme behavior.
+- [x] Finish cross-repository normalization for contracts, shared types, Control Plane, SDK, App Core, theme behavior, and lab evidence boundaries.
 - [ ] Prove the local integrated flow consistently from organization creation through evidence and accountability review.
 
 ## v0.9 - Integrated Local Candidate And User-Flow Hardening
