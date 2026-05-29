@@ -1,6 +1,5 @@
 ---
 title: "IsoniaOS Litepaper"
-subtitle: "Accountable Governance for Digital Organizations"
 author: ["IsoniaOS Contributors"]
 version: "0.1.0"
 date: "2026-05-29"
@@ -10,9 +9,9 @@ description: "A short public-facing overview of IsoniaOS, accountable self-manag
 
 # IsoniaOS Litepaper
 
-**Version:** 0.1.0
-**Date:** 2026-05-29
-**Status:** Public strategic baseline
+**Version:** 0.1.0<br>
+**Date:** 2026-05-29<br>
+**Status:** Public strategic baseline<br>
 **Audience:** users, partners, contributors, design partners, ecosystem readers, and early governance communities
 
 This document is directional. It should not be read as a production, audit, legal, provider-completeness, token-launch, public-beta, or security-completeness claim.

@@ -15,12 +15,14 @@ All notable public documentation changes are tracked here.
 - Repaired the public roadmap as a checklist-based current-cycle roadmap with separate future work.
 - Updated the public roadmap to reflect completed cross-repository normalization while keeping integrated flow validation unchecked.
 - Reworked MkDocs navigation around public user, developer, operator, and reference questions.
+- Made the Litepaper and Whitepaper pages ReadTheDocs-compatible by removing public Pandoc citation/front-matter requirements and renaming the navigation label to Whitepaper.
 - Updated the README as a short public entrypoint.
 - Updated the developer configuration boundary wording for App Core's deployment-array runtime config and Reown-derived wallet mode.
 
 ### Removed
 
 - Removed public navigation for internal process pages.
+- Removed PDF-only paper build assets from the public docs repository.
 - Removed old overview, organization, proposal, deployment, security-posture, and root duplicate roadmap/whitepaper pages from active public docs.
 - Kept token-specific, SaaS/internal planning, archived-version, and old active-version material out of the public active tree.
 

@@ -47,17 +47,14 @@ Build the static site:
 mkdocs build
 ```
 
-Public strategic papers are maintained as Markdown sources at [`site/litepaper.md`](site/litepaper.md) and [`site/whitepaper.md`](site/whitepaper.md). To build local PDF copies with Pandoc and XeLaTeX installed:
-
-```bash
-make papers-pdf
-```
+Public strategic papers are maintained as MkDocs-compatible Markdown sources at [`site/litepaper.md`](site/litepaper.md) and [`site/whitepaper.md`](site/whitepaper.md). PDF-only build assets are kept outside this public docs repository.
 
 ## Troubleshooting
 
 - If `mkdocs` is not found, activate the virtual environment and reinstall `requirements.txt`.
 - If navigation fails, check that every path in `mkdocs.yml` exists under `site/`.
 - Source pages belong under `site/`; generated output belongs under `public/`.
+- PDF build scripts, Pandoc metadata, BibTeX references, and generated PDFs do not belong in this public repository.
 - Do not restore old `archive/` or versioned public-docs folders as active navigation. Historical material belongs in Git history and private migration records.
 
 ## Contribution

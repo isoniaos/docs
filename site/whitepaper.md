@@ -1,6 +1,5 @@
 ---
 title: "IsoniaOS Technical Whitepaper"
-subtitle: "A Governance Control Plane and Self-Management Operating Layer for Accountable Digital Organizations"
 author: ["IsoniaOS Contributors"]
 version: "0.1.0"
 date: "2026-05-29"
@@ -15,15 +14,14 @@ keywords:
   - authority boundaries
   - AI facilitation
   - digital organizations
-bibliography: whitepaper-pdf/references.bib
-link-citations: true
+description: "A technical strategic whitepaper for IsoniaOS, covering accountable self-management, governance lifecycle, authority boundaries, AI facilitation, and adapter architecture."
 ---
 
 # IsoniaOS Technical Whitepaper
 
-**Version:** 0.1.0
-**Date:** 2026-05-29
-**Status:** Technical strategic baseline
+**Version:** 0.1.0<br>
+**Date:** 2026-05-29<br>
+**Status:** Technical strategic baseline<br>
 **Audience:** governance researchers, DAO operators, protocol teams, engineers, contributors, public-good communities, and design partners
 
 This document is directional. It should not be read as a production, audit, legal, provider-completeness, token-launch, public-beta, AI-safety-completeness, or security-completeness claim.
@@ -57,23 +55,23 @@ IsoniaOS belongs to a long conversation about how humans coordinate without hidi
 
 Several intellectual traditions shape this view.
 
-> "There is no such thing as a structureless group." — Jo Freeman [@freeman1972]
+> "There is no such thing as a structureless group." — Jo Freeman, [The Tyranny of Structurelessness](https://www.jofreeman.com/joreen/tyranny.htm)
 
 Freeman's critique of structurelessness is essential for digital organizations. A DAO, protocol community, open-source collective, cooperative, or civic group can reject formal hierarchy and still reproduce informal power. The design lesson for IsoniaOS is simple: if authority exists, the system should help make it explicit, reviewable, and accountable.
 
-> "Code is law." — Lawrence Lessig [@lessig2006]
+> "Code is law." — Lawrence Lessig, [Code: Version 2.0](https://lessig.org/product/codev2/)
 
 Lessig's point is not that software should replace law or politics. It is that architecture regulates behavior. In blockchain systems this becomes concrete: contracts, wallets, roles, interfaces, indexers, and permissions shape what participants can do. IsoniaOS therefore treats technical architecture as governance architecture.
 
-> "There are no panaceas." — Elinor Ostrom [@ostrom2007diagnostic]
+> "There are no panaceas." — Elinor Ostrom, [A Diagnostic Approach for Going Beyond Panaceas](https://doi.org/10.1073/pnas.0702288104)
 
-Ostrom's work on commons governance warns against universal templates. Communities can self-govern shared resources, but durable governance depends on local rules, monitoring, conflict-resolution mechanisms, and the ability of affected people to participate in changing rules [@ostrom1990]. IsoniaOS should therefore support templates without pretending that one governance model fits all organizations.
+Ostrom's work on commons governance warns against universal templates. Communities can self-govern shared resources, but durable governance depends on local rules, monitoring, conflict-resolution mechanisms, and the ability of affected people to participate in changing rules ([Governing the Commons](https://www.cambridge.org/core/books/governing-the-commons/7AB7AE11BADA84409C34815CC288CD79)). IsoniaOS should therefore support templates without pretending that one governance model fits all organizations.
 
-> "The distinguishing mark of the firm is the supersession of the price mechanism." — Ronald Coase [@coase1937]
+> "The distinguishing mark of the firm is the supersession of the price mechanism." — Ronald Coase, [The Nature of the Firm](https://doi.org/10.1111/j.1468-0335.1937.tb00002.x)
 
 Coase explained why firms exist when markets are too costly for coordination. Digital organizations create a new question: if software, networks, smart contracts, and AI reduce some coordination costs, which parts of the firm can become transparent, modular, and self-managed rather than hierarchical? IsoniaOS exists in that question.
 
-Modern organization design adds another layer. Teal management, Holacracy, Sociocracy, and related self-management systems show that roles, circles, tensions, consent, advice, and evolutionary purpose can replace parts of the command hierarchy when the surrounding operating system is mature [@laloux2014; @robertson2015; @sociocracy30]. Web3 and DAO research add primitives for programmable execution, treasury coordination, delegation, reputation, sybil resistance, and digital constitutionalism [@buterin2022daos; @ohlhaver2022desoc; @tan2024constitutions].
+Modern organization design adds another layer. Teal management, Holacracy, Sociocracy, and related self-management systems show that roles, circles, tensions, consent, advice, and evolutionary purpose can replace parts of the command hierarchy when the surrounding operating system is mature. Useful references include Frederic Laloux's [Reinventing Organizations](https://www.reinventingorganizations.com/), Brian Robertson's *Holacracy*, and [Sociocracy 3.0](https://sociocracy30.org/). Web3 and DAO research add primitives for programmable execution, treasury coordination, delegation, reputation, sybil resistance, and digital constitutionalism. Useful references include Vitalik Buterin's [DAOs are not corporations](https://vitalik.ca/general/2022/09/20/daos.html), Ohlhaver, Weyl, and Buterin's [Decentralized Society](https://ssrn.com/abstract=4105763), and [The Constitutions of Web3](https://arxiv.org/abs/2403.00081).
 
 IsoniaOS does not copy any one tradition. It translates the strongest lessons into a governance control plane:
 
@@ -212,7 +210,7 @@ IsoniaOS should learn from the strongest organization-runtime products, DAO fram
 
 The best systems in this category treat an internet organization as an operating environment: scoped teams or domains structure work, permissions constrain authority, budgets and expenditures allocate resources, work records connect labor to payment, objections and disputes provide an escalation path, and reputation-like signals attempt to make influence contextual. IsoniaOS should absorb these patterns as product lessons while remaining a neutral control plane across many systems.
 
-### 6.1 Day-to-day work should not be held hostage by voting
+### 7.1 Day-to-day work should not be held hostage by voting
 
 A self-managed organization cannot vote on every action. Voting is slow, expensive in attention, and often the wrong tool for routine work. IsoniaOS should therefore make the ordinary path permissive where policy allows it, and reserve votes for high-impact, disputed, or constitutionally important decisions.
 
@@ -225,7 +223,7 @@ Escalate to advice, consent, vote, multisig, or dispute only when the risk requi
 
 The product should help users see why a decision did not require a vote just as clearly as it shows why another decision did require one.
 
-### 6.2 Circles and domains make authority contextual
+### 7.2 Circles and domains make authority contextual
 
 Large organizations become illegible without structure. Some mature organization systems use domains or teams to group work, budgets, and authority. IsoniaOS should use circles in a similar organizational role: circles are not departments in a rigid hierarchy; they are scoped domains of responsibility.
 
@@ -243,7 +241,7 @@ A circle should be able to hold:
 
 This keeps decisions close to people with relevant context while still preserving escalation paths to broader organization authority when needed.
 
-### 6.3 Budgets, payments, and work records are governance
+### 7.3 Budgets, payments, and work records are governance
 
 Money movement is not separate from governance. A payment expresses an authorized judgment: that some work, service, grant, salary, bounty, or reimbursement should receive resources from a shared treasury.
 
@@ -260,7 +258,7 @@ IsoniaOS should therefore treat budgets and payments as governance records with 
 
 This is where IsoniaOS can differentiate from pure voting tools. It should connect financial execution to organizational intent and accountability.
 
-### 6.4 Reputation is a contextual signal, not a universal rank
+### 7.4 Reputation is a contextual signal, not a universal rank
 
 Reputation can help route authority, but it is dangerous when treated as a single universal score. A contributor can be highly trusted in Solidity security, moderately trusted in protocol operations, and unknown in community moderation.
 
@@ -275,7 +273,7 @@ IsoniaOS should model reputation-like data as contextual contribution signals:
 
 The goal is not a social-credit system. The goal is to help the organization ask: who has relevant demonstrated context for this decision?
 
-### 6.5 The core should stay small; extensions and adapters carry diversity
+### 7.5 The core should stay small; extensions and adapters carry diversity
 
 Organization design is too diverse for one hardcoded workflow. IsoniaOS should keep the authority model and record model stable while allowing external systems, templates, and adapters to express different governance mechanisms.
 
@@ -292,7 +290,7 @@ The core should provide:
 
 Extensions and adapters can then provide specialized behavior for Safe execution, Snapshot signaling, Governor proposals, delegation, forums, work records, payments, disputes, discussion ingestion, or AI summaries.
 
-### 6.6 Maturity should be gradual
+### 7.6 Maturity should be gradual
 
 A new organization may need human moderators, admins, or stewards. A mature organization may automate more decisions through policies, adapters, extensions, or contract-backed routes. IsoniaOS should not shame early organizations for being partially centralized. It should make the centralization visible and help the organization evolve deliberately.
 
@@ -304,13 +302,13 @@ Manual records -> role-based authority -> policy-constrained decisions -> adapte
 
 The product should show which stage a process is in rather than pretending every organization is fully decentralized.
 
-### 6.7 Consensus should be visible; dissent should have a path
+### 7.7 Consensus should be visible; dissent should have a path
 
 The system should not block action when there is clear consensus, but it must provide a path when there is dissent. IsoniaOS should support objections, escalations, disputes, appeals, and post-action reviews as first-class records.
 
 A decision that proceeds without objection should still leave a clear trace. A decision that faces objection should show what was objected to, who was affected, which policy applied, what evidence was reviewed, and how the issue was resolved.
 
-### 6.8 Integrate proven organization runtimes instead of cloning them
+### 7.8 Integrate proven organization runtimes instead of cloning them
 
 Some of the strongest governance products in the industry already prove that digital organizations need more than proposals and votes. They combine scoped teams, permissions, budgets, work records, contribution signals, execution paths, objections, disputes, and extension mechanisms into an operational environment.
 
@@ -931,10 +929,29 @@ Integration work should be sequenced carefully. Multisig wallets, voting systems
 
 The roadmap is not a promise that a feature is complete. It uses checkboxes to separate current evidence from planned work.
 
-## 26. References
+## 26. References And Further Reading
 
-::: {#refs}
-:::
+The public documentation version uses regular Markdown links so that Read the Docs and MkDocs render the sources without a Pandoc citation pipeline. The PDF source can keep BibTeX and Pandoc citation syntax in the private papers workspace.
+
+- Jo Freeman, [The Tyranny of Structurelessness](https://www.jofreeman.com/joreen/tyranny.htm), 1972.
+- Lawrence Lessig, [Code: Version 2.0](https://lessig.org/product/codev2/), 2006.
+- Elinor Ostrom, [Governing the Commons: The Evolution of Institutions for Collective Action](https://www.cambridge.org/core/books/governing-the-commons/7AB7AE11BADA84409C34815CC288CD79), 1990.
+- Elinor Ostrom, [A Diagnostic Approach for Going Beyond Panaceas](https://doi.org/10.1073/pnas.0702288104), 2007.
+- Ronald H. Coase, [The Nature of the Firm](https://doi.org/10.1111/j.1468-0335.1937.tb00002.x), 1937.
+- Frederic Laloux, [Reinventing Organizations](https://www.reinventingorganizations.com/), 2014.
+- Brian J. Robertson, *Holacracy: The New Management System for a Rapidly Changing World*, 2015.
+- [Sociocracy 3.0: Effective Collaboration At Any Scale](https://sociocracy30.org/).
+- Vitalik Buterin, [DAOs are not corporations: where decentralization in autonomous organizations matters](https://vitalik.ca/general/2022/09/20/daos.html), 2022.
+- Puja Ohlhaver, E. Glen Weyl, and Vitalik Buterin, [Decentralized Society: Finding Web3's Soul](https://ssrn.com/abstract=4105763), 2022.
+- Yochai Benkler, [Coase's Penguin, or, Linux and The Nature of the Firm](https://arxiv.org/abs/cs/0109077), 2002.
+- Yochai Benkler, [The Wealth of Networks](https://www.benkler.org/Benkler_Wealth_Of_Networks.pdf), 2006.
+- Primavera De Filippi and Aaron Wright, *Blockchain and the Law: The Rule of Code*, 2018.
+- Primavera De Filippi and Samer Hassan, [Blockchain Technology as a Regulatory Technology: From Code is Law to Law is Code](https://arxiv.org/abs/1801.02507), 2018.
+- E. Glen Weyl, Audrey Tang, and the Plurality Community, [Plurality: The Future of Collaborative Technology and Democracy](https://plurality.net/), 2024.
+- Nathan Schneider, [Governable Spaces: Democratic Design for Online Life](https://nathanschneider.info/books/governable-spaces/), 2024.
+- Nathan Schneider, Primavera De Filippi, Seth Frey, Joshua Z. Tan, and Amy X. Zhang, [Modular Politics: Toward a Governance Layer for Online Communities](https://arxiv.org/abs/2005.13701), 2020.
+- Seth Frey and Nathan Schneider, [Effective Voice: Beyond Exit and Affect in Online Communities](https://arxiv.org/abs/2009.12470), 2020.
+- Joshua Z. Tan, Max Langenkamp, Anna Weichselbraun, Ann Brody, and Lucia Korpas, [The Constitutions of Web3](https://arxiv.org/abs/2403.00081), 2024.
 
 ## 27. Glossary And Key Terms
 
