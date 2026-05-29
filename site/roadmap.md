@@ -93,14 +93,14 @@ read-only adapters prove their authority boundaries.
   vote.
 - [x] Establish proposal, decision, execution, accountability, and memory as
   core concepts.
-- [ ] Validate a complete non-technical user journey end to end.
+- [x] Validate a complete non-technical user journey end to end.
 
 ## v0.2 - Early Organization And Proposal Model
 
 - [x] Define organizations, proposals, roles, permissions, and activation as
   central product objects.
 - [x] Capture the accountability loop as a product requirement.
-- [ ] Make every role and permission understandable in user-facing UI.
+- [x] Make every role and permission understandable in user-facing UI.
 
 ## v0.3 - Repository Split And Shared Foundations
 
@@ -108,7 +108,7 @@ read-only adapters prove their authority boundaries.
 - [x] Establish a shared TypeScript type package for cross-repository data
   shapes.
 - [x] Keep public docs separate from implementation repositories.
-- [ ] Remove all stale external links from older repository guidance.
+- [x] Remove all stale external links from older repository guidance.
 
 ## v0.4 - Onchain Authority And Execution Foundations
 
@@ -116,7 +116,7 @@ read-only adapters prove their authority boundaries.
   roles, policy routes, and execution receipts.
 - [x] Preserve the rule that contract-backed state is authoritative only for
   the facts it models.
-- [ ] Complete broad review of authority handoff and critical execution paths.
+- [x] Complete broad review of authority handoff and critical execution paths.
 
 ## v0.5 - Control Plane Read Model Foundations
 
@@ -124,7 +124,7 @@ read-only adapters prove their authority boundaries.
   read models, diagnostics, and REST read APIs.
 - [x] Document that read models can lag, fail, or disagree temporarily with
   source state.
-- [ ] Harden projection rebuild and stale-data user messaging across all main
+- [x] Harden projection rebuild and stale-data user messaging across all main
   views.
 
 ## v0.6 - SDK And App Core Foundations
@@ -133,7 +133,7 @@ read-only adapters prove their authority boundaries.
   helpers.
 - [x] Establish App Core as the React and Vite governance console.
 - [x] Establish the default theme package as presentation-only.
-- [ ] Complete all user-facing organization setup, activation, proposal, and
+- [x] Complete all user-facing organization setup, activation, proposal, and
   accountability flows in a polished public beta path.
 
 ## v0.7 - Diagnostics, Evidence, Archive, And Accountability Surfaces
@@ -142,7 +142,7 @@ read-only adapters prove their authority boundaries.
   accountability records, and source disclosure.
 - [x] Document trust boundaries between contracts, read models, UI views,
   manual notes, and external records.
-- [ ] Validate the full proposal-to-proof loop through current App Core and
+- [x] Validate the full proposal-to-proof loop through current App Core and
   Control Plane flows.
 
 ## v0.8 And v0.8.x - Documentation, Repository Normalization, And Developer-Preview Stabilization
