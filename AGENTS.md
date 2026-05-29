@@ -49,17 +49,21 @@ Update the smallest relevant current page under `site/` for public user, develop
 
 Do not publish private strategy, internal migration manifests, detailed token-launch material, tokenomics, treasury/legal planning, SaaS planning, customer notes, or internal Codex task templates.
 
-### Protected strategic documents
+## Protected Strategic Documents
 
-`site/whitepaper.md` and `site/roadmap.md` are protected founder-governed strategic documents.
+The following files are founder-governed strategic documents:
 
-Codex, coding agents, automated repair tasks, documentation cleanup tasks, and broad refactors must not rewrite, restructure, summarize, regenerate, auto-format, or materially edit these files.
+- `site/litepaper.md`
+- `site/whitepaper.md`
+- `site/roadmap.md`
 
-Allowed changes require an explicit founder/user instruction that names the exact protected document and describes the intended strategic change. If the instruction is not explicit, leave these files unchanged and report a proposed patch instead.
+Do not rewrite, summarize, reorganize, truncate, or stylistically normalize these files during routine docs repair, implementation tasks, formatting cleanup, dependency work, or automated Codex passes.
 
-Do not touch these files during routine MkDocs navigation cleanup, archive cleanup, stale-link cleanup, repository normalization, wording polish, or implementation-driven documentation updates.
+These files may be changed only when the user/founder explicitly names the specific file and requested strategic change. If a task touches behavior, APIs, repository structure, or implementation details, update smaller relevant docs instead of changing these strategic documents unless explicitly instructed.
 
-Every task report must state whether `site/whitepaper.md` and `site/roadmap.md` were changed or intentionally left unchanged.
+Generated PDFs must not become the source of truth. The Markdown source remains authoritative.
+
+Every task report must state whether `site/litepaper.md`, `site/whitepaper.md`, and `site/roadmap.md` were changed or intentionally left unchanged.
 
 ## Testing and Validation
 

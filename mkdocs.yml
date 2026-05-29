@@ -29,7 +29,8 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Whitepaper: whitepaper.md
+  - Litepaper: litepaper.md
+  - Technical Whitepaper: whitepaper.md
   - Roadmap: roadmap.md
   - Learn:
       - Overview: learn/index.md

@@ -1,4 +1,32 @@
-# IsoniaOS Whitepaper
+---
+title: "IsoniaOS Technical Whitepaper"
+subtitle: "A Governance Control Plane and Self-Management Operating Layer for Accountable Digital Organizations"
+author: ["IsoniaOS Contributors"]
+version: "0.1.0"
+date: "2026-05-29"
+status: "Technical strategic baseline"
+subject: "DAO governance, accountable self-management, governance control planes, AI-assisted organizational memory"
+keywords:
+  - IsoniaOS
+  - DAO governance
+  - accountable self-management
+  - teal governance
+  - governance lifecycle
+  - authority boundaries
+  - AI facilitation
+  - digital organizations
+bibliography: whitepaper-pdf/references.bib
+link-citations: true
+---
+
+# IsoniaOS Technical Whitepaper
+
+**Version:** 0.1.0
+**Date:** 2026-05-29
+**Status:** Technical strategic baseline
+**Audience:** governance researchers, DAO operators, protocol teams, engineers, contributors, public-good communities, and design partners
+
+This document is directional. It should not be read as a production, audit, legal, provider-completeness, token-launch, public-beta, AI-safety-completeness, or security-completeness claim.
 
 ## 1. Abstract
 
@@ -9,21 +37,63 @@ It starts from a practical problem: communities often know that a proposal passe
 IsoniaOS treats governance as a lifecycle:
 
 ```text
-Tension -> Framing -> Proposal or Advice Process -> Decision -> Execution -> Evidence -> Accountability -> Memory
+Tension -> Framing
+-> Proposal or Advice Process
+-> Decision
+-> Execution
+-> Evidence
+-> Accountability
+-> Memory
 ```
 
 The first public focus is DAO governance because the pain is concrete. DAOs manage proposals, roles, approvals, shared budgets, contributor work, grants, external records, onchain actions, and community discussion across many tools. IsoniaOS does not try to replace every tool. It helps the organization connect the records, keep authority boundaries clear, and make distributed work accountable.
 
 The long-term direction is broader than voting. IsoniaOS aims to help DAOs, foundations, cooperatives, public-good communities, open-source projects, protocol teams, civic groups, and other digital organizations move toward accountable self-management: roles instead of hidden hierarchy, policies instead of opaque authority, evidence instead of trust-me claims, and AI-assisted coordination without centralized control.
 
-## 2. The Problem: Governance Decisions Become Fragmented Records
+
+## 2. Intellectual Lineage And Design Commitments
+
+IsoniaOS belongs to a long conversation about how humans coordinate without hiding power. It does not treat decentralization as a slogan, self-management as an HR style, or blockchain as an automatic cure for governance problems. The project starts from a stricter claim: authority must be visible, decisions must be traceable, execution must be evidenced, and collective memory must survive tool fragmentation.
+
+Several intellectual traditions shape this view.
+
+> "There is no such thing as a structureless group." — Jo Freeman [@freeman1972]
+
+Freeman's critique of structurelessness is essential for digital organizations. A DAO, protocol community, open-source collective, cooperative, or civic group can reject formal hierarchy and still reproduce informal power. The design lesson for IsoniaOS is simple: if authority exists, the system should help make it explicit, reviewable, and accountable.
+
+> "Code is law." — Lawrence Lessig [@lessig2006]
+
+Lessig's point is not that software should replace law or politics. It is that architecture regulates behavior. In blockchain systems this becomes concrete: contracts, wallets, roles, interfaces, indexers, and permissions shape what participants can do. IsoniaOS therefore treats technical architecture as governance architecture.
+
+> "There are no panaceas." — Elinor Ostrom [@ostrom2007diagnostic]
+
+Ostrom's work on commons governance warns against universal templates. Communities can self-govern shared resources, but durable governance depends on local rules, monitoring, conflict-resolution mechanisms, and the ability of affected people to participate in changing rules [@ostrom1990]. IsoniaOS should therefore support templates without pretending that one governance model fits all organizations.
+
+> "The distinguishing mark of the firm is the supersession of the price mechanism." — Ronald Coase [@coase1937]
+
+Coase explained why firms exist when markets are too costly for coordination. Digital organizations create a new question: if software, networks, smart contracts, and AI reduce some coordination costs, which parts of the firm can become transparent, modular, and self-managed rather than hierarchical? IsoniaOS exists in that question.
+
+Modern organization design adds another layer. Teal management, Holacracy, Sociocracy, and related self-management systems show that roles, circles, tensions, consent, advice, and evolutionary purpose can replace parts of the command hierarchy when the surrounding operating system is mature [@laloux2014; @robertson2015; @sociocracy30]. Web3 and DAO research add primitives for programmable execution, treasury coordination, delegation, reputation, sybil resistance, and digital constitutionalism [@buterin2022daos; @ohlhaver2022desoc; @tan2024constitutions].
+
+IsoniaOS does not copy any one tradition. It translates the strongest lessons into a governance control plane:
+
+- structure must be visible enough to prevent hidden hierarchy;
+- code must expose authority instead of disguising it;
+- no governance template should claim universal validity;
+- self-management requires roles, policies, evidence, and accountability;
+- DAOs need more than votes;
+- AI can help memory and coordination, but it must not become the ruler.
+
+This is the philosophical center of IsoniaOS: accountable self-management for organizations that want to distribute authority without losing responsibility.
+
+## 3. The Problem: Governance Decisions Become Fragmented Records
 
 Modern digital organizations use many places to make and record decisions:
 
 - forum posts and documents for context;
 - Telegram, Discord, Slack, and community chat for discussion;
 - calls, meeting notes, and community updates for informal alignment;
-- Snapshot, Tally, Agora, Aragon, DAOHaus, Colony, XDAO, or other governance tools for proposals, voting, delegation, work, or community operations;
+- governance, DAO framework, treasury, work-management, delegation, or organization-runtime tools for proposals, voting, delegation, work, payments, or community operations;
 - Safe and other wallet systems for execution;
 - block explorers and external links for proof;
 - spreadsheets, issue trackers, or project boards for follow-up.
@@ -48,7 +118,7 @@ This creates an execution gap. The organization makes a decision, but the follow
 
 It also creates a self-management gap. People may be told that the organization is decentralized or community-led, but the actual authority can remain hidden in private chats, multisigs, informal founder decisions, contributor cliques, or untracked operational habits. IsoniaOS is designed to make those authority paths visible without pretending that one interface is the whole source of truth.
 
-## 3. Why This Matters For Digital Organizations
+## 4. Why This Matters For Digital Organizations
 
 Governance is not only the moment of voting or approval. Good governance needs context before a decision, clear authority during the decision, and visible accountability after the decision.
 
@@ -68,7 +138,7 @@ IsoniaOS is designed to make governance records easier to follow, but the deeper
 
 A self-managed organization does not mean an organization without power. It means power is distributed through visible roles, policies, decision modes, evidence, accountability, and review.
 
-## 4. IsoniaOS Vision
+## 5. IsoniaOS Vision
 
 The vision is accountable self-management for digital organizations.
 
@@ -99,7 +169,7 @@ From hierarchy and hidden coordination to accountable self-management.
 
 IsoniaOS should become the memory, accountability, and coordination layer for organizations that want to distribute authority without losing responsibility.
 
-## 5. Accountable Self-Management And Teal Governance
+## 6. Accountable Self-Management And Teal Governance
 
 The term “teal governance” is used here as a practical shorthand for mature self-management. In this context, it does not mean vague horizontality or the absence of leadership. It means an organization where:
 
@@ -121,14 +191,150 @@ Proposal -> Vote -> Result
 IsoniaOS should support a richer loop:
 
 ```text
-Purpose -> Tension -> Framing -> Advice or Proposal -> Decision -> Execution -> Evidence -> Accountability -> Learning -> Updated Purpose, Role, Policy, or Template
+Purpose -> Tension -> Framing
+-> Advice or Proposal
+-> Decision
+-> Execution
+-> Evidence
+-> Accountability
+-> Learning
+-> Updated Purpose, Role, Policy, or Template
 ```
 
 This model matters because many DAO systems solve the voting problem but not the organization problem. Real organizations need roles, budgets, working groups, operational policies, conflict handling, execution tracking, and memory.
 
 IsoniaOS should not present self-management as an unverified maturity claim. It should show which parts are modeled, which parts are manual, which parts come from external systems, and which parts are planned.
 
-## 6. Core Product Model
+
+## 7. Design Lessons From Mature Organization-Runtime Systems
+
+IsoniaOS should learn from the strongest organization-runtime products, DAO frameworks, treasury tools, and governance protocols in the industry without becoming a clone of any single system. The lesson is not that every organization should migrate into one product. The lesson is that serious digital organizations need operational primitives, not only a voting page.
+
+The best systems in this category treat an internet organization as an operating environment: scoped teams or domains structure work, permissions constrain authority, budgets and expenditures allocate resources, work records connect labor to payment, objections and disputes provide an escalation path, and reputation-like signals attempt to make influence contextual. IsoniaOS should absorb these patterns as product lessons while remaining a neutral control plane across many systems.
+
+### 6.1 Day-to-day work should not be held hostage by voting
+
+A self-managed organization cannot vote on every action. Voting is slow, expensive in attention, and often the wrong tool for routine work. IsoniaOS should therefore make the ordinary path permissive where policy allows it, and reserve votes for high-impact, disputed, or constitutionally important decisions.
+
+This leads to a practical rule:
+
+```text
+Default to action within a visible role or policy.
+Escalate to advice, consent, vote, multisig, or dispute only when the risk requires it.
+```
+
+The product should help users see why a decision did not require a vote just as clearly as it shows why another decision did require one.
+
+### 6.2 Circles and domains make authority contextual
+
+Large organizations become illegible without structure. Some mature organization systems use domains or teams to group work, budgets, and authority. IsoniaOS should use circles in a similar organizational role: circles are not departments in a rigid hierarchy; they are scoped domains of responsibility.
+
+A circle should be able to hold:
+
+- a purpose;
+- roles;
+- policies;
+- budgets;
+- tensions;
+- decision-mode rules;
+- accountability records;
+- external-source links;
+- review history.
+
+This keeps decisions close to people with relevant context while still preserving escalation paths to broader organization authority when needed.
+
+### 6.3 Budgets, payments, and work records are governance
+
+Money movement is not separate from governance. A payment expresses an authorized judgment: that some work, service, grant, salary, bounty, or reimbursement should receive resources from a shared treasury.
+
+IsoniaOS should therefore treat budgets and payments as governance records with expected context:
+
+- which circle or policy authorized the spend;
+- which decision mode applied;
+- who requested it;
+- who reviewed it;
+- who executed it;
+- which wallet, transaction, or external system moved funds;
+- what work, deliverable, milestone, or obligation the payment relates to;
+- what evidence confirms completion or explains failure.
+
+This is where IsoniaOS can differentiate from pure voting tools. It should connect financial execution to organizational intent and accountability.
+
+### 6.4 Reputation is a contextual signal, not a universal rank
+
+Reputation can help route authority, but it is dangerous when treated as a single universal score. A contributor can be highly trusted in Solidity security, moderately trusted in protocol operations, and unknown in community moderation.
+
+IsoniaOS should model reputation-like data as contextual contribution signals:
+
+- scoped to organization, circle, skill, role, or workstream;
+- derived from visible evidence where possible;
+- source-disclosed when imported from external systems;
+- reviewable by humans;
+- separated from legal identity and private personal data;
+- never presented as a complete measure of a person.
+
+The goal is not a social-credit system. The goal is to help the organization ask: who has relevant demonstrated context for this decision?
+
+### 6.5 The core should stay small; extensions and adapters carry diversity
+
+Organization design is too diverse for one hardcoded workflow. IsoniaOS should keep the authority model and record model stable while allowing external systems, templates, and adapters to express different governance mechanisms.
+
+The core should provide:
+
+- organization identity;
+- roles and permissions;
+- policies;
+- decision records;
+- evidence records;
+- accountability records;
+- trust-boundary metadata;
+- adapter maturity labels.
+
+Extensions and adapters can then provide specialized behavior for Safe execution, Snapshot signaling, Governor proposals, delegation, forums, work records, payments, disputes, discussion ingestion, or AI summaries.
+
+### 6.6 Maturity should be gradual
+
+A new organization may need human moderators, admins, or stewards. A mature organization may automate more decisions through policies, adapters, extensions, or contract-backed routes. IsoniaOS should not shame early organizations for being partially centralized. It should make the centralization visible and help the organization evolve deliberately.
+
+A healthy maturity path can look like this:
+
+```text
+Manual records -> role-based authority -> policy-constrained decisions -> adapter-backed evidence -> contract-backed execution -> automated checks and dispute paths
+```
+
+The product should show which stage a process is in rather than pretending every organization is fully decentralized.
+
+### 6.7 Consensus should be visible; dissent should have a path
+
+The system should not block action when there is clear consensus, but it must provide a path when there is dissent. IsoniaOS should support objections, escalations, disputes, appeals, and post-action reviews as first-class records.
+
+A decision that proceeds without objection should still leave a clear trace. A decision that faces objection should show what was objected to, who was affected, which policy applied, what evidence was reviewed, and how the issue was resolved.
+
+### 6.8 Integrate proven organization runtimes instead of cloning them
+
+Some of the strongest governance products in the industry already prove that digital organizations need more than proposals and votes. They combine scoped teams, permissions, budgets, work records, contribution signals, execution paths, objections, disputes, and extension mechanisms into an operational environment.
+
+IsoniaOS should treat these as proven industry patterns, not as a mandate to recreate a closed organization runtime. The goal is to make IsoniaOS the neutral accountability, memory, and coordination layer that can sit beside many organization systems and explain how their records relate to authority, evidence, and follow-through.
+
+When an organization already uses an organization-runtime product, IsoniaOS should be able to index or link its records as external authority, discussion, execution, or evidence sources where technically, legally, and operationally appropriate.
+
+A read-only organization-runtime adapter could map:
+
+| External organization-runtime record | IsoniaOS interpretation |
+| --- | --- |
+| Organization record | Organization or external organization source |
+| Team, domain, department, or workstream | Circle or external circle evidence |
+| Permission or role assignment | Role, permission, or authority evidence |
+| Motion, action request, or operational proposal | Proposal, decision, objection, or dispute record |
+| Expenditure, grant, payroll item, or payment | Execution and evidence record |
+| Task, bounty, milestone, or work item | Work record and accountability record |
+| Reputation, contribution, or trust signal | Contextual contribution signal |
+| Objection, dispute, appeal, or arbitration event | Dispute, escalation, and review record |
+| Extension or plugin action | External adapter event with explicit trust boundaries |
+
+The first integration scope should be read-only. Write integration should wait for legal, licensing, security, authority, and UX evidence gates.
+
+## 8. Core Product Model
 
 IsoniaOS organizes governance and self-management around durable objects:
 
@@ -137,14 +343,19 @@ IsoniaOS organizes governance and self-management around durable objects:
 | Organization | The DAO, working group, grants program, council, cooperative, protocol team, or community using IsoniaOS. |
 | Purpose | The organization’s reason for existing, operating principles, and high-level direction. |
 | Circle | A semi-autonomous working group around a purpose, domain, budget, or function. |
+| Budget | A scoped allocation of shared resources tied to an organization, circle, policy, proposal, or workstream. |
 | Role | A named responsibility, such as admin, reviewer, executor, treasury steward, grant reviewer, security reviewer, contributor, delegate, or observer. |
 | Permission | A rule for who can do something. |
 | Policy | A documented rule that defines authority, process, limits, thresholds, or review requirements. |
 | Template | A reusable setup pattern for common governance and self-management processes. |
 | Tension | A visible gap between the current state and a better state: problem, risk, need, opportunity, ambiguity, or conflict. |
+| Work record | A task, grant, bounty, deliverable, salary, milestone, or contribution record connected to responsibility and evidence. |
+| Contribution signal | A contextual record of demonstrated work, review, delivery, participation, or trust imported or computed with source disclosure. |
 | Proposal | A request for the organization to decide something. |
 | Advice process | A decision mode where a role-holder can decide after consulting affected people and relevant experts. |
 | Consent process | A decision mode where a change can proceed unless there is a reasoned objection. |
+| Objection | A reasoned concern that a proposed action may harm the organization, violate policy, create unacceptable risk, or ignore affected people. |
+| Dispute | An escalated disagreement that requires structured review, voting, arbitration, mediation, or another documented resolution path. |
 | Decision | The outcome of a proposal, role authority, advice process, consent process, or vote. |
 | Execution | The action expected after a decision. |
 | Evidence | A record that supports a claim about what happened. |
@@ -159,6 +370,7 @@ The product model is not only about creating records. It is about showing relati
 flowchart TD
   Org["Organization"] --> Purpose["Purpose and principles"]
   Org --> Circles["Circles"]
+  Org --> Budgets["Budgets"]
   Org --> Roles["Roles and permissions"]
   Org --> Policies["Policies"]
   Org --> Templates["Templates"]
@@ -166,7 +378,10 @@ flowchart TD
   Circles --> Tension
   Roles --> Tension
   Tension --> Framing["Framing and affected parties"]
-  Framing --> Advice["Advice process"]
+  Budgets --> Execution
+  Framing --> Work["Work record"]
+  Work --> Advice["Advice process"]
+  Framing --> Advice
   Framing --> Proposal["Proposal"]
   Framing --> Consent["Consent process"]
   Policies --> Advice
@@ -184,7 +399,7 @@ flowchart TD
   Memory --> Purpose
 ```
 
-## 7. Organization Lifecycle
+## 9. Organization Lifecycle
 
 An organization should move through a simple lifecycle.
 
@@ -202,7 +417,7 @@ Activation matters because a half-configured organization can be misleading. Iso
 
 In contract-backed flows, activation and authority should be tied to modeled contract state. In manual or external-record flows, IsoniaOS should show that those records are annotations or evidence unless a documented model says otherwise.
 
-## 8. Roles, Circles, And Permissions
+## 10. Roles, Circles, And Permissions
 
 Roles help people understand responsibility. Permissions define what those roles can do. Circles group related roles, policies, budgets, and tensions around a domain of work.
 
@@ -244,7 +459,44 @@ A permission should answer a narrow question:
 
 Good role design should avoid hidden power. A participant should be able to see why a person, circle, wallet, group, delegate, or process can perform an action.
 
-## 9. Tensions As The Starting Point For Work
+
+## 11. Budgets, Payments, Work Records, And Contribution Signals
+
+Self-management is weak when teams have responsibility but no visible resources. A circle should be able to hold a budget, request funds, approve routine spending within policy limits, and connect payments to work records and evidence.
+
+IsoniaOS should model budgets as scoped authority, not just balances. A useful budget record should show:
+
+- the organization or circle it belongs to;
+- funding source and allocation history;
+- spending policy;
+- spending limits by decision mode;
+- active payment requests;
+- executed payments;
+- related work records;
+- remaining allocation or runway where available;
+- evidence and accountability status.
+
+A work record can represent a task, grant, bounty, salary, milestone, recurring responsibility, or contribution. It should not require every organization to use the same project-management workflow, but it should capture enough information to preserve accountability:
+
+- who requested the work;
+- who owns it;
+- which circle, role, policy, or decision authorized it;
+- expected deliverable or outcome;
+- due date or review window;
+- payment or reward context if any;
+- required evidence;
+- completion, failure, cancellation, or dispute status.
+
+Contribution signals can be derived from completed work, reviews, governance participation, code contributions, security reviews, dispute resolution, delivery reliability, or imported external reputation systems. These signals should help route context and advice. They should not become a universal rank or hidden authority layer.
+
+This gives IsoniaOS a clear product stance:
+
+```text
+Payments are not only treasury operations.
+Payments are evidence-bearing governance events.
+```
+
+## 12. Tensions As The Starting Point For Work
 
 A tension is a visible gap between the current state and a better state. It can be a problem, risk, opportunity, ambiguity, conflict, missing policy, operational need, or strategic question.
 
@@ -268,7 +520,7 @@ A useful tension record should show:
 - related discussion sources;
 - whether it became a proposal, advice-process decision, policy update, role update, dispute, task, or archived note.
 
-## 10. Decision Modes: Not Every Decision Should Be A Vote
+## 13. Decision Modes: Not Every Decision Should Be A Vote
 
 Voting is important, but it is not the only governance mechanism.
 
@@ -299,7 +551,36 @@ For example:
 
 This is central to accountable self-management. The organization should not be blocked by unnecessary votes, but it should also not allow undocumented authority to replace governance.
 
-## 11. Templates And Repeatable Governance Patterns
+
+## 14. Objections, Disputes, And Escalation
+
+A self-managed organization needs a way to object without forcing every decision into a vote from the beginning. IsoniaOS should distinguish between ordinary discussion, a reasoned objection, and a formal dispute.
+
+An objection should explain why a proposed action may:
+
+- violate a policy;
+- exceed a role or circle mandate;
+- create unacceptable treasury, security, legal, operational, or reputational risk;
+- ignore an affected person or group;
+- lack sufficient evidence;
+- conflict with the organization purpose or a prior decision.
+
+A dispute is an escalated objection that requires a documented resolution path. The path may be mediation, circle consent, a reputation-weighted process, a delegate process, token vote, multisig review, arbitration, or another policy-defined route.
+
+A dispute record should show:
+
+- source decision, tension, policy, role, circle, or payment;
+- objecting party or affected group where public disclosure is appropriate;
+- reason for objection;
+- decision mode used for escalation;
+- evidence reviewed;
+- outcome;
+- accountability consequences;
+- appeal or review status.
+
+This makes dissent legible. It also prevents a false binary between “everything is informal” and “everything requires a full vote.”
+
+## 15. Templates And Repeatable Governance Patterns
 
 Templates help organizations avoid starting from a blank page.
 
@@ -342,7 +623,7 @@ A self-managed startup or open-source project might use a different template:
 
 Templates should be editable over time. A template is a starting pattern, not a guarantee that every organization has the same process.
 
-## 12. Proposals, Decisions, Execution, Evidence, Verification, And Memory
+## 16. Proposals, Decisions, Execution, Evidence, Verification, And Memory
 
 The core IsoniaOS loop connects a decision to follow-through.
 
@@ -365,7 +646,7 @@ sequenceDiagram
   Organization->>Record: Close, block, learn, or continue follow-up
 ```
 
-Evidence can come from different places. It may be a transaction, an external public record, a document, a milestone note, a discussion summary, a Safe transaction, a Snapshot vote, a Tally proposal, an Agora delegate record, an Aragon or DAOHaus organization action, a Colony work record, an XDAO governance record, or a manual completion update.
+Evidence can come from different places. It may be a transaction, an external public record, a document, a milestone note, a discussion summary, a multisig transaction, an offchain vote, a Governor-style proposal, a delegation record, a DAO-framework action, an organization-runtime motion, a payment or work record, a dispute record, or a manual completion update.
 
 Verification asks a more precise question: what claim does this evidence support?
 
@@ -382,7 +663,7 @@ Verification asks a more precise question: what claim does this evidence support
 
 Governance memory is the result. It is the durable record that helps future participants understand why a decision happened and whether follow-through matched the approved intent.
 
-## 13. Accountability Model
+## 17. Accountability Model
 
 An approved proposal creates a follow-up question, not only a result.
 
@@ -421,7 +702,7 @@ Useful statuses include:
 
 Manual updates are useful, but they should be shown as manual updates. A completion note does not automatically prove that the approved intent was satisfied. The product should preserve the difference between “someone said it is done” and “the evidence supports the claim.”
 
-## 14. Discussion Sources, AI Facilitation, And Organizational Memory
+## 18. Discussion Sources, AI Facilitation, And Organizational Memory
 
 A large part of governance happens before a proposal is formalized. For many organizations, the real context lives in Telegram channels, Discord servers, forums, Slack workspaces, GitHub discussions, issue trackers, meeting notes, calls, newsletters, or community updates.
 
@@ -453,7 +734,7 @@ AI as context engine, not final judge.
 
 If AI produces a summary, the record should make that visible. The product should allow humans to inspect the underlying source where permitted and should not hide uncertainty, missing context, or stale imports.
 
-## 15. Integrations And Adapter Philosophy
+## 19. Integrations And Adapter Philosophy
 
 IsoniaOS should integrate with existing governance and DAO tools instead of pretending they do not exist.
 
@@ -465,14 +746,12 @@ Connect external records. Preserve their boundaries. Do not fake authority.
 
 Potential integration surfaces include:
 
-- Safe for multisig execution and treasury actions;
-- Snapshot for offchain signaling and community votes;
-- Tally for Governor-style proposals, voting, and delegation records;
-- Agora for delegation and governance participation records;
-- Aragon for DAO organization and governance records;
-- DAOHaus for Moloch-style DAO records and operations;
-- Colony for contributor work, domains, payments, and reputation-like work records;
-- XDAO for DAO administration and governance records;
+- multisig execution and treasury systems for transaction execution, payment evidence, and wallet control records;
+- offchain signaling systems for community votes and sentiment;
+- Governor-style systems for proposals, voting, delegation, and onchain governance history;
+- DAO framework systems for organization setup, roles, permissions, proposals, and treasury operations;
+- organization-runtime systems for teams, domains, motions, disputes, payments, work records, and contribution signals;
+- DAO administration systems for operational governance records;
 - Telegram, Discord, forums, Slack, and similar platforms for discussion context;
 - block explorers and RPC/indexing services for transaction and event evidence.
 
@@ -490,7 +769,7 @@ An adapter can be:
 
 Public docs should not claim provider-completeness until a scoped evidence gate supports that claim.
 
-## 16. Trust And Authority Boundaries
+## 20. Trust And Authority Boundaries
 
 IsoniaOS should make trust boundaries visible.
 
@@ -518,7 +797,7 @@ This record is linked evidence. It does not override contract state.
 This discussion summary was AI-assisted and should be reviewed against the source before it is used for a high-impact decision.
 ```
 
-## 17. User Experience Model
+## 21. User Experience Model
 
 The user experience should be organized around questions people actually ask.
 
@@ -562,7 +841,7 @@ For a technical developer:
 
 The same product can serve all groups if it keeps the main record plain and routes technical details to the developer page.
 
-## 18. Technical Architecture Overview
+## 22. Technical Architecture Overview
 
 IsoniaOS is split into focused public components:
 
@@ -585,7 +864,7 @@ flowchart TD
   API --> ReadModels["Read models"]
   API --> External["External adapters"]
   External --> Safe["Safe / wallets"]
-  External --> GovTools["Snapshot / Tally / Agora / Aragon / DAOHaus / Colony / XDAO"]
+  External --> GovTools["Governance / DAO / Organization-runtime tools"]
   External --> Discussion["Telegram / Discord / forums / Slack"]
   API --> Contracts["EVM contracts"]
   Contracts --> API
@@ -598,7 +877,27 @@ flowchart TD
 
 The technical model should preserve authority rather than blur it. A read API can explain contract state. It should not silently become the authority for contract-backed facts. An AI summary can help users understand a discussion. It should not silently become a decision.
 
-## 19. Privacy, Safety, And Limitations
+
+## 23. Protocol Kernel, Extension Space, And Adapter Boundaries
+
+IsoniaOS should be designed like a governance kernel surrounded by extension and adapter space. The kernel should remain small and predictable. It should protect authority boundaries, record integrity, and accountability semantics. External systems and optional modules can then express diverse organization models.
+
+The kernel should avoid hardcoding one ideology of governance. It should instead ask stable questions:
+
+- What is the organization?
+- What is the purpose or domain of authority?
+- Which role, circle, policy, wallet, contract, or external tool created authority?
+- Which decision mode was used?
+- What was expected to happen?
+- What evidence supports the claim that it happened?
+- Who or what is accountable now?
+- What remains unresolved?
+
+Adapters should never hide their source model. An offchain vote, a multisig transaction, an organization-runtime motion, a Governor-style proposal, a delegate action, a forum thread, a chat discussion, and a manual note all carry different kinds of truth. IsoniaOS should connect them without flattening them into the same authority type.
+
+This architecture supports gradual adoption. An organization can begin with manual and external records, then connect adapters, then add policy-constrained flows, then add contract-backed execution where the risk and maturity justify it.
+
+## 24. Privacy, Safety, And Limitations
 
 IsoniaOS records governance information. That information can affect people, budgets, reputations, contributor relationships, and community decisions.
 
@@ -620,7 +919,7 @@ Current limitations:
 
 These limitations are not a reason to hide information. They are a reason to show status clearly.
 
-## 20. Roadmap Relationship
+## 25. Roadmap Relationship
 
 The roadmap is directional. It explains how the product grows from early lifecycle modeling into public beta and later broader organization workflows.
 
@@ -628,11 +927,16 @@ Near-term work focuses on the proposal-to-proof loop: organization setup, activa
 
 The self-management direction extends that loop with purpose, tensions, circles, decision modes, policies, advice process, consent process, discussion-source ingestion, AI facilitation, external integrations, dispute records, and organization health views.
 
-Integration work should be sequenced carefully. Safe, Snapshot, Tally, Agora, Aragon, DAOHaus, Colony, XDAO, Telegram, Discord, forums, Slack, and other platforms should enter the roadmap as staged adapters with source-disclosure, trust-boundary, privacy, and maturity labels.
+Integration work should be sequenced carefully. Multisig wallets, voting systems, Governor-style tools, DAO frameworks, organization-runtime products, DAO administration tools, chat platforms, forums, and other external systems should enter the roadmap as staged adapters with source-disclosure, trust-boundary, privacy, and maturity labels. Named provider sequencing belongs in the public roadmap and integration-lab notes, not in philosophical claims inside the whitepaper.
 
 The roadmap is not a promise that a feature is complete. It uses checkboxes to separate current evidence from planned work.
 
-## 21. Glossary And Key Terms
+## 26. References
+
+::: {#refs}
+:::
+
+## 27. Glossary And Key Terms
 
 For short definitions, see the [Glossary](reference/glossary.md).
 
@@ -645,16 +949,21 @@ Key terms:
 - purpose;
 - activation;
 - circle;
+- budget;
 - role;
 - permission;
 - policy;
 - template;
 - tension;
+- work record;
+- contribution signal;
 - advice process;
 - consent process;
 - proposal;
 - decision;
 - decision mode;
+- objection;
+- dispute;
 - execution;
 - evidence;
 - verification;
@@ -662,5 +971,7 @@ Key terms:
 - discussion source;
 - integration adapter;
 - AI facilitation;
+- extension space;
+- adapter boundary;
 - governance memory;
 - authority boundary.
